@@ -1,10 +1,11 @@
 export const tool = {
-  Merge_PDF: {
-    title: "Merge PDF",
-    description: "Combine multiple PDF files into one document",
-    color: "var(--red)",
-    type: ".pdf",
-    to: "/merge-pdf",
+  JPG_to_PDF: {
+    title: "JPG to PDF",
+    seoTitle: "Convert JPG to PDF Online - Free JPG to PDF Converter",
+    description: "Convert JPG image files to PDF documents",
+    color: "#f1c40f",
+    type: ".jpg",
+    to: "/jpg-to-pdf",
   },
 };
 

@@ -9,12 +9,14 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "دمج PDF",
-    description: "دمج ملفات PDF متعددة في مستند واحد",
-    color: "var(--red)",
-    type: ".pdf",
-    to: "/merge-pdf",
+  JPG_to_PDF: {
+    title: "JPG إلى PDF",
+    seoTitle:
+      "أدوات تحويل JPG إلى PDF عبر الإنترنت - تحويل الصور إلى مستندات PDF",
+    description: "تحويل ملفات صور JPG إلى مستندات PDF",
+    color: "#f1c40f",
+    type: ".jpg",
+    to: "/jpg-to-pdf",
   },
 };
 

@@ -10,12 +10,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "Fusionner des PDF",
-    description: "Combinez plusieurs fichiers PDF en un seul document",
-    color: "var(--red)",
-    type: ".pdf",
-    to: "/merge-pdf",
+  JPG_to_PDF: {
+    title: "JPG en PDF",
+    seoTitle: "JPG en PDF - Convertir des fichiers image JPG en documents PDF",
+    description: "Convertir des fichiers image JPG en documents PDF",
+    color: "#f1c40f",
+    type: ".jpg",
+    to: "/jpg-to-pdf",
   },
 };
 

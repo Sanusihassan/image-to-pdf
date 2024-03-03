@@ -10,12 +10,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "合并PDF",
-    description: "将多个PDF文件合并成一个文档",
-    color: "var(--red)",
-    type: ".pdf",
-    to: "/merge-pdf",
+  JPG_to_PDF: {
+    title: "JPG转PDF",
+    seoTitle: "JPG转PDF - 将JPG图像文件转换为PDF文档",
+    description: "将JPG图像文件转换为PDF文档",
+    color: "#f1c40f",
+    type: ".jpg",
+    to: "/jpg-to-pdf",
   },
 };
 

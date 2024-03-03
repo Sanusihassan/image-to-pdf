@@ -36,12 +36,14 @@ export const nav_content = {
   pdf_to_markdown: "PDF से मार्कडाउन तक",
 };
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "पीडीएफ विलय",
-    description: "एक दस्तावेज में कई पीडीएफ फ़ाइलों को जोड़ें",
-    color: "var(--red)",
-    type: ".pdf",
-    to: "/merge-pdf",
+  JPG_to_PDF: {
+    title: "JPG से पीडीएफ में",
+    seoTitle:
+      "JPG से पीडीएफ में - JPG छवि फ़ाइलों को पीडीएफ दस्तावेजों में बदलें",
+    description: "JPG छवि फ़ाइलों को पीडीएफ दस्तावेजों में बदलें",
+    color: "#f1c40f",
+    type: ".jpg",
+    to: "/jpg-to-pdf",
   },
 };
 

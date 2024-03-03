@@ -83,5 +83,5 @@ export default ({ item }: { item: data_type }) => {
 
 // export default ToolPage;
 export const routes = {
-  "/merge-pdf": { item: tool["Merge_PDF"] },
+  "/jpg-to-pdf": { item: tool["JPG_to_PDF"] },
 };

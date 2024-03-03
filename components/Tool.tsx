@@ -62,14 +62,14 @@ const Tool: React.FC<ToolProps> = ({
   // the files:
   const { setFiles } = useFileStore();
   const dispatch = useDispatch();
-  // const dispatch = useDispatch();
-  const router = useRouter();
+
   const handleHideTool = () => {
     dispatch(dispatch(setField({ showTool: false })));
   };
   useEffect(() => {
     dispatch(setField({ showDownloadBtn: false }));
-  }, []);
+
+  }, [stateShowTool]);
 
   // endpoint
   // const [endpoint, setEndpoint] = useState("");
@@ -79,9 +79,6 @@ const Tool: React.FC<ToolProps> = ({
     handleHideTool();
   }, []);
   const { getRootProps, isDragActive } = useDropzone({ onDrop });
-
-  // file input change handler
-  let showTool = stateShowTool && errorMessage?.length > 0;
   // accepted file types
   const acceptedFileTypes = {
     ".pdf": ".pdf, .PDF",
@@ -105,7 +102,7 @@ const Tool: React.FC<ToolProps> = ({
           <div className="overlay display-4">{tools.drop_files}</div>
         )}
         <div
-          className={`text-center ${!showTool ? "" : "d-flex"
+          className={`text-center${!(stateShowTool && errorMessage?.length > 0) ? "" : " d-flex"
             } flex-column tools ${stateShowTool ? "" : "d-none"}`}
         >
           <h1 className="display-3">
