@@ -29,24 +29,24 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": ["تم دمج ملفات ال PDF!", "تم دمج ملف ال PDF!"],
+    "jpg-to-pdf": ["تم تحويل ملفات JPG إلى PDF!", "تم تحويل ملف JPG إلى PDF!"],
   },
   btnText: {
-    "merge-pdf": ["تحميل ملفات PDF المدموجة", "تحميل ملف PDF مدموج"],
+    "jpg-to-pdf": ["تحميل ملفات PDF المحولة", "تحميل ملف PDF المحول"],
   },
   backto: {
-    "merge-pdf": "العودة إلى دمج ملفات PDF",
+    "jpg-to-pdf": "العودة إلى JPG إلى PDF",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "خيارات دمج ملف PDF",
+    jpg_to_pdf: "خيارات تحويل ملف JPG إلى PDF",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: {
-    merge_pdf: "دمج PDF",
+    jpg_to_pdf: "تحويل إلى PDF",
   },
   pages: "صفحة",
   page: "صفحة واحدة",

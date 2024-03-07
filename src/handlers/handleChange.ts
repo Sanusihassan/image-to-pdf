@@ -4,7 +4,7 @@ import { AnyAction } from "@reduxjs/toolkit";
 import type { errors as _ } from "../content/content"; // import the errors constant
 
 import { validateFiles } from "../utils";
-import { ToolState, setField, resetErrorMessage } from "../store";
+import { setField, resetErrorMessage } from "../store";
 export const handleChange = (
   e: React.ChangeEvent<HTMLInputElement>,
   dispatch: Dispatch<AnyAction>,
@@ -23,4 +23,5 @@ export const handleChange = (
     dispatch(setField({ showTool: false }));
     dispatch(resetErrorMessage());
   }
+  // debugger;
 };

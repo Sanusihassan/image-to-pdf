@@ -81,12 +81,14 @@ const Tool: React.FC<ToolProps> = ({
   const { getRootProps, isDragActive } = useDropzone({ onDrop });
   // accepted file types
   const acceptedFileTypes = {
-    ".pdf": ".pdf, .PDF",
-    ".pptx": ".pptx, .ppt",
-    ".docx": ".docx, .doc",
-    ".xlsx": ".xlsx, .xls",
     ".jpg": ".jpg, .jpeg",
-    ".html": ".html, .htm",
+    ".png": ".png",
+    ".gif": ".gif",
+    ".tiff": ".tiff",
+    ".bmp": ".bmp",
+    ".svg": ".svg",
+    ".webp": ".webp",
+    ".heif, .heic": ".heif, .heic",
   };
 
   return (

@@ -7,21 +7,92 @@ export const tool = {
     type: ".jpg",
     to: "/jpg-to-pdf",
   },
+  PNG_to_PDF: {
+    title: "PNG to PDF",
+    seoTitle: "Convert PNG to PDF Online - Free PNG to PDF Converter",
+    description: "Convert PNG image files to PDF documents",
+    color: "#3498db",
+    type: ".png",
+    to: "/png-to-pdf",
+  },
+  GIF_to_PDF: {
+    title: "GIF to PDF",
+    seoTitle: "Convert GIF to PDF Online - Free GIF to PDF Converter",
+    description: "Convert GIF image files to PDF documents",
+    color: "#bdc3c7",
+    type: ".gif",
+    to: "/gif-to-pdf",
+  },
+  TIFF_to_PDF: {
+    title: "TIFF to PDF",
+    seoTitle: "Convert TIFF to PDF Online - Free TIFF to PDF Converter",
+    description: "Convert TIFF image files to PDF documents",
+    color: "#e45453",
+    type: ".tiff",
+    to: "/tiff-to-pdf",
+  },
+  BMP_to_PDF: {
+    title: "BMP to PDF",
+    seoTitle: "Convert BMP to PDF Online - Free BMP to PDF Converter",
+    description: "Convert BMP image files to PDF documents",
+    color: "#573b26",
+    type: ".bmp",
+    to: "/bmp-to-pdf",
+  },
+  SVG_to_PDF: {
+    title: "SVG to PDF",
+    seoTitle: "Convert SVG to PDF Online - Free SVG to PDF Converter",
+    description: "Convert SVG image files to PDF documents",
+    color: "#ffb338",
+    type: ".svg",
+    to: "/svg-to-pdf",
+  },
+  WebP_to_PDF: {
+    title: "WebP to PDF",
+    seoTitle: "Convert WebP to PDF Online - Free WebP to PDF Converter",
+    description: "Convert WebP image files to PDF documents",
+    color: "#6fc21f",
+    type: ".webp",
+    to: "/webp-to-pdf",
+  },
+  HEIF_to_PDF: {
+    title: "HEIF/HEIC to PDF",
+    seoTitle: "Convert HEIF/HEIC to PDF Online - Free HEIF/HEIC to PDF Converter",
+    description: "Convert HEIF/HEIC image files to PDF documents",
+    color: "#c376b8",
+    type: ".heif, .heic",
+    to: "/heif-heic-to-pdf",
+  },
 };
 
+// increase this one as well:
 export const edit_page = {
   edit_page_titles: {
-    merge_pdf: "Merge PDF options",
+    jpg_to_pdf: "JPG to PDF options",
+    png_to_pdf: "PNG to PDF options",
+    gif_to_pdf: "GIF to PDF options",
+    tiff_to_pdf: "TIFF to PDF options",
+    bmp_to_pdf: "BMP to PDF options",
+    svg_to_pdf: "SVG to PDF options",
+    webp_to_pdf: "WebP to PDF options",
+    heif_heic_to_pdf: "HEIF/HEIC to PDF options",
   },
-  loader_text: "please wait...",
+  loader_text: "Please wait...",
   add_more_button: "Add more files",
-  // translate the values of this object to french.
   action_buttons: {
-    merge_pdf: "Merge PDF",
+    jpg_to_pdf: "Convert to PDF",
+    png_to_pdf: "Convert to PDF",
+    gif_to_pdf: "Convert to PDF",
+    tiff_to_pdf: "Convert to PDF",
+    bmp_to_pdf: "Convert to PDF",
+    svg_to_pdf: "Convert to PDF",
+    webp_to_pdf: "Convert to PDF",
+    heif_heic_to_pdf: "Convert to PDF",
   },
   pages: "pages",
   page: "page",
 };
+
 
 export const tools = {
   select: "Select",
@@ -32,15 +103,21 @@ export const tools = {
 
 export const downloadFile = {
   titles: {
-    "merge-pdf": ["PDF files have been merged!", "PDF file has been merged!"],
+    "jpg-to-pdf": [
+      "JPG files have been converted to PDF!",
+      "JPG file has been converted to PDF!",
+    ],
   },
 
   btnText: {
-    "merge-pdf": ["Download Merged PDF files", "Download Merged PDF file"],
+    "jpg-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
   },
 
   backto: {
-    "merge-pdf": "Back To Merge PDF",
+    "jpg-to-pdf": "Back To JPG to PDF",
   },
 };
 

@@ -8,11 +8,10 @@ import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
 // types
 import type { tools } from "../../content";
-import { useRouter } from "next/router";
-import { validateFiles } from "../../src/utils";
 type AcceptedFileTypes = {
-  [key in ".pdf" | ".pptx" | ".docx" | ".xlsx" | ".jpg" | ".html"]: string;
+  [key in ".jpg" | ".png" | ".gif" | ".tiff" | ".bmp" | ".svg" | ".webp" | ".heif, .heic"]: string;
 };
+
 interface FileInputFormProps {
   data: {
     type: string;

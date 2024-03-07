@@ -22,12 +22,12 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "Opciones para fusionar PDF",
+    jpg_to_pdf: "Opciones para convertir JPG a PDF",
   },
   loader_text: "Por favor espera...",
   add_more_button: "Agrega más archivos",
   action_buttons: {
-    merge_pdf: "Combinar PDF",
+    jpg_to_pdf: "Convertir a PDF",
   },
   pages: "paginas",
   page: "página",
@@ -42,19 +42,19 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "¡Combinación de archivos PDF exitosa!",
-      "¡Combinación de archivo PDF exitosa!",
+    "jpg-to-pdf": [
+      "¡Conversión de archivos JPG a PDF exitosa!",
+      "¡Conversión de archivo JPG a PDF exitosa!",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "Descargar archivos PDF combinados",
-      "Descargar archivo PDF combinado",
+    "jpg-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
     ],
   },
   backto: {
-    "merge-pdf": "Volver a unir PDF",
+    "jpg-to-pdf": "Volver a JPG a PDF",
   },
 };
 

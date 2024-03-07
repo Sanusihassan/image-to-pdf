@@ -29,30 +29,30 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "Fusion de fichiers PDF réussie !",
-      "Fusion de fichier PDF réussie !",
+    "jpg-to-pdf": [
+      "Conversion de fichiers JPG en PDF réussie !",
+      "Conversion de fichier JPG en PDF réussie !",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "Télécharger les fichiers PDF fusionnés",
-      "Télécharger le fichier PDF fusionné",
+    "jpg-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
     ],
   },
   backto: {
-    "merge-pdf": "Retour à Fusionner PDF",
+    "jpg-to-pdf": "Retour à JPG vers PDF",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "Options de fusion de PDF",
+    jpg_to_pdf: "Options de conversion de JPG en PDF",
   },
   loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
   action_buttons: {
-    merge_pdf: "Fusionner PDF",
+    jpg_to_pdf: "Convertir en PDF",
   },
   pages: "pages",
   page: "page",

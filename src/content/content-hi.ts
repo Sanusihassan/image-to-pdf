@@ -49,30 +49,30 @@ export const tool: _tool = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "PDF फ़ाइलें मर्ज़ की गई हैं!",
-      "PDF फ़ाइल को मर्ज़ किया गया है!",
+    "jpg-to-pdf": [
+      "JPG फ़ाइलें PDF में रूपांतरित की गईं!",
+      "JPG फ़ाइल को PDF में रूपांतरित किया गया है!",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "मर्ज़ की गई PDF फ़ाइलें डाउनलोड करें",
-      "मर्ज़ की गई PDF फ़ाइल डाउनलोड करें",
+    "jpg-to-pdf": [
+      "PDF में रूपांतरित की गई JPG फ़ाइलें डाउनलोड करें",
+      "PDF में रूपांतरित की गई JPG फ़ाइल डाउनलोड करें",
     ],
   },
   backto: {
-    "merge-pdf": "मर्ज़ की गई PDF को वापस जाएं",
+    "jpg-to-pdf": "JPG से PDF को वापस जाएं",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "PDF फ्यूज़न विकल्प",
+    jpg_to_pdf: "JPG से PDF विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
   action_buttons: {
-    merge_pdf: "पीडीएफ विलय करें",
+    jpg_to_pdf: "पीडीएफ में रूपांतरित करें",
   },
   pages: "पृष्ठों",
   page: "पृष्ठ",

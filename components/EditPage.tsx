@@ -8,7 +8,6 @@ import Options, { OptionsProps } from "./DisplayFile/Options";
 import type { edit_page } from "../content";
 import ErrorElement from "./ErrorElement";
 import type { errors as _ } from "../content";
-import { Spinner } from "react-bootstrap";
 import { CogIcon } from "@heroicons/react/outline";
 // import { ToolStoreContext } from "../src/ToolStoreContext";
 import { useDispatch, useSelector } from "react-redux";
@@ -61,17 +60,13 @@ const EditPage = ({
   );
   const dispatch = useDispatch();
   // actual files;
-  const { files, setFiles, fileInput, submitBtn } = useFileStore();
-  useEffect(() => {
-    if (errorCode == "ERR_NO_FILES_SELECTED" && files.length > 0) {
-      dispatch(resetErrorMessage());
-    }
-  }, [files, errorCode]);
+  const { fileInput } = useFileStore();
+  
   // gearRef
   const gearRef = useRef(null);
   return (
     <aside
-      className={`edit-page ${showTool || showDownloadBtn ? "d-none" : ""}`}
+      className={`edit-page${showTool || showDownloadBtn ? " d-none" : ""}`}
     >
       <section className="edit-area position-relative">
         <DisplayFile

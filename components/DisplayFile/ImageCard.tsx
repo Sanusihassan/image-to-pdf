@@ -29,7 +29,6 @@ const ImageCard: React.FC<ImageCardProps> = ({
   const [imageUrl, setImageUrl] = useState("");
   const [tooltipSize, setToolTipSize] = useState("");
   const dispatch = useDispatch();
-  let isSubscribed = true;
   let p = getFileDetailsTooltipContent(
     file,
     ...fileDetailProps,
@@ -39,36 +38,38 @@ const ImageCard: React.FC<ImageCardProps> = ({
   p.then((size) => {
     setToolTipSize(size);
   });
+  let isSubscribed = true;
   useEffect(() => {
     const processFile = async () => {
-      try {
-        setShowLoader(true);
-        if (extension && extension === ".jpg") {
+      if (extension) {
+        try {
+          // setShowLoader(true);
           const reader = new FileReader();
           reader.onload = function (event: ProgressEvent<FileReader>) {
             const imageUrl = (event.target as FileReader).result as string;
             if (isSubscribed) {
+              console.log(imageUrl)
               setImageUrl(imageUrl);
             }
           };
           reader.readAsDataURL(file);
+        } catch (error) {
+          console.error("Error processing files:", error);
+        } finally {
+          // setShowLoader(false);
         }
-      } catch (error) {
-        console.error("Error processing files:", error);
-      } finally {
-        // setShowLoader(false);
       }
     };
     processFile();
     return () => {
       isSubscribed = false;
     };
-  }, [extension, file]);
+  }, []);
   return (
     <div
       className="drag-element-img"
       data-tooltip-id={`image_tooltip_${index}`}
-      data-tooltip-content={tooltipSize}
+      data-tooltip-html={tooltipSize}
       data-tooltip-place="top"
       {...provided.dragHandleProps}
       style={{

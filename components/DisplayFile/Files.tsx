@@ -1,12 +1,9 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import type { errors as _ } from "../../content";
 import ImageCard from "./ImageCard";
-import FileCard from "./FileCard";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { isDraggableExtension } from "../../src/utils";
 import { useRouter } from "next/router";
-import { useSelector, useDispatch } from "react-redux";
-import store, { ToolState } from "../../src/store";
 import { useFileStore } from "../../src/file-store";
 
 type FileProps = {
@@ -21,15 +18,13 @@ type FileProps = {
 const Files = ({
   errors,
   extension,
-  toolTipSizes,
   loader_text,
-  showSpinner,
   fileDetailProps,
 }: FileProps) => {
   // const store = useSelector((state: { tool: ToolState }) => state.tool);
-  const { files, imageUrls, setImageUrls } = useFileStore();
+  const { files } = useFileStore();
 
-  useEffect(() => {}, [files]);
+  useEffect(() => { }, [files]);
 
   const router = useRouter();
   const handleDragEnd = (result: any) => {
@@ -49,9 +44,8 @@ const Files = ({
         <Droppable droppableId="imageUrls" direction="horizontal">
           {(provided, snapshot) => (
             <div
-              className={`display-file ${
-                snapshot.isDraggingOver ? "dragging-over" : ""
-              }`}
+              className={`display-file ${snapshot.isDraggingOver ? "dragging-over" : ""
+                }`}
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
@@ -67,41 +61,21 @@ const Files = ({
                     <div
                       {...provided.draggableProps}
                       ref={provided.innerRef}
-                      className={`drag-element ${
-                        snapshot.isDragging ? "dragging" : ""
-                      }`}
+                      className={`drag-element ${snapshot.isDragging ? "dragging" : ""
+                        }`}
                       style={{
                         ...provided.draggableProps.style,
                       }}
                     >
-                      {/* isDraggableExtension(extension) ? ( */}
-                      {extension === ".jpg" ? (
-                        (() => {
-                          return (
-                            <ImageCard
-                              index={index}
-                              provided={provided}
-                              extension={extension}
-                              errors={errors}
-                              fileDetailProps={fileDetailProps}
-                              file={file}
-                              loader_text={loader_text}
-                            />
-                          );
-                        })()
-                      ) : (
-                        <FileCard
-                          extension={extension}
-                          file={file}
-                          index={index}
-                          isDraggable={isDraggableExtension(extension, router)}
-                          provided={provided}
-                          snapshot={snapshot}
-                          errors={errors}
-                          loader_text={loader_text}
-                          fileDetailProps={fileDetailProps}
-                        />
-                      )}
+                      <ImageCard
+                        index={index}
+                        provided={provided}
+                        extension={extension}
+                        errors={errors}
+                        fileDetailProps={fileDetailProps}
+                        file={file}
+                        loader_text={loader_text}
+                      />
                     </div>
                   )}
                 </Draggable>
