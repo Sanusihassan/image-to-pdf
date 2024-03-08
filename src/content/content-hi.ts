@@ -35,17 +35,74 @@ export const nav_content = {
   pdf_to_html: "पीडीएफ से एचटीएमएल",
   pdf_to_markdown: "PDF से मार्कडाउन तक",
 };
+
 export const tool: _tool = {
   JPG_to_PDF: {
-    title: "JPG से पीडीएफ में",
-    seoTitle:
-      "JPG से पीडीएफ में - JPG छवि फ़ाइलों को पीडीएफ दस्तावेजों में बदलें",
-    description: "JPG छवि फ़ाइलों को पीडीएफ दस्तावेजों में बदलें",
+    title: "JPG से PDF",
+    seoTitle: "ऑनलाइन JPG को PDF में बदलें - मुफ्त JPG से PDF कनवर्टर",
+    description: "JPG छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
   },
+  PNG_to_PDF: {
+    title: "PNG से PDF",
+    seoTitle: "ऑनलाइन PNG को PDF में बदलें - मुफ्त PNG से PDF कनवर्टर",
+    description: "PNG छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#3498db",
+    type: ".png",
+    to: "/png-to-pdf",
+  },
+  GIF_to_PDF: {
+    title: "GIF से PDF",
+    seoTitle: "ऑनलाइन GIF को PDF में बदलें - मुफ्त GIF से PDF कनवर्टर",
+    description: "GIF छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#636e72",
+    type: ".gif",
+    to: "/gif-to-pdf",
+  },
+  TIFF_to_PDF: {
+    title: "TIFF से PDF",
+    seoTitle: "ऑनलाइन TIFF को PDF में बदलें - मुफ्त TIFF से PDF कनवर्टर",
+    description: "TIFF छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#e45453",
+    type: ".tiff",
+    to: "/tiff-to-pdf",
+  },
+  BMP_to_PDF: {
+    title: "BMP से PDF",
+    seoTitle: "ऑनलाइन BMP को PDF में बदलें - मुफ्त BMP से PDF कनवर्टर",
+    description: "BMP छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#573b26",
+    type: ".bmp",
+    to: "/bmp-to-pdf",
+  },
+  SVG_to_PDF: {
+    title: "SVG से PDF",
+    seoTitle: "ऑनलाइन SVG को PDF में बदलें - मुफ्त SVG से PDF कनवर्टर",
+    description: "SVG छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#ffb338",
+    type: ".svg",
+    to: "/svg-to-pdf",
+  },
+  WebP_to_PDF: {
+    title: "WebP से PDF",
+    seoTitle: "ऑनलाइन WebP को PDF में बदलें - मुफ्त WebP से PDF कनवर्टर",
+    description: "WebP छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#6fc21f",
+    type: ".webp",
+    to: "/webp-to-pdf",
+  },
+  HEIF_to_PDF: {
+    title: "HEIF/HEIC से PDF",
+    seoTitle: "ऑनलाइन HEIF/HEIC को PDF में बदलें - मुफ्त HEIF/HEIC से PDF कनवर्टर",
+    description: "HEIF/HEIC छवि फ़ाइलों को PDF दस्तावेज़ों में बदलें",
+    color: "#c376b8",
+    type: ".heif, .heic",
+    to: "/heif-heic-to-pdf",
+  },
 };
+
 
 export const downloadFile: _downloadFile = {
   titles: {
@@ -68,15 +125,30 @@ export const downloadFile: _downloadFile = {
 export const edit_page: _edit_page = {
   edit_page_titles: {
     jpg_to_pdf: "JPG से PDF विकल्प",
+    png_to_pdf: "PNG से PDF विकल्प",
+    gif_to_pdf: "GIF से PDF विकल्प",
+    tiff_to_pdf: "TIFF से PDF विकल्प",
+    bmp_to_pdf: "BMP से PDF विकल्प",
+    svg_to_pdf: "SVG से PDF विकल्प",
+    webp_to_pdf: "WebP से PDF विकल्प",
+    heif_heic_to_pdf: "HEIF/HEIC से PDF विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
   action_buttons: {
-    jpg_to_pdf: "पीडीएफ में रूपांतरित करें",
+    jpg_to_pdf: "PDF में बदलें",
+    png_to_pdf: "PDF में बदलें",
+    gif_to_pdf: "PDF में बदलें",
+    tiff_to_pdf: "PDF में बदलें",
+    bmp_to_pdf: "PDF में बदलें",
+    svg_to_pdf: "PDF में बदलें",
+    webp_to_pdf: "PDF में बदलें",
+    heif_heic_to_pdf: "PDF में बदलें",
   },
-  pages: "पृष्ठों",
+  pages: "पृष्ठ",
   page: "पृष्ठ",
 };
+
 
 export const tools: _tools = {
   select: "चुनें",

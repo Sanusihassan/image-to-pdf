@@ -12,13 +12,70 @@ import type {
 export const tool: _tool = {
   JPG_to_PDF: {
     title: "JPG转PDF",
-    seoTitle: "JPG转PDF - 将JPG图像文件转换为PDF文档",
+    seoTitle: "在线JPG转PDF - 免费JPG转PDF转换器",
     description: "将JPG图像文件转换为PDF文档",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
   },
+  PNG_to_PDF: {
+    title: "PNG转PDF",
+    seoTitle: "在线PNG转PDF - 免费PNG转PDF转换器",
+    description: "将PNG图像文件转换为PDF文档",
+    color: "#3498db",
+    type: ".png",
+    to: "/png-to-pdf",
+  },
+  GIF_to_PDF: {
+    title: "GIF转PDF",
+    seoTitle: "在线GIF转PDF - 免费GIF转PDF转换器",
+    description: "将GIF图像文件转换为PDF文档",
+    color: "#636e72",
+    type: ".gif",
+    to: "/gif-to-pdf",
+  },
+  TIFF_to_PDF: {
+    title: "TIFF转PDF",
+    seoTitle: "在线TIFF转PDF - 免费TIFF转PDF转换器",
+    description: "将TIFF图像文件转换为PDF文档",
+    color: "#e45453",
+    type: ".tiff",
+    to: "/tiff-to-pdf",
+  },
+  BMP_to_PDF: {
+    title: "BMP转PDF",
+    seoTitle: "在线BMP转PDF - 免费BMP转PDF转换器",
+    description: "将BMP图像文件转换为PDF文档",
+    color: "#573b26",
+    type: ".bmp",
+    to: "/bmp-to-pdf",
+  },
+  SVG_to_PDF: {
+    title: "SVG转PDF",
+    seoTitle: "在线SVG转PDF - 免费SVG转PDF转换器",
+    description: "将SVG图像文件转换为PDF文档",
+    color: "#ffb338",
+    type: ".svg",
+    to: "/svg-to-pdf",
+  },
+  WebP_to_PDF: {
+    title: "WebP转PDF",
+    seoTitle: "在线WebP转PDF - 免费WebP转PDF转换器",
+    description: "将WebP图像文件转换为PDF文档",
+    color: "#6fc21f",
+    type: ".webp",
+    to: "/webp-to-pdf",
+  },
+  HEIF_to_PDF: {
+    title: "HEIF/HEIC转PDF",
+    seoTitle: "在线HEIF/HEIC转PDF - 免费HEIF/HEIC转PDF转换器",
+    description: "将HEIF/HEIC图像文件转换为PDF文档",
+    color: "#c376b8",
+    type: ".heif, .heic",
+    to: "/heif-heic-to-pdf",
+  },
 };
+
 
 export const downloadFile: _downloadFile = {
   titles: {
@@ -34,16 +91,31 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    jpg_to_pdf: "JPG转PDF选项",
+    jpg_to_pdf: "JPG 到 PDF 选项",
+    png_to_pdf: "PNG 到 PDF 选项",
+    gif_to_pdf: "GIF 到 PDF 选项",
+    tiff_to_pdf: "TIFF 到 PDF 选项",
+    bmp_to_pdf: "BMP 到 PDF 选项",
+    svg_to_pdf: "SVG 到 PDF 选项",
+    webp_to_pdf: "WebP 到 PDF 选项",
+    heif_heic_to_pdf: "HEIF/HEIC 到 PDF 选项",
   },
-  loader_text: "请稍等...",
+  loader_text: "请稍候...",
   add_more_button: "添加更多文件",
   action_buttons: {
-    jpg_to_pdf: "转换为PDF",
+    jpg_to_pdf: "转换为 PDF",
+    png_to_pdf: "转换为 PDF",
+    gif_to_pdf: "转换为 PDF",
+    tiff_to_pdf: "转换为 PDF",
+    bmp_to_pdf: "转换为 PDF",
+    svg_to_pdf: "转换为 PDF",
+    webp_to_pdf: "转换为 PDF",
+    heif_heic_to_pdf: "转换为 PDF",
   },
   pages: "页",
   page: "页",
 };
+
 
 export const tools: _tools = {
   select: "选择",

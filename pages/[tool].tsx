@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 
 export type data_type = {
   title: string;
+  seoTitle: string;
   description: string;
   color: string;
   type: string;
@@ -51,7 +52,7 @@ export default ({ item }: { item: data_type }) => {
   return (
     <>
       <Head>
-        <title>{`PDFEquips | ${item.title}`}</title>
+        <title>{`PDFEquips | ${item.seoTitle}`}</title>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -81,16 +82,12 @@ export default ({ item }: { item: data_type }) => {
   );
 };
 
-// export default ToolPage;
-
-//   "webp-to-pdf": #6fc21f,
-//   "heif-to-pdf": #c376b8
 export const routes = {
   "/jpg-to-pdf": { item: tool["JPG_to_PDF"] },
   "/svg-to-pdf": { item: tool["SVG_to_PDF"] },
   "/png-to-pdf": { item: tool["PNG_to_PDF"] },
   "/gif-to-pdf": { item: tool["GIF_to_PDF"] },
-  "/ttif-to-pdf": { item: tool["TIFF_to_PDF"] },
+  "/tiff-to-pdf": { item: tool["TIFF_to_PDF"] },
   "/bmp-to-pdf": { item: tool["BMP_to_PDF"] },
   "/webp-to-pdf": { item: tool["WebP_to_PDF"] },
   "/heif-heic-to-pdf": { item: tool["HEIF_to_PDF"] },

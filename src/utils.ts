@@ -44,6 +44,7 @@ function emptyPDFHandler(dispatch: Dispatch<AnyAction>, errors: _) {
   return DEFAULT_PDF_IMAGE;
 }
 // i don't know why but when i pass any other file type except images or pdfs this function will cause the application to crash by entering an infinite loop
+// 
 export const getFileDetailsTooltipContent = async (
   file: File,
   pages: string,
@@ -223,24 +224,29 @@ export const validateFiles = (
       "heif",
       "heic",
     ];
+    let isFileTypeSupported = types.includes(file_extension.toLowerCase());
     if (!file || !file.name) {
       // handle FILE_CORRUPT error
       dispatch(setField({ errorMessage: errors.FILE_CORRUPT.message }));
       return false;
-    } else if (!file.type) {
-      // handle NOT_SUPPORTED_TYPE error
-      dispatch(setField({ errorMessage: errors.NOT_SUPPORTED_TYPE.message }));
-      return false;
-    } else if (
+    }
+    // else if (!file.type) {
+    //   // handle NOT_SUPPORTED_TYPE error
+    //   dispatch(setField({ errorMessage: errors.NOT_SUPPORTED_TYPE.message }));
+    //   return false;
+    // }
+    else if (
       !allowedMimeTypes.includes(file.type) ||
-      !types.includes(file_extension.toLowerCase())
+      !isFileTypeSupported
     ) {
-      const errorMessage =
-        errors.NOT_SUPPORTED_TYPE.types[
-        extension as keyof typeof errors.NOT_SUPPORTED_TYPE.types
-        ] || errors.NOT_SUPPORTED_TYPE.message;
-      dispatch(setField({ errorMessage: errorMessage }));
-      return false;
+      if(!isFileTypeSupported) {
+        const errorMessage =
+          errors.NOT_SUPPORTED_TYPE.types[
+          extension as keyof typeof errors.NOT_SUPPORTED_TYPE.types
+          ] || errors.NOT_SUPPORTED_TYPE.message;
+        dispatch(setField({ errorMessage: errorMessage }));
+        return false;
+      }
     } else if (file.size > fileSizeLimit) {
       // handle FILE_TOO_LARGE error
       dispatch(setField({ errorMessage: errors.FILE_TOO_LARGE.message }));

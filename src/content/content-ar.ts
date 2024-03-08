@@ -10,15 +10,71 @@ import type {
 
 export const tool: _tool = {
   JPG_to_PDF: {
-    title: "JPG إلى PDF",
-    seoTitle:
-      "أدوات تحويل JPG إلى PDF عبر الإنترنت - تحويل الصور إلى مستندات PDF",
-    description: "تحويل ملفات صور JPG إلى مستندات PDF",
+    title: "تحويل JPG إلى PDF",
+    seoTitle: "تحويل JPG إلى PDF عبر الإنترنت - محول مجاني من JPG إلى PDF",
+    description: "تحويل ملفات الصور JPG إلى مستندات PDF",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
   },
+  PNG_to_PDF: {
+    title: "تحويل PNG إلى PDF",
+    seoTitle: "تحويل PNG إلى PDF عبر الإنترنت - محول مجاني من PNG إلى PDF",
+    description: "تحويل ملفات الصور PNG إلى مستندات PDF",
+    color: "#3498db",
+    type: ".png",
+    to: "/png-to-pdf",
+  },
+  GIF_to_PDF: {
+    title: "تحويل GIF إلى PDF",
+    seoTitle: "تحويل GIF إلى PDF عبر الإنترنت - محول مجاني من GIF إلى PDF",
+    description: "تحويل ملفات الصور GIF إلى مستندات PDF",
+    color: "#636e72",
+    type: ".gif",
+    to: "/gif-to-pdf",
+  },
+  TIFF_to_PDF: {
+    title: "تحويل TIFF إلى PDF",
+    seoTitle: "تحويل TIFF إلى PDF عبر الإنترنت - محول مجاني من TIFF إلى PDF",
+    description: "تحويل ملفات الصور TIFF إلى مستندات PDF",
+    color: "#e45453",
+    type: ".tiff",
+    to: "/tiff-to-pdf",
+  },
+  BMP_to_PDF: {
+    title: "تحويل BMP إلى PDF",
+    seoTitle: "تحويل BMP إلى PDF عبر الإنترنت - محول مجاني من BMP إلى PDF",
+    description: "تحويل ملفات الصور BMP إلى مستندات PDF",
+    color: "#573b26",
+    type: ".bmp",
+    to: "/bmp-to-pdf",
+  },
+  SVG_to_PDF: {
+    title: "تحويل SVG إلى PDF",
+    seoTitle: "تحويل SVG إلى PDF عبر الإنترنت - محول مجاني من SVG إلى PDF",
+    description: "تحويل ملفات الصور SVG إلى مستندات PDF",
+    color: "#ffb338",
+    type: ".svg",
+    to: "/svg-to-pdf",
+  },
+  WebP_to_PDF: {
+    title: "تحويل WebP إلى PDF",
+    seoTitle: "تحويل WebP إلى PDF عبر الإنترنت - محول مجاني من WebP إلى PDF",
+    description: "تحويل ملفات الصور WebP إلى مستندات PDF",
+    color: "#6fc21f",
+    type: ".webp",
+    to: "/webp-to-pdf",
+  },
+  HEIF_to_PDF: {
+    title: "تحويل HEIF/HEIC إلى PDF",
+    seoTitle: "تحويل HEIF/HEIC إلى PDF عبر الإنترنت - محول مجاني من HEIF/HEIC إلى PDF",
+    description: "تحويل ملفات الصور HEIF/HEIC إلى مستندات PDF",
+    color: "#c376b8",
+    type: ".heif, .heic",
+    to: "/heif-heic-to-pdf",
+  },
 };
+
 
 export const tools: _tools = {
   select: "اختر",
@@ -39,16 +95,31 @@ export const downloadFile: _downloadFile = {
   },
 };
 
+
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    jpg_to_pdf: "خيارات تحويل ملف JPG إلى PDF",
+    jpg_to_pdf: "خيارات تحويل JPG إلى PDF",
+    png_to_pdf: "خيارات تحويل PNG إلى PDF",
+    gif_to_pdf: "خيارات تحويل GIF إلى PDF",
+    tiff_to_pdf: "خيارات تحويل TIFF إلى PDF",
+    bmp_to_pdf: "خيارات تحويل BMP إلى PDF",
+    svg_to_pdf: "خيارات تحويل SVG إلى PDF",
+    webp_to_pdf: "خيارات تحويل WebP إلى PDF",
+    heif_heic_to_pdf: "خيارات تحويل HEIF/HEIC إلى PDF",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: {
     jpg_to_pdf: "تحويل إلى PDF",
+    png_to_pdf: "تحويل إلى PDF",
+    gif_to_pdf: "تحويل إلى PDF",
+    tiff_to_pdf: "تحويل إلى PDF",
+    bmp_to_pdf: "تحويل إلى PDF",
+    svg_to_pdf: "تحويل إلى PDF",
+    webp_to_pdf: "تحويل إلى PDF",
+    heif_heic_to_pdf: "تحويل إلى PDF",
   },
-  pages: "صفحة",
+  pages: "صفحات",
   page: "صفحة واحدة",
 };
 

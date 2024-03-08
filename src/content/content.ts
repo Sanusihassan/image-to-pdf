@@ -19,7 +19,7 @@ export const tool = {
     title: "GIF to PDF",
     seoTitle: "Convert GIF to PDF Online - Free GIF to PDF Converter",
     description: "Convert GIF image files to PDF documents",
-    color: "#bdc3c7",
+    color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
   },
@@ -65,7 +65,7 @@ export const tool = {
   },
 };
 
-// increase this one as well:
+
 export const edit_page = {
   edit_page_titles: {
     jpg_to_pdf: "JPG to PDF options",

@@ -1,4 +1,6 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+// this is the component that is responsible for rendering the image files
+// i think GIF, HEIF/HEIC, SVG images require special case of handling
+import React, { useCallback, useEffect, useState } from "react";
 import { ActionDiv } from "./ActionDiv";
 import { Tooltip } from "react-tooltip";
 import type { errors as _ } from "../../content";
@@ -29,37 +31,34 @@ const ImageCard: React.FC<ImageCardProps> = ({
   const [imageUrl, setImageUrl] = useState("");
   const [tooltipSize, setToolTipSize] = useState("");
   const dispatch = useDispatch();
-  let p = getFileDetailsTooltipContent(
-    file,
-    ...fileDetailProps,
-    dispatch,
-    errors
-  );
-  p.then((size) => {
-    setToolTipSize(size);
-  });
   let isSubscribed = true;
-  useEffect(() => {
-    const processFile = async () => {
-      if (extension) {
-        try {
-          // setShowLoader(true);
-          const reader = new FileReader();
-          reader.onload = function (event: ProgressEvent<FileReader>) {
-            const imageUrl = (event.target as FileReader).result as string;
-            if (isSubscribed) {
-              console.log(imageUrl)
-              setImageUrl(imageUrl);
-            }
-          };
-          reader.readAsDataURL(file);
-        } catch (error) {
-          console.error("Error processing files:", error);
-        } finally {
-          // setShowLoader(false);
-        }
+  const processFile = useCallback(async () => {
+    if (extension) {
+      try {
+        setShowLoader(true);
+        const reader = new FileReader();
+        reader.onload = function (event: ProgressEvent<FileReader>) {
+          const imageUrl = (event.target as FileReader).result as string;
+          setImageUrl(imageUrl);
+        };
+        reader.readAsDataURL(file);
+      } catch (error) {
+        console.error("Error processing files:", error);
+      } finally {
+        setShowLoader(false);
       }
-    };
+    }
+  }, [extension, file]);
+  useEffect(() => {
+    let p = getFileDetailsTooltipContent(
+      file,
+      ...fileDetailProps,
+      dispatch,
+      errors
+    );
+    p.then((size) => {
+      setToolTipSize(size);
+    });
     processFile();
     return () => {
       isSubscribed = false;

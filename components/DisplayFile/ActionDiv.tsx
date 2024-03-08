@@ -1,11 +1,8 @@
 import { RefreshIcon, TrashIcon } from "@heroicons/react/solid";
-import { useRotatedImage, validateFiles } from "../../src/utils";
-import { Dispatch, SetStateAction, useCallback, useContext } from "react";
 import type { errors as _ } from "../../content";
 // import { ToolStoreContext } from "../../src/ToolStoreContext";
 import { useRouter } from "next/router";
-import { useSelector, useDispatch } from "react-redux";
-import { ToolState } from "../../src/store";
+import { useDispatch } from "react-redux";
 import { useFileStore } from "../../src/file-store";
 
 export type ActionProps = {

@@ -12,11 +12,67 @@ import type {
 export const tool: _tool = {
   JPG_to_PDF: {
     title: "JPG en PDF",
-    seoTitle: "JPG en PDF - Convertir des fichiers image JPG en documents PDF",
-    description: "Convertir des fichiers image JPG en documents PDF",
+    seoTitle: "Convertir JPG en PDF en ligne - Convertisseur gratuit de JPG en PDF",
+    description: "Convertir des fichiers d'image JPG en documents PDF",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+  },
+  PNG_to_PDF: {
+    title: "PNG en PDF",
+    seoTitle: "Convertir PNG en PDF en ligne - Convertisseur gratuit de PNG en PDF",
+    description: "Convertir des fichiers d'image PNG en documents PDF",
+    color: "#3498db",
+    type: ".png",
+    to: "/png-to-pdf",
+  },
+  GIF_to_PDF: {
+    title: "GIF en PDF",
+    seoTitle: "Convertir GIF en PDF en ligne - Convertisseur gratuit de GIF en PDF",
+    description: "Convertir des fichiers d'image GIF en documents PDF",
+    color: "#636e72",
+    type: ".gif",
+    to: "/gif-to-pdf",
+  },
+  TIFF_to_PDF: {
+    title: "TIFF en PDF",
+    seoTitle: "Convertir TIFF en PDF en ligne - Convertisseur gratuit de TIFF en PDF",
+    description: "Convertir des fichiers d'image TIFF en documents PDF",
+    color: "#e45453",
+    type: ".tiff",
+    to: "/tiff-to-pdf",
+  },
+  BMP_to_PDF: {
+    title: "BMP en PDF",
+    seoTitle: "Convertir BMP en PDF en ligne - Convertisseur gratuit de BMP en PDF",
+    description: "Convertir des fichiers d'image BMP en documents PDF",
+    color: "#573b26",
+    type: ".bmp",
+    to: "/bmp-to-pdf",
+  },
+  SVG_to_PDF: {
+    title: "SVG en PDF",
+    seoTitle: "Convertir SVG en PDF en ligne - Convertisseur gratuit de SVG en PDF",
+    description: "Convertir des fichiers d'image SVG en documents PDF",
+    color: "#ffb338",
+    type: ".svg",
+    to: "/svg-to-pdf",
+  },
+  WebP_to_PDF: {
+    title: "WebP en PDF",
+    seoTitle: "Convertir WebP en PDF en ligne - Convertisseur gratuit de WebP en PDF",
+    description: "Convertir des fichiers d'image WebP en documents PDF",
+    color: "#6fc21f",
+    type: ".webp",
+    to: "/webp-to-pdf",
+  },
+  HEIF_to_PDF: {
+    title: "HEIF/HEIC en PDF",
+    seoTitle: "Convertir HEIF/HEIC en PDF en ligne - Convertisseur gratuit de HEIF/HEIC en PDF",
+    description: "Convertir des fichiers d'image HEIF/HEIC en documents PDF",
+    color: "#c376b8",
+    type: ".heif, .heic",
+    to: "/heif-heic-to-pdf",
   },
 };
 
@@ -47,16 +103,31 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    jpg_to_pdf: "Options de conversion de JPG en PDF",
+    jpg_to_pdf: "Options de conversion JPG vers PDF",
+    png_to_pdf: "Options de conversion PNG vers PDF",
+    gif_to_pdf: "Options de conversion GIF vers PDF",
+    tiff_to_pdf: "Options de conversion TIFF vers PDF",
+    bmp_to_pdf: "Options de conversion BMP vers PDF",
+    svg_to_pdf: "Options de conversion SVG vers PDF",
+    webp_to_pdf: "Options de conversion WebP vers PDF",
+    heif_heic_to_pdf: "Options de conversion HEIF/HEIC vers PDF",
   },
   loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
   action_buttons: {
     jpg_to_pdf: "Convertir en PDF",
+    png_to_pdf: "Convertir en PDF",
+    gif_to_pdf: "Convertir en PDF",
+    tiff_to_pdf: "Convertir en PDF",
+    bmp_to_pdf: "Convertir en PDF",
+    svg_to_pdf: "Convertir en PDF",
+    webp_to_pdf: "Convertir en PDF",
+    heif_heic_to_pdf: "Convertir en PDF",
   },
   pages: "pages",
   page: "page",
 };
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

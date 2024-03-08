@@ -2,6 +2,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/solid";
 // import { ToolStoreContext } from "../src/ToolStoreContext";
 import { useSelector } from "react-redux";
 import { ToolState } from "../src/store";
+import { useEffect } from "react";
 
 const ErrorElement = () => {
   // const dispatch = useDispatch();
@@ -12,6 +13,9 @@ const ErrorElement = () => {
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
+  useEffect(() => {
+
+  }, [errorMessage, showErrorMessage])
   return (
     <>
       <div
