@@ -225,16 +225,22 @@ export const validateFiles = (
       "heic",
     ];
     let isFileTypeSupported = types.includes(file_extension.toLowerCase());
+    const expectedExtensions = extension.toLowerCase().split(',').map(ext => ext.trim());
+    const uploadedExtension = file_extension.toLowerCase();
+
+    // Check if the uploaded extension matches any of the expected extensions
+    const extensionMatches = expectedExtensions.includes(uploadedExtension);
+
     if (!file || !file.name) {
       // handle FILE_CORRUPT error
       dispatch(setField({ errorMessage: errors.FILE_CORRUPT.message }));
       return false;
     }
-    // else if (!file.type) {
-    //   // handle NOT_SUPPORTED_TYPE error
-    //   dispatch(setField({ errorMessage: errors.NOT_SUPPORTED_TYPE.message }));
-    //   return false;
-    // }
+    else if (!extensionMatches) {
+      // handle NOT_SUPPORTED_TYPE error
+      dispatch(setField({ errorMessage: errors.NOT_SUPPORTED_TYPE.message }));
+      return false;
+    }
     else if (
       !allowedMimeTypes.includes(file.type) ||
       !isFileTypeSupported

@@ -1,16 +1,14 @@
-import { useEffect, useState, RefObject, useContext } from "react";
+import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 
 
 import { useRouter } from "next/router";
 
-import { validateFiles } from "../src/utils";
-
 import type { errors as _, edit_page } from "../content";
 import Files from "./DisplayFile/Files";
 // import { ToolStoreContext } from "../src/ToolStoreContext";
-import { useSelector, useDispatch } from "react-redux";
-import { ToolState, resetErrorMessage } from "../src/store";
+import { useDispatch } from "react-redux";
+
 import { useFileStore } from "../src/file-store";
 type propTypes = {
   extension: string;
@@ -31,12 +29,6 @@ const DisplayFile = ({
 }: propTypes) => {
   const [showSpinner, setShowSpinner] = useState(true);
   const [toolTipSizes, setToolTipSizes] = useState<string[]>([]);
-  // actual files
-  const { files, setImageUrls } = useFileStore();
-  const dispatch = useDispatch();
-  // router
-  const router = useRouter();
-  let path = router.asPath.replace(/^\/[a-z]{2}\//, "").replace(/^\//, "");
 
   useEffect(() => {
     // const max_files = 2;
