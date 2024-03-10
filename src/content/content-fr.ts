@@ -86,20 +86,86 @@ export const tools: _tools = {
 export const downloadFile: _downloadFile = {
   titles: {
     "jpg-to-pdf": [
-      "Conversion de fichiers JPG en PDF réussie !",
-      "Conversion de fichier JPG en PDF réussie !",
+      "Les fichiers JPG ont été convertis en PDF !",
+      "Le fichier JPG a été converti en PDF !",
+    ],
+    "svg-to-pdf": [
+      "Les fichiers SVG ont été convertis en PDF !",
+      "Le fichier SVG a été converti en PDF !",
+    ],
+    "png-to-pdf": [
+      "Les fichiers PNG ont été convertis en PDF !",
+      "Le fichier PNG a été converti en PDF !",
+    ],
+    "gif-to-pdf": [
+      "Les fichiers GIF ont été convertis en PDF !",
+      "Le fichier GIF a été converti en PDF !",
+    ],
+    "tiff-to-pdf": [
+      "Les fichiers TIFF ont été convertis en PDF !",
+      "Le fichier TIFF a été converti en PDF !",
+    ],
+    "bmp-to-pdf": [
+      "Les fichiers BMP ont été convertis en PDF !",
+      "Le fichier BMP a été converti en PDF !",
+    ],
+    "webp-to-pdf": [
+      "Les fichiers WEBP ont été convertis en PDF !",
+      "Le fichier WEBP a été converti en PDF !",
+    ],
+    "heif-heic-to-pdf": [
+      "Les fichiers HEIF/HEIC ont été convertis en PDF !",
+      "Le fichier HEIF/HEIC a été converti en PDF !",
     ],
   },
+
   btnText: {
     "jpg-to-pdf": [
       "Télécharger les fichiers PDF convertis",
       "Télécharger le fichier PDF converti",
     ],
+    "svg-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "png-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "gif-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "tiff-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "bmp-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "webp-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
+    "heif-heic-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
+    ],
   },
-  backto: {
-    "jpg-to-pdf": "Retour à JPG vers PDF",
+
+  backTo: {
+    "jpg-to-pdf": "Retour à la conversion JPG vers PDF",
+    "svg-to-pdf": "Retour à la conversion SVG vers PDF",
+    "png-to-pdf": "Retour à la conversion PNG vers PDF",
+    "gif-to-pdf": "Retour à la conversion GIF vers PDF",
+    "tiff-to-pdf": "Retour à la conversion TIFF vers PDF",
+    "bmp-to-pdf": "Retour à la conversion BMP vers PDF",
+    "webp-to-pdf": "Retour à la conversion WEBP vers PDF",
+    "heif-heic-to-pdf": "Retour à la conversion HEIF/HEIC vers PDF",
   },
 };
+
 
 export const edit_page: _edit_page = {
   edit_page_titles: {

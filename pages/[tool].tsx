@@ -1,3 +1,4 @@
+// download page content and stop auto downloading + action button onclick on download btn
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../components/Tool";
@@ -92,7 +93,7 @@ export default ({ item }: { item: data_type }) => {
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
       </Head>
-      <NavBar path="path-to-tool" lang="" />
+      <NavBar path={item.to.replace("/", "")} lang="" />
       <Tool
         tools={tools}
         data={item}

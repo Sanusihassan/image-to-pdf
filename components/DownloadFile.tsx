@@ -37,10 +37,10 @@ const DownloadFile = ({
       </h3>
       <div className="d-flex align-items-center justify-content-between rounded-circle">
         <button
-          className={`btn btn-dark rounded-circle mr-2 back-btn align-items-center`}
+          className={`btn btn-dark rounded-circle mr-2 back-btn align-items-center download-btn`}
           style={lang == "ar" ? { order: 1 } : {}}
           data-tooltip-content={
-            downloadFile.backto[path as keyof typeof downloadFile.backto]
+            downloadFile.backTo[path as keyof typeof downloadFile.backTo]
           }
           data-tooltip-id="download-btn-tooltip"
           data-tooltip-place="left"

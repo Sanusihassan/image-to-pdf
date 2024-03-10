@@ -67,7 +67,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         <meta name="description" content={item.description} />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <NavBar path="path-to-tool" lang={lang} />
+      <NavBar path={item.to.replace("/", "")} lang={lang} />
       <Tool
         tools={tools}
         data={item}

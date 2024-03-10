@@ -79,15 +79,87 @@ export const tool: _tool = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "jpg-to-pdf": ["JPG文件已转换为PDF！", "JPG文件已转换为PDF！"],
+    "jpg-to-pdf": [
+      "JPG 文件已转换为 PDF！",
+      "JPG 文件已转换为 PDF！",
+    ],
+    "svg-to-pdf": [
+      "SVG 文件已转换为 PDF！",
+      "SVG 文件已转换为 PDF！",
+    ],
+    "png-to-pdf": [
+      "PNG 文件已转换为 PDF！",
+      "PNG 文件已转换为 PDF！",
+    ],
+    "gif-to-pdf": [
+      "GIF 文件已转换为 PDF！",
+      "GIF 文件已转换为 PDF！",
+    ],
+    "tiff-to-pdf": [
+      "TIFF 文件已转换为 PDF！",
+      "TIFF 文件已转换为 PDF！",
+    ],
+    "bmp-to-pdf": [
+      "BMP 文件已转换为 PDF！",
+      "BMP 文件已转换为 PDF！",
+    ],
+    "webp-to-pdf": [
+      "WEBP 文件已转换为 PDF！",
+      "WEBP 文件已转换为 PDF！",
+    ],
+    "heif-heic-to-pdf": [
+      "HEIF/HEIC 文件已转换为 PDF！",
+      "HEIF/HEIC 文件已转换为 PDF！",
+    ],
   },
+
   btnText: {
-    "jpg-to-pdf": ["下载转换后的PDF文件", "下载转换后的PDF文件"],
+    "jpg-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "svg-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "png-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "gif-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "tiff-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "bmp-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "webp-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
+    "heif-heic-to-pdf": [
+      "下载转换后的 PDF 文件",
+      "下载转换后的 PDF 文件",
+    ],
   },
-  backto: {
-    "jpg-to-pdf": "返回JPG转PDF",
+
+  backTo: {
+    "jpg-to-pdf": "返回 JPG 到 PDF",
+    "svg-to-pdf": "返回 SVG 到 PDF",
+    "png-to-pdf": "返回 PNG 到 PDF",
+    "gif-to-pdf": "返回 GIF 到 PDF",
+    "tiff-to-pdf": "返回 TIFF 到 PDF",
+    "bmp-to-pdf": "返回 BMP 到 PDF",
+    "webp-to-pdf": "返回 WEBP 到 PDF",
+    "heif-heic-to-pdf": "返回 HEIF/HEIC 到 PDF",
   },
 };
+
 
 export const edit_page: _edit_page = {
   edit_page_titles: {

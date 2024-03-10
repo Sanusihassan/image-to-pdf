@@ -85,13 +85,84 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "jpg-to-pdf": ["تم تحويل ملفات JPG إلى PDF!", "تم تحويل ملف JPG إلى PDF!"],
+    "jpg-to-pdf": [
+      "تم تحويل ملفات JPG إلى PDF!",
+      "تم تحويل ملف JPG إلى PDF!",
+    ],
+    "svg-to-pdf": [
+      "تم تحويل ملفات SVG إلى PDF!",
+      "تم تحويل ملف SVG إلى PDF!",
+    ],
+    "png-to-pdf": [
+      "تم تحويل ملفات PNG إلى PDF!",
+      "تم تحويل ملف PNG إلى PDF!",
+    ],
+    "gif-to-pdf": [
+      "تم تحويل ملفات GIF إلى PDF!",
+      "تم تحويل ملف GIF إلى PDF!",
+    ],
+    "tiff-to-pdf": [
+      "تم تحويل ملفات TIFF إلى PDF!",
+      "تم تحويل ملف TIFF إلى PDF!",
+    ],
+    "bmp-to-pdf": [
+      "تم تحويل ملفات BMP إلى PDF!",
+      "تم تحويل ملف BMP إلى PDF!",
+    ],
+    "webp-to-pdf": [
+      "تم تحويل ملفات WEBP إلى PDF!",
+      "تم تحويل ملف WEBP إلى PDF!",
+    ],
+    "heif-heic-to-pdf": [
+      "تم تحويل ملفات HEIF/HEIC إلى PDF!",
+      "تم تحويل ملف HEIF/HEIC إلى PDF!",
+    ],
   },
+
   btnText: {
-    "jpg-to-pdf": ["تحميل ملفات PDF المحولة", "تحميل ملف PDF المحول"],
+    "jpg-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "svg-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "png-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "gif-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "tiff-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "bmp-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "webp-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
+    "heif-heic-to-pdf": [
+      "تحميل الملفات PDF المحولة",
+      "تحميل الملف PDF المحول",
+    ],
   },
-  backto: {
-    "jpg-to-pdf": "العودة إلى JPG إلى PDF",
+
+  backTo: {
+    "jpg-to-pdf": "العودة إلى تحويل JPG إلى PDF",
+    "svg-to-pdf": "العودة إلى تحويل SVG إلى PDF",
+    "png-to-pdf": "العودة إلى تحويل PNG إلى PDF",
+    "gif-to-pdf": "العودة إلى تحويل GIF إلى PDF",
+    "tiff-to-pdf": "العودة إلى تحويل TIFF إلى PDF",
+    "bmp-to-pdf": "العودة إلى تحويل BMP إلى PDF",
+    "webp-to-pdf": "العودة إلى تحويل WEBP إلى PDF",
+    "heif-heic-to-pdf": "العودة إلى تحويل HEIF/HEIC إلى PDF",
   },
 };
 

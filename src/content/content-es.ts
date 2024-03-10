@@ -115,20 +115,86 @@ export const tools: _tools = {
 export const downloadFile: _downloadFile = {
   titles: {
     "jpg-to-pdf": [
-      "¡Conversión de archivos JPG a PDF exitosa!",
-      "¡Conversión de archivo JPG a PDF exitosa!",
+      "¡Los archivos JPG se han convertido a PDF!",
+      "¡El archivo JPG se ha convertido a PDF!",
+    ],
+    "svg-to-pdf": [
+      "¡Los archivos SVG se han convertido a PDF!",
+      "¡El archivo SVG se ha convertido a PDF!",
+    ],
+    "png-to-pdf": [
+      "¡Los archivos PNG se han convertido a PDF!",
+      "¡El archivo PNG se ha convertido a PDF!",
+    ],
+    "gif-to-pdf": [
+      "¡Los archivos GIF se han convertido a PDF!",
+      "¡El archivo GIF se ha convertido a PDF!",
+    ],
+    "tiff-to-pdf": [
+      "¡Los archivos TIFF se han convertido a PDF!",
+      "¡El archivo TIFF se ha convertido a PDF!",
+    ],
+    "bmp-to-pdf": [
+      "¡Los archivos BMP se han convertido a PDF!",
+      "¡El archivo BMP se ha convertido a PDF!",
+    ],
+    "webp-to-pdf": [
+      "¡Los archivos WEBP se han convertido a PDF!",
+      "¡El archivo WEBP se ha convertido a PDF!",
+    ],
+    "heif-heic-to-pdf": [
+      "¡Los archivos HEIF/HEIC se han convertido a PDF!",
+      "¡El archivo HEIF/HEIC se ha convertido a PDF!",
     ],
   },
+
   btnText: {
     "jpg-to-pdf": [
       "Descargar archivos PDF convertidos",
       "Descargar archivo PDF convertido",
     ],
+    "svg-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "png-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "gif-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "tiff-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "bmp-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "webp-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
+    "heif-heic-to-pdf": [
+      "Descargar archivos PDF convertidos",
+      "Descargar archivo PDF convertido",
+    ],
   },
-  backto: {
+
+  backTo: {
     "jpg-to-pdf": "Volver a JPG a PDF",
+    "svg-to-pdf": "Volver a SVG a PDF",
+    "png-to-pdf": "Volver a PNG a PDF",
+    "gif-to-pdf": "Volver a GIF a PDF",
+    "tiff-to-pdf": "Volver a TIFF a PDF",
+    "bmp-to-pdf": "Volver a BMP a PDF",
+    "webp-to-pdf": "Volver a WEBP a PDF",
+    "heif-heic-to-pdf": "Volver a HEIF/HEIC a PDF",
   },
 };
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

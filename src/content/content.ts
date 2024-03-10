@@ -107,6 +107,34 @@ export const downloadFile = {
       "JPG files have been converted to PDF!",
       "JPG file has been converted to PDF!",
     ],
+    "svg-to-pdf": [
+      "SVG files have been converted to PDF!",
+      "SVG file has been converted to PDF!",
+    ],
+    "png-to-pdf": [
+      "PNG files have been converted to PDF!",
+      "PNG file has been converted to PDF!",
+    ],
+    "gif-to-pdf": [
+      "GIF files have been converted to PDF!",
+      "GIF file has been converted to PDF!",
+    ],
+    "tiff-to-pdf": [
+      "TIFF files have been converted to PDF!",
+      "TIFF file has been converted to PDF!",
+    ],
+    "bmp-to-pdf": [
+      "BMP files have been converted to PDF!",
+      "BMP file has been converted to PDF!",
+    ],
+    "webp-to-pdf": [
+      "WEBP files have been converted to PDF!",
+      "WEBP file has been converted to PDF!",
+    ],
+    "heif-heic-to-pdf": [
+      "HEIF/HEIC files have been converted to PDF!",
+      "HEIF/HEIC file has been converted to PDF!",
+    ],
   },
 
   btnText: {
@@ -114,12 +142,48 @@ export const downloadFile = {
       "Download Converted PDF files",
       "Download Converted PDF file",
     ],
+    "svg-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "png-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "gif-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "tiff-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "bmp-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "webp-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
+    "heif-heic-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
   },
 
-  backto: {
+  backTo: {
     "jpg-to-pdf": "Back To JPG to PDF",
+    "svg-to-pdf": "Back To SVG to PDF",
+    "png-to-pdf": "Back To PNG to PDF",
+    "gif-to-pdf": "Back To GIF to PDF",
+    "tiff-to-pdf": "Back To TIFF to PDF",
+    "bmp-to-pdf": "Back To BMP to PDF",
+    "webp-to-pdf": "Back To WEBP to PDF",
+    "heif-heic-to-pdf": "Back To HEIF/HEIC to PDF",
   },
 };
+
 
 export const errors = {
   EMPTY_FILE: {
