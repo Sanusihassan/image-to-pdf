@@ -10,7 +10,8 @@ import {
 } from "../../src/content/content-fr";
 import { errors } from "../../src/content/content-fr";
 import { useRouter } from "next/router";
-import type { data_type } from "../[tool]";
+import { routesMap, type data_type } from "../[tool]";
+import { howToSchemas } from "@/src/how-to/how-to-fr";
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
     params: { tool: key.substring(1) },
@@ -34,6 +35,12 @@ export async function getStaticProps({
 export default ({ item, lang }: { item: data_type; lang: string }) => {
   const router = useRouter();
   const { asPath } = router;
+  const matchingKey = Object.keys(routesMap).find(
+    (key) => routesMap[key as keyof typeof routesMap] === asPath
+  );
+  const currentHowTo = matchingKey
+    ? howToSchemas[matchingKey as keyof typeof howToSchemas]
+    : null;
   const websiteSchema = {
     "@context": "http://schema.org",
     "@type": "WebPage",
@@ -49,6 +56,12 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(currentHowTo),
           }}
         />
         <meta name="description" content={item.description} />

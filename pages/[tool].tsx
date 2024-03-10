@@ -9,6 +9,7 @@ import {
   downloadFile,
 } from "../src/content/content";
 import { useRouter } from "next/router";
+import { howToSchemas } from "@/src/how-to/how-to";
 
 export type data_type = {
   title: string;
@@ -39,9 +40,27 @@ export async function getStaticProps({
   return { props: { item } };
 }
 
+export const routesMap = {
+  JPGToPDFHOWTO: "/jpg-to-pdf",
+  PNGToPDFHOWTO: "/png-to-pdf",
+  GIFToPDFHOWTO: "/gif-to-pdf",
+  TIFFToPDFHOWTO: "/tiff-to-pdf",
+  BMPToPDFHOWTO: "/bmp-to-pdf",
+  SVGToPDFHOWTO: "/svg-to-pdf",
+  WebPToPDFHOWTO: "/webp-to-pdf",
+  HEIFToPDFHOWTO: "/heif-heic-to-pdf",
+  HEICToPDFHOWTO: "/heif-heic-to-pdf"
+};
+
 export default ({ item }: { item: data_type }) => {
   const router = useRouter();
   const { asPath } = router;
+  const matchingKey = Object.keys(routesMap).find(
+    (key) => routesMap[key as keyof typeof routesMap] === asPath
+  );
+  const currentHowTo = matchingKey
+    ? howToSchemas[matchingKey as keyof typeof howToSchemas]
+    : null;
   const websiteSchema = {
     "@context": "http://schema.org",
     "@type": "WebPage",
@@ -57,6 +76,12 @@ export default ({ item }: { item: data_type }) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(currentHowTo),
           }}
         />
         <meta name="description" content={item.description} />

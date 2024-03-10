@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import type { errors as _ } from "../../content";
 import ImageCard from "./ImageCard";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable, DropResult } from "react-beautiful-dnd";
 import { isDraggableExtension } from "../../src/utils";
 import { useRouter } from "next/router";
 import { useFileStore } from "../../src/file-store";
@@ -22,20 +22,17 @@ const Files = ({
   fileDetailProps,
 }: FileProps) => {
   // const store = useSelector((state: { tool: ToolState }) => state.tool);
-  const { files } = useFileStore();
-
-  useEffect(() => { }, [files]);
+  const { files, setFiles } = useFileStore();
 
   const router = useRouter();
-  const handleDragEnd = (result: any) => {
+  const handleDragEnd = (result: DropResult) => {
     if (!result.destination) {
       return;
     }
-    // Argument of type 'Blob[]' is not assignable to parameter of type 'File[]'.
-    // Type 'Blob' is missing the following properties from type 'File': lastModified, webkitRelativePathts(2345)
-    if (isDraggableExtension(extension, router)) {
-      // dispatch(setFiles(store.files));
-    }
+    const items = Array.from(files);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination!.index, 0, reorderedItem);
+    setFiles(items);
   };
 
   return (
