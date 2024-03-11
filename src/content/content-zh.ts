@@ -182,6 +182,34 @@ export const downloadFile: _downloadFile = {
       "HEIF/HEIC 文件已转换为 PDF！",
     ],
     "pdf-to-jpg": ["PDF文件已转换为JPG！", "PDF文件已转换为JPG！"],
+    "pdf-to-svg": [
+      "PDF 文件已转换为 SVG！",
+      "PDF 文件已转换为 SVG！",
+    ],
+    "pdf-to-png": [
+      "PDF 文件已转换为 PNG！",
+      "PDF 文件已转换为 PNG！",
+    ],
+    "pdf-to-gif": [
+      "PDF 文件已转换为 GIF！",
+      "PDF 文件已转换为 GIF！",
+    ],
+    "pdf-to-tiff": [
+      "PDF 文件已转换为 TIFF！",
+      "PDF 文件已转换为 TIFF！",
+    ],
+    "pdf-to-bmp": [
+      "PDF 文件已转换为 BMP！",
+      "PDF 文件已转换为 BMP！",
+    ],
+    "pdf-to-webp": [
+      "PDF 文件已转换为 WEBP！",
+      "PDF 文件已转换为 WEBP！",
+    ],
+    "pdf-to-heif-heic": [
+      "PDF 文件已转换为 HEIF/HEIC！",
+      "PDF 文件已转换为 HEIF/HEIC！",
+    ],
   },
 
   btnText: {
@@ -218,6 +246,34 @@ export const downloadFile: _downloadFile = {
       "下载转换后的 PDF 文件",
     ],
     "pdf-to-jpg": ["下载转换后的JPG文件", "下载转换后的JPG文件"],
+    "pdf-to-svg": [
+      "下载转换后的 SVG 文件",
+      "下载转换后的 SVG 文件",
+    ],
+    "pdf-to-png": [
+      "下载转换后的 PNG 文件",
+      "下载转换后的 PNG 文件",
+    ],
+    "pdf-to-gif": [
+      "下载转换后的 GIF 文件",
+      "下载转换后的 GIF 文件",
+    ],
+    "pdf-to-tiff": [
+      "下载转换后的 TIFF 文件",
+      "下载转换后的 TIFF 文件",
+    ],
+    "pdf-to-bmp": [
+      "下载转换后的 BMP 文件",
+      "下载转换后的 BMP 文件",
+    ],
+    "pdf-to-webp": [
+      "下载转换后的 WEBP 文件",
+      "下载转换后的 WEBP 文件",
+    ],
+    "pdf-to-heif-heic": [
+      "下载转换后的 HEIF/HEIC 文件",
+      "下载转换后的 HEIF/HEIC 文件",
+    ],
   },
 
   backTo: {
@@ -230,6 +286,13 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "返回 WEBP 到 PDF",
     "heif-heic-to-pdf": "返回 HEIF/HEIC 到 PDF",
     "pdf-to-jpg": "返回PDF转JPG",
+    "pdf-to-svg": "返回到 PDF 转 SVG",
+    "pdf-to-png": "返回到 PDF 转 PNG",
+    "pdf-to-gif": "返回到 PDF 转 GIF",
+    "pdf-to-tiff": "返回到 PDF 转 TIFF",
+    "pdf-to-bmp": "返回到 PDF 转 BMP",
+    "pdf-to-webp": "返回到 PDF 转 WEBP",
+    "pdf-to-heif-heic": "返回到 PDF 转 HEIF/HEIC",
   },
 };
 
@@ -245,6 +308,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "WebP 到 PDF 选项",
     heif_heic_to_pdf: "HEIF/HEIC 到 PDF 选项",
     pdf_to_jpg: "PDF转JPG选项",
+    pdf_to_svg: "PDF 转 SVG 选项",
+    pdf_to_png: "PDF 转 PNG 选项",
+    pdf_to_gif: "PDF 转 GIF 选项",
+    pdf_to_tiff: "PDF 转 TIFF 选项",
+    pdf_to_bmp: "PDF 转 BMP 选项",
+    pdf_to_webp: "PDF 转 WebP 选项",
+    pdf_to_heif_heic: "PDF 转 HEIF/HEIC 选项",
   },
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
@@ -258,6 +328,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "转换为 PDF",
     heif_heic_to_pdf: "转换为 PDF",
     pdf_to_jpg: "转换为JPG",
+    pdf_to_svg: "转换为SVG",
+    pdf_to_png: "转换为PNG",
+    pdf_to_gif: "转换为GIF",
+    pdf_to_tiff: "转换为TIFF",
+    pdf_to_bmp: "转换为BMP",
+    pdf_to_webp: "转换为WebP",
+    pdf_to_heif_heic: "转换为HEIF/HEIC",
   },
   pages: "页",
   page: "页",

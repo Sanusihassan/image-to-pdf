@@ -188,6 +188,34 @@ export const downloadFile: _downloadFile = {
       "تم تحويل ملف HEIF/HEIC إلى PDF!",
     ],
     "pdf-to-jpg": ["تم تحويل ملفات PDF إلى JPG!", "تم تحويل ملف PDF إلى JPG!"],
+    "pdf-to-svg": [
+      "تم تحويل ملفات PDF إلى SVG!",
+      "تم تحويل ملف PDF إلى SVG!",
+    ],
+    "pdf-to-png": [
+      "تم تحويل ملفات PDF إلى PNG!",
+      "تم تحويل ملف PDF إلى PNG!",
+    ],
+    "pdf-to-gif": [
+      "تم تحويل ملفات PDF إلى GIF!",
+      "تم تحويل ملف PDF إلى GIF!",
+    ],
+    "pdf-to-tiff": [
+      "تم تحويل ملفات PDF إلى TIFF!",
+      "تم تحويل ملف PDF إلى TIFF!",
+    ],
+    "pdf-to-bmp": [
+      "تم تحويل ملفات PDF إلى BMP!",
+      "تم تحويل ملف PDF إلى BMP!",
+    ],
+    "pdf-to-webp": [
+      "تم تحويل ملفات PDF إلى WEBP!",
+      "تم تحويل ملف PDF إلى WEBP!",
+    ],
+    "pdf-to-heif-heic": [
+      "تم تحويل ملفات PDF إلى HEIF/HEIC!",
+      "تم تحويل ملف PDF إلى HEIF/HEIC!",
+    ],
   },
 
   btnText: {
@@ -224,6 +252,35 @@ export const downloadFile: _downloadFile = {
       "تحميل الملف PDF المحول",
     ],
     "pdf-to-jpg": ["تحميل ملفات JPG المحولة", "تحميل ملف JPG المحول"],
+    "pdf-to-svg": [
+      "تنزيل الملفات المحولة إلى SVG",
+      "تنزيل الملف المحول إلى SVG",
+    ],
+    "pdf-to-png": [
+      "تنزيل الملفات المحولة إلى PNG",
+      "تنزيل الملف المحول إلى PNG",
+    ],
+    "pdf-to-gif": [
+      "تنزيل الملفات المحولة إلى GIF",
+      "تنزيل الملف المحول إلى GIF",
+    ],
+    "pdf-to-tiff": [
+      "تنزيل الملفات المحولة إلى TIFF",
+      "تنزيل الملف المحول إلى TIFF",
+    ],
+    "pdf-to-bmp": [
+      "تنزيل الملفات المحولة إلى BMP",
+      "تنزيل الملف المحول إلى BMP",
+    ],
+    "pdf-to-webp": [
+      "تنزيل الملفات المحولة إلى WEBP",
+      "تنزيل الملف المحول إلى WEBP",
+    ],
+    "pdf-to-heif-heic": [
+      "تنزيل الملفات المحولة إلى HEIF/HEIC",
+      "تنزيل الملف المحول إلى HEIF/HEIC",
+    ],
+
   },
 
   backTo: {
@@ -236,7 +293,15 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "العودة إلى تحويل WEBP إلى PDF",
     "heif-heic-to-pdf": "العودة إلى تحويل HEIF/HEIC إلى PDF",
     "pdf-to-jpg": "العودة إلى PDF إلى JPG",
+    "pdf-to-svg": "العودة إلى PDF إلى SVG",
+    "pdf-to-png": "العودة إلى PDF إلى PNG",
+    "pdf-to-gif": "العودة إلى PDF إلى GIF",
+    "pdf-to-tiff": "العودة إلى PDF إلى TIFF",
+    "pdf-to-bmp": "العودة إلى PDF إلى BMP",
+    "pdf-to-webp": "العودة إلى PDF إلى WEBP",
+    "pdf-to-heif-heic": "العودة إلى PDF إلى HEIF/HEIC",
   },
+
 };
 
 
@@ -251,6 +316,14 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "خيارات تحويل WebP إلى PDF",
     heif_heic_to_pdf: "خيارات تحويل HEIF/HEIC إلى PDF",
     pdf_to_jpg: "خيارات تحويل ملف PDF إلى JPG",
+    pdf_to_svg: "خيارات تحويل PDF إلى SVG",
+    pdf_to_png: "خيارات تحويل PDF إلى PNG",
+    pdf_to_gif: "خيارات تحويل PDF إلى GIF",
+    pdf_to_tiff: "خيارات تحويل PDF إلى TIFF",
+    pdf_to_bmp: "خيارات تحويل PDF إلى BMP",
+    pdf_to_webp: "خيارات تحويل PDF إلى WebP",
+    pdf_to_heif_heic: "خيارات تحويل PDF إلى HEIF/HEIC",
+
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
@@ -264,6 +337,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "تحويل إلى PDF",
     heif_heic_to_pdf: "تحويل إلى PDF",
     pdf_to_jpg: "تحويل إلى JPG",
+    pdf_to_svg: "تحويل إلى SVG",
+    pdf_to_png: "تحويل إلى PNG",
+    pdf_to_gif: "تحويل إلى GIF",
+    pdf_to_tiff: "تحويل إلى TIFF",
+    pdf_to_bmp: "تحويل إلى BMP",
+    pdf_to_webp: "تحويل إلى WebP",
+    pdf_to_heif_heic: "تحويل إلى HEIF/HEIC",
   },
   pages: "صفحات",
   page: "صفحة واحدة",

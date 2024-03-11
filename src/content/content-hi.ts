@@ -210,6 +210,34 @@ export const downloadFile: _downloadFile = {
       "PDF फ़ाइलें JPG में रूपांतरित की गईं!",
       "PDF फ़ाइल को JPG में रूपांतरित किया गया है!",
     ],
+    "pdf-to-svg": [
+      "PDF फ़ाइलें SVG में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल SVG में परिवर्तित की गई है!",
+    ],
+    "pdf-to-png": [
+      "PDF फ़ाइलें PNG में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल PNG में परिवर्तित की गई है!",
+    ],
+    "pdf-to-gif": [
+      "PDF फ़ाइलें GIF में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल GIF में परिवर्तित की गई है!",
+    ],
+    "pdf-to-tiff": [
+      "PDF फ़ाइलें TIFF में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल TIFF में परिवर्तित की गई है!",
+    ],
+    "pdf-to-bmp": [
+      "PDF फ़ाइलें BMP में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल BMP में परिवर्तित की गई है!",
+    ],
+    "pdf-to-webp": [
+      "PDF फ़ाइलें WEBP में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल WEBP में परिवर्तित की गई है!",
+    ],
+    "pdf-to-heif-heic": [
+      "PDF फ़ाइलें HEIF/HEIC में परिवर्तित की गई हैं!",
+      "PDF फ़ाइल HEIF/HEIC में परिवर्तित की गई है!",
+    ],
   },
 
   btnText: {
@@ -249,6 +277,34 @@ export const downloadFile: _downloadFile = {
       "JPG में रूपांतरित की गई PDF फ़ाइलें डाउनलोड करें",
       "JPG में रूपांतरित की गई PDF फ़ाइल डाउनलोड करें",
     ],
+    "pdf-to-svg": [
+      "डाउनलोड किए गए SVG फ़ाइलें",
+      "डाउनलोड की गई SVG फ़ाइल",
+    ],
+    "pdf-to-png": [
+      "डाउनलोड किए गए PNG फ़ाइलें",
+      "डाउनलोड की गई PNG फ़ाइल",
+    ],
+    "pdf-to-gif": [
+      "डाउनलोड किए गए GIF फ़ाइलें",
+      "डाउनलोड की गई GIF फ़ाइल",
+    ],
+    "pdf-to-tiff": [
+      "डाउनलोड किए गए TIFF फ़ाइलें",
+      "डाउनलोड की गई TIFF फ़ाइल",
+    ],
+    "pdf-to-bmp": [
+      "डाउनलोड किए गए BMP फ़ाइलें",
+      "डाउनलोड की गई BMP फ़ाइल",
+    ],
+    "pdf-to-webp": [
+      "डाउनलोड किए गए WEBP फ़ाइलें",
+      "डाउनलोड की गई WEBP फ़ाइल",
+    ],
+    "pdf-to-heif-heic": [
+      "डाउनलोड किए गए HEIF/HEIC फ़ाइलें",
+      "डाउनलोड की गई HEIF/HEIC फ़ाइल",
+    ],
   },
 
   backTo: {
@@ -261,6 +317,14 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "WEBP से PDF में वापस जाएं",
     "heif-heic-to-pdf": "HEIF/HEIC से PDF में वापस जाएं",
     "pdf-to-jpg": "PDF से JPG को वापस जाएं",
+    "pdf-to-svg": "PDF से SVG में वापस जाएं",
+    "pdf-to-png": "PDF से PNG में वापस जाएं",
+    "pdf-to-gif": "PDF से GIF में वापस जाएं",
+    "pdf-to-tiff": "PDF से TIFF में वापस जाएं",
+    "pdf-to-bmp": "PDF से BMP में वापस जाएं",
+    "pdf-to-webp": "PDF से WEBP में वापस जाएं",
+    "pdf-to-heif-heic": "PDF से HEIF/HEIC में वापस जाएं",
+
   },
 };
 
@@ -275,6 +339,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "WebP से PDF विकल्प",
     heif_heic_to_pdf: "HEIF/HEIC से PDF विकल्प",
     pdf_to_jpg: "PDF से JPG विकल्प",
+    pdf_to_svg: "पीडीएफ से SVG विकल्प",
+    pdf_to_png: "पीडीएफ से PNG विकल्प",
+    pdf_to_gif: "पीडीएफ से GIF विकल्प",
+    pdf_to_tiff: "पीडीएफ से TIFF विकल्प",
+    pdf_to_bmp: "पीडीएफ से BMP विकल्प",
+    pdf_to_webp: "पीडीएफ से WebP विकल्प",
+    pdf_to_heif_heic: "पीडीएफ से HEIF/HEIC विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
@@ -288,6 +359,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "PDF में बदलें",
     heif_heic_to_pdf: "PDF में बदलें",
     pdf_to_jpg: "जेपीजी में रूपांतरित करें",
+    pdf_to_svg: "SVG में परिवर्तित करें",
+    pdf_to_png: "PNG में परिवर्तित करें",
+    pdf_to_gif: "GIF में परिवर्तित करें",
+    pdf_to_tiff: "TIFF में परिवर्तित करें",
+    pdf_to_bmp: "BMP में परिवर्तित करें",
+    pdf_to_webp: "WebP में परिवर्तित करें",
+    pdf_to_heif_heic: "HEIF/HEIC में परिवर्तित करें",
   },
   pages: "पृष्ठ",
   page: "पृष्ठ",

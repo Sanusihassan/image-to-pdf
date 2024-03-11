@@ -223,6 +223,7 @@ export const validateFiles = (
       "webp",
       "heif",
       "heic",
+      "pdf"
     ];
     let isFileTypeSupported = types.includes(file_extension.toLowerCase());
     const expectedExtensions = extension.toLowerCase().split(',').map(ext => ext.trim());

@@ -142,6 +142,13 @@ export const edit_page = {
     webp_to_pdf: "WebP to PDF options",
     heif_heic_to_pdf: "HEIF/HEIC to PDF options",
     pdf_to_jpg: "PDF to JPG options",
+    pdf_to_svg: "PDF to SVG options",
+    pdf_to_png: "PDF to PNG options",
+    pdf_to_gif: "PDF to GIF options",
+    pdf_to_tiff: "PDF to TIFF options",
+    pdf_to_bmp: "PDF to BMP options",
+    pdf_to_webp: "PDF to WebP options",
+    pdf_to_heif_heic: "PDF to HEIF/HEIC options",
   },
   loader_text: "Please wait...",
   add_more_button: "Add more files",
@@ -155,6 +162,13 @@ export const edit_page = {
     webp_to_pdf: "Convert to PDF",
     heif_heic_to_pdf: "Convert to PDF",
     pdf_to_jpg: "Convert to JPG",
+    pdf_to_svg: "Convert to SVG",
+    pdf_to_png: "Convert to PNG",
+    pdf_to_gif: "Convert to GIF",
+    pdf_to_tiff: "Convert to TIFF",
+    pdf_to_bmp: "Convert to BMP",
+    pdf_to_webp: "Convert to WebP",
+    pdf_to_heif_heic: "Convert to HEIF/HEIC",
   },
   pages: "pages",
   page: "page",
@@ -206,6 +220,34 @@ export const downloadFile = {
       "PDF files have been converted to JPG!",
       "PDF file has been converted to JPG!",
     ],
+    "pdf-to-svg": [
+      "PDF files have been converted to SVG!",
+      "PDF file has been converted to SVG!",
+    ],
+    "pdf-to-png": [
+      "PDF files have been converted to PNG!",
+      "PDF file has been converted to PNG!",
+    ],
+    "pdf-to-gif": [
+      "PDF files have been converted to GIF!",
+      "PDF file has been converted to GIF!",
+    ],
+    "pdf-to-tiff": [
+      "PDF files have been converted to TIFF!",
+      "PDF file has been converted to TIFF!",
+    ],
+    "pdf-to-bmp": [
+      "PDF files have been converted to BMP!",
+      "PDF file has been converted to BMP!",
+    ],
+    "pdf-to-webp": [
+      "PDF files have been converted to WEBP!",
+      "PDF file has been converted to WEBP!",
+    ],
+    "pdf-to-heif-heic": [
+      "PDF files have been converted to HEIF/HEIC!",
+      "PDF file has been converted to HEIF/HEIC!",
+    ],
   },
 
   btnText: {
@@ -245,6 +287,34 @@ export const downloadFile = {
       "Download Converted JPG files",
       "Download Converted JPG file",
     ],
+    "pdf-to-svg": [
+      "Download Converted SVG files",
+      "Download Converted SVG file",
+    ],
+    "pdf-to-png": [
+      "Download Converted PNG files",
+      "Download Converted PNG file",
+    ],
+    "pdf-to-gif": [
+      "Download Converted GIF files",
+      "Download Converted GIF file",
+    ],
+    "pdf-to-tiff": [
+      "Download Converted TIFF files",
+      "Download Converted TIFF file",
+    ],
+    "pdf-to-bmp": [
+      "Download Converted BMP files",
+      "Download Converted BMP file",
+    ],
+    "pdf-to-webp": [
+      "Download Converted WEBP files",
+      "Download Converted WEBP file",
+    ],
+    "pdf-to-heif-heic": [
+      "Download Converted HEIF/HEIC files",
+      "Download Converted HEIF/HEIC file",
+    ],
   },
 
   backTo: {
@@ -257,6 +327,13 @@ export const downloadFile = {
     "webp-to-pdf": "Back To WEBP to PDF",
     "heif-heic-to-pdf": "Back To HEIF/HEIC to PDF",
     "pdf-to-jpg": "Back To PDF to JPG",
+    "pdf-to-svg": "Back To PDF to SVG",
+    "pdf-to-png": "Back To PDF to PNG",
+    "pdf-to-gif": "Back To PDF to GIF",
+    "pdf-to-tiff": "Back To PDF to TIFF",
+    "pdf-to-bmp": "Back To PDF to BMP",
+    "pdf-to-webp": "Back To PDF to WEBP",
+    "pdf-to-heif-heic": "Back To PDF to HEIF/HEIC",
   },
 };
 

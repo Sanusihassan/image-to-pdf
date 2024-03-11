@@ -156,6 +156,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Opciones de WebP a PDF",
     heif_heic_to_pdf: "Opciones de HEIF/HEIC a PDF",
     pdf_to_jpg: "Opciones para convertir PDF a JPG",
+    pdf_to_svg: "Opciones de PDF a SVG",
+    pdf_to_png: "Opciones de PDF a PNG",
+    pdf_to_gif: "Opciones de PDF a GIF",
+    pdf_to_tiff: "Opciones de PDF a TIFF",
+    pdf_to_bmp: "Opciones de PDF a BMP",
+    pdf_to_webp: "Opciones de PDF a WebP",
+    pdf_to_heif_heic: "Opciones de PDF a HEIF/HEIC",
   },
   loader_text: "Por favor, espera...",
   add_more_button: "Agregar más archivos",
@@ -169,6 +176,14 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Convertir a PDF",
     heif_heic_to_pdf: "Convertir a PDF",
     pdf_to_jpg: "Convertir a JPG",
+    pdf_to_svg: "Convertir a SVG",
+    pdf_to_png: "Convertir a PNG",
+    pdf_to_gif: "Convertir a GIF",
+    pdf_to_tiff: "Convertir a TIFF",
+    pdf_to_bmp: "Convertir a BMP",
+    pdf_to_webp: "Convertir a WebP",
+    pdf_to_heif_heic: "Convertir a HEIF/HEIC",
+
   },
   pages: "páginas",
   page: "página",
@@ -220,6 +235,34 @@ export const downloadFile: _downloadFile = {
       "¡Conversión de archivos PDF a JPG exitosa!",
       "¡Conversión de archivo PDF a JPG exitosa!",
     ],
+    "pdf-to-svg": [
+      "¡Los archivos PDF se han convertido a SVG!",
+      "¡El archivo PDF se ha convertido a SVG!",
+    ],
+    "pdf-to-png": [
+      "¡Los archivos PDF se han convertido a PNG!",
+      "¡El archivo PDF se ha convertido a PNG!",
+    ],
+    "pdf-to-gif": [
+      "¡Los archivos PDF se han convertido a GIF!",
+      "¡El archivo PDF se ha convertido a GIF!",
+    ],
+    "pdf-to-tiff": [
+      "¡Los archivos PDF se han convertido a TIFF!",
+      "¡El archivo PDF se ha convertido a TIFF!",
+    ],
+    "pdf-to-bmp": [
+      "¡Los archivos PDF se han convertido a BMP!",
+      "¡El archivo PDF se ha convertido a BMP!",
+    ],
+    "pdf-to-webp": [
+      "¡Los archivos PDF se han convertido a WEBP!",
+      "¡El archivo PDF se ha convertido a WEBP!",
+    ],
+    "pdf-to-heif-heic": [
+      "¡Los archivos PDF se han convertido a HEIF/HEIC!",
+      "¡El archivo PDF se ha convertido a HEIF/HEIC!",
+    ],
   },
 
   btnText: {
@@ -259,6 +302,34 @@ export const downloadFile: _downloadFile = {
       "Descargar archivos JPG convertidos",
       "Descargar archivo JPG convertido",
     ],
+    "pdf-to-svg": [
+      "Descargar archivos SVG convertidos",
+      "Descargar archivo SVG convertido",
+    ],
+    "pdf-to-png": [
+      "Descargar archivos PNG convertidos",
+      "Descargar archivo PNG convertido",
+    ],
+    "pdf-to-gif": [
+      "Descargar archivos GIF convertidos",
+      "Descargar archivo GIF convertido",
+    ],
+    "pdf-to-tiff": [
+      "Descargar archivos TIFF convertidos",
+      "Descargar archivo TIFF convertido",
+    ],
+    "pdf-to-bmp": [
+      "Descargar archivos BMP convertidos",
+      "Descargar archivo BMP convertido",
+    ],
+    "pdf-to-webp": [
+      "Descargar archivos WEBP convertidos",
+      "Descargar archivo WEBP convertido",
+    ],
+    "pdf-to-heif-heic": [
+      "Descargar archivos HEIF/HEIC convertidos",
+      "Descargar archivo HEIF/HEIC convertido",
+    ],
   },
 
   backTo: {
@@ -271,6 +342,13 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "Volver a WEBP a PDF",
     "heif-heic-to-pdf": "Volver a HEIF/HEIC a PDF",
     "pdf-to-jpg": "Volver a PDF a JPG",
+    "pdf-to-svg": "Volver a PDF a SVG",
+    "pdf-to-png": "Volver a PDF a PNG",
+    "pdf-to-gif": "Volver a PDF a GIF",
+    "pdf-to-tiff": "Volver a PDF a TIFF",
+    "pdf-to-bmp": "Volver a PDF a BMP",
+    "pdf-to-webp": "Volver a PDF a WEBP",
+    "pdf-to-heif-heic": "Volver a PDF a HEIF/HEIC",
   },
 };
 
