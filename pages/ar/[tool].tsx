@@ -86,4 +86,12 @@ export const routes = {
   "/bmp-to-pdf": { item: tool["BMP_to_PDF"] },
   "/webp-to-pdf": { item: tool["WebP_to_PDF"] },
   "/heif-heic-to-pdf": { item: tool["HEIF_to_PDF"] },
+  "/pdf-to-jpg": { item: tool["PDF_to_JPG"] },
+  "/pdf-to-svg": { item: tool["PDF_to_SVG"] },
+  "/pdf-to-png": { item: tool["PDF_to_PNG"] },
+  "/pdf-to-gif": { item: tool["PDF_to_GIF"] },
+  "/pdf-to-tiff": { item: tool["PDF_to_TIFF"] },
+  "/pdf-to-bmp": { item: tool["PDF_to_BMP"] },
+  "/pdf-to-webp": { item: tool["PDF_to_WebP"] },
+  "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] },
 };

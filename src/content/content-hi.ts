@@ -101,6 +101,75 @@ export const tool: _tool = {
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
   },
+  PDF_to_JPG: {
+    title: "PDF से JPG में",
+    seoTitle: "PDF से JPG में - PDF फ़ाइलों को JPG छवि फ़ाइलों में बदलें",
+    description: "PDF फ़ाइलों को JPG छवि फ़ाइलों में बदलें",
+    color: "#f1c40f",
+    type: ".pdf",
+    to: "/pdf-to-jpg",
+  },
+  PDF_to_PNG: {
+    title: "पीडीएफ से पीएनजी में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को पीएनजी में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को पीएनजी छवि फ़ाइलों में बदलें",
+    color: "#3498db",
+    type: ".pdf",
+    to: "/pdf-to-png",
+  },
+
+  PDF_to_GIF: {
+    title: "पीडीएफ से जीआईएफ़ में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को जीआईएफ़ में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को जीआईएफ़ छवि फ़ाइलों में बदलें",
+    color: "#636e72",
+    type: ".pdf",
+    to: "/pdf-to-gif",
+  },
+  PDF_to_TIFF: {
+    title: "पीडीएफ से टिफ़ में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को टिफ़ में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को टिफ़ छवि फ़ाइलों में बदलें",
+    color: "#e45453",
+    type: ".pdf",
+    to: "/pdf-to-tiff",
+  },
+
+  PDF_to_BMP: {
+    title: "पीडीएफ से बीएमपी में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को बीएमपी में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को बीएमपी छवि फ़ाइलों में बदलें",
+    color: "#573b26",
+    type: ".pdf",
+    to: "/pdf-to-bmp",
+  },
+
+  PDF_to_SVG: {
+    title: "पीडीएफ से स्वग में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को स्वग में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को स्वग वेक्टर छवि फ़ाइलों में बदलें",
+    color: "#ffb338",
+    type: ".pdf",
+    to: "/pdf-to-svg",
+  },
+  PDF_to_WebP: {
+    title: "पीडीएफ से वेबपी में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को वेबपी में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को वेबपी छवि फ़ाइलों में बदलें",
+    color: "#6fc21f",
+    type: ".pdf",
+    to: "/pdf-to-webp",
+  },
+
+  PDF_to_HEIF: {
+    title: "पीडीएफ से हीफ/हीइस में बदलें",
+    seoTitle: "ऑनलाइन पीडीएफ को हीफ/हीइस में बदलें - मुफ्त पीडीएफ से छवि परिवर्तक",
+    description: "पीडीएफ फ़ाइलों को हीफ/हीइस छवि फ़ाइलों में बदलें",
+    color: "#c376b8",
+    type: ".pdf",
+    to: "/pdf-to-heif-heic",
+  },
+
 };
 
 export const downloadFile: _downloadFile = {
@@ -137,6 +206,10 @@ export const downloadFile: _downloadFile = {
       "HEIF/HEIC फ़ाइलें PDF में कनवर्ट की गईं हैं!",
       "HEIF/HEIC फ़ाइल PDF में कनवर्ट की गई है!",
     ],
+    "pdf-to-jpg": [
+      "PDF फ़ाइलें JPG में रूपांतरित की गईं!",
+      "PDF फ़ाइल को JPG में रूपांतरित किया गया है!",
+    ],
   },
 
   btnText: {
@@ -172,6 +245,10 @@ export const downloadFile: _downloadFile = {
       "कनवर्ट की गई PDF फ़ाइलें डाउनलोड करें",
       "कनवर्ट की गई PDF फ़ाइल डाउनलोड करें",
     ],
+    "pdf-to-jpg": [
+      "JPG में रूपांतरित की गई PDF फ़ाइलें डाउनलोड करें",
+      "JPG में रूपांतरित की गई PDF फ़ाइल डाउनलोड करें",
+    ],
   },
 
   backTo: {
@@ -183,6 +260,7 @@ export const downloadFile: _downloadFile = {
     "bmp-to-pdf": "BMP से PDF में वापस जाएं",
     "webp-to-pdf": "WEBP से PDF में वापस जाएं",
     "heif-heic-to-pdf": "HEIF/HEIC से PDF में वापस जाएं",
+    "pdf-to-jpg": "PDF से JPG को वापस जाएं",
   },
 };
 
@@ -196,6 +274,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "SVG से PDF विकल्प",
     webp_to_pdf: "WebP से PDF विकल्प",
     heif_heic_to_pdf: "HEIF/HEIC से PDF विकल्प",
+    pdf_to_jpg: "PDF से JPG विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
@@ -208,6 +287,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "PDF में बदलें",
     webp_to_pdf: "PDF में बदलें",
     heif_heic_to_pdf: "PDF में बदलें",
+    pdf_to_jpg: "जेपीजी में रूपांतरित करें",
   },
   pages: "पृष्ठ",
   page: "पृष्ठ",

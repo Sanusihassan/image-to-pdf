@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable, DropResult } from "react-beautif
 import { isDraggableExtension } from "../../src/utils";
 import { useRouter } from "next/router";
 import { useFileStore } from "../../src/file-store";
+import FileCard from "./FileCard";
 
 type FileProps = {
   errors: _;
@@ -64,15 +65,28 @@ const Files = ({
                         ...provided.draggableProps.style,
                       }}
                     >
-                      <ImageCard
-                        index={index}
-                        provided={provided}
-                        extension={extension}
-                        errors={errors}
-                        fileDetailProps={fileDetailProps}
-                        file={file}
-                        loader_text={loader_text}
-                      />
+                      {extension === ".pdf" ?
+                        (
+                          <FileCard
+                            extension={extension}
+                            file={file}
+                            index={index}
+                            isDraggable={isDraggableExtension(extension, router)}
+                            provided={provided}
+                            snapshot={snapshot}
+                            errors={errors}
+                            loader_text={loader_text}
+                            fileDetailProps={fileDetailProps}
+                          />) : (
+                          <ImageCard
+                            index={index}
+                            provided={provided}
+                            extension={extension}
+                            errors={errors}
+                            fileDetailProps={fileDetailProps}
+                            file={file}
+                            loader_text={loader_text}
+                          />)}
                     </div>
                   )}
                 </Draggable>

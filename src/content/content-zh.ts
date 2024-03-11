@@ -74,6 +74,76 @@ export const tool: _tool = {
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
   },
+  PDF_to_JPG: {
+    title: "PDF转JPG",
+    seoTitle: "PDF转JPG - 将PDF文件转换为JPG图像文件",
+    description: "将PDF文件转换为JPG图像文件",
+    color: "#f1c40f",
+    type: ".pdf",
+    to: "/pdf-to-jpg",
+  },
+  PDF_to_PNG: {
+    title: "PDF 转 PNG",
+    seoTitle: "在线将 PDF 转换为 PNG - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 PNG 图像文件",
+    color: "#3498db",
+    type: ".pdf",
+    to: "/pdf-to-png",
+  },
+
+  PDF_to_GIF: {
+    title: "PDF 转 GIF",
+    seoTitle: "在线将 PDF 转换为 GIF - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 GIF 图像文件",
+    color: "#636e72",
+    type: ".pdf",
+    to: "/pdf-to-gif",
+  },
+
+  PDF_to_TIFF: {
+    title: "PDF 转 TIFF",
+    seoTitle: "在线将 PDF 转换为 TIFF - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 TIFF 图像文件",
+    color: "#e45453",
+    type: ".pdf",
+    to: "/pdf-to-tiff",
+  },
+  PDF_to_BMP: {
+    title: "PDF 转 BMP",
+    seoTitle: "在线将 PDF 转换为 BMP - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 BMP 图像文件",
+    color: "#573b26",
+    type: ".pdf",
+    to: "/pdf-to-bmp",
+  },
+
+  PDF_to_SVG: {
+    title: "PDF 转 SVG",
+    seoTitle: "在线将 PDF 转换为 SVG - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 SVG 矢量图像文件",
+    color: "#ffb338",
+    type: ".pdf",
+    to: "/pdf-to-svg",
+  },
+
+  PDF_to_WebP: {
+    title: "PDF 转 WebP",
+    seoTitle: "在线将 PDF 转换为 WebP - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 WebP 图像文件",
+    color: "#6fc21f",
+    type: ".pdf",
+    to: "/pdf-to-webp",
+  },
+
+  PDF_to_HEIF: {
+    title: "PDF 转 HEIF/HEIC",
+    seoTitle: "在线将 PDF 转换为 HEIF/HEIC - 免费 PDF 转图像转换器",
+    description: "将 PDF 文件转换为 HEIF/HEIC 图像文件",
+    color: "#c376b8",
+    type: ".pdf",
+    to: "/pdf-to-heif-heic",
+  },
+
 };
 
 
@@ -111,6 +181,7 @@ export const downloadFile: _downloadFile = {
       "HEIF/HEIC 文件已转换为 PDF！",
       "HEIF/HEIC 文件已转换为 PDF！",
     ],
+    "pdf-to-jpg": ["PDF文件已转换为JPG！", "PDF文件已转换为JPG！"],
   },
 
   btnText: {
@@ -146,6 +217,7 @@ export const downloadFile: _downloadFile = {
       "下载转换后的 PDF 文件",
       "下载转换后的 PDF 文件",
     ],
+    "pdf-to-jpg": ["下载转换后的JPG文件", "下载转换后的JPG文件"],
   },
 
   backTo: {
@@ -157,6 +229,7 @@ export const downloadFile: _downloadFile = {
     "bmp-to-pdf": "返回 BMP 到 PDF",
     "webp-to-pdf": "返回 WEBP 到 PDF",
     "heif-heic-to-pdf": "返回 HEIF/HEIC 到 PDF",
+    "pdf-to-jpg": "返回PDF转JPG",
   },
 };
 
@@ -171,6 +244,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "SVG 到 PDF 选项",
     webp_to_pdf: "WebP 到 PDF 选项",
     heif_heic_to_pdf: "HEIF/HEIC 到 PDF 选项",
+    pdf_to_jpg: "PDF转JPG选项",
   },
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
@@ -183,6 +257,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "转换为 PDF",
     webp_to_pdf: "转换为 PDF",
     heif_heic_to_pdf: "转换为 PDF",
+    pdf_to_jpg: "转换为JPG",
   },
   pages: "页",
   page: "页",

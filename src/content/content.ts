@@ -63,6 +63,71 @@ export const tool = {
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
   },
+  PDF_to_JPG: {
+    title: "PDF to JPG",
+    seoTitle: "Convert PDF to JPG Online - Free PDF to Image Converter",
+    description: "Convert PDF files to JPG image files",
+    color: "#f1c40f",
+    type: ".pdf",
+    to: "/pdf-to-jpg",
+  },
+  PDF_to_PNG: {
+    title: "PDF to PNG",
+    seoTitle: "Convert PDF to PNG Online - Free PDF to Image Converter",
+    description: "Convert PDF files to PNG image files",
+    color: "#3498db",
+    type: ".pdf",
+    to: "/pdf-to-png",
+  },
+
+  PDF_to_GIF: {
+    title: "PDF to GIF",
+    seoTitle: "Convert PDF to GIF Online - Free PDF to Image Converter",
+    description: "Convert PDF files to GIF image files",
+    color: "#636e72",
+    type: ".pdf",
+    to: "/pdf-to-gif",
+  },
+  PDF_to_TIFF: {
+    title: "PDF to TIFF",
+    seoTitle: "Convert PDF to TIFF Online - Free PDF to Image Converter",
+    description: "Convert PDF files to TIFF image files",
+    color: "#e45453",
+    type: ".pdf",
+    to: "/pdf-to-tiff",
+  },
+  PDF_to_BMP: {
+    title: "PDF to BMP",
+    seoTitle: "Convert PDF to BMP Online - Free PDF to Image Converter",
+    description: "Convert PDF files to BMP image files",
+    color: "#573b26",
+    type: ".pdf",
+    to: "/pdf-to-bmp",
+  },
+  PDF_to_SVG: {
+    title: "PDF to SVG",
+    seoTitle: "Convert PDF to SVG Online - Free PDF to Image Converter",
+    description: "Convert PDF files to SVG vector image files",
+    color: "#ffb338",
+    type: ".pdf",
+    to: "/pdf-to-svg",
+  },
+  PDF_to_WebP: {
+    title: "PDF to WebP",
+    seoTitle: "Convert PDF to WebP Online - Free PDF to Image Converter",
+    description: "Convert PDF files to WebP image files",
+    color: "#6fc21f",
+    type: ".pdf",
+    to: "/pdf-to-webp",
+  },
+  PDF_to_HEIF: {
+    title: "PDF to HEIF/HEIC",
+    seoTitle: "Convert PDF to HEIF/HEIC Online - Free PDF to Image Converter",
+    description: "Convert PDF files to HEIF/HEIC image files",
+    color: "#c376b8",
+    type: ".pdf",
+    to: "/pdf-to-heif-heic",
+  },
 };
 
 
@@ -76,6 +141,7 @@ export const edit_page = {
     svg_to_pdf: "SVG to PDF options",
     webp_to_pdf: "WebP to PDF options",
     heif_heic_to_pdf: "HEIF/HEIC to PDF options",
+    pdf_to_jpg: "PDF to JPG options",
   },
   loader_text: "Please wait...",
   add_more_button: "Add more files",
@@ -88,6 +154,7 @@ export const edit_page = {
     svg_to_pdf: "Convert to PDF",
     webp_to_pdf: "Convert to PDF",
     heif_heic_to_pdf: "Convert to PDF",
+    pdf_to_jpg: "Convert to JPG",
   },
   pages: "pages",
   page: "page",
@@ -135,6 +202,10 @@ export const downloadFile = {
       "HEIF/HEIC files have been converted to PDF!",
       "HEIF/HEIC file has been converted to PDF!",
     ],
+    "pdf-to-jpg": [
+      "PDF files have been converted to JPG!",
+      "PDF file has been converted to JPG!",
+    ],
   },
 
   btnText: {
@@ -170,6 +241,10 @@ export const downloadFile = {
       "Download Converted PDF files",
       "Download Converted PDF file",
     ],
+    "pdf-to-jpg": [
+      "Download Converted JPG files",
+      "Download Converted JPG file",
+    ],
   },
 
   backTo: {
@@ -181,6 +256,7 @@ export const downloadFile = {
     "bmp-to-pdf": "Back To BMP to PDF",
     "webp-to-pdf": "Back To WEBP to PDF",
     "heif-heic-to-pdf": "Back To HEIF/HEIC to PDF",
+    "pdf-to-jpg": "Back To PDF to JPG",
   },
 };
 

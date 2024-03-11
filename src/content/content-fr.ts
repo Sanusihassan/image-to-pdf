@@ -74,6 +74,74 @@ export const tool: _tool = {
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
   },
+  PDF_to_JPG: {
+    title: "PDF en JPG",
+    seoTitle: "PDF en JPG - Convertir des fichiers PDF en fichiers image JPG",
+    description: "Convertir des fichiers PDF en fichiers image JPG",
+    color: "#f1c40f",
+    type: ".pdf",
+    to: "/pdf-to-jpg",
+  },
+  PDF_to_PNG: {
+    title: "PDF vers PNG",
+    seoTitle: "Convertir PDF en PNG en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image PNG",
+    color: "#3498db",
+    type: ".pdf",
+    to: "/pdf-to-png",
+  },
+
+  PDF_to_GIF: {
+    title: "PDF vers GIF",
+    seoTitle: "Convertir PDF en GIF en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image GIF",
+    color: "#636e72",
+    type: ".pdf",
+    to: "/pdf-to-gif",
+  },
+
+  PDF_to_TIFF: {
+    title: "PDF vers TIFF",
+    seoTitle: "Convertir PDF en TIFF en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image TIFF",
+    color: "#e45453",
+    type: ".pdf",
+    to: "/pdf-to-tiff",
+  },
+  PDF_to_BMP: {
+    title: "PDF vers BMP",
+    seoTitle: "Convertir PDF en BMP en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image BMP",
+    color: "#573b26",
+    type: ".pdf",
+    to: "/pdf-to-bmp",
+  },
+
+  PDF_to_SVG: {
+    title: "PDF vers SVG",
+    seoTitle: "Convertir PDF en SVG en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image vectorielle SVG",
+    color: "#ffb338",
+    type: ".pdf",
+    to: "/pdf-to-svg",
+  },
+
+  PDF_to_WebP: {
+    title: "PDF vers WebP",
+    seoTitle: "Convertir PDF en WebP en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image WebP",
+    color: "#6fc21f",
+    type: ".pdf",
+    to: "/pdf-to-webp",
+  },
+  PDF_to_HEIF: {
+    title: "PDF vers HEIF/HEIC",
+    seoTitle: "Convertir PDF en HEIF/HEIC en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des fichiers PDF en fichiers d'image HEIF/HEIC",
+    color: "#c376b8",
+    type: ".pdf",
+    to: "/pdf-to-heif-heic",
+  },
 };
 
 export const tools: _tools = {
@@ -117,6 +185,10 @@ export const downloadFile: _downloadFile = {
       "Les fichiers HEIF/HEIC ont été convertis en PDF !",
       "Le fichier HEIF/HEIC a été converti en PDF !",
     ],
+    "pdf-to-jpg": [
+      "Conversion de fichiers PDF en JPG réussie !",
+      "Conversion de fichier PDF en JPG réussie !",
+    ],
   },
 
   btnText: {
@@ -152,6 +224,10 @@ export const downloadFile: _downloadFile = {
       "Télécharger les fichiers PDF convertis",
       "Télécharger le fichier PDF converti",
     ],
+    "pdf-to-jpg": [
+      "Télécharger les fichiers JPG convertis",
+      "Télécharger le fichier JPG converti",
+    ],
   },
 
   backTo: {
@@ -163,6 +239,7 @@ export const downloadFile: _downloadFile = {
     "bmp-to-pdf": "Retour à la conversion BMP vers PDF",
     "webp-to-pdf": "Retour à la conversion WEBP vers PDF",
     "heif-heic-to-pdf": "Retour à la conversion HEIF/HEIC vers PDF",
+    "pdf-to-jpg": "Retour à PDF vers JPG",
   },
 };
 
@@ -177,6 +254,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "Options de conversion SVG vers PDF",
     webp_to_pdf: "Options de conversion WebP vers PDF",
     heif_heic_to_pdf: "Options de conversion HEIF/HEIC vers PDF",
+    pdf_to_jpg: "Options de conversion de PDF en JPG",
   },
   loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
@@ -189,6 +267,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "Convertir en PDF",
     webp_to_pdf: "Convertir en PDF",
     heif_heic_to_pdf: "Convertir en PDF",
+    pdf_to_jpg: "Convertir en JPG",
   },
   pages: "pages",
   page: "page",

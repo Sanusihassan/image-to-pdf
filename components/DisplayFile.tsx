@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 
-
-import { useRouter } from "next/router";
-
 import type { errors as _, edit_page } from "../content";
 import Files from "./DisplayFile/Files";
-// import { ToolStoreContext } from "../src/ToolStoreContext";
-import { useDispatch } from "react-redux";
 
-import { useFileStore } from "../src/file-store";
 type propTypes = {
   extension: string;
   pages: string;

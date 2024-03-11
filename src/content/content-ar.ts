@@ -73,6 +73,76 @@ export const tool: _tool = {
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
   },
+  PDF_to_JPG: {
+    title: "PDF إلى JPG",
+    seoTitle:
+      "أدوات تحويل PDF إلى JPG عبر الإنترنت - تحويل ملفات PDF إلى ملفات صور JPG",
+    description: "تحويل ملفات PDF إلى ملفات صور JPG",
+    color: "#f1c40f",
+    type: ".pdf",
+    to: "/pdf-to-jpg",
+  },
+  PDF_to_PNG: {
+    title: "تحويل PDF إلى PNG",
+    seoTitle: "تحويل ملف PDF إلى PNG عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور PNG",
+    color: "#3498db",
+    type: ".pdf",
+    to: "/pdf-to-png",
+  },
+
+  PDF_to_GIF: {
+    title: "تحويل PDF إلى GIF",
+    seoTitle: "تحويل ملف PDF إلى GIF عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور GIF",
+    color: "#636e72",
+    type: ".pdf",
+    to: "/pdf-to-gif",
+  },
+  PDF_to_TIFF: {
+    title: "تحويل PDF إلى TIFF",
+    seoTitle: "تحويل ملف PDF إلى TIFF عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور TIFF",
+    color: "#e45453",
+    type: ".pdf",
+    to: "/pdf-to-tiff",
+  },
+
+  PDF_to_BMP: {
+    title: "تحويل PDF إلى BMP",
+    seoTitle: "تحويل ملف PDF إلى BMP عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور BMP",
+    color: "#573b26",
+    type: ".pdf",
+    to: "/pdf-to-bmp",
+  },
+  PDF_to_SVG: {
+    title: "تحويل PDF إلى SVG",
+    seoTitle: "تحويل ملف PDF إلى SVG عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور SVG الشعاعية",
+    color: "#ffb338",
+    type: ".pdf",
+    to: "/pdf-to-svg",
+  },
+
+  PDF_to_WebP: {
+    title: "تحويل PDF إلى WebP",
+    seoTitle: "تحويل ملف PDF إلى WebP عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور WebP",
+    color: "#6fc21f",
+    type: ".pdf",
+    to: "/pdf-to-webp",
+  },
+
+  PDF_to_HEIF: {
+    title: "تحويل PDF إلى HEIF/HEIC",
+    seoTitle: "تحويل ملف PDF إلى HEIF/HEIC عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    description: "تحويل ملفات PDF إلى ملفات صور HEIF/HEIC",
+    color: "#c376b8",
+    type: ".pdf",
+    to: "/pdf-to-heif-heic",
+  },
+
 };
 
 
@@ -117,6 +187,7 @@ export const downloadFile: _downloadFile = {
       "تم تحويل ملفات HEIF/HEIC إلى PDF!",
       "تم تحويل ملف HEIF/HEIC إلى PDF!",
     ],
+    "pdf-to-jpg": ["تم تحويل ملفات PDF إلى JPG!", "تم تحويل ملف PDF إلى JPG!"],
   },
 
   btnText: {
@@ -152,6 +223,7 @@ export const downloadFile: _downloadFile = {
       "تحميل الملفات PDF المحولة",
       "تحميل الملف PDF المحول",
     ],
+    "pdf-to-jpg": ["تحميل ملفات JPG المحولة", "تحميل ملف JPG المحول"],
   },
 
   backTo: {
@@ -163,6 +235,7 @@ export const downloadFile: _downloadFile = {
     "bmp-to-pdf": "العودة إلى تحويل BMP إلى PDF",
     "webp-to-pdf": "العودة إلى تحويل WEBP إلى PDF",
     "heif-heic-to-pdf": "العودة إلى تحويل HEIF/HEIC إلى PDF",
+    "pdf-to-jpg": "العودة إلى PDF إلى JPG",
   },
 };
 
@@ -177,6 +250,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "خيارات تحويل SVG إلى PDF",
     webp_to_pdf: "خيارات تحويل WebP إلى PDF",
     heif_heic_to_pdf: "خيارات تحويل HEIF/HEIC إلى PDF",
+    pdf_to_jpg: "خيارات تحويل ملف PDF إلى JPG",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
@@ -189,6 +263,7 @@ export const edit_page: _edit_page = {
     svg_to_pdf: "تحويل إلى PDF",
     webp_to_pdf: "تحويل إلى PDF",
     heif_heic_to_pdf: "تحويل إلى PDF",
+    pdf_to_jpg: "تحويل إلى JPG",
   },
   pages: "صفحات",
   page: "صفحة واحدة",
