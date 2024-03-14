@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 // store
 import { ToolState } from "../../src/store";
@@ -32,6 +31,9 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const path = data.to.replace("/", "")
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
+  );
+  const heifHeicType = useSelector(
+    (state: { tool: ToolState }) => state.tool.heifHeicType
   );
   const dispatch = useDispatch();
   // file store
@@ -66,6 +68,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           {
             path,
             errorMessage,
+            heifHeicType
           },
           files,
           errors,

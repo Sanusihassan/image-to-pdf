@@ -9,7 +9,9 @@ export interface OptionsProps {
 
 
 const Options = ({ layout, edit_page }: OptionsProps) => {
-  return <></>
+  return <>
+    
+  </>
 };
 
 export default Options;

@@ -1,6 +1,5 @@
 import DisplayFile from "./DisplayFile";
 import {
-  useEffect,
   useRef
 } from "react";
 
@@ -16,6 +15,7 @@ import {
 import { useFileStore } from "../src/file-store";
 import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
+import { HEifHEicOptions } from "./DisplayFile/Options/HEIF-HEIC-Option";
 
 type editPageProps = {
   extension: string;
@@ -40,9 +40,6 @@ const EditPage = ({
 }: editPageProps) => {
   // const [showOptions, setShowOptions] = useState(false);
   // state variables:
-  const errorCode = useSelector(
-    (state: { tool: ToolState }) => state.tool.errorCode
-  );
   const showTool = useSelector(
     (state: { tool: ToolState }) => state.tool.showTool
   );
@@ -58,7 +55,7 @@ const EditPage = ({
   const dispatch = useDispatch();
   // actual files;
   const { fileInput } = useFileStore();
-  
+
   // gearRef
   const gearRef = useRef(null);
   return (
@@ -128,6 +125,7 @@ const EditPage = ({
           </bdi>
         </h5>
         {/* <Options layout={k as OptionsProps["layout"]} edit_page={edit_page} /> */}
+        {path === "pdf-to-heif-heic" ? <HEifHEicOptions /> : null}
         <div className="hide-onsmall">
           <SubmitBtn k={path} edit_page={edit_page} />
         </div>

@@ -15,6 +15,7 @@ export const handleUpload = async (
   state: {
     path: string;
     errorMessage: string;
+    heifHeicType: "heif" | "heic"
   },
   files: File[],
   errors: _,
@@ -54,7 +55,7 @@ export const handleUpload = async (
   if (state.errorMessage) {
     return;
   }
-  // formData.append("compress_amount", String(state.compressPdf));
+  formData.append("heifHeicType", String(state.heifHeicType));
   const originalFileName = files[0]?.name?.split(".").slice(0, -1).join(".");
 
   const mimeTypeLookupTable: {
