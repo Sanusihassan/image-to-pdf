@@ -37,10 +37,6 @@ const MyDocument = ({ lang }: { lang: string }) => {
           name="twitter:image"
           content="https://www.pdfequips.com/pdfequips.png"
         />
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

@@ -1,4 +1,3 @@
-// download page content and stop auto downloading + action button onclick on download btn
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../components/Tool";
@@ -118,11 +117,11 @@ export const routes = {
   "/webp-to-pdf": { item: tool["WebP_to_PDF"] },
   "/heif-heic-to-pdf": { item: tool["HEIF_to_PDF"] },
   "/pdf-to-jpg": { item: tool["PDF_to_JPG"] },
-  "/pdf-to-svg": { item: tool["PDF_to_SVG"] },
-  "/pdf-to-png": { item: tool["PDF_to_PNG"] },
-  "/pdf-to-gif": { item: tool["PDF_to_GIF"] },
-  "/pdf-to-tiff": { item: tool["PDF_to_TIFF"] },
-  "/pdf-to-bmp": { item: tool["PDF_to_BMP"] },
+  "/pdf-to-svg": { item: tool["PDF_to_SVG"] }, // front end
+  "/pdf-to-png": { item: tool["PDF_to_PNG"] }, // done
+  "/pdf-to-gif": { item: tool["PDF_to_GIF"] }, // not now
+  "/pdf-to-tiff": { item: tool["PDF_to_TIFF"] }, // done
+  "/pdf-to-bmp": { item: tool["PDF_to_BMP"] }, // done
   "/pdf-to-webp": { item: tool["PDF_to_WebP"] },
-  "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] },
+  "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] }, // choose
 };

@@ -2,7 +2,7 @@ import { DraggableProvided, DraggableStateSnapshot } from "react-beautiful-dnd";
 import { ActionDiv, ActionProps } from "./ActionDiv";
 import { Tooltip } from "react-tooltip";
 import type { errors as _ } from "../../content";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Loader } from "./Loader";
 import {
   getFileDetailsTooltipContent,
@@ -38,20 +38,6 @@ const FileCard = ({
   const [tooltipSize, setToolTipSize] = useState("");
   const dispatch = useDispatch();
   let isSubscribed = true;
-  // if (true) {
-  // } else {
-  //   const sizeInBytes = file.size;
-  //   let size: string = "";
-  //   let isoCode = lang === "fr" ? "fr-FR" : lang == "" ? "en" : lang;
-  //   size = new Intl.NumberFormat(isoCode, {
-  //     notation: "compact",
-  //     style: "unit",
-  //     unit: "byte",
-  //     unitDisplay: "narrow",
-  //   }).format(sizeInBytes);
-  //   let tooltipContent = size;
-  // }
-  // }
   useEffect(() => {
     (async () => {
       let size = await getFileDetailsTooltipContent(

@@ -150,7 +150,6 @@ export async function getFirstPageAsImage(
       return canvas.toDataURL();
     } catch (error) {
       dispatch(setField({ errorMessage: errors.FILE_CORRUPT.message }));
-
       return DEFAULT_PDF_IMAGE; // Return the placeholder image URL when an error occurs
     }
   }

@@ -24,7 +24,6 @@ const Files = ({
 }: FileProps) => {
   // const store = useSelector((state: { tool: ToolState }) => state.tool);
   const { files, setFiles } = useFileStore();
-
   const router = useRouter();
   const handleDragEnd = (result: DropResult) => {
     if (!result.destination) {
