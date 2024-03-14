@@ -100,6 +100,42 @@ export const handleUpload = async (
       outputFileMimeType: "text/plain",
       outputFileName: `${originalFileName}.txt`,
     },
+    "image/jpeg": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.jpg`
+    },
+    "image/png": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.png`
+    },
+    "image/gif": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.gif`
+    },
+    "image/tiff": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.tiff`
+    },
+    "image/bmp": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.bmp`
+    },
+    "image/svg+xml": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.svg`
+    },
+    "image/webp": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.webp`
+    },
+    "image/heif": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.heif`
+    },
+    "image/heic": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.heic`
+    }
   };
 
   try {
@@ -131,8 +167,8 @@ export const handleUpload = async (
     }
   } catch (error) {
     if ((error as { code: string }).code === "ERR_NETWORK") {
-      dispatch(setField({ errorMessage: errors.ERR_NETWORK.message }));
-      return;
+      // dispatch(setField({ errorMessage: errors.ERR_NETWORK.message }));
+      // return;
     }
     dispatch(setField({ isSubmitted: false }));
   } finally {

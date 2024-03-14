@@ -117,7 +117,7 @@ export const routes = {
   "/webp-to-pdf": { item: tool["WebP_to_PDF"] },
   "/heif-heic-to-pdf": { item: tool["HEIF_to_PDF"] },
   "/pdf-to-jpg": { item: tool["PDF_to_JPG"] },
-  "/pdf-to-svg": { item: tool["PDF_to_SVG"] }, // front end
+  "/pdf-to-svg": { item: tool["PDF_to_SVG"] }, // done
   "/pdf-to-png": { item: tool["PDF_to_PNG"] }, // done
   "/pdf-to-gif": { item: tool["PDF_to_GIF"] }, // not now
   "/pdf-to-tiff": { item: tool["PDF_to_TIFF"] }, // done
