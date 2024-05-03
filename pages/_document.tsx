@@ -5,7 +5,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-// import { isrtllang } from "../src/utils";
 
 const MyDocument = ({ lang }: { lang: string }) => {
   // let isRtl = isrtllang(lang);
