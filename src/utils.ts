@@ -201,13 +201,13 @@ export const validateFiles = (
     "image/heif",
     "image/heic",
   ];
-    
+
   if (files.length == 0) {
     dispatch(setField({ errorMessage: errors.NO_FILES_SELECTED.message }));
     dispatch(setField({ errorCode: "ERR_NO_FILES_SELECTED" }));
     return false;
   }
-  const fileSizeLimit = 50 * 1024 * 1024; // 50 MB
+  const fileSizeLimit = 100 * 1024 * 1024; // 100MB
   for (let i = 0; i < files.length; i++) {
     const file = files[i] || null;
     extension = extension.replace(".", "").toUpperCase();
@@ -245,7 +245,7 @@ export const validateFiles = (
       !allowedMimeTypes.includes(file.type) ||
       !isFileTypeSupported
     ) {
-      if(!isFileTypeSupported) {
+      if (!isFileTypeSupported) {
         const errorMessage =
           errors.NOT_SUPPORTED_TYPE.types[
           extension as keyof typeof errors.NOT_SUPPORTED_TYPE.types

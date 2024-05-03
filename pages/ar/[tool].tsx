@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 
 import { routesMap, type data_type } from "../[tool]";
 import { howToSchemas } from "@/src/how-to/how-to-ar";
+import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
     params: { tool: key.substring(1) },
@@ -51,7 +52,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
   return (
     <>
       <Head>
-        <title>{`PDFEquips | ${item.title}`}</title>
+        <title>{`PDFEquips | ${item.seoTitle}`}</title>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -59,7 +60,16 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
           }}
         />
         <meta name="description" content={item.description} />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
+        <OpenGraph
+          ogUrl={`https://www.pdfequips.com/ar${item.to}`}
+          ogDescription={item.description}
+          ogLocale="ar_AR"
+          ogImageWidth="1200"
+          ogImageHeight="630"
+          ogTitle={item.seoTitle}
+          ogImage={`https://www.pdfequips.com/images/ar${item.to}.png`}
+        />
       </Head>
       <NavBar path={item.to.replace("/", "")} lang={lang} />
       <Tool

@@ -2,6 +2,7 @@
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../components/Tool";
+import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
 import {
   edit_page,
   errors,
@@ -50,7 +51,7 @@ export const routesMap = {
   SVGToPDFHOWTO: "/svg-to-pdf",
   WebPToPDFHOWTO: "/webp-to-pdf",
   HEIFToPDFHOWTO: "/heif-heic-to-pdf",
-  HEICToPDFHOWTO: "/heif-heic-to-pdf"
+  HEICToPDFHOWTO: "/heif-heic-to-pdf",
 };
 
 export default ({ item }: { item: data_type }) => {
@@ -86,7 +87,16 @@ export default ({ item }: { item: data_type }) => {
           }}
         />
         <meta name="description" content={item.description} />
-        <link rel="icon" href="/logo.png" />
+        <OpenGraph
+          ogUrl={`https://www.pdfequips.com${item.to}`}
+          ogDescription={item.description}
+          ogImageHeight="630"
+          ogImageWidth="1200"
+          ogLocale="en"
+          ogSiteName="PDFEquips"
+          ogTitle={item.seoTitle}
+          ogImage={`https://www.pdfequips.com/images${item.to}.png`}
+        />
         {/* needed for styles */}
         <link
           rel="stylesheet"
