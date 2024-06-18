@@ -4,7 +4,14 @@ type WritableDraft<T> = {
 };
 
 type k = keyof WritableDraft<ToolState>;
-
+export type supportedImageTypes = 'JPG' |
+  'PNG' |
+  'BMP' |
+  'TIFF' |
+  'GIF' |
+  'SVG' |
+  'WebP' |
+  'HEIF';
 export interface ToolState {
   showTool: boolean;
   isSubmitted: boolean;
@@ -14,6 +21,7 @@ export interface ToolState {
   showDownloadBtn: boolean;
   showOptions: boolean;
   nav_height: number;
+  selectedImageFormat: supportedImageTypes
 }
 
 const initialState: ToolState = {
@@ -25,6 +33,7 @@ const initialState: ToolState = {
   showDownloadBtn: false,
   showOptions: false,
   nav_height: 0,
+  selectedImageFormat: "JPG"
 };
 
 const toolSlice = createSlice({

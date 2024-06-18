@@ -6,20 +6,19 @@ import Select, {
   CSSObjectWithLabel,
   GroupBase,
   StylesConfig,
-  OptionProps
+  OptionProps,
+  ClearIndicatorProps
 } from 'react-select';
-
-
-
+import { setField, supportedImageTypes } from "@/src/store";
+import { useDispatch } from "react-redux";
 
 export interface OptionsProps {
   layout?: string;
   edit_page: _;
 }
 
-
 // Define image formats options
-const imageFormats = [
+const imageFormats: { value: supportedImageTypes; label: string; }[] = [
   { value: 'JPG', label: 'JPG' },
   { value: 'PNG', label: 'PNG' },
   { value: 'BMP', label: 'BMP' },
@@ -32,12 +31,12 @@ const imageFormats = [
 
 // Interface for image format option
 interface ImageFormatOption {
-  value: string;
+  value: supportedImageTypes; // Adjust to match supportedImageTypes
   label: string;
 }
 
 // Define custom styles for react-select
-const customStyles: StylesConfig<ImageFormatOption, false> = {
+const customStyles: StylesConfig<ImageFormatOption, false, GroupBase<ImageFormatOption>> = {
   option: (
     base: CSSObjectWithLabel,
     state: OptionProps<ImageFormatOption, false, GroupBase<ImageFormatOption>>
@@ -59,9 +58,18 @@ const customStyles: StylesConfig<ImageFormatOption, false> = {
       border: `1px solid #ced4da`, // example hover border style
     },
   }),
+  clearIndicator: (base: CSSObjectWithLabel, props: ClearIndicatorProps<ImageFormatOption, false, GroupBase<ImageFormatOption>>) => ({
+    ...base,
+    cursor: 'pointer',
+    color: '#aaa',
+    '&:hover': {
+      color: '#333',
+    },
+  }),
 };
 
 const ImageOptions = ({ content }: { content: { info: string; placeholder: string } }) => {
+  const dispatch = useDispatch();
   return (
     <div className="body">
       <Alert variant="info">
@@ -70,19 +78,26 @@ const ImageOptions = ({ content }: { content: { info: string; placeholder: strin
       </Alert>
       <Select
         options={imageFormats}
-        styles={customStyles}
+        // @ts-ignore
+        styles={customStyles as unknown as ImageFormatOption}
         placeholder={content.placeholder}
+        // @ts-ignore
+        onChange={(v: { value: supportedImageTypes }) => {
+          dispatch(setField({
+            selectedImageFormat: v.value
+          }))
+        }}
       />
     </div>
   );
 };
 
-
-
 const Options = ({ layout, edit_page }: OptionsProps) => {
-  return <>
-    {layout === "image" ? <ImageOptions content={edit_page.options_content.image_to_pdf} /> : null}
-  </>
+  return (
+    <>
+      {layout === "image" ? <ImageOptions content={edit_page.options_content.image_to_pdf} /> : null}
+    </>
+  );
 };
 
 export default Options;

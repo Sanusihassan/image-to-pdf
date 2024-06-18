@@ -5,7 +5,8 @@ import type { errors as _ } from "../../content";
 import { AnyAction } from "@reduxjs/toolkit";
 import {
   resetErrorMessage,
-  setField
+  setField,
+  supportedImageTypes
 } from "../store";
 
 export const handleUpload = async (
@@ -15,6 +16,7 @@ export const handleUpload = async (
   state: {
     path: string;
     errorMessage: string;
+    selectedImageFormat: supportedImageTypes
   },
   files: File[],
   errors: _,
@@ -43,6 +45,7 @@ export const handleUpload = async (
   for (let i = 0; i < files.length; i++) {
     formData.append("files", files[i]);
   }
+  formData.append("selectedImageFormat", state.selectedImageFormat);
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {

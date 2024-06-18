@@ -33,6 +33,9 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
+  const selectedImageFormat = useSelector(
+    (state: { tool: ToolState }) => state.tool.selectedImageFormat
+  );
   const dispatch = useDispatch();
   // file store
   const {
@@ -66,6 +69,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           {
             path,
             errorMessage,
+            selectedImageFormat
           },
           files,
           errors,
