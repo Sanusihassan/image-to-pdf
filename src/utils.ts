@@ -223,6 +223,7 @@ export const validateFiles = (
       "webp",
       "heif",
       "heic",
+      "image"
     ];
     let isFileTypeSupported = types.includes(file_extension.toLowerCase());
     const expectedExtensions = extension.toLowerCase().split(',').map(ext => ext.trim());
@@ -236,7 +237,7 @@ export const validateFiles = (
       dispatch(setField({ errorMessage: errors.FILE_CORRUPT.message }));
       return false;
     }
-    else if (!extensionMatches) {
+    else if (!extensionMatches && expectedExtensions[0] !== "image") {
       // handle NOT_SUPPORTED_TYPE error
       dispatch(setField({ errorMessage: errors.NOT_SUPPORTED_TYPE.message }));
       return false;

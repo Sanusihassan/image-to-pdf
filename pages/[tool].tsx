@@ -11,7 +11,10 @@ import {
   downloadFile,
 } from "../src/content/content";
 import { useRouter } from "next/router";
-import { howToSchemas } from "@/src/how-to/how-to";
+import { howToSchemas, howToType } from "@/src/how-to/how-to";
+import { Features } from "@/components/Features";
+import { Footer } from "@/components/Footer";
+import HowTo from "@/components/HowTo";
 
 export type data_type = {
   title: string;
@@ -114,6 +117,13 @@ export default ({ item }: { item: data_type }) => {
         page={edit_page.page}
         downloadFile={downloadFile}
       />
+      {/* <div className="container">
+        <Features features={item.features as { title: string; description: string }[]} tool={item.to} />
+      </div>
+      <div className="container">
+        <HowTo howTo={currentHowTo as howToType} alt={item.seoTitle} imgSrc={item.to.replace("/", "")} />
+      </div>
+      <Footer footer={footer} title={item.seoTitle.split("-")[1]} /> */}
     </>
   );
 };
@@ -135,4 +145,6 @@ export const routes = {
   "/pdf-to-bmp": { item: tool["PDF_to_BMP"] },
   "/pdf-to-webp": { item: tool["PDF_to_WebP"] },
   "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] },
+  "/image-to-pdf": { item: tool["Image_to_PDF"] },
+  "/pdf-to-image": { item: tool["PDF_to_Image"] },
 };

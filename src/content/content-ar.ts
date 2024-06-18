@@ -142,7 +142,50 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/pdf-to-heif-heic",
   },
-
+  Image_to_PDF: {
+    title: "تحويل الصور إلى PDF",
+    seoTitle: "تحويل الصور إلى ملف PDF عبر الإنترنت - محول صور مجاني إلى PDF",
+    description: "تحويل ملفات الصور (JPG، PNG، BMP، TIFF، GIF، SVG، WebP، HEIF) إلى مستندات PDF",
+    color: "#3498db",
+    type: "image",
+    to: "/image-to-pdf",
+    features: [
+      {
+        title: "حماية مضمونة للملفات",
+        description: "حماية مضمونة للملفات الخاصة بك من خلال تشفير TLS. ملفاتك غير متاحة لأي شخص، ونقوم بحذفها تلقائيًا من خوادمنا بعد التحويل لمزيد من الطمأنينة."
+      },
+      {
+        title: "أداة سريعة وبسيطة لتحويل الصور إلى PDF",
+        description: "قم بسحب ملفك ببساطة وإسقاطه في المنطقة المخصصة أعلاه لتحويله بسرعة من تنسيقات الصور المختلفة إلى PDF. بالإضافة إلى ذلك، يمكنك تخصيص الإعدادات مثل الهامش والاتجاه والحجم."
+      },
+      {
+        title: "تحويل عالي الجودة",
+        description: "PDFEquips يسمح للمستخدمين بتحويل الصور إلى ملفات PDF عالية الجودة باستخدام تقنيات التحويل المتقدمة. يحافظ على 100% من الجودة الأصلية."
+      }
+    ]
+  },
+  PDF_to_Image: {
+    title: "PDF إلى صورة",
+    seoTitle: "تحويل مستندات PDF إلى صور - محول مجاني من PDF إلى صورة",
+    description: "تحويل مستندات PDF إلى ملفات صور (JPG، PNG، BMP، TIFF، GIF، SVG، WebP، HEIF)",
+    color: "#e74c3c",
+    type: ".pdf",
+    to: "/pdf-to-image",
+    features: [
+      {
+        title: "حماية مضمونة للملفات",
+        description: "حماية مضمونة للملفات الخاصة بك من خلال تشفير TLS. ملفاتك غير متاحة لأي شخص، ونقوم بحذفها تلقائيًا من خوادمنا بعد التحويل لمزيد من الطمأنينة."
+      },
+      {
+        title: "أداة سريعة وبسيطة لتحويل PDF إلى صور",
+        description: "قم بسحب ملفك PDF ببساطة وإسقاطه في المنطقة المخصصة أعلاه لتحويله بسرعة إلى تنسيقات صور مختلفة. بالإضافة إلى ذلك، يمكنك اختيار تنسيق الصورة المطلوب وإعدادات الجودة."
+      },
+      {
+        title: "تحويل عالي الجودة",
+        description: "PDFEquips يسمح للمستخدمين بتحويل مستندات PDF إلى ملفات صور عالية الجودة باستخدام تقنيات التحويل المتقدمة. يحافظ على 100% من الجودة الأصلية."
+      }
+    ]
+  }
 };
 
 
@@ -188,6 +231,15 @@ export const downloadFile: _downloadFile = {
       "تم تحويل ملف HEIF/HEIC إلى PDF!",
     ],
     "pdf-to-jpg": ["تم تحويل ملفات PDF إلى JPG!", "تم تحويل ملف PDF إلى JPG!"],
+    "image-to-pdf": [
+      "تم تحويل ملفات الصور إلى PDF!",
+      "تم تحويل ملف الصورة إلى PDF!"
+    ],
+
+    "pdf-to-image": [
+      "تم تحويل ملفات PDF إلى صور!",
+      "تم تحويل ملف PDF إلى صورة!"
+    ]
   },
 
   btnText: {
@@ -224,6 +276,16 @@ export const downloadFile: _downloadFile = {
       "تحميل الملف PDF المحول",
     ],
     "pdf-to-jpg": ["تحميل ملفات JPG المحولة", "تحميل ملف JPG المحول"],
+
+    "image-to-pdf": [
+      "تنزيل ملفات PDF المحولة",
+      "تنزيل ملف PDF المحول"
+    ],
+
+    "pdf-to-image": [
+      "تنزيل ملفات الصور المحولة",
+      "تنزيل ملف الصورة المحول"
+    ]
   },
 
   backTo: {
@@ -236,6 +298,8 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "العودة إلى تحويل WEBP إلى PDF",
     "heif-heic-to-pdf": "العودة إلى تحويل HEIF/HEIC إلى PDF",
     "pdf-to-jpg": "العودة إلى PDF إلى JPG",
+    "image-to-pdf": "العودة إلى تحويل الصورة إلى PDF",
+    "pdf-to-image": "العودة إلى تحويل PDF إلى صورة"
   },
 };
 
@@ -251,6 +315,8 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "خيارات تحويل WebP إلى PDF",
     heif_heic_to_pdf: "خيارات تحويل HEIF/HEIC إلى PDF",
     pdf_to_jpg: "خيارات تحويل ملف PDF إلى JPG",
+    image_to_pdf: "تحويل إلى PDF",
+    pdf_to_image: "تحويل إلى صورة"
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
@@ -264,9 +330,18 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "تحويل إلى PDF",
     heif_heic_to_pdf: "تحويل إلى PDF",
     pdf_to_jpg: "تحويل إلى JPG",
+    image_to_pdf: "تحويل إلى PDF",
+    pdf_to_image: "تحويل إلى صورة"
   },
   pages: "صفحات",
   page: "صفحة واحدة",
+};
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "الشروط",
+  conditions: "والأحكام",
+  privacy_policy: "سياسة الخصوصية",
 };
 
 export const errors: _errors = {

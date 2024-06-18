@@ -142,6 +142,51 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/pdf-to-heif-heic",
   },
+  Image_to_PDF: {
+    title: "Image vers PDF",
+    seoTitle: "Convertir des Images en PDF en ligne - Convertisseur gratuit d'images en PDF",
+    description: "Convertir des fichiers image (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF) en documents PDF",
+    color: "#3498db",
+    type: "image",
+    to: "/image-to-pdf",
+    features: [
+      {
+        title: "Protection garantie des fichiers",
+        description: "Notre chiffrement TLS assure une sécurité constante pour vos images. Vos fichiers sont inaccessibles à quiconque et nous les supprimons automatiquement de nos serveurs après la conversion pour une tranquillité d'esprit accrue."
+      },
+      {
+        title: "Outil rapide et simple pour convertir des images en PDF",
+        description: "Il vous suffit de glisser-déposer votre fichier dans la zone désignée ci-dessus pour le convertir rapidement à partir de divers formats d'image en PDF. De plus, vous pouvez personnaliser des paramètres tels que la marge, l'orientation et la taille."
+      },
+      {
+        title: "Conversion de haute qualité",
+        description: "PDFEquips permet aux utilisateurs de transformer des images en fichiers PDF de haute qualité grâce à ses technologies avancées de conversion. Il préserve 100% de la qualité originale."
+      }
+    ]
+  },
+
+  PDF_to_Image: {
+    title: "PDF vers Image",
+    seoTitle: "Convertir des PDF en Images en ligne - Convertisseur gratuit de PDF en image",
+    description: "Convertir des documents PDF en fichiers image (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF)",
+    color: "#e74c3c",
+    type: ".pdf",
+    to: "/pdf-to-image",
+    features: [
+      {
+        title: "Protection garantie des fichiers",
+        description: "Notre chiffrement TLS assure une sécurité constante pour vos PDFs. Vos fichiers sont inaccessibles à quiconque et nous les supprimons automatiquement de nos serveurs après la conversion pour une tranquillité d'esprit accrue."
+      },
+      {
+        title: "Outil rapide et simple pour convertir des PDF en images",
+        description: "Il vous suffit de glisser-déposer votre fichier PDF dans la zone désignée ci-dessus pour le convertir rapidement en différents formats d'image. De plus, vous pouvez choisir le format d'image désiré et les paramètres de qualité."
+      },
+      {
+        title: "Conversion de haute qualité",
+        description: "PDFEquips permet aux utilisateurs de transformer des documents PDF en fichiers image de haute qualité grâce à ses technologies avancées de conversion. Il préserve 100% de la qualité originale."
+      }
+    ]
+  }
 };
 
 export const tools: _tools = {
@@ -189,6 +234,15 @@ export const downloadFile: _downloadFile = {
       "Conversion de fichiers PDF en JPG réussie !",
       "Conversion de fichier PDF en JPG réussie !",
     ],
+    "image-to-pdf": [
+      "Les fichiers image ont été convertis en PDF !",
+      "Le fichier image a été converti en PDF !"
+    ],
+
+    "pdf-to-image": [
+      "Les fichiers PDF ont été convertis en images !",
+      "Le fichier PDF a été converti en image !"
+    ]
   },
 
   btnText: {
@@ -228,6 +282,15 @@ export const downloadFile: _downloadFile = {
       "Télécharger les fichiers JPG convertis",
       "Télécharger le fichier JPG converti",
     ],
+    "image-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti"
+    ],
+
+    "pdf-to-image": [
+      "Télécharger les fichiers image convertis",
+      "Télécharger le fichier image converti"
+    ]
   },
 
   backTo: {
@@ -240,6 +303,8 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "Retour à la conversion WEBP vers PDF",
     "heif-heic-to-pdf": "Retour à la conversion HEIF/HEIC vers PDF",
     "pdf-to-jpg": "Retour à PDF vers JPG",
+    "image-to-pdf": "Retour à IMAGE vers PDF",
+    "pdf-to-image": "Retour à PDF vers IMAGE"
   },
 };
 
@@ -255,6 +320,8 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Options de conversion WebP vers PDF",
     heif_heic_to_pdf: "Options de conversion HEIF/HEIC vers PDF",
     pdf_to_jpg: "Options de conversion de PDF en JPG",
+    image_to_pdf: "Options IMAGE vers PDF",
+    pdf_to_image: "Options PDF vers IMAGE",
   },
   loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
@@ -268,11 +335,20 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Convertir en PDF",
     heif_heic_to_pdf: "Convertir en PDF",
     pdf_to_jpg: "Convertir en JPG",
+    image_to_pdf: "Convertir en PDF",
+    pdf_to_image: "Convertir en IMAGE"
   },
   pages: "pages",
   page: "page",
 };
 
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "conditions",
+  conditions: "conditions d'utilisation",
+  privacy_policy: "politique de confidentialité",
+};
 
 export const errors: _errors = {
   EMPTY_FILE: {

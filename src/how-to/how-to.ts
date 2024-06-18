@@ -1,4 +1,16 @@
 export type _howToSchemas = typeof howToSchemas;
+export type howToType = {
+    "@context": string;
+    "@type": string;
+    name: string;
+    description: string;
+    step: {
+        "@type": string;
+        name: string;
+        text: string;
+        substeps: string[];
+    }[];
+};
 export const howToSchemas = {
     JPGToPDFHOWTO: {
         "@context": "http://schema.org",

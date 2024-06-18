@@ -89,6 +89,7 @@ const Tool: React.FC<ToolProps> = ({
     ".svg": ".svg",
     ".webp": ".webp",
     ".heif, .heic": ".heif, .heic",
+    "image": ".jpg, .png, .bmp, .tiff, .gif, .svg, .webp, .heif"
   };
 
   return (

@@ -143,7 +143,51 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/pdf-to-heif-heic",
   },
+  Image_to_PDF: {
+    title: "图片转PDF",
+    seoTitle: "在线图片转PDF - 免费图片转PDF转换器",
+    description: "将图片文件（JPG、PNG、BMP、TIFF、GIF、SVG、WebP、HEIF）转换为PDF文档",
+    color: "#3498db",
+    type: "image",
+    to: "/image-to-pdf",
+    features: [
+      {
+        title: "文件保护保证",
+        description: "我们的TLS加密确保您的图片始终安全。您的文件对任何人都不可访问，我们在转换后会自动从服务器上删除，为您带来额外的安心感。"
+      },
+      {
+        title: "快速简便的图片转PDF工具",
+        description: "只需将文件拖放到上方指定区域，即可快速将各种图片格式转换为PDF。此外，您还可以自定义设置，如边距、方向和尺寸。"
+      },
+      {
+        title: "高质量转换",
+        description: "PDFEquips使用先进的转换技术，允许用户将图片转换为高质量的PDF文件。它能保持100%的原始质量。"
+      }
+    ]
+  },
 
+  PDF_to_Image: {
+    title: "PDF转图片",
+    seoTitle: "在线PDF转图片 - 免费PDF转图片转换器",
+    description: "将PDF文档转换为图片文件（JPG、PNG、BMP、TIFF、GIF、SVG、WebP、HEIF）",
+    color: "#e74c3c",
+    type: ".pdf",
+    to: "/pdf-to-image",
+    features: [
+      {
+        title: "文件保护保证",
+        description: "我们的TLS加密确保您的PDF始终安全。您的文件对任何人都不可访问，我们在转换后会自动从服务器上删除，为您带来额外的安心感。"
+      },
+      {
+        title: "快速简便的PDF转图片工具",
+        description: "只需将PDF文件拖放到上方指定区域，即可快速将其转换为各种图片格式。此外，您还可以选择所需的图片格式和质量设置。"
+      },
+      {
+        title: "高质量转换",
+        description: "PDFEquips使用先进的转换技术，允许用户将PDF文档转换为高质量的图片文件。它能保持100%的原始质量。"
+      }
+    ]
+  }
 };
 
 
@@ -182,6 +226,15 @@ export const downloadFile: _downloadFile = {
       "HEIF/HEIC 文件已转换为 PDF！",
     ],
     "pdf-to-jpg": ["PDF文件已转换为JPG！", "PDF文件已转换为JPG！"],
+    "image-to-pdf": [
+      "图片文件已转换为PDF！",
+      "图片文件已转换为PDF！"
+    ],
+
+    "pdf-to-image": [
+      "PDF文件已转换为图片！",
+      "PDF文件已转换为图片！"
+    ]
   },
 
   btnText: {
@@ -218,6 +271,15 @@ export const downloadFile: _downloadFile = {
       "下载转换后的 PDF 文件",
     ],
     "pdf-to-jpg": ["下载转换后的JPG文件", "下载转换后的JPG文件"],
+    "image-to-pdf": [
+      "下载转换后的PDF文件",
+      "下载转换后的PDF文件"
+    ],
+
+    "pdf-to-image": [
+      "下载转换后的图片文件",
+      "下载转换后的图片文件"
+    ]
   },
 
   backTo: {
@@ -230,6 +292,8 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "返回 WEBP 到 PDF",
     "heif-heic-to-pdf": "返回 HEIF/HEIC 到 PDF",
     "pdf-to-jpg": "返回PDF转JPG",
+    "image-to-pdf": "返回图片转PDF",
+    "pdf-to-image": "返回PDF转图片"
   },
 };
 
@@ -245,6 +309,8 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "WebP 到 PDF 选项",
     heif_heic_to_pdf: "HEIF/HEIC 到 PDF 选项",
     pdf_to_jpg: "PDF转JPG选项",
+    image_to_pdf: "图片转PDF选项",
+    pdf_to_image: "PDF转图片选项",
   },
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
@@ -258,6 +324,8 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "转换为 PDF",
     heif_heic_to_pdf: "转换为 PDF",
     pdf_to_jpg: "转换为JPG",
+    image_to_pdf: "转换为PDF",
+    pdf_to_image: "转换为图片"
   },
   pages: "页",
   page: "页",
@@ -269,6 +337,14 @@ export const tools: _tools = {
   or_drop: "或将文件拖放到此处",
   files: "文件",
   drop_files: "在此处拖放文件",
+};
+
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "条款",
+  conditions: "条件",
+  privacy_policy: "隐私政策",
 };
 
 export const errors: _errors = {
