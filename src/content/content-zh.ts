@@ -329,6 +329,12 @@ export const edit_page: _edit_page = {
   },
   pages: "页",
   page: "页",
+  options_content: {
+    image_to_pdf: {
+      info: "从下拉菜单中选择您要转换为的图像格式:",
+      placeholder: "选择图像格式..."
+    }
+  }
 };
 
 

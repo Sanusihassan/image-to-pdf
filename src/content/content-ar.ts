@@ -335,6 +335,12 @@ export const edit_page: _edit_page = {
   },
   pages: "صفحات",
   page: "صفحة واحدة",
+  options_content: {
+    image_to_pdf: {
+      info: "اختر من القائمة المنسدلة تنسيق الصورة الذي ترغب في تحويله إليه:",
+      placeholder: "اختر تنسيق الصورة..."
+    }
+  }
 };
 
 export const footer: _footer = {

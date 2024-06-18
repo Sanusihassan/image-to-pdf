@@ -221,6 +221,12 @@ export const edit_page: _edit_page = {
   },
   pages: "páginas",
   page: "página",
+  options_content: {
+    image_to_pdf: {
+      info: "Selecciona desde el menú desplegable el formato de imagen al que deseas convertir:",
+      placeholder: "Selecciona formato de imagen..."
+    }
+  }
 };
 
 

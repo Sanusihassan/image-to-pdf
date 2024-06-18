@@ -310,6 +310,12 @@ export const edit_page = {
   },
   pages: "pages",
   page: "page",
+  options_content: {
+    image_to_pdf: {
+      info: "Select from the dropdown the image format you want to convert to:",
+      placeholder: "Select image format..."
+    }
+  }
 };
 
 

@@ -108,4 +108,6 @@ export const routes = {
   "/pdf-to-bmp": { item: tool["PDF_to_BMP"] },
   "/pdf-to-webp": { item: tool["PDF_to_WebP"] },
   "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] },
+  "/image-to-pdf": { item: tool["Image_to_PDF"] },
+  "/pdf-to-image": { item: tool["PDF_to_Image"] },
 };

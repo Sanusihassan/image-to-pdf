@@ -109,10 +109,10 @@ const Tool: React.FC<ToolProps> = ({
             } flex-column tools ${stateShowTool ? "" : "d-none"}`}
         >
           <h1 className="display-3">
-            <bdi>{data.title}</bdi>
+            {data.title}
           </h1>
           <p className="lead">
-            <bdi>{data.description}</bdi>
+            {data.description}
           </p>
           <FileInputForm
             lang={lang}

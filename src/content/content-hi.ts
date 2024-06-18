@@ -359,6 +359,12 @@ export const edit_page: _edit_page = {
   },
   pages: "पृष्ठ",
   page: "पृष्ठ",
+  options_content: {
+    image_to_pdf: {
+      info: "ड्रॉपडाउन से चयन करें उस छवि प्रारूप को जिसे आप PDF में बदलना चाहते हैं:",
+      placeholder: "छवि प्रारूप चुनें..."
+    }
+  }
 };
 
 

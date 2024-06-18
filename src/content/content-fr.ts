@@ -340,6 +340,13 @@ export const edit_page: _edit_page = {
   },
   pages: "pages",
   page: "page",
+  options_content: {
+    image_to_pdf: {
+      info: "Sélectionnez dans le menu déroulant le format d'image auquel vous souhaitez convertir :",
+      placeholder: "Sélectionnez le format d'image..."
+    }
+  }
+
 };
 
 
