@@ -77,7 +77,7 @@ export default ({ item }: { item: data_type }) => {
   const router = useRouter();
   const { asPath } = router;
   const matchingKey = Object.keys(routesMap).find(
-    (key) => routesMap[key as keyof typeof routesMap] === asPath
+    (key) => routesMap[key as keyof typeof routesMap] === item.to
   );
   const currentHowTo = matchingKey
     ? howToSchemas[matchingKey as keyof typeof howToSchemas]

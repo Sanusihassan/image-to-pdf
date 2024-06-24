@@ -388,6 +388,365 @@ export const howToSchemas: _howToSchemas = {
                 "text": "कन्वर्ट किए गए पीडीएफ़ दस्तावेज़ को डाउनलोड करें।"
             }
         ]
+    },
+    ImageToPDFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "इमेज को PDF में कैसे बदलें",
+        description: "कई इमेज (JPG, PNG, आदि) को एकल PDF दस्तावेज़ में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "इमेज को PDF में बदलने वाले टूल को खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उपकरण में उन इमेज को खींचें और छोड़ें जिन्हें आप बदलना चाहते हैं, या 'इमेज फ़ाइलें चुनें' बटन पर क्लिक करके उन्हें चुनें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "इमेज को खींचकर और छोड़कर उन्हें वांछित क्रम में व्यवस्थित करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "'PDF में बदलें' बटन पर क्लिक करके परिवर्तन प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 6",
+                text: "परिणामी PDF फ़ाइल डाउनलोड करें जिसमें आपकी इमेज शामिल हों।"
+            }
+        ]
+    },
+    PDFToImageHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF को इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को इमेज (JPG, PNG, आदि) में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को इमेज में बदलने वाले टूल को खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "इमेज का प्रारूप चुनें (JPG, PNG, आदि)।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "उन पृष्ठों का चयन करें जिन्हें आप इमेज में बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "'इमेज में बदलें' बटन पर क्लिक करके परिवर्तन प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 6",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 7",
+                text: "परिणामी इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToPNGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF को PNG इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को PNG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को PNG में बदलने वाले टूल को खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "उन पृष्ठों का चयन करें जिन्हें आप PNG इमेज में बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "'PNG में बदलें' बटन पर क्लिक करके परिवर्तन प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 6",
+                text: "परिणामी PNG इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToJPGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को JPG इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को कई JPG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को JPG में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'JPG में बदलें' बटन पर क्लिक करके PDF को JPG में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई JPG इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToGIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को GIF इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को GIF इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को GIF में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'GIF में बदलें' बटन पर क्लिक करके PDF को GIF में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई GIF इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToBMPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को BMP इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को BMP इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को BMP में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'बदलें' बटन पर क्लिक करके PDF को BMP में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई BMP इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToWEBPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को WebP इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को WebP इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को WebP में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'WebP में बदलें' बटन पर क्लिक करके PDF को WebP में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई WebP इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToSVGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को SVG इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को SVG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को SVG में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'SVG में बदलें' बटन पर क्लिक करके PDF को SVG में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई SVG इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToTIFFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को TIFF इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को TIFF इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को TIFF में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "'बदलें' बटन पर क्लिक करके PDF को TIFF में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "बदली हुई TIFF इमेज डाउनलोड करें।"
+            }
+        ]
+    },
+    PDFToHEIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "PDF दस्तावेज़ों को HEIF/HEIC इमेज में कैसे बदलें",
+        description: "एक PDF दस्तावेज़ को HEIF या HEIC इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "चरण 1",
+                text: "PDF को HEIF/HEIC में बदलने वाले टूल को PDFEquips पर खोलें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 2",
+                text: "उस PDF फ़ाइल को अपलोड या चयन करें जिसे आप बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 3",
+                text: "उन पृष्ठों का चयन करें जिन्हें आप HEIF/HEIC इमेज में बदलना चाहते हैं।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 4",
+                text: "वांछित आउटपुट प्रारूप चुनें: HEIF या HEIC।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 5",
+                text: "'HEIF/HEIC में बदलें' बटन पर क्लिक करके PDF को HEIF/HEIC में बदलने की प्रक्रिया प्रारंभ करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 6",
+                text: "परिवर्तन प्रक्रिया समाप्त होने की प्रतीक्षा करें।"
+            },
+            {
+                "@type": "HowToStep",
+                name: "चरण 7",
+                text: "बदली हुई HEIF या HEIC इमेज डाउनलोड करें।"
+            }
+        ]
     }
-
 }

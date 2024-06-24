@@ -15,7 +15,7 @@ const HowTo = ({ howTo, alt, imgSrc }: {
         (state: { tool: ToolState }) => state.tool.showTool
     );
     useEffect(() => {
-        console.log(stateShowTool)
+        console.log(stateShowTool, howTo)
     }, [stateShowTool])
     return (
         <>

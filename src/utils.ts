@@ -173,7 +173,7 @@ export const getPlaceHoderImageUrl = (extension: string) => {
 
 // a function to check if the extension is .jpg or .pdf:
 export const isDraggableExtension = (ext: string, router: NextRouter) => {
-  return ext === ".jpg" || router.asPath.includes("merge-pdf");
+  return ext != ".pdf";
 };
 
 export function isrtllang(asPath: string): boolean {

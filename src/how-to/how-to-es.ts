@@ -388,5 +388,367 @@ export const howToSchemas: _howToSchemas = {
                 "text": "Descarga el documento PDF convertido."
             }
         ]
+    },
+    ImageToPDFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir imágenes a PDF",
+        description: "Guía paso a paso para convertir múltiples imágenes (JPG, PNG, etc.) en un solo documento PDF.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de imágenes a PDF."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Arrastra y suelta las imágenes que deseas convertir en la herramienta, o haz clic en el botón 'Seleccionar archivos de imagen' para elegirlas."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Ordena las imágenes en el orden deseado arrastrando y soltando."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Inicia el proceso de conversión haciendo clic en el botón 'Convertir a PDF'."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 6",
+                text: "Descarga el archivo PDF resultante que contiene tus imágenes."
+            }
+        ]
+    },
+    PDFToImageHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir PDF a imágenes",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes (JPG, PNG, etc.).",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a imágenes."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Elige el formato de la imagen (JPG, PNG, etc.)."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Selecciona las páginas que deseas convertir en imágenes."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Inicia el proceso de conversión haciendo clic en el botón 'Convertir a imagen'."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 6",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 7",
+                text: "Descarga las imágenes resultantes del PDF convertido."
+            }
+        ]
+    },
+    PDFToPNGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir PDF a imágenes PNG",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes PNG.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a PNG."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Selecciona las páginas que deseas convertir en imágenes PNG."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Inicia el proceso de conversión haciendo clic en el botón 'Convertir a PNG'."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 6",
+                text: "Descarga las imágenes PNG resultantes del PDF convertido."
+            }
+        ]
+    },
+    PDFToJPGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes JPG",
+        description: "Guía paso a paso para convertir un documento PDF en múltiples imágenes JPG.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a JPG en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir a JPG' para iniciar el proceso de conversión de PDF a JPG."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes JPG convertidas."
+            }
+        ]
+    },
+    PDFToGIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes GIF",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes GIF.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a GIF en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir a GIF' para iniciar el proceso de conversión de PDF a GIF."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes GIF convertidas."
+            }
+        ]
+    },
+    PDFToBMPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes BMP",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes BMP.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a BMP en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir' para iniciar el proceso de conversión de PDF a BMP."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes BMP convertidas."
+            }
+        ]
+    },
+    PDFToWEBPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes WebP",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes WebP.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a WebP en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir a WebP' para iniciar el proceso de conversión de PDF a WebP."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes WebP convertidas."
+            }
+        ]
+    },
+    PDFToSVGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes SVG",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes SVG.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a SVG en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir a PDF' para iniciar el proceso de conversión de PDF a SVG."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes SVG convertidas."
+            }
+        ]
+    },
+    PDFToTIFFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes TIFF",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes TIFF.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a TIFF en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Haz clic en el botón 'Convertir' para iniciar el proceso de conversión de PDF a TIFF."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Descarga las imágenes TIFF convertidas."
+            }
+        ]
+    },
+    PDFToHEIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "Cómo convertir documentos PDF a imágenes HEIF/HEIC",
+        description: "Guía paso a paso para convertir un documento PDF en imágenes HEIF o HEIC.",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "Paso 1",
+                text: "Abre la herramienta de conversión de PDF a HEIF/HEIC en PDFEquips."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 2",
+                text: "Carga o selecciona el archivo PDF que deseas convertir."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 3",
+                text: "Selecciona las páginas que deseas convertir en imágenes HEIF/HEIC."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 4",
+                text: "Elige el formato de salida deseado: HEIF o HEIC."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 5",
+                text: "Haz clic en el botón 'Convertir a HEIF/HEIC' para iniciar el proceso de conversión de PDF a HEIF/HEIC."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 6",
+                text: "Espera a que se complete el proceso de conversión."
+            },
+            {
+                "@type": "HowToStep",
+                name: "Paso 7",
+                text: "Descarga las imágenes HEIF o HEIC convertidas."
+            }
+        ]
     }
+
+
 }

@@ -17,6 +17,20 @@ export const tool: _tool = {
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+    features: [
+      {
+        title: "Protección garantizada para archivos",
+        description: "Nuestro cifrado TLS garantiza seguridad constante para tus JPEGs. Tus archivos son inaccesibles para cualquier persona, y los eliminamos automáticamente de nuestros servidores después de la conversión para mayor tranquilidad."
+      },
+      {
+        title: "Herramienta rápida y sencilla para convertir JPG a PDF",
+        description: "Simplemente arrastra y suelta tu archivo en el área designada arriba para convertirlo rápidamente de JPG a PDF. Además, puedes personalizar configuraciones como margen, orientación y tamaño."
+      },
+      {
+        title: "Conversión de alta calidad",
+        description: "PDFEquips permite a los usuarios transformar imágenes en archivos PDF de alta calidad con sus tecnologías avanzadas de conversión. Mantiene el 100% de la calidad original."
+      }
+    ]
   },
   PNG_to_PDF: {
     title: "PNG a PDF",
@@ -25,6 +39,20 @@ export const tool: _tool = {
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
+    features: [
+      {
+        title: "Priorizamos tu privacidad",
+        description: "Nadie más ve tus archivos excepto tú, como debe ser. PDFEquips utiliza cifrado TLS para seguridad en todas las transferencias de archivos. Todos los archivos se procesan automáticamente."
+      },
+      {
+        title: "Mantén la resolución original para archivos PNG",
+        description: "Puedes convertir imágenes PNG a archivos PDF, reduciendo efectivamente el tamaño de las imágenes PNG. Con las tecnologías avanzadas de conversión PDF de PDFEquips, se preserva la resolución original de las imágenes PNG, garantizando cero pérdida de calidad."
+      },
+      {
+        title: "Conversión sin necesidad de software",
+        description: "Para convertir tu PNG a PDF, no necesitas ningún software. Con PDFEquips, la conversión ocurre en la nube para un servicio rápido desde cualquier dispositivo. Solo sube, convierte, siéntate y relájate."
+      }
+    ]
   },
   GIF_to_PDF: {
     title: "GIF a PDF",
@@ -33,6 +61,20 @@ export const tool: _tool = {
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
+    features: [
+      {
+        title: "Conversor rápido de GIF a PDF",
+        description: "Con esta útil herramienta, transformar una imagen GIF en un documento PDF solo lleva unos segundos. Simplemente carga tu imagen GIF animada, personaliza la configuración de salida y guarda tu archivo. Es rápido, conveniente y completamente gratuito."
+      },
+      {
+        title: "Sin necesidad de iniciar sesión",
+        description: "Accede a nuestra plataforma sin complicaciones de inicio de sesión. Respetamos tu tiempo y privacidad al proporcionar servicios de conversión sin problemas al alcance de tu mano."
+      },
+      {
+        title: "Conversión sin necesidad de software",
+        description: "Para convertir tu GIF a PDF, no necesitas ningún software. Con PDFEquips, la conversión ocurre en la nube para un servicio rápido desde cualquier dispositivo. Solo sube, convierte, siéntate y relájate."
+      }
+    ]
   },
   TIFF_to_PDF: {
     title: "TIFF a PDF",
@@ -41,6 +83,20 @@ export const tool: _tool = {
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    features: [
+      {
+        title: "Conversor rápido de TIFF a PDF",
+        description: "Convierte tus imágenes TIFF en documentos PDF rápida y eficientemente. Nuestra herramienta garantiza un proceso de conversión sin problemas en solo unos clics."
+      },
+      {
+        title: "No se requiere inicio de sesión",
+        description: "Accede a nuestra plataforma sin complicaciones, sin necesidad de credenciales de inicio de sesión. Disfruta de servicios instantáneos de conversión de TIFF a PDF sin complicaciones de inicio de sesión."
+      },
+      {
+        title: "Conversión robusta basada en la nube",
+        description: "Experimenta una conversión robusta de TIFF a PDF basada en la nube para un servicio rápido desde cualquier dispositivo. Simplemente carga tus archivos TIFF, convierte y descarga tus imágenes PDF sin esfuerzo."
+      }
+    ]
   },
   BMP_to_PDF: {
     title: "BMP a PDF",
@@ -49,6 +105,20 @@ export const tool: _tool = {
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    features: [
+      {
+        title: "Conversión rápida",
+        description: "Convierte rápidamente imágenes BMP en documentos PDF con nuestro proceso de conversión rápido. Obtén tus archivos PDF listos en segundos."
+      },
+      {
+        title: "Motor robusto",
+        description: "Experimenta un motor de conversión robusto que garantiza una conversión precisa y confiable de BMP a PDF cada vez, manteniendo la calidad e integridad."
+      },
+      {
+        title: "Procesamiento seguro",
+        description: "Nuestro convertidor prioriza la seguridad, asegurando que todas las conversiones de BMP a PDF se realicen de forma segura. Tus archivos están protegidos durante todo el proceso."
+      }
+    ]
   },
   SVG_to_PDF: {
     title: "SVG a PDF",
@@ -57,6 +127,20 @@ export const tool: _tool = {
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    features: [
+      {
+        title: "Reordena los SVG",
+        description: "Reordena fácilmente las imágenes SVG antes de la conversión para personalizar la secuencia en tu documento PDF."
+      },
+      {
+        title: "Conversión rápida",
+        description: "Convierte rápidamente imágenes SVG en documentos PDF con nuestro proceso de conversión rápido. Obtén tus archivos PDF listos en segundos."
+      },
+      {
+        title: "Motor robusto",
+        description: "Experimenta un motor de conversión robusto que garantiza una conversión precisa y confiable de SVG a PDF cada vez, manteniendo la calidad e integridad."
+      }
+    ]
   },
   WebP_to_PDF: {
     title: "WebP a PDF",
@@ -65,6 +149,20 @@ export const tool: _tool = {
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    features: [
+      {
+        title: "Conversión de alta calidad",
+        description: "Experimenta una conversión de alta calidad de imágenes WebP a documentos PDF, preservando la resolución y claridad de la imagen."
+      },
+      {
+        title: "Organiza fácilmente las páginas",
+        description: "Organiza el orden de las páginas en tu documento PDF con facilidad, asegurando la secuencia deseada para tus imágenes WebP convertidas."
+      },
+      {
+        title: "Soporte para múltiples imágenes",
+        description: "Convierte múltiples imágenes WebP en un solo documento PDF, permitiendo una organización y compartición sencilla de imágenes."
+      }
+    ]
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC a PDF",
@@ -73,6 +171,20 @@ export const tool: _tool = {
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    features: [
+      {
+        title: "Conversión de alta calidad",
+        description: "Convierte imágenes HEIF/HEIC a documentos PDF con alta calidad, garantizando claridad y resolución de imagen óptimas."
+      },
+      {
+        title: "Conversión por lotes",
+        description: "Convierte eficientemente múltiples imágenes HEIF/HEIC en un solo documento PDF de una vez, ahorrando tiempo y esfuerzo para conversiones masivas."
+      },
+      {
+        title: "Compatibilidad multiplataforma",
+        description: "Accede a nuestro conversor desde cualquier dispositivo o plataforma para convertir imágenes HEIF/HEIC a formato PDF sin problemas."
+      }
+    ]
   },
   PDF_to_JPG: {
     title: "PDF a JPG",
@@ -81,6 +193,21 @@ export const tool: _tool = {
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
+    features: [
+      {
+        title: "Herramienta rápida y sencilla para convertir PDF a JPG",
+        description: "Simplemente arrastra y suelta tu archivo en el área designada arriba para convertirlo rápidamente de PDF a JPG. Además, puedes personalizar configuraciones como margen, orientación y tamaño."
+      },
+      {
+        title: "Protección garantizada para archivos",
+        description: "Nuestro cifrado TLS garantiza una seguridad constante para tus PDFs. Tus archivos son inaccesibles para cualquier persona y los eliminamos automáticamente de nuestros servidores después de la conversión para mayor tranquilidad."
+      },
+      {
+        title: "Conversión de alta calidad",
+        description: "PDFEquips permite a los usuarios transformar PDFs en archivos JPG de alta calidad con sus tecnologías avanzadas de conversión. Mantiene el 100% de la calidad original."
+      }
+    ]
+
   },
   PDF_to_PNG: {
     title: "PDF a PNG",
@@ -89,6 +216,20 @@ export const tool: _tool = {
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    features: [
+      {
+        title: "Interfaz fácil de usar",
+        description: "Nuestro conversor de PDF a PNG cuenta con una interfaz intuitiva y fácil de usar, haciendo que el proceso de conversión sea fluido para usuarios de todos los niveles."
+      },
+      {
+        title: "Mantén la calidad de imagen",
+        description: "Disfruta de imágenes PNG de alta resolución sin pérdida de calidad. Nuestro conversor preserva la calidad original de tus imágenes PDF durante el proceso de conversión."
+      },
+      {
+        title: "Conversión por lotes",
+        description: "Convierte eficientemente múltiples páginas o documentos PDF en imágenes PNG de una sola vez. Ahorra tiempo y esfuerzo con nuestra función de conversión por lotes simplificada."
+      }
+    ]
   },
 
   PDF_to_GIF: {
@@ -98,6 +239,20 @@ export const tool: _tool = {
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    features: [
+      {
+        title: "Extracción de imágenes",
+        description: "Extrae imágenes de documentos PDF y conviértelas al formato GIF, preservando la calidad y transparencia de la imagen."
+      },
+      {
+        title: "Salida personalizable",
+        description: "Personaliza los ajustes de salida para tus imágenes GIF, incluyendo resolución, velocidad de cuadros y paleta de colores, para adaptarse a tus necesidades."
+      },
+      {
+        title: "Soporte para múltiples páginas",
+        description: "Convierte documentos PDF de múltiples páginas en una serie de imágenes GIF, manteniendo la secuencia y orden de páginas para cada GIF."
+      }
+    ]
   },
   PDF_to_TIFF: {
     title: "PDF a TIFF",
@@ -106,6 +261,20 @@ export const tool: _tool = {
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    features: [
+      {
+        title: "Conversión robusta basada en la nube",
+        description: "Experimenta una conversión robusta de PDF a TIFF basada en la nube para un servicio rápido desde cualquier dispositivo. Simplemente carga tus documentos PDF, convierte y descarga tus imágenes TIFF sin esfuerzo."
+      },
+      {
+        title: "No se requiere inicio de sesión",
+        description: "Accede a nuestra plataforma sin complicaciones, sin necesidad de credenciales de inicio de sesión. Disfruta de servicios instantáneos de conversión de PDF a TIFF sin complicaciones de inicio de sesión."
+      },
+      {
+        title: "Conversor rápido de PDF a TIFF",
+        description: "Convierte rápidamente tus documentos PDF en imágenes TIFF de forma rápida y eficiente. Nuestra herramienta garantiza un proceso de conversión sin problemas en solo unos clics."
+      }
+    ]
   },
 
   PDF_to_BMP: {
@@ -115,6 +284,20 @@ export const tool: _tool = {
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    features: [
+      {
+        title: "Procesamiento seguro",
+        description: "Nuestro conversor prioriza la seguridad, asegurando que todas las conversiones de PDF a BMP se realicen de forma segura. Tus archivos están protegidos durante todo el proceso."
+      },
+      {
+        title: "Motor robusto",
+        description: "Experimenta un motor de conversión robusto que garantiza una conversión precisa y confiable de PDF a BMP cada vez, manteniendo la calidad e integridad."
+      },
+      {
+        title: "Conversión rápida",
+        description: "Convierte rápidamente tus documentos PDF en imágenes BMP con nuestro proceso de conversión rápido. Obtén tus archivos BMP listos en segundos."
+      }
+    ]
   },
 
   PDF_to_SVG: {
@@ -124,6 +307,20 @@ export const tool: _tool = {
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    features: [
+      {
+        title: "Conversión de gráficos vectoriales",
+        description: "Convierte gráficos vectoriales PDF al formato SVG para imágenes escalables y de alta calidad que se pueden redimensionar sin pérdida de calidad."
+      },
+      {
+        title: "Preserva texto y gráficos",
+        description: "Mantén el texto y los gráficos originales de tus archivos PDF durante el proceso de conversión para garantizar precisión y fidelidad."
+      },
+      {
+        title: "Soporte para múltiples páginas",
+        description: "Convierte documentos PDF de múltiples páginas en múltiples archivos SVG, manteniendo la secuencia y el orden de páginas para cada imagen SVG."
+      }
+    ]
   },
   PDF_to_WebP: {
     title: "PDF a WebP",
@@ -132,6 +329,20 @@ export const tool: _tool = {
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    features: [
+      {
+        title: "Extracción de imágenes",
+        description: "Extrae imágenes de documentos PDF y conviértelas al formato WebP, preservando la calidad y transparencia de la imagen."
+      },
+      {
+        title: "Conversión de alta calidad",
+        description: "Experimenta una conversión de alta calidad de documentos PDF a imágenes WebP, garantizando una claridad y resolución óptimas de la imagen."
+      },
+      {
+        title: "Conversión por lotes",
+        description: "Convierte múltiples páginas o documentos de PDF al formato WebP de una vez, ahorrando tiempo y esfuerzo en conversiones masivas."
+      }
+    ]
   },
 
   PDF_to_HEIF: {
@@ -141,6 +352,20 @@ export const tool: _tool = {
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    features: [
+      {
+        title: "Extracción de imágenes",
+        description: "Extrae imágenes de documentos PDF y conviértelas al formato HEIF/HEIC, preservando la calidad y transparencia de la imagen."
+      },
+      {
+        title: "Conversión de alta calidad",
+        description: "Experimenta una conversión de alta calidad de archivos PDF a imágenes HEIF/HEIC, garantizando una claridad y resolución óptimas de la imagen."
+      },
+      {
+        title: "Soporte para múltiples formatos",
+        description: "Convierte tus archivos PDF al formato HEIF/HEIC junto con otros formatos de imagen para adaptarse a tus preferencias."
+      }
+    ]
   },
   Image_to_PDF: {
     title: "Imagen a PDF",
@@ -190,7 +415,7 @@ export const tool: _tool = {
 };
 
 
-export const edit_page: _edit_page = {
+export const edit_page = {
   edit_page_titles: {
     jpg_to_pdf: "Opciones de JPG a PDF",
     png_to_pdf: "Opciones de PNG a PDF",
@@ -201,8 +426,15 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Opciones de WebP a PDF",
     heif_heic_to_pdf: "Opciones de HEIF/HEIC a PDF",
     pdf_to_jpg: "Opciones para convertir PDF a JPG",
+    pdf_to_svg: "Opciones para convertir PDF a SVG",
+    pdf_to_png: "Opciones para convertir PDF a PNG",
+    pdf_to_gif: "Opciones para convertir PDF a GIF",
+    pdf_to_tiff: "Opciones para convertir PDF a TIFF",
+    pdf_to_bmp: "Opciones para convertir PDF a BMP",
+    pdf_to_webp: "Opciones para convertir PDF a WebP",
+    pdf_to_heif_heic: "Opciones para convertir PDF a HEIF/HEIC",
     image_to_pdf: "Opciones de IMAGEN a PDF",
-    pdf_to_image: "Opciones de PDF a IMAGEN",
+    pdf_to_image: "Opciones de PDF a IMAGEN"
   },
   loader_text: "Por favor, espera...",
   add_more_button: "Agregar más archivos",
@@ -216,6 +448,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "Convertir a PDF",
     heif_heic_to_pdf: "Convertir a PDF",
     pdf_to_jpg: "Convertir a JPG",
+    pdf_to_svg: "Convertir a SVG",
+    pdf_to_png: "Convertir a PNG",
+    pdf_to_gif: "Convertir a GIF",
+    pdf_to_tiff: "Convertir a TIFF",
+    pdf_to_bmp: "Convertir a BMP",
+    pdf_to_webp: "Convertir a WebP",
+    pdf_to_heif_heic: "Convertir a HEIF/HEIC",
     image_to_pdf: "Convertir a PDF",
     pdf_to_image: "Convertir a IMAGEN"
   },
@@ -227,14 +466,6 @@ export const edit_page: _edit_page = {
       placeholder: "Selecciona formato de imagen..."
     }
   }
-};
-
-
-export const tools: _tools = {
-  select: "Seleccionar",
-  or_drop: "o soltar archivos aquí",
-  files: "archivos",
-  drop_files: "Arrastra los archivos aquí",
 };
 
 export const downloadFile: _downloadFile = {
@@ -272,18 +503,45 @@ export const downloadFile: _downloadFile = {
       "¡El archivo HEIF/HEIC se ha convertido a PDF!",
     ],
     "pdf-to-jpg": [
-      "¡Conversión de archivos PDF a JPG exitosa!",
-      "¡Conversión de archivo PDF a JPG exitosa!",
+      "¡Los archivos PDF se han convertido a JPG!",
+      "¡El archivo PDF se ha convertido a JPG!",
+    ],
+    "pdf-to-svg": [
+      "¡Los archivos PDF se han convertido a SVG!",
+      "¡El archivo PDF se ha convertido a SVG!",
+    ],
+    "pdf-to-png": [
+      "¡Los archivos PDF se han convertido a PNG!",
+      "¡El archivo PDF se ha convertido a PNG!",
+    ],
+    "pdf-to-gif": [
+      "¡Los archivos PDF se han convertido a GIF!",
+      "¡El archivo PDF se ha convertido a GIF!",
+    ],
+    "pdf-to-tiff": [
+      "¡Los archivos PDF se han convertido a TIFF!",
+      "¡El archivo PDF se ha convertido a TIFF!",
+    ],
+    "pdf-to-bmp": [
+      "¡Los archivos PDF se han convertido a BMP!",
+      "¡El archivo PDF se ha convertido a BMP!",
+    ],
+    "pdf-to-webp": [
+      "¡Los archivos PDF se han convertido a WEBP!",
+      "¡El archivo PDF se ha convertido a WEBP!",
+    ],
+    "pdf-to-heif-heic": [
+      "¡Los archivos PDF se han convertido a HEIF/HEIC!",
+      "¡El archivo PDF se ha convertido a HEIF/HEIC!",
     ],
     "image-to-pdf": [
       "¡Los archivos de imagen se han convertido a PDF!",
-      "¡El archivo de imagen se ha convertido a PDF!"
+      "¡El archivo de imagen se ha convertido a PDF!",
     ],
-
     "pdf-to-image": [
       "¡Los archivos PDF se han convertido en imágenes!",
-      "¡El archivo PDF se ha convertido en una imagen!"
-    ]
+      "¡El archivo PDF se ha convertido en una imagen!",
+    ],
   },
 
   btnText: {
@@ -323,15 +581,42 @@ export const downloadFile: _downloadFile = {
       "Descargar archivos JPG convertidos",
       "Descargar archivo JPG convertido",
     ],
+    "pdf-to-svg": [
+      "Descargar archivos SVG convertidos",
+      "Descargar archivo SVG convertido",
+    ],
+    "pdf-to-png": [
+      "Descargar archivos PNG convertidos",
+      "Descargar archivo PNG convertido",
+    ],
+    "pdf-to-gif": [
+      "Descargar archivos GIF convertidos",
+      "Descargar archivo GIF convertido",
+    ],
+    "pdf-to-tiff": [
+      "Descargar archivos TIFF convertidos",
+      "Descargar archivo TIFF convertido",
+    ],
+    "pdf-to-bmp": [
+      "Descargar archivos BMP convertidos",
+      "Descargar archivo BMP convertido",
+    ],
+    "pdf-to-webp": [
+      "Descargar archivos WEBP convertidos",
+      "Descargar archivo WEBP convertido",
+    ],
+    "pdf-to-heif-heic": [
+      "Descargar archivos HEIF/HEIC convertidos",
+      "Descargar archivo HEIF/HEIC convertido",
+    ],
     "image-to-pdf": [
       "Descargar archivos PDF convertidos",
-      "Descargar archivo PDF convertido"
+      "Descargar archivo PDF convertido",
     ],
-
     "pdf-to-image": [
       "Descargar archivos de imagen convertidos",
-      "Descargar archivo de imagen convertido"
-    ]
+      "Descargar archivo de imagen convertido",
+    ],
   },
 
   backTo: {
@@ -344,9 +629,25 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "Volver a WEBP a PDF",
     "heif-heic-to-pdf": "Volver a HEIF/HEIC a PDF",
     "pdf-to-jpg": "Volver a PDF a JPG",
+    "pdf-to-svg": "Volver a PDF a SVG",
+    "pdf-to-png": "Volver a PDF a PNG",
+    "pdf-to-gif": "Volver a PDF a GIF",
+    "pdf-to-tiff": "Volver a PDF a TIFF",
+    "pdf-to-bmp": "Volver a PDF a BMP",
+    "pdf-to-webp": "Volver a PDF a WEBP",
+    "pdf-to-heif-heic": "Volver a PDF a HEIF/HEIC",
     "image-to-pdf": "Volver a IMAGEN a PDF",
-    "pdf-to-image": "Volver a PDF a IMAGEN"
+    "pdf-to-image": "Volver a PDF a IMAGEN",
   },
+};
+
+
+
+export const tools: _tools = {
+  select: "Seleccionar",
+  or_drop: "o soltar archivos aquí",
+  files: "archivos",
+  drop_files: "Arrastra los archivos aquí",
 };
 
 

@@ -409,36 +409,36 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 1",
-                text: "Open the image to PDF conversion tool on your preferred platform."
+                text: "Open the image to PDF conversion tool."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 2",
-                text: "Drag and drop the images you want to convert into the tool, or click the 'Select Images' button to choose them."
+                text: "Drag and drop the images you want to convert into the tool, or click the \"Select IMAGE files\" button to choose them."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
                 text: "Arrange the images in the desired order by dragging and dropping them."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 4",
+            //     text: "Adjust settings such as page orientation, size, and margins if necessary."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Adjust settings such as page orientation, size, and margins if necessary."
+                text: `Initiate the conversion process by clicking the "Convert to PDF" button.`
             },
             {
                 "@type": "HowToStep",
                 name: "Step 5",
-                text: "Initiate the conversion process by clicking the 'Convert' or 'Create PDF' button."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion to complete."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 6",
                 text: "Download the resulting PDF file containing your images."
             }
         ]
@@ -452,7 +452,7 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 1",
-                text: "Open the PDF to image conversion tool on your preferred platform."
+                text: "Open the PDF to image conversion tool."
             },
             {
                 "@type": "HowToStep",
@@ -462,17 +462,17 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the image format (JPG, PNG, etc.) and quality settings."
+                text: "Choose the image format (JPG, PNG, etc.)."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Specify the pages or range of pages you wish to convert to images."
+                text: "Specify the pages you wish to convert to images."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 5",
-                text: "Start the conversion process by clicking the 'Convert' or 'Create Images' button."
+                text: "Start the conversion process by clicking the 'Convert to IMAGE'."
             },
             {
                 "@type": "HowToStep",
@@ -495,7 +495,7 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 1",
-                text: "Open the PDF to image conversion tool on your preferred platform."
+                text: "Open the PDF to png conversion tool."
             },
             {
                 "@type": "HowToStep",
@@ -505,26 +505,21 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose PNG as the output image format."
+                text: "Specify the pages pages you wish to convert to PNG images."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Specify the pages or range of pages you wish to convert to PNG images."
+                text: "Start the conversion process by clicking the 'Convert to PNG' button."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 5",
-                text: "Start the conversion process by clicking the 'Convert' or 'Create Images' button."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 6",
                 text: "Download the resulting PNG images from the converted PDF."
             }
         ]
@@ -545,29 +540,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to JPG images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to JPG images."
+                text: "Click the 'Convert to JPG' button to start the PDF to JPG conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
-                text: "Click the 'Convert' button to start the PDF to JPG conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted JPG images."
             }
         ]
@@ -588,29 +583,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to GIF images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 4",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to GIF images."
+                text: "Click the 'Convert to GIF' button to start the PDF to GIF conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
-                text: "Click the 'Convert' button to start the PDF to GIF conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted GIF images."
             }
         ]
@@ -631,29 +626,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to BMP images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to BMP images."
+                text: "Click the \"Convert\" button to start the PDF to BMP conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
-                text: "Click the 'Convert' button to start the PDF to BMP conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted BMP images."
             }
         ]
@@ -674,29 +669,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to WebP images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 4",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to WebP images."
+                text: "Click the \"Convert to Webp\" button to start the PDF to WebP conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
-                text: "Click the 'Convert' button to start the PDF to WebP conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted WebP images."
             }
         ]
@@ -717,29 +712,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to SVG images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 4",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to SVG images."
+                text: "Click the \"Convert to PDF\" button to start the PDF to SVG conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
-                text: "Click the 'Convert' button to start the PDF to SVG conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 6",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted SVG images."
             }
         ]
@@ -760,29 +755,29 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 3",
+            //     text: "Choose the pages you want to convert to TIFF images."
+            // },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 4",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Choose the pages you want to convert to TIFF images."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 4",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 5",
                 text: "Click the 'Convert' button to start the PDF to TIFF conversion process."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 6",
+                name: "Step 4",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 7",
+                name: "Step 5",
                 text: "Download the converted TIFF images."
             }
         ]
@@ -813,27 +808,26 @@ export const howToSchemas = {
                 name: "Step 4",
                 text: "Select the desired output format: HEIF or HEIC."
             },
+            // {
+            //     "@type": "HowToStep",
+            //     name: "Step 5",
+            //     text: "Configure any additional settings such as image resolution or quality, if needed."
+            // },
             {
                 "@type": "HowToStep",
                 name: "Step 5",
-                text: "Configure any additional settings such as image resolution or quality, if needed."
+                text: "Click the \"Convert to HEIF/HEIC\" button to start the PDF to HEIF/HEIC conversion process."
             },
             {
                 "@type": "HowToStep",
                 name: "Step 6",
-                text: "Click the 'Convert' button to start the PDF to HEIF/HEIC conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                name: "Step 7",
                 text: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 8",
+                name: "Step 7",
                 text: "Download the converted HEIF or HEIC images."
             }
         ]
     }
-
 }

@@ -387,5 +387,365 @@ export const howToSchemas: _howToSchemas = {
                 "text": "下载转换后的PDF文档。"
             }
         ]
+    },
+    ImageToPDFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将图像转换为 PDF",
+        description: "将多个图像（JPG、PNG 等）转换为单个 PDF 文件的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "打开图像转换为 PDF 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "将要转换的图像拖放到工具中，或点击“选择图像文件”按钮进行选择。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "通过拖放图像来按所需顺序排列它们。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "点击“转换为 PDF”按钮开始转换过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 6",
+                text: "下载包含图像的生成的 PDF 文件。"
+            }
+        ]
+    },
+    PDFToImageHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 转换为图像",
+        description: "将 PDF 文件转换为图像（JPG、PNG 等）的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "打开 PDF 转换为图像的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "选择图像格式（JPG、PNG 等）。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "选择要转换为图像的页面。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "点击“转换为图像”按钮开始转换过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 6",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 7",
+                text: "下载生成的图像。"
+            }
+        ]
+    },
+    PDFToPNGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 转换为 PNG 图像",
+        description: "将 PDF 文件转换为 PNG 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "打开 PDF 转换为 PNG 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "选择要转换为 PNG 图像的页面。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "点击“转换为 PNG”按钮开始转换过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 6",
+                text: "下载生成的 PNG 图像。"
+            }
+        ]
+    },
+    PDFToJPGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 JPG 图像",
+        description: "将 PDF 文件转换为多个 JPG 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 JPG 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换为 JPG”按钮开始 PDF 转换为 JPG 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 JPG 图像。"
+            }
+        ]
+    },
+    PDFToGIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 GIF 图像",
+        description: "将 PDF 文件转换为 GIF 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 GIF 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换为 GIF”按钮开始 PDF 转换为 GIF 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 GIF 图像。"
+            }
+        ]
+    },
+    PDFToBMPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 BMP 图像",
+        description: "将 PDF 文件转换为 BMP 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 BMP 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换”按钮开始 PDF 转换为 BMP 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 BMP 图像。"
+            }
+        ]
+    },
+    PDFToWEBPHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 WebP 图像",
+        description: "将 PDF 文件转换为 WebP 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 WebP 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换为 WebP”按钮开始 PDF 转换为 WebP 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 WebP 图像。"
+            }
+        ]
+    },
+    PDFToSVGHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 SVG 图像",
+        description: "将 PDF 文件转换为 SVG 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 SVG 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换为 SVG”按钮开始 PDF 转换为 SVG 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 SVG 图像。"
+            }
+        ]
+    },
+    PDFToTIFFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 TIFF 图像",
+        description: "将 PDF 文件转换为 TIFF 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 TIFF 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "点击“转换”按钮开始 PDF 转换为 TIFF 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "下载转换后的 TIFF 图像。"
+            }
+        ]
+    },
+    PDFToHEIFHOWTO: {
+        "@context": "http://schema.org",
+        "@type": "HowTo",
+        name: "如何将 PDF 文件转换为 HEIF/HEIC 图像",
+        description: "将 PDF 文件转换为 HEIF 或 HEIC 图像的分步指南。",
+        step: [
+            {
+                "@type": "HowToStep",
+                name: "步骤 1",
+                text: "在 PDFEquips 上打开 PDF 转换为 HEIF/HEIC 的工具。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 2",
+                text: "上传或选择要转换的 PDF 文件。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 3",
+                text: "选择要转换为 HEIF/HEIC 图像的页面。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 4",
+                text: "选择所需的输出格式：HEIF 或 HEIC。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 5",
+                text: "点击“转换为 HEIF/HEIC”按钮开始 PDF 转换为 HEIF/HEIC 的过程。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 6",
+                text: "等待转换过程完成。"
+            },
+            {
+                "@type": "HowToStep",
+                name: "步骤 7",
+                text: "下载转换后的 HEIF 或 HEIC 图像。"
+            }
+        ]
     }
 }

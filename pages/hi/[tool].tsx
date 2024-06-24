@@ -6,12 +6,17 @@ import {
   tool,
   tools,
   downloadFile,
+  footer,
 } from "../../src/content/content-hi";
 import { errors } from "../../src/content/content-hi";
 import { useRouter } from "next/router";
 import { routesMap, type data_type } from "../[tool]";
 import { howToSchemas } from "@/src/how-to/how-to-hi";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
+import { Features } from "@/components/Features";
+import { Footer } from "@/components/Footer";
+import HowTo from "@/components/HowTo";
+import { howToType } from "@/src/how-to/how-to";
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
     params: { tool: key.substring(1) },
@@ -36,7 +41,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
   const router = useRouter();
   const { asPath } = router;
   const matchingKey = Object.keys(routesMap).find(
-    (key) => routesMap[key as keyof typeof routesMap] === asPath
+    (key) => routesMap[key as keyof typeof routesMap] === item.to
   );
   const currentHowTo = matchingKey
     ? howToSchemas[matchingKey as keyof typeof howToSchemas]
@@ -87,6 +92,13 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         page={edit_page.page}
         downloadFile={downloadFile}
       />
+      <div className="container">
+        <Features features={item.features as { title: string; description: string }[]} tool={item.to} />
+      </div>
+      <div className="container">
+        <HowTo howTo={currentHowTo as howToType} alt={item.seoTitle} imgSrc={item.to.replace("/", "")} />
+      </div>
+      <Footer footer={footer} title={item.seoTitle.split("-")[1]} />
     </>
   );
 };

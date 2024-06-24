@@ -17,6 +17,20 @@ export const tool: _tool = {
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+    features: [
+      {
+        title: "文件的保障保护",
+        description: "我们的TLS加密确保您的JPEG文件始终安全。您的文件对任何人都不可访问，并且在转换后我们会自动从服务器中删除它们，以增加您的安心。"
+      },
+      {
+        title: "快速简便的JPG转PDF工具",
+        description: "只需将您的文件拖放到上面的指定区域，即可快速将其从JPG转换为PDF。此外，您可以自定义边距、方向和大小等设置。"
+      },
+      {
+        title: "高质量转换",
+        description: "PDFEquips允许用户使用其先进的转换技术将图像转换为高质量的PDF文件。它保持100%的原始质量。"
+      }
+    ]
   },
   PNG_to_PDF: {
     title: "PNG转PDF",
@@ -25,6 +39,20 @@ export const tool: _tool = {
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
+    features: [
+      {
+        title: "我们优先考虑您的隐私",
+        description: "除了您自己，没有人能看到您的文件——这是理所当然的。PDFEquips在所有文件传输中使用TLS加密来确保安全，所有文件都会自动处理。"
+      },
+      {
+        title: "保留PNG文件的原始分辨率",
+        description: "您可以将PNG图像转换为PDF文件，有效减小PNG图像的大小。借助PDFEquips的先进PDF转换技术，保留PNG图像的原始分辨率，确保完全不会失去任何质量。"
+      },
+      {
+        title: "无需软件即可转换",
+        description: "要将PNG转换为PDF，您无需任何软件。借助PDFEquips，转换在云端进行，从任何设备都可以快速进行服务。只需上传、转换，然后坐下来放松。"
+      }
+    ]
   },
   GIF_to_PDF: {
     title: "GIF转PDF",
@@ -33,6 +61,20 @@ export const tool: _tool = {
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
+    features: [
+      {
+        title: "快速GIF转PDF转换器",
+        description: "使用这个实用工具，将GIF图像转换为PDF文档只需几秒钟。只需上传您的动态GIF图像，自定义输出设置，保存文件。快速、便捷、完全免费。"
+      },
+      {
+        title: "无需登录",
+        description: "无需登录即可访问我们的平台。我们尊重您的时间和隐私，为您提供无缝转换服务。"
+      },
+      {
+        title: "无需软件即可转换",
+        description: "要将GIF转换为PDF，您无需任何软件。借助PDFEquips，转换在云端进行，从任何设备都可以快速进行服务。只需上传、转换，然后坐下来放松。"
+      }
+    ]
   },
   TIFF_to_PDF: {
     title: "TIFF转PDF",
@@ -41,6 +83,20 @@ export const tool: _tool = {
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    features: [
+      {
+        title: "快速TIFF转PDF转换器",
+        description: "快速高效地将您的TIFF图像转换为PDF文档。我们的工具确保在几次点击内实现无缝转换流程。"
+      },
+      {
+        title: "无需登录",
+        description: "无需任何登录凭据即可轻松访问我们的平台。享受即时的TIFF到PDF转换服务，无需任何登录麻烦。"
+      },
+      {
+        title: "强大的基于云的转换",
+        description: "体验强大的基于云的TIFF到PDF转换，为您提供快速的服务。只需上传您的TIFF文件，转换并下载您的PDF文档，无需费力。"
+      }
+    ]
   },
   BMP_to_PDF: {
     title: "BMP转PDF",
@@ -49,6 +105,20 @@ export const tool: _tool = {
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    features: [
+      {
+        title: "快速转换",
+        description: "使用我们的快速转换流程快速将BMP图像转换为PDF文档。在几秒钟内准备好您的PDF文件。"
+      },
+      {
+        title: "强大的引擎",
+        description: "体验一款强大的转换引擎，确保每次BMP转PDF转换都准确可靠，保持质量和完整性。"
+      },
+      {
+        title: "安全处理",
+        description: "我们的转换器优先考虑安全性，确保所有BMP到PDF的转换都经过安全处理。在整个过程中，您的文件都受到保护。"
+      }
+    ]
   },
   SVG_to_PDF: {
     title: "SVG转PDF",
@@ -57,6 +127,20 @@ export const tool: _tool = {
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    features: [
+      {
+        title: "重新排序SVG",
+        description: "在转换之前轻松重新排序SVG图像，以定制PDF文档中的顺序。"
+      },
+      {
+        title: "快速转换",
+        description: "使用我们的快速转换流程快速将SVG图像转换为PDF文档。在几秒钟内准备好您的PDF文件。"
+      },
+      {
+        title: "强大的引擎",
+        description: "体验一款强大的转换引擎，确保每次SVG到PDF转换都准确可靠，保持质量和完整性。"
+      }
+    ]
   },
   WebP_to_PDF: {
     title: "WebP转PDF",
@@ -65,6 +149,20 @@ export const tool: _tool = {
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    features: [
+      {
+        title: "高质量转换",
+        description: "体验将WebP图像转换为PDF文档的高质量转换，保留图像分辨率和清晰度。"
+      },
+      {
+        title: "轻松排列页面",
+        description: "轻松排列PDF文档中页面的顺序，确保转换后的WebP图像的期望顺序。"
+      },
+      {
+        title: "多图像支持",
+        description: "将多个WebP图像转换为单个PDF文档，便于图像的组织和共享。"
+      }
+    ]
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC转PDF",
@@ -73,6 +171,20 @@ export const tool: _tool = {
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    features: [
+      {
+        title: "高质量转换",
+        description: "将HEIF/HEIC图像转换为高质量PDF文档，确保图像清晰度和分辨率优化。"
+      },
+      {
+        title: "批量转换",
+        description: "有效地将多个HEIF/HEIC图像一次性转换为单个PDF文档，节省批量转换的时间和精力。"
+      },
+      {
+        title: "跨平台兼容性",
+        description: "从任何设备或平台访问我们的转换器，无缝将HEIF/HEIC图像转换为PDF格式。"
+      }
+    ]
   },
   PDF_to_JPG: {
     title: "PDF转JPG",
@@ -81,6 +193,20 @@ export const tool: _tool = {
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
+    features: [
+      {
+        title: "快速简单的PDF转JPG工具",
+        description: "只需将文件拖放到上面指定的区域即可快速将其从PDF转换为JPG。此外，您还可以自定义设置，如页边距、方向和大小。"
+      },
+      {
+        title: "文件保护保证",
+        description: "我们的TLS加密确保您的PDF文件始终安全。您的文件对任何人都不可见，我们在转换后会自动从服务器中删除它们，以增加安心感。"
+      },
+      {
+        title: "高质量转换",
+        description: "PDFEquips允许用户使用其先进的转换技术将PDF转换为高质量的JPG文件。它保持了100%的原始质量。"
+      }
+    ]
   },
   PDF_to_PNG: {
     title: "PDF 转 PNG",
@@ -89,6 +215,20 @@ export const tool: _tool = {
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    features: [
+      {
+        title: "用户友好的界面",
+        description: "我们的PDF到PNG转换器拥有直观且易于使用的界面，使转换过程对各种技能水平的用户都变得轻松无缝。"
+      },
+      {
+        title: "保留图像质量",
+        description: "在转换过程中保留高分辨率的PNG图像，不会降低质量。我们的转换器在转换过程中保持PDF图像的原始质量。"
+      },
+      {
+        title: "批量转换",
+        description: "一次性将多个PDF页面或文档转换为PNG图像。使用我们简化的批量转换功能节省时间和精力。"
+      }
+    ]
   },
 
   PDF_to_GIF: {
@@ -98,6 +238,20 @@ export const tool: _tool = {
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    features: [
+      {
+        title: "图像提取",
+        description: "从PDF文档中提取图像并将其转换为GIF格式，保留图像质量和透明度。"
+      },
+      {
+        title: "可定制输出",
+        description: "自定义GIF图像的输出设置，包括分辨率、帧速率和调色板，以满足您的需求。"
+      },
+      {
+        title: "多页支持",
+        description: "将多页PDF文档转换为一系列GIF图像，保持每个GIF图像的页面顺序和顺序。"
+      }
+    ]
   },
 
   PDF_to_TIFF: {
@@ -107,6 +261,20 @@ export const tool: _tool = {
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    features: [
+      {
+        title: "强大的基于云的转换",
+        description: "体验强大的基于云的PDF到TIFF转换，为您提供快速的服务。只需上传您的PDF文档，转换并下载您的TIFF图像，毫不费力。"
+      },
+      {
+        title: "无需登录",
+        description: "无需任何登录凭据即可轻松访问我们的平台。享受即时的PDF到TIFF转换服务，无需任何登录麻烦。"
+      },
+      {
+        title: "快速PDF到TIFF转换器",
+        description: "快速高效地将您的PDF文档转换为TIFF图像。我们的工具确保在几次点击内实现无缝转换流程。"
+      }
+    ]
   },
   PDF_to_BMP: {
     title: "PDF 转 BMP",
@@ -115,6 +283,20 @@ export const tool: _tool = {
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    features: [
+      {
+        title: "安全处理",
+        description: "我们的转换器优先考虑安全性，确保所有PDF到BMP的转换都经过安全处理。在整个过程中，您的文件都受到保护。"
+      },
+      {
+        title: "强大的引擎",
+        description: "体验一款强大的转换引擎，确保每次PDF到BMP的转换都准确可靠，保持质量和完整性。"
+      },
+      {
+        title: "快速转换",
+        description: "使用我们的快速转换流程快速将PDF文档转换为BMP图像。在几秒钟内准备好您的BMP文件。"
+      }
+    ]
   },
 
   PDF_to_SVG: {
@@ -124,6 +306,20 @@ export const tool: _tool = {
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    features: [
+      {
+        title: "矢量图形转换",
+        description: "将PDF矢量图形转换为SVG格式，以获得可缩放和高质量的图像，无需损失质量。"
+      },
+      {
+        title: "保留文本和图形",
+        description: "在转换过程中保留PDF文件的原始文本和图形，以确保准确性和保真度。"
+      },
+      {
+        title: "多页支持",
+        description: "将多页PDF文档转换为多个SVG文件，保持每个SVG图像的页面顺序和顺序。"
+      }
+    ]
   },
 
   PDF_to_WebP: {
@@ -133,6 +329,20 @@ export const tool: _tool = {
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    features: [
+      {
+        title: "图像提取",
+        description: "从PDF文档中提取图像并将其转换为WebP格式，保留图像质量和透明度。"
+      },
+      {
+        title: "高质量转换",
+        description: "体验将PDF文档转换为WebP图像的高质量转换，确保图像清晰度和分辨率优化。"
+      },
+      {
+        title: "批量转换",
+        description: "一次性将多个页面或文档从PDF转换为WebP格式，节省批量转换的时间和精力。"
+      }
+    ]
   },
 
   PDF_to_HEIF: {
@@ -142,6 +352,20 @@ export const tool: _tool = {
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    features: [
+      {
+        title: "图像提取",
+        description: "从PDF文档中提取图像并将其转换为HEIF/HEIC格式，保留图像质量和透明度。"
+      },
+      {
+        title: "高质量转换",
+        description: "体验将PDF文件转换为HEIF/HEIC图像的高质量转换，确保图像清晰度和分辨率优化。"
+      },
+      {
+        title: "多格式支持",
+        description: "将您的PDF文件转换为HEIF/HEIC格式以及其他图像格式，以满足您的需求。"
+      }
+    ]
   },
   Image_to_PDF: {
     title: "图片转PDF",

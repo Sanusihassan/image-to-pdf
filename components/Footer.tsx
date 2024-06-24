@@ -19,7 +19,7 @@ export const Footer = ({ footer, title }: { footer: footer, title: string }) => 
                         </p>
                         <div className="socials">
                             <a
-                                href="https://www.facebook.com/pdfequipsfb"
+                                href="https://www.facebook.com/pdfequips4real"
                                 target="_blank"
                                 className="facebook"
                             >
