@@ -1,46 +1,61 @@
 import QuickIcon from "./icons/QuickIcon";
-import { BsCloudUpload } from "react-icons/bs";
+import { BiSelectMultiple } from "react-icons/bi";
 import { CiLock } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { ToolState } from "../src/store";
-import { MdOutlineMoneyOffCsred, MdOutlineMoreTime } from "react-icons/md";
+import { PiFileImageThin } from "react-icons/pi";
 import RobustIcon from "./icons/Features/Robust";
-import VersatileIcon from "./icons/Features/Versatile";
+import { IoMdOptions } from "react-icons/io";
 import NoEmailIcon from "./icons/Features/NoEmail";
-import { CursorClickIcon, ThumbUpIcon } from "@heroicons/react/outline";
+import { SiSvg } from "react-icons/si";
 import { PiHandshake } from "react-icons/pi";
 import EasyIcon from "./icons/Features/Easy";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { RiCheckboxMultipleLine } from "react-icons/ri";
-import StandardIcon from "./icons/Features/Standard";
+import { MdOutlineHighQuality } from "react-icons/md";
+import { TbDownloadOff } from "react-icons/tb";
+import { type toType } from "@/src/content/content";
+import { FastForwardIcon } from "@heroicons/react/solid";
+import { RiCharacterRecognitionLine } from "react-icons/ri";
+
+
+import { AiOutlineOrderedList } from "react-icons/ai";
+
 
 
 export const Features = ({ features, tool }: {
     features: { title: string; description: string }[];
-    tool: "/merge-pdf" | "/compress-pdf" | "/pdf-to-powerpoint" | "/word-to-pdf" | "/powerpoint-to-pdf" | "/excel-to-pdf" | "/html-to-pdf" | "/pdf-to-word" | "/pdf-to-excel" | "/pdf-to-pdf-a" | "/pdf-to-text";
+    tool: toType
 }) => {
     const stateShowTool = useSelector(
         (state: { tool: ToolState }) => state.tool.showTool
     );
     useEffect(() => {
         console.log(stateShowTool)
-    }, [stateShowTool])
-
-
-    const iconsMap = {
-        "/merge-pdf": [MdOutlineMoneyOffCsred, RobustIcon, CiLock],
-        "/compress-pdf": [VersatileIcon, NoEmailIcon, ThumbUpIcon],
-        "/pdf-to-powerpoint": [CursorClickIcon, QuickIcon, PiHandshake],
-        "/word-to-pdf": [EasyIcon, IoIosCheckmarkCircleOutline, RiCheckboxMultipleLine],
-        "/powerpoint-to-pdf": [CursorClickIcon, QuickIcon, PiHandshake],
-        "/excel-to-pdf": [EasyIcon, QuickIcon, CiLock],
-        "/html-to-pdf": [QuickIcon, CiLock, BsCloudUpload],
-        "/pdf-to-word": [IoIosCheckmarkCircleOutline, EasyIcon, RiCheckboxMultipleLine],
-        "/pdf-to-excel": [QuickIcon, EasyIcon, CiLock],
-        "/pdf-to-pdf-a": [ThumbUpIcon, StandardIcon, MdOutlineMoreTime],
-        "/pdf-to-text": [RobustIcon, QuickIcon, ThumbUpIcon],
+    }, [stateShowTool]);
+    // @ts-ignore
+    const iconsMap: {
+        [K in toType]: any;
+    } = {
+        "/jpg-to-pdf": [RobustIcon, QuickIcon, MdOutlineHighQuality],
+        "/png-to-pdf": [CiLock, RobustIcon, TbDownloadOff],
+        "/gif-to-pdf": [QuickIcon, NoEmailIcon, TbDownloadOff],
+        "/bmp-to-pdf": [FastForwardIcon, RobustIcon, CiLock],
+        "/image-to-pdf": [QuickIcon, CiLock, RobustIcon],
+        "/pdf-to-image": [CiLock, QuickIcon, RobustIcon],
+        "/pdf-to-png": [EasyIcon, MdOutlineHighQuality, BiSelectMultiple],
+        "/pdf-to-jpg": [FastForwardIcon, CiLock, MdOutlineHighQuality],
+        "/pdf-to-gif": [PiFileImageThin, IoMdOptions, RiCheckboxMultipleLine],
+        "/pdf-to-bmp": [CiLock, RobustIcon, QuickIcon],
+        "/webp-to-pdf": [MdOutlineHighQuality, EasyIcon, RiCheckboxMultipleLine],
+        "/heif-heic-to-pdf": [MdOutlineHighQuality, RiCheckboxMultipleLine, PiHandshake],
+        "/svg-to-pdf": [AiOutlineOrderedList, QuickIcon, RobustIcon],
+        "/pdf-to-svg": [SiSvg, RiCharacterRecognitionLine, RiCheckboxMultipleLine],
+        "/pdf-to-tiff": [RobustIcon, NoEmailIcon, QuickIcon],
+        "/pdf-to-webp": [PiFileImageThin, MdOutlineHighQuality, RiCheckboxMultipleLine],
+        "/pdf-to-heif-heic": [PiFileImageThin, MdOutlineHighQuality, RiCheckboxMultipleLine],
     }
+    // @ts-ignore
     const icons = iconsMap[tool];
     return (
         <div className={`features${stateShowTool ? "" : " d-none"}`}>

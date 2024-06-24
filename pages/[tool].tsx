@@ -9,6 +9,8 @@ import {
   tool,
   tools,
   downloadFile,
+  footer,
+  toType,
 } from "../src/content/content";
 import { useRouter } from "next/router";
 import { howToSchemas, howToType } from "@/src/how-to/how-to";
@@ -22,7 +24,11 @@ export type data_type = {
   description: string;
   color: string;
   type: string;
-  to: string;
+  to: toType;
+  features?: {
+    title: string;
+    description: string;
+  }[] | undefined
 };
 
 export async function getStaticPaths() {
@@ -47,14 +53,24 @@ export async function getStaticProps({
 
 export const routesMap = {
   JPGToPDFHOWTO: "/jpg-to-pdf",
+  PDFToJPGHOWTO: "/pdf-to-jpg",
   PNGToPDFHOWTO: "/png-to-pdf",
+  PDFToPNGHOWTO: "/pdf-to-png",
   GIFToPDFHOWTO: "/gif-to-pdf",
+  PDFToGIFHOWTO: "/pdf-to-gif",
   TIFFToPDFHOWTO: "/tiff-to-pdf",
+  PDFToTIFFHOWTO: "/pdf-to-tiff",
   BMPToPDFHOWTO: "/bmp-to-pdf",
+  PDFToBMPHOWTO: "/pdf-to-bmp",
   SVGToPDFHOWTO: "/svg-to-pdf",
+  PDFToSVGHOWTO: "/pdf-to-svg",
   WebPToPDFHOWTO: "/webp-to-pdf",
+  PDFToWEBPHOWTO: "/pdf-to-webp",
   HEIFToPDFHOWTO: "/heif-heic-to-pdf",
+  PDFToHEIFHOWTO: "/pdf-to-heif-heic",
   HEICToPDFHOWTO: "/heif-heic-to-pdf",
+  ImageToPDFHOWTO: "/image-to-pdf",
+  PDFToImageHOWTO: "/pdf-to-image"
 };
 
 export default ({ item }: { item: data_type }) => {
@@ -90,7 +106,6 @@ export default ({ item }: { item: data_type }) => {
           }}
         />
         <meta name="description" content={item.description} />
-        <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
         <OpenGraph
           ogUrl={`https://www.pdfequips.com${item.to}`}
           ogDescription={item.description}
@@ -118,13 +133,13 @@ export default ({ item }: { item: data_type }) => {
         page={edit_page.page}
         downloadFile={downloadFile}
       />
-      {/* <div className="container">
+      <div className="container">
         <Features features={item.features as { title: string; description: string }[]} tool={item.to} />
       </div>
       <div className="container">
         <HowTo howTo={currentHowTo as howToType} alt={item.seoTitle} imgSrc={item.to.replace("/", "")} />
       </div>
-      <Footer footer={footer} title={item.seoTitle.split("-")[1]} /> */}
+      <Footer footer={footer} title={item.seoTitle.split("-")[1]} />
     </>
   );
 };

@@ -1,10 +1,4 @@
-type ToolType = {
-  title: string;
-  seoTitle: string;
-  description: string;
-  color: string;
-  type: string;
-  to: "/jpg-to-pdf" |
+export type toType = "/jpg-to-pdf" |
   "/svg-to-pdf" |
   "/png-to-pdf" |
   "/gif-to-pdf" |
@@ -20,7 +14,14 @@ type ToolType = {
   "/pdf-to-bmp" |
   "/pdf-to-webp" |
   "/pdf-to-heif-heic" | "/image-to-pdf" | "/pdf-to-image";
-  features?: {
+type ToolType = {
+  title: string;
+  seoTitle: string;
+  description: string;
+  color: string;
+  type: string;
+  to: toType;
+  features: {
     title: string;
     description: string;
   }[]
@@ -120,6 +121,20 @@ export const tool: Tool = {
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    features: [
+      {
+        title: "Fast TIFF to PDF Converter",
+        description: "Convert your TIFF images into PDF documents quickly and efficiently. Our tool ensures a seamless conversion process in just a few clicks."
+      },
+      {
+        title: "No Login Required",
+        description: "Access our platform hassle-free without the need for any login credentials. Enjoy instant TIFF to PDF conversion services without any login complications."
+      },
+      {
+        title: "Robust Cloud-Based Conversion",
+        description: "Experience robust cloud-based TIFF to PDF conversion for rapid service from any device. Simply upload your TIFF files, convert, and download your PDF documents effortlessly."
+      }
+    ]
   },
   BMP_to_PDF: {
     title: "BMP to PDF",
@@ -128,6 +143,20 @@ export const tool: Tool = {
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    features: [
+      {
+        title: "Fast Conversion",
+        description: "Quickly convert BMP images to PDF documents with our fast conversion process. Get your PDF files ready in seconds."
+      },
+      {
+        title: "Robust Engine",
+        description: "Experience a robust conversion engine that ensures accurate and reliable BMP to PDF conversion every time, maintaining quality and integrity."
+      },
+      {
+        title: "Secure Processing",
+        description: "Our converter prioritizes security, ensuring all BMP to PDF conversions are processed securely. Your files are protected throughout the process."
+      }
+    ]
   },
   SVG_to_PDF: {
     title: "SVG to PDF",
@@ -136,6 +165,20 @@ export const tool: Tool = {
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    features: [
+      {
+        title: "Reorder SVGs",
+        description: "Easily reorder SVG images before conversion to customize the sequence in your PDF document."
+      },
+      {
+        title: "Fast Conversion",
+        description: "Quickly convert SVG images to PDF documents with our fast conversion process. Get your PDF files ready in seconds."
+      },
+      {
+        title: "Robust Engine",
+        description: "Experience a robust conversion engine that ensures accurate and reliable SVG to PDF conversion every time, maintaining quality and integrity."
+      }
+    ]
   },
   WebP_to_PDF: {
     title: "WebP to PDF",
@@ -144,6 +187,20 @@ export const tool: Tool = {
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    features: [
+      {
+        title: "High-Quality Conversion",
+        description: "Experience high-quality conversion of WebP images to PDF documents, preserving image resolution and clarity."
+      },
+      {
+        title: "Easily Arrange Pages",
+        description: "Arrange the order of pages in your PDF document with ease, ensuring the desired sequence for your converted WebP images."
+      },
+      {
+        title: "Multi-Image Support",
+        description: "Convert multiple WebP images into a single PDF document, allowing for easy organization and sharing of images."
+      }
+    ]
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC to PDF",
@@ -152,6 +209,20 @@ export const tool: Tool = {
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    features: [
+      {
+        title: "High-Quality Conversion",
+        description: "Convert HEIF/HEIC images to PDF documents with high quality, ensuring optimal image clarity and resolution."
+      },
+      {
+        title: "Batch Conversion",
+        description: "Efficiently convert multiple HEIF/HEIC images into a single PDF document in one go, saving time and effort for bulk conversions."
+      },
+      {
+        title: "Cross-Platform Compatibility",
+        description: "Access our converter from any device or platform to convert HEIF/HEIC images to PDF format seamlessly."
+      }
+    ]
   },
   PDF_to_JPG: {
     title: "PDF to JPG",
@@ -182,6 +253,20 @@ export const tool: Tool = {
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    features: [
+      {
+        title: "User-Friendly Interface",
+        description: "Our PDF-to-PNG converter boasts an intuitive and easy-to-use interface, making the conversion process seamless for users of all skill levels."
+      },
+      {
+        title: "Retain Image Quality",
+        description: "Enjoy high-resolution PNG images without any loss in quality. Our converter preserves the original quality of your PDF images during the conversion process."
+      },
+      {
+        title: "Batch Conversion",
+        description: "Efficiently convert multiple PDF pages or documents into PNG images in one go. Save time and effort with our streamlined batch conversion feature."
+      }
+    ]
   },
 
   PDF_to_GIF: {
@@ -191,6 +276,20 @@ export const tool: Tool = {
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    features: [
+      {
+        title: "Image Extraction",
+        description: "Extract images from PDF documents and convert them to GIF format, preserving image quality and transparency."
+      },
+      {
+        title: "Customizable Output",
+        description: "Customize the output settings for your GIF images, including resolution, frame rate, and color palette, to suit your needs."
+      },
+      {
+        title: "Multi-Page Support",
+        description: "Convert multi-page PDF documents into a series of GIF images, maintaining the sequence and order of pages for each GIF."
+      }
+    ]
   },
   PDF_to_TIFF: {
     title: "PDF to TIFF",
@@ -199,6 +298,20 @@ export const tool: Tool = {
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    features: [
+      {
+        title: "Robust Cloud-Based Conversion",
+        description: "Experience robust cloud-based PDF to TIFF conversion for rapid service from any device. Simply upload your PDF documents, convert, and download your TIFF images effortlessly."
+      },
+      {
+        title: "No Login Required",
+        description: "Access our platform hassle-free without the need for any login credentials. Enjoy instant PDF to TIFF conversion services without any login complications."
+      },
+      {
+        title: "Fast PDF to TIFF Converter",
+        description: "Convert your PDF documents into TIFF images quickly and efficiently. Our tool ensures a seamless conversion process in just a few clicks."
+      }
+    ]
   },
   PDF_to_BMP: {
     title: "PDF to BMP",
@@ -207,6 +320,20 @@ export const tool: Tool = {
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    features: [
+      {
+        title: "Secure Processing",
+        description: "Our converter prioritizes security, ensuring all PDF to BMP conversions are processed securely. Your files are protected throughout the process."
+      },
+      {
+        title: "Robust Engine",
+        description: "Experience a robust conversion engine that ensures accurate and reliable PDF to BMP conversion every time, maintaining quality and integrity."
+      },
+      {
+        title: "Fast Conversion",
+        description: "Quickly convert PDF documents to BMP images with our fast conversion process. Get your BMP files ready in seconds."
+      }
+    ]
   },
   PDF_to_SVG: {
     title: "PDF to SVG",
@@ -215,6 +342,20 @@ export const tool: Tool = {
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    features: [
+      {
+        title: "Vector Graphics Conversion",
+        description: "Convert PDF vector graphics to SVG format for scalable and high-quality images that can be resized without loss of quality."
+      },
+      {
+        title: "Preserve Text and Graphics",
+        description: "Maintain the original text and graphics from your PDF files during the conversion process to ensure accuracy and fidelity."
+      },
+      {
+        title: "Multi-Page Support",
+        description: "Convert multi-page PDF documents into multiple SVG files, maintaining the sequence and order of pages for each SVG image."
+      }
+    ]
   },
   PDF_to_WebP: {
     title: "PDF to WebP",
@@ -223,6 +364,20 @@ export const tool: Tool = {
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    features: [
+      {
+        title: "Image Extraction",
+        description: "Extract images from PDF documents and convert them to WebP format, preserving image quality and transparency."
+      },
+      {
+        title: "High-Quality Conversion",
+        description: "Experience high-quality conversion of PDF documents to WebP images, ensuring optimal image clarity and resolution."
+      },
+      {
+        title: "Batch Conversion",
+        description: "Convert multiple pages or documents from PDF to WebP format in one go, saving time and effort for bulk conversions."
+      }
+    ]
   },
   PDF_to_HEIF: {
     title: "PDF to HEIF/HEIC",
@@ -231,6 +386,20 @@ export const tool: Tool = {
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    features: [
+      {
+        title: "Image Extraction",
+        description: "Extract images from PDF documents and convert them to HEIF/HEIC format, preserving image quality and transparency."
+      },
+      {
+        title: "High-Quality Conversion",
+        description: "Experience high-quality conversion of PDF files to HEIF/HEIC images, ensuring optimal image clarity and resolution."
+      },
+      {
+        title: "Multiple Format Support",
+        description: "Convert your PDF files to HEIF/HEIC format along with other image formats to suit your preferences."
+      }
+    ]
   },
   Image_to_PDF: {
     title: "Image to PDF",
