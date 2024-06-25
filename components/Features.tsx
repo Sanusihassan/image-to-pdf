@@ -33,7 +33,7 @@ export const Features = ({ features, tool }: {
     useEffect(() => {
         console.log(stateShowTool)
     }, [stateShowTool]);
-    // @ts-ignore
+
     const iconsMap: {
         [K in toType]: any;
     } = {
@@ -54,6 +54,7 @@ export const Features = ({ features, tool }: {
         "/pdf-to-tiff": [RobustIcon, NoEmailIcon, QuickIcon],
         "/pdf-to-webp": [PiFileImageThin, MdOutlineHighQuality, RiCheckboxMultipleLine],
         "/pdf-to-heif-heic": [PiFileImageThin, MdOutlineHighQuality, RiCheckboxMultipleLine],
+        "/tiff-to-pdf": [QuickIcon, NoEmailIcon, RobustIcon]
     }
     // @ts-ignore
     const icons = iconsMap[tool];

@@ -449,12 +449,42 @@ export const downloadFile: _downloadFile = {
       "HEIF/HEIC 文件已转换为 PDF！",
       "HEIF/HEIC 文件已转换为 PDF！",
     ],
-    "pdf-to-jpg": ["PDF文件已转换为JPG！", "PDF文件已转换为JPG！"],
+    "pdf-to-jpg": [
+      "PDF文件已转换为JPG！",
+      "PDF文件已转换为JPG！"
+    ],
+    "pdf-to-svg": [
+      "PDF文件已转换为SVG！",
+      "PDF文件已转换为SVG！"
+    ],
+    "pdf-to-png": [
+      "PDF文件已转换为PNG！",
+      "PDF文件已转换为PNG！"
+    ],
+    "pdf-to-gif": [
+      "PDF文件已转换为GIF！",
+      "PDF文件已转换为GIF！"
+    ],
+    "pdf-to-tiff": [
+      "PDF文件已转换为TIFF！",
+      "PDF文件已转换为TIFF！"
+    ],
+    "pdf-to-bmp": [
+      "PDF文件已转换为BMP！",
+      "PDF文件已转换为BMP！"
+    ],
+    "pdf-to-webp": [
+      "PDF文件已转换为WEBP！",
+      "PDF文件已转换为WEBP！"
+    ],
+    "pdf-to-heif-heic": [
+      "PDF文件已转换为HEIF/HEIC！",
+      "PDF文件已转换为HEIF/HEIC！"
+    ],
     "image-to-pdf": [
       "图片文件已转换为PDF！",
       "图片文件已转换为PDF！"
     ],
-
     "pdf-to-image": [
       "PDF文件已转换为图片！",
       "PDF文件已转换为图片！"
@@ -494,12 +524,42 @@ export const downloadFile: _downloadFile = {
       "下载转换后的 PDF 文件",
       "下载转换后的 PDF 文件",
     ],
-    "pdf-to-jpg": ["下载转换后的JPG文件", "下载转换后的JPG文件"],
+    "pdf-to-jpg": [
+      "下载转换后的JPG文件",
+      "下载转换后的JPG文件"
+    ],
+    "pdf-to-svg": [
+      "下载转换后的SVG文件",
+      "下载转换后的SVG文件"
+    ],
+    "pdf-to-png": [
+      "下载转换后的PNG文件",
+      "下载转换后的PNG文件"
+    ],
+    "pdf-to-gif": [
+      "下载转换后的GIF文件",
+      "下载转换后的GIF文件"
+    ],
+    "pdf-to-tiff": [
+      "下载转换后的TIFF文件",
+      "下载转换后的TIFF文件"
+    ],
+    "pdf-to-bmp": [
+      "下载转换后的BMP文件",
+      "下载转换后的BMP文件"
+    ],
+    "pdf-to-webp": [
+      "下载转换后的WEBP文件",
+      "下载转换后的WEBP文件"
+    ],
+    "pdf-to-heif-heic": [
+      "下载转换后的HEIF/HEIC文件",
+      "下载转换后的HEIF/HEIC文件"
+    ],
     "image-to-pdf": [
       "下载转换后的PDF文件",
       "下载转换后的PDF文件"
     ],
-
     "pdf-to-image": [
       "下载转换后的图片文件",
       "下载转换后的图片文件"
@@ -516,11 +576,17 @@ export const downloadFile: _downloadFile = {
     "webp-to-pdf": "返回 WEBP 到 PDF",
     "heif-heic-to-pdf": "返回 HEIF/HEIC 到 PDF",
     "pdf-to-jpg": "返回PDF转JPG",
+    "pdf-to-svg": "返回PDF转SVG",
+    "pdf-to-png": "返回PDF转PNG",
+    "pdf-to-gif": "返回PDF转GIF",
+    "pdf-to-tiff": "返回PDF转TIFF",
+    "pdf-to-bmp": "返回PDF转BMP",
+    "pdf-to-webp": "返回PDF转WEBP",
+    "pdf-to-heif-heic": "返回PDF转HEIF/HEIC",
     "image-to-pdf": "返回图片转PDF",
     "pdf-to-image": "返回PDF转图片"
-  },
+  }
 };
-
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
@@ -533,8 +599,15 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "WebP 到 PDF 选项",
     heif_heic_to_pdf: "HEIF/HEIC 到 PDF 选项",
     pdf_to_jpg: "PDF转JPG选项",
+    pdf_to_svg: "PDF转SVG选项",
+    pdf_to_png: "PDF转PNG选项",
+    pdf_to_gif: "PDF转GIF选项",
+    pdf_to_tiff: "PDF转TIFF选项",
+    pdf_to_bmp: "PDF转BMP选项",
+    pdf_to_webp: "PDF转WEBP选项",
+    pdf_to_heif_heic: "PDF转HEIF/HEIC选项",
     image_to_pdf: "图片转PDF选项",
-    pdf_to_image: "PDF转图片选项",
+    pdf_to_image: "PDF转图片选项"
   },
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
@@ -548,6 +621,13 @@ export const edit_page: _edit_page = {
     webp_to_pdf: "转换为 PDF",
     heif_heic_to_pdf: "转换为 PDF",
     pdf_to_jpg: "转换为JPG",
+    pdf_to_svg: "转换为SVG",
+    pdf_to_png: "转换为PNG",
+    pdf_to_gif: "转换为GIF",
+    pdf_to_tiff: "转换为TIFF",
+    pdf_to_bmp: "转换为BMP",
+    pdf_to_webp: "转换为WEBP",
+    pdf_to_heif_heic: "转换为HEIF/HEIC",
     image_to_pdf: "转换为PDF",
     pdf_to_image: "转换为图片"
   },
