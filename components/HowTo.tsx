@@ -31,7 +31,7 @@ const HowTo = ({ howTo, alt, imgSrc }: {
                 </div>
                 <div className="col how-to-steps">
                     <div itemScope itemType="http://schema.org/HowTo">
-                        <h2 itemProp="name">{howTo.name}?</h2>
+                        <h2 itemProp="name">{howTo.name}</h2>
                         <p itemProp="description">{howTo.description}</p>
                         {howTo.step.map((step, index) => (
                             <div key={index} itemScope itemType="http://schema.org/HowToStep">

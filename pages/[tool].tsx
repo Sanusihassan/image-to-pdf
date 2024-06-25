@@ -106,6 +106,7 @@ export default ({ item }: { item: data_type }) => {
           }}
         />
         <meta name="description" content={item.description} />
+        <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
         <OpenGraph
           ogUrl={`https://www.pdfequips.com${item.to}`}
           ogDescription={item.description}
