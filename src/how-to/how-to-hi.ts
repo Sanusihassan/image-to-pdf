@@ -4,7 +4,7 @@ export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "JPG छवियों को PDF में कैसे बदलें",
+        name: "JPG छवियों को PDF में कैसे बदलें ?",
         description:
             "कई JPG छवियों को एक ही PDF दस्तावेज़ में बदलने के लिए कदम-से-कदम मार्गदर्शिका।",
         step: [
@@ -48,7 +48,7 @@ export const howToSchemas: _howToSchemas = {
     PNGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "PNG छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "PNG छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई PNG छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -91,7 +91,7 @@ export const howToSchemas: _howToSchemas = {
     GIFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "GIF छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "GIF छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई GIF छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -134,7 +134,7 @@ export const howToSchemas: _howToSchemas = {
     TIFFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "TIFF छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "TIFF छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई TIFF छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -177,7 +177,7 @@ export const howToSchemas: _howToSchemas = {
     BMPToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "BMP छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "BMP छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई BMP छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -220,7 +220,7 @@ export const howToSchemas: _howToSchemas = {
     SVGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "SVG छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "SVG छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई SVG छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -263,7 +263,7 @@ export const howToSchemas: _howToSchemas = {
     WebPToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "WebP छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "WebP छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई WebP छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -306,7 +306,7 @@ export const howToSchemas: _howToSchemas = {
     HEIFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "HEIF छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "HEIF छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई HEIF छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -346,10 +346,12 @@ export const howToSchemas: _howToSchemas = {
             }
         ]
     },
+
+
     HEICToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "HEIC छवियों को PDF में कैसे कन्वर्ट करें",
+        "name": "HEIC छवियों को PDF में कैसे कन्वर्ट करें ?",
         "description": "एकल पीडीएफ दस्तावेज़ में कई HEIC छवियों को कन्वर्ट करने के लिए चरणबद्ध गाइड।",
         "step": [
             {
@@ -392,7 +394,7 @@ export const howToSchemas: _howToSchemas = {
     ImageToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "इमेज को PDF में कैसे बदलें",
+        name: "इमेज को PDF में कैसे बदलें ?",
         description: "कई इमेज (JPG, PNG, आदि) को एकल PDF दस्तावेज़ में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -430,7 +432,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToImageHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF को इमेज में कैसे बदलें",
+        name: "PDF को इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को इमेज (JPG, PNG, आदि) में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -473,7 +475,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToPNGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF को PNG इमेज में कैसे बदलें",
+        name: "PDF को PNG इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को PNG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -511,7 +513,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToJPGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को JPG इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को JPG इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को कई JPG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -544,7 +546,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToGIFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को GIF इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को GIF इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को GIF इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -577,7 +579,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToBMPHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को BMP इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को BMP इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को BMP इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -610,7 +612,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToWEBPHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को WebP इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को WebP इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को WebP इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -643,7 +645,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToSVGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को SVG इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को SVG इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को SVG इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -676,7 +678,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToTIFFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को TIFF इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को TIFF इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को TIFF इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {
@@ -709,7 +711,7 @@ export const howToSchemas: _howToSchemas = {
     PDFToHEIFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "PDF दस्तावेज़ों को HEIF/HEIC इमेज में कैसे बदलें",
+        name: "PDF दस्तावेज़ों को HEIF/HEIC इमेज में कैसे बदलें ?",
         description: "एक PDF दस्तावेज़ को HEIF या HEIC इमेज में बदलने के लिए चरण-दर-चरण मार्गदर्शिका।",
         step: [
             {

@@ -11,11 +11,14 @@ export type howToType = {
         substeps: string[];
     }[];
 };
+// please add a question mark at the end of each question
+// for example: name: "How to Convert JPG Images to PDF?",
+// keep the content as is just add the question marks
 export const howToSchemas = {
     JPGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert JPG Images to PDF",
+        name: "How to Convert JPG Images to PDF?",
         description:
             "Step-by-step guide to convert multiple JPG images to a single PDF document.",
         step: [
@@ -59,7 +62,7 @@ export const howToSchemas = {
     PNGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert PNG Images to PDF",
+        "name": "How to Convert PNG Images to PDF?",
         "description": "Step-by-step guide to convert multiple PNG images to a single PDF document.",
         "step": [
             {
@@ -102,7 +105,7 @@ export const howToSchemas = {
     GIFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert GIF Images to PDF",
+        "name": "How to Convert GIF Images to PDF?",
         "description": "Step-by-step guide to convert multiple GIF images to a single PDF document.",
         "step": [
             {
@@ -145,7 +148,7 @@ export const howToSchemas = {
     TIFFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert TIFF Images to PDF",
+        "name": "How to Convert TIFF Images to PDF?",
         "description": "Step-by-step guide to convert multiple TIFF images to a single PDF document.",
         "step": [
             {
@@ -188,7 +191,7 @@ export const howToSchemas = {
     BMPToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert BMP Images to PDF",
+        "name": "How to Convert BMP Images to PDF?",
         "description": "Step-by-step guide to convert BMP images to a single PDF document.",
         "step": [
             {
@@ -231,7 +234,7 @@ export const howToSchemas = {
     SVGToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert SVG Images to PDF",
+        "name": "How to Convert SVG Images to PDF?",
         "description": "Step-by-step guide to convert SVG images to a single PDF document.",
         "step": [
             {
@@ -274,7 +277,7 @@ export const howToSchemas = {
     WebPToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert WebP Images to PDF",
+        "name": "How to Convert WebP Images to PDF?",
         "description": "Step-by-step guide to convert WebP images to a single PDF document.",
         "step": [
             {
@@ -317,7 +320,7 @@ export const howToSchemas = {
     HEIFToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert HEIF Images to PDF",
+        "name": "How to Convert HEIF Images to PDF?",
         "description": "Step-by-step guide to convert HEIF images to a single PDF document.",
         "step": [
             {
@@ -360,7 +363,7 @@ export const howToSchemas = {
     HEICToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert HEIC Images to PDF",
+        "name": "How to Convert HEIC Images to PDF?",
         "description": "Step-by-step guide to convert HEIC images to a single PDF document.",
         "step": [
             {
@@ -400,10 +403,20 @@ export const howToSchemas = {
             }
         ]
     },
+
+    /**
+     * only the first name property should have a qustion mark
+    for example:
+
+    ImageToPDFHOWTO: {
+            "@context": "http://schema.org",
+            "@type": "HowTo",
+            name: "How to Convert Images to PDF?",
+     */
     ImageToPDFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert Images to PDF",
+        name: "How to Convert Images to PDF?",
         description: "Step-by-step guide to convert multiple images (JPG, PNG, etc.) to a single PDF document.",
         step: [
             {
@@ -421,15 +434,10 @@ export const howToSchemas = {
                 name: "Step 3",
                 text: "Arrange the images in the desired order by dragging and dropping them."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 4",
-            //     text: "Adjust settings such as page orientation, size, and margins if necessary."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: `Initiate the conversion process by clicking the "Convert to PDF" button.`
+                text: "Initiate the conversion process by clicking the \"Convert to PDF\" button."
             },
             {
                 "@type": "HowToStep",
@@ -446,7 +454,7 @@ export const howToSchemas = {
     PDFToImageHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF to Images",
+        name: "How to Convert PDF to Images?",
         description: "Step-by-step guide to convert a PDF document into images (JPG, PNG, etc.).",
         step: [
             {
@@ -489,13 +497,13 @@ export const howToSchemas = {
     PDFToPNGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF to PNG Images",
+        name: "How to Convert PDF to PNG Images?",
         description: "Step-by-step guide to convert a PDF document into PNG images.",
         step: [
             {
                 "@type": "HowToStep",
                 name: "Step 1",
-                text: "Open the PDF to png conversion tool."
+                text: "Open the PDF to PNG conversion tool."
             },
             {
                 "@type": "HowToStep",
@@ -505,7 +513,7 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Specify the pages pages you wish to convert to PNG images."
+                text: "Specify the pages you wish to convert to PNG images."
             },
             {
                 "@type": "HowToStep",
@@ -527,7 +535,7 @@ export const howToSchemas = {
     PDFToJPGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to JPG Images",
+        name: "How to Convert PDF Documents to JPG Images?",
         description: "Step-by-step guide to convert a PDF document into multiple JPG images.",
         step: [
             {
@@ -540,16 +548,6 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to JPG images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
@@ -570,7 +568,7 @@ export const howToSchemas = {
     PDFToGIFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to GIF Images",
+        name: "How to Convert PDF Documents to GIF Images?",
         description: "Step-by-step guide to convert a PDF document into GIF images.",
         step: [
             {
@@ -583,16 +581,6 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to GIF images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 4",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
@@ -613,7 +601,7 @@ export const howToSchemas = {
     PDFToBMPHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to BMP Images",
+        name: "How to Convert PDF Documents to BMP Images?",
         description: "Step-by-step guide to convert a PDF document into BMP images.",
         step: [
             {
@@ -626,16 +614,6 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to BMP images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
@@ -656,7 +634,7 @@ export const howToSchemas = {
     PDFToWEBPHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to WebP Images",
+        name: "How to Convert PDF Documents to WebP Images?",
         description: "Step-by-step guide to convert a PDF document into WebP images.",
         step: [
             {
@@ -669,23 +647,13 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to WebP images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 4",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
                 text: "Click the \"Convert to Webp\" button to start the PDF to WebP conversion process."
             },
             {
-                "@type": "HowToStep",
+                "@type": "HowToSchema",
                 name: "Step 4",
                 text: "Wait for the conversion process to finish."
             },
@@ -699,7 +667,7 @@ export const howToSchemas = {
     PDFToSVGHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to SVG Images",
+        name: "How to Convert PDF Documents to SVG Images?",
         description: "Step-by-step guide to convert a PDF document into SVG images.",
         step: [
             {
@@ -712,20 +680,10 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to SVG images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 4",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
-                text: "Click the \"Convert to PDF\" button to start the PDF to SVG conversion process."
+                text: "Click the \"Convert to SVG\" button to start the PDF to SVG conversion process."
             },
             {
                 "@type": "HowToStep",
@@ -742,7 +700,7 @@ export const howToSchemas = {
     PDFToTIFFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to TIFF Images",
+        name: "How to Convert PDF Documents to TIFF Images?",
         description: "Step-by-step guide to convert a PDF document into TIFF images.",
         step: [
             {
@@ -755,16 +713,6 @@ export const howToSchemas = {
                 name: "Step 2",
                 text: "Upload or select the PDF file you want to convert."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 3",
-            //     text: "Choose the pages you want to convert to TIFF images."
-            // },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 4",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 3",
@@ -773,7 +721,7 @@ export const howToSchemas = {
             {
                 "@type": "HowToStep",
                 name: "Step 4",
-                text: "Wait for the conversion process to finish."
+                title: "Wait for the conversion process to finish."
             },
             {
                 "@type": "HowToStep",
@@ -785,7 +733,7 @@ export const howToSchemas = {
     PDFToHEIFHOWTO: {
         "@context": "http://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to HEIF/HEIC Images",
+        name: "How to Convert PDF Documents to HEIF/HEIC Images?",
         description: "Step-by-step guide to convert a PDF document into HEIF or HEIC images.",
         step: [
             {
@@ -808,11 +756,6 @@ export const howToSchemas = {
                 name: "Step 4",
                 text: "Select the desired output format: HEIF or HEIC."
             },
-            // {
-            //     "@type": "HowToStep",
-            //     name: "Step 5",
-            //     text: "Configure any additional settings such as image resolution or quality, if needed."
-            // },
             {
                 "@type": "HowToStep",
                 name: "Step 5",
@@ -830,4 +773,5 @@ export const howToSchemas = {
             }
         ]
     }
+
 }
