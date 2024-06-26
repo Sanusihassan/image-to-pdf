@@ -1,15 +1,9 @@
-import { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-
 import EditPage from "./EditPage";
-import { ToolState, setField } from "../src/store";
-
-import { useRouter } from "next/router";
-import type { edit_page, tools, downloadFile } from "../content";
-import type { errors as _ } from "../content";
 import ErrorElement from "./ErrorElement";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setField } from "../src/store";
 import { useFileStore } from "../src/file-store";
 import { FileInputForm } from "./Tool/FileInputForm";
 import DownloadFile from "./DownloadFile";
@@ -33,13 +27,13 @@ export type ToolData = {
 
 type ToolProps = {
   data: ToolData;
-  tools: tools;
+  tools: any; // Define your type for 'tools' and 'downloadFile' appropriately
   lang: string;
-  errors: _;
-  edit_page: edit_page;
+  errors: any; // Define your type for 'errors' appropriately
+  edit_page: any; // Define your type for 'edit_page' appropriately
   pages: string;
   page: string;
-  downloadFile: downloadFile;
+  downloadFile: any; // Define your type for 'downloadFile' appropriately
 };
 
 const Tool: React.FC<ToolProps> = ({
@@ -53,33 +47,43 @@ const Tool: React.FC<ToolProps> = ({
   downloadFile,
 }) => {
   const path = data.to.replace("/", "");
-  const stateShowTool = useSelector(
-    (state: { tool: ToolState }) => state.tool.showTool
-  );
-  const errorMessage = useSelector(
-    (state: { tool: ToolState }) => state.tool.errorMessage
-  );
-  // the files:
+  const stateShowTool = useSelector((state: { tool: any }) => state.tool.showTool);
+  const errorMessage = useSelector((state: { tool: any }) => state.tool.errorMessage);
   const { setFiles } = useFileStore();
   const dispatch = useDispatch();
 
   const handleHideTool = () => {
-    dispatch(dispatch(setField({ showTool: false })));
+    dispatch(setField({ showTool: false }));
   };
+
   useEffect(() => {
     dispatch(setField({ showDownloadBtn: false }));
-
   }, [stateShowTool]);
 
-  // endpoint
-  // const [endpoint, setEndpoint] = useState("");
-  // drag and drop input handling
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setFiles(acceptedFiles);
     handleHideTool();
   }, []);
+
+  const handlePaste = useCallback((event: React.ClipboardEvent<HTMLDivElement>) => {
+    const items = event.clipboardData?.items;
+    if (items) {
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.kind === "file") {
+          const blob = item.getAsFile();
+          if (blob) {
+            setFiles([blob]);
+            handleHideTool();
+            return;
+          }
+        }
+      }
+    }
+  }, []);
+
   const { getRootProps, isDragActive } = useDropzone({ onDrop });
-  // accepted file types
+
   const acceptedFileTypes = {
     ".jpg": ".jpg, .jpeg",
     ".png": ".png",
@@ -96,7 +100,7 @@ const Tool: React.FC<ToolProps> = ({
     <>
       <div
         className="tools-page container-fluid position-relative"
-        {...(stateShowTool && getRootProps())}
+        {...(stateShowTool && { ...getRootProps(), onPaste: handlePaste })}
         onClick={(e) => {
           e.preventDefault();
         }}
@@ -124,7 +128,6 @@ const Tool: React.FC<ToolProps> = ({
           <p>{tools.or_drop}</p>
           <ErrorElement />
         </div>
-        {/* ) : ( */}
         <EditPage
           extension={data.type}
           edit_page={edit_page}
@@ -135,7 +138,6 @@ const Tool: React.FC<ToolProps> = ({
           path={path}
         />
         <DownloadFile lang={lang} downloadFile={downloadFile} path={path} />
-        {/* )} */}
       </div>
     </>
   );
