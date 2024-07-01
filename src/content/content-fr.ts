@@ -12,11 +12,12 @@ import type {
 export const tool: _tool = {
   JPG_to_PDF: {
     title: "JPG en PDF",
-    seoTitle: "Convertir JPG en PDF en ligne - Convertisseur gratuit de JPG en PDF",
+    seoTitle: "Convertir JPG en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image JPG en documents PDF",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+    keywords: "JPG en PDF, convertir JPG en PDF, convertisseur gratuit de JPG en PDF",
     features: [
       {
         title: "Protection garantie des fichiers",
@@ -34,11 +35,12 @@ export const tool: _tool = {
   },
   PNG_to_PDF: {
     title: "PNG en PDF",
-    seoTitle: "Convertir PNG en PDF en ligne - Convertisseur gratuit de PNG en PDF",
+    seoTitle: "Convertir PNG en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image PNG en documents PDF",
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
+    keywords: "PNG en PDF, convertir PNG en PDF, convertisseur gratuit de PNG en PDF",
     features: [
       {
         title: "Nous priorisons votre confidentialité",
@@ -56,11 +58,12 @@ export const tool: _tool = {
   },
   GIF_to_PDF: {
     title: "GIF en PDF",
-    seoTitle: "Convertir GIF en PDF en ligne - Convertisseur gratuit de GIF en PDF",
+    seoTitle: "Convertir GIF en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image GIF en documents PDF",
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
+    keywords: "GIF en PDF, convertir GIF en PDF, convertisseur gratuit de GIF en PDF",
     features: [
       {
         title: "Convertisseur rapide de GIF en PDF",
@@ -78,11 +81,12 @@ export const tool: _tool = {
   },
   TIFF_to_PDF: {
     title: "TIFF en PDF",
-    seoTitle: "Convertir TIFF en PDF en ligne - Convertisseur gratuit de TIFF en PDF",
+    seoTitle: "Convertir TIFF en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image TIFF en documents PDF",
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    keywords: "TIFF en PDF, convertir TIFF en PDF, convertisseur gratuit de TIFF en PDF",
     features: [
       {
         title: "Convertisseur rapide de TIFF en PDF",
@@ -100,11 +104,12 @@ export const tool: _tool = {
   },
   BMP_to_PDF: {
     title: "BMP en PDF",
-    seoTitle: "Convertir BMP en PDF en ligne - Convertisseur gratuit de BMP en PDF",
+    seoTitle: "Convertir BMP en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image BMP en documents PDF",
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    keywords: "BMP en PDF, convertir BMP en PDF, convertisseur gratuit de BMP en PDF",
     features: [
       {
         title: "Conversion rapide",
@@ -122,11 +127,12 @@ export const tool: _tool = {
   },
   SVG_to_PDF: {
     title: "SVG en PDF",
-    seoTitle: "Convertir SVG en PDF en ligne - Convertisseur gratuit de SVG en PDF",
+    seoTitle: "Convertir SVG en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image SVG en documents PDF",
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    keywords: "SVG en PDF, convertir SVG en PDF, convertisseur gratuit de SVG en PDF",
     features: [
       {
         title: "Réorganisez les SVG",
@@ -144,11 +150,12 @@ export const tool: _tool = {
   },
   WebP_to_PDF: {
     title: "WebP en PDF",
-    seoTitle: "Convertir WebP en PDF en ligne - Convertisseur gratuit de WebP en PDF",
+    seoTitle: "Convertir WebP en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image WebP en documents PDF",
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    keywords: "WebP en PDF, convertir WebP en PDF, convertisseur gratuit de WebP en PDF",
     features: [
       {
         title: "Conversion de haute qualité",
@@ -166,11 +173,12 @@ export const tool: _tool = {
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC en PDF",
-    seoTitle: "Convertir HEIF/HEIC en PDF en ligne - Convertisseur gratuit de HEIF/HEIC en PDF",
+    seoTitle: "Convertir HEIF/HEIC en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers d'image HEIF/HEIC en documents PDF",
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    keywords: "HEIF en PDF, HEIC en PDF, convertir HEIF en PDF, convertir HEIC en PDF, convertisseur gratuit de HEIF en PDF, convertisseur gratuit de HEIC en PDF",
     features: [
       {
         title: "Conversion de haute qualité",
@@ -188,11 +196,12 @@ export const tool: _tool = {
   },
   PDF_to_JPG: {
     title: "PDF en JPG",
-    seoTitle: "PDF en JPG - Convertir des fichiers PDF en fichiers image JPG",
+    seoTitle: "Convertir PDF en JPG - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers image JPG",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
+    keywords: "PDF en JPG, convertir PDF en JPG, convertisseur gratuit de PDF en JPG",
     features: [
       {
         title: "Outil rapide et simple pour convertir des PDF en JPG",
@@ -210,11 +219,12 @@ export const tool: _tool = {
   },
   PDF_to_PNG: {
     title: "PDF vers PNG",
-    seoTitle: "Convertir PDF en PNG en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en PNG - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image PNG",
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    keywords: "PDF en PNG, convertir PDF en PNG, convertisseur gratuit de PDF en PNG",
     features: [
       {
         title: "Interface conviviale",
@@ -230,14 +240,14 @@ export const tool: _tool = {
       }
     ]
   },
-
   PDF_to_GIF: {
     title: "PDF vers GIF",
-    seoTitle: "Convertir PDF en GIF en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en GIF - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image GIF",
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    keywords: "PDF en GIF, convertir PDF en GIF, convertisseur gratuit de PDF en GIF",
     features: [
       {
         title: "Extraction d'images",
@@ -253,14 +263,14 @@ export const tool: _tool = {
       }
     ]
   },
-
   PDF_to_TIFF: {
     title: "PDF vers TIFF",
-    seoTitle: "Convertir PDF en TIFF en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en TIFF - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image TIFF",
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    keywords: "PDF en TIFF, convertir PDF en TIFF, convertisseur gratuit de PDF en TIFF",
     features: [
       {
         title: "Conversion robuste basée sur le cloud",
@@ -278,11 +288,12 @@ export const tool: _tool = {
   },
   PDF_to_BMP: {
     title: "PDF vers BMP",
-    seoTitle: "Convertir PDF en BMP en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en BMP - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image BMP",
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    keywords: "PDF en BMP, convertir PDF en BMP, convertisseur gratuit de PDF en BMP",
     features: [
       {
         title: "Traitement sécurisé",
@@ -298,14 +309,14 @@ export const tool: _tool = {
       }
     ]
   },
-
   PDF_to_SVG: {
     title: "PDF vers SVG",
-    seoTitle: "Convertir PDF en SVG en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en SVG - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image vectorielle SVG",
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    keywords: "PDF en SVG, convertir PDF en SVG, convertisseur gratuit de PDF en SVG",
     features: [
       {
         title: "Conversion de graphiques vectoriels",
@@ -321,14 +332,14 @@ export const tool: _tool = {
       }
     ]
   },
-
   PDF_to_WebP: {
     title: "PDF vers WebP",
-    seoTitle: "Convertir PDF en WebP en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en WebP - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image WebP",
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    keywords: "PDF en WebP, convertir PDF en WebP, convertisseur gratuit de PDF en WebP",
     features: [
       {
         title: "Extraction d'images",
@@ -346,11 +357,12 @@ export const tool: _tool = {
   },
   PDF_to_HEIF: {
     title: "PDF vers HEIF/HEIC",
-    seoTitle: "Convertir PDF en HEIF/HEIC en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir PDF en HEIF/HEIC - Convertisseur gratuit",
     description: "Convertir des fichiers PDF en fichiers d'image HEIF/HEIC",
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    keywords: "PDF en HEIF, PDF en HEIC, convertir PDF en HEIF, convertir PDF en HEIC, convertisseur gratuit de PDF en HEIF, convertisseur gratuit de PDF en HEIC",
     features: [
       {
         title: "Extraction d'images",
@@ -368,11 +380,12 @@ export const tool: _tool = {
   },
   Image_to_PDF: {
     title: "Image vers PDF",
-    seoTitle: "Convertir des Images en PDF en ligne - Convertisseur gratuit d'images en PDF",
+    seoTitle: "Convertir des images en PDF - Convertisseur gratuit",
     description: "Convertir des fichiers image (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF) en documents PDF",
     color: "#3498db",
     type: "image",
     to: "/image-to-pdf",
+    keywords: "image en PDF, convertir image en PDF, convertisseur gratuit d'image en PDF",
     features: [
       {
         title: "Protection garantie des fichiers",
@@ -391,11 +404,12 @@ export const tool: _tool = {
 
   PDF_to_Image: {
     title: "PDF vers Image",
-    seoTitle: "Convertir des PDF en Images en ligne - Convertisseur gratuit de PDF en image",
+    seoTitle: "Convertir des PDF en images - Convertisseur gratuit",
     description: "Convertir des documents PDF en fichiers image (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF)",
     color: "#e74c3c",
     type: ".pdf",
     to: "/pdf-to-image",
+    keywords: "PDF en image, convertir PDF en image, convertisseur gratuit de PDF en image",
     features: [
       {
         title: "Protection garantie des fichiers",
@@ -411,7 +425,7 @@ export const tool: _tool = {
       }
     ]
   }
-};
+}
 
 export const tools: _tools = {
   select: "Sélectionner",

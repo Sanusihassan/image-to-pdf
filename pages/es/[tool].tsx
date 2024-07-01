@@ -72,6 +72,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
           }}
         />
         <meta name="description" content={item.description} />
+        <meta name="keywords" content={item.keywords} />
         <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
         <OpenGraph
           ogUrl={`https://www.pdfequips.com/es${item.to}`}

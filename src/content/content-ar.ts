@@ -11,11 +11,12 @@ import type {
 export const tool: _tool = {
   JPG_to_PDF: {
     title: "تحويل JPG إلى PDF",
-    seoTitle: "تحويل JPG إلى PDF عبر الإنترنت - محول مجاني من JPG إلى PDF",
+    seoTitle: "تحويل JPG إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور JPG إلى مستندات PDF",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+    keywords: "تحويل JPG إلى PDF, محول JPG إلى PDF, تحويل الصور إلى PDF, تحويل JPG, تحويل الملفات",
     features: [
       {
         title: "حماية مضمونة للملفات",
@@ -33,11 +34,12 @@ export const tool: _tool = {
   },
   PNG_to_PDF: {
     title: "تحويل PNG إلى PDF",
-    seoTitle: "تحويل PNG إلى PDF عبر الإنترنت - محول مجاني من PNG إلى PDF",
+    seoTitle: "تحويل PNG إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور PNG إلى مستندات PDF",
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
+    keywords: "تحويل PNG إلى PDF, محول PNG إلى PDF, تحويل الصور إلى PDF, تحويل PNG, تحويل الملفات",
     features: [
       {
         title: "نحن نولي الأولوية لخصوصيتك",
@@ -55,11 +57,12 @@ export const tool: _tool = {
   },
   GIF_to_PDF: {
     title: "تحويل GIF إلى PDF",
-    seoTitle: "تحويل GIF إلى PDF عبر الإنترنت - محول مجاني من GIF إلى PDF",
+    seoTitle: "تحويل GIF إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور GIF إلى مستندات PDF",
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
+    keywords: "تحويل GIF إلى PDF, محول GIF إلى PDF, تحويل الصور إلى PDF, تحويل GIF, تحويل الملفات",
     features: [
       {
         title: "محول سريع من GIF إلى PDF",
@@ -77,11 +80,12 @@ export const tool: _tool = {
   },
   TIFF_to_PDF: {
     title: "تحويل TIFF إلى PDF",
-    seoTitle: "تحويل TIFF إلى PDF عبر الإنترنت - محول مجاني من TIFF إلى PDF",
+    seoTitle: "تحويل TIFF إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور TIFF إلى مستندات PDF",
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    keywords: "تحويل TIFF إلى PDF, محول TIFF إلى PDF, تحويل الصور إلى PDF, تحويل TIFF, تحويل الملفات",
     features: [
       {
         title: "محول سريع من TIFF إلى PDF",
@@ -99,11 +103,12 @@ export const tool: _tool = {
   },
   BMP_to_PDF: {
     title: "تحويل BMP إلى PDF",
-    seoTitle: "تحويل BMP إلى PDF عبر الإنترنت - محول مجاني من BMP إلى PDF",
+    seoTitle: "تحويل BMP إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور BMP إلى مستندات PDF",
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    keywords: "تحويل BMP إلى PDF, محول BMP إلى PDF, تحويل الصور إلى PDF, تحويل BMP, تحويل الملفات",
     features: [
       {
         title: "تحويل سريع",
@@ -121,11 +126,12 @@ export const tool: _tool = {
   },
   SVG_to_PDF: {
     title: "تحويل SVG إلى PDF",
-    seoTitle: "تحويل SVG إلى PDF عبر الإنترنت - محول مجاني من SVG إلى PDF",
+    seoTitle: "تحويل SVG إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور SVG إلى مستندات PDF",
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    keywords: "تحويل SVG إلى PDF, محول SVG إلى PDF, تحويل الصور إلى PDF, تحويل SVG, تحويل الملفات",
     features: [
       {
         title: "إعادة ترتيب صور SVG",
@@ -143,11 +149,12 @@ export const tool: _tool = {
   },
   WebP_to_PDF: {
     title: "تحويل WebP إلى PDF",
-    seoTitle: "تحويل WebP إلى PDF عبر الإنترنت - محول مجاني من WebP إلى PDF",
+    seoTitle: "تحويل WebP إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور WebP إلى مستندات PDF",
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    keywords: "تحويل WebP إلى PDF, محول WebP إلى PDF, تحويل الصور إلى PDF, تحويل WebP, تحويل الملفات",
     features: [
       {
         title: "تحويل عالي الجودة",
@@ -165,11 +172,12 @@ export const tool: _tool = {
   },
   HEIF_to_PDF: {
     title: "تحويل HEIF/HEIC إلى PDF",
-    seoTitle: "تحويل HEIF/HEIC إلى PDF عبر الإنترنت - محول مجاني من HEIF/HEIC إلى PDF",
+    seoTitle: "تحويل HEIF/HEIC إلى PDF - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات الصور HEIF/HEIC إلى مستندات PDF",
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    keywords: "تحويل HEIF إلى PDF, تحويل HEIC إلى PDF, محول HEIF إلى PDF, محول HEIC إلى PDF, تحويل الصور إلى PDF, تحويل HEIF, تحويل HEIC, تحويل الملفات",
     features: [
       {
         title: "تحويل عالي الجودة",
@@ -187,12 +195,12 @@ export const tool: _tool = {
   },
   PDF_to_JPG: {
     title: "PDF إلى JPG",
-    seoTitle:
-      "أدوات تحويل PDF إلى JPG عبر الإنترنت - تحويل ملفات PDF إلى ملفات صور JPG",
+    seoTitle: "تحويل PDF إلى JPG - محول مجاني عبر الإنترنت",
     description: "تحويل ملفات PDF إلى ملفات صور JPG",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
+    keywords: "تحويل PDF إلى JPG, محول PDF إلى JPG, تحويل PDF إلى صور, تحويل PDF إلى JPEG, تحويل الملفات",
     features: [
       {
         title: "أداة سريعة وبسيطة لتحويل PDF إلى JPG",
@@ -210,11 +218,12 @@ export const tool: _tool = {
   },
   PDF_to_PNG: {
     title: "تحويل PDF إلى PNG",
-    seoTitle: "تحويل ملف PDF إلى PNG عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى PNG عبر الإنترنت - محول مجاني من PDF إلى صورة PNG",
     description: "تحويل ملفات PDF إلى ملفات صور PNG",
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    keywords: "تحويل PDF إلى PNG, محول PDF إلى PNG, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "واجهة سهلة الاستخدام",
@@ -230,14 +239,14 @@ export const tool: _tool = {
       }
     ],
   },
-
   PDF_to_GIF: {
     title: "تحويل PDF إلى GIF",
-    seoTitle: "تحويل ملف PDF إلى GIF عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى GIF عبر الإنترنت - محول مجاني من PDF إلى صورة GIF",
     description: "تحويل ملفات PDF إلى ملفات صور GIF",
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    keywords: "تحويل PDF إلى GIF, محول PDF إلى GIF, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "استخراج الصور",
@@ -255,11 +264,12 @@ export const tool: _tool = {
   },
   PDF_to_TIFF: {
     title: "تحويل PDF إلى TIFF",
-    seoTitle: "تحويل ملف PDF إلى TIFF عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى TIFF عبر الإنترنت - محول مجاني من PDF إلى صورة TIFF",
     description: "تحويل ملفات PDF إلى ملفات صور TIFF",
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    keywords: "تحويل PDF إلى TIFF, محول PDF إلى TIFF, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "تحويل قوي قائم على السحابة",
@@ -275,14 +285,14 @@ export const tool: _tool = {
       }
     ],
   },
-
   PDF_to_BMP: {
     title: "تحويل PDF إلى BMP",
-    seoTitle: "تحويل ملف PDF إلى BMP عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى BMP عبر الإنترنت - محول مجاني من PDF إلى صورة BMP",
     description: "تحويل ملفات PDF إلى ملفات صور BMP",
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    keywords: "تحويل PDF إلى BMP, محول PDF إلى BMP, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "معالجة آمنة",
@@ -300,11 +310,12 @@ export const tool: _tool = {
   },
   PDF_to_SVG: {
     title: "تحويل PDF إلى SVG",
-    seoTitle: "تحويل ملف PDF إلى SVG عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى SVG عبر الإنترنت - محول مجاني من PDF إلى صورة SVG",
     description: "تحويل ملفات PDF إلى ملفات صور SVG الشعاعية",
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    keywords: "تحويل PDF إلى SVG, محول PDF إلى SVG, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "تحويل الرسومات المتجهة",
@@ -320,14 +331,14 @@ export const tool: _tool = {
       }
     ],
   },
-
   PDF_to_WebP: {
     title: "تحويل PDF إلى WebP",
-    seoTitle: "تحويل ملف PDF إلى WebP عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى WebP عبر الإنترنت - محول مجاني من PDF إلى صورة WebP",
     description: "تحويل ملفات PDF إلى ملفات صور WebP",
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    keywords: "تحويل PDF إلى WebP, محول PDF إلى WebP, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "استخراج الصور",
@@ -343,14 +354,14 @@ export const tool: _tool = {
       }
     ],
   },
-
   PDF_to_HEIF: {
     title: "تحويل PDF إلى HEIF/HEIC",
-    seoTitle: "تحويل ملف PDF إلى HEIF/HEIC عبر الإنترنت - محول مجاني من PDF إلى صورة",
+    seoTitle: "تحويل ملف PDF إلى HEIF/HEIC عبر الإنترنت - محول مجاني من PDF إلى صورة HEIF",
     description: "تحويل ملفات PDF إلى ملفات صور HEIF/HEIC",
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    keywords: "تحويل PDF إلى HEIF, تحويل PDF إلى HEIC, محول PDF إلى HEIF, محول PDF إلى HEIC, تحويل PDF إلى صور, تحويل PDF, تحويل الملفات",
     features: [
       {
         title: "استخراج الصور",
@@ -373,6 +384,7 @@ export const tool: _tool = {
     color: "#3498db",
     type: "image",
     to: "/image-to-pdf",
+    keywords: "تحويل الصور إلى PDF, محول الصور إلى PDF, تحويل JPG إلى PDF, تحويل PNG إلى PDF, تحويل BMP إلى PDF, تحويل TIFF إلى PDF, تحويل GIF إلى PDF, تحويل SVG إلى PDF, تحويل WebP إلى PDF, تحويل HEIF إلى PDF, تحويل الملفات",
     features: [
       {
         title: "حماية مضمونة للملفات",
@@ -395,6 +407,7 @@ export const tool: _tool = {
     color: "#e74c3c",
     type: ".pdf",
     to: "/pdf-to-image",
+    keywords: "تحويل PDF إلى صور, محول PDF إلى صور, تحويل PDF إلى JPG, تحويل PDF إلى PNG, تحويل PDF إلى BMP, تحويل PDF إلى TIFF, تحويل PDF إلى GIF, تحويل PDF إلى SVG, تحويل PDF إلى WebP, تحويل PDF إلى HEIF, تحويل الملفات",
     features: [
       {
         title: "حماية مضمونة للملفات",

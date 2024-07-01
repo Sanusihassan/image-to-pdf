@@ -25,6 +25,7 @@ export type data_type = {
   color: string;
   type: string;
   to: toType;
+  keywords: string;
   features?: {
     title: string;
     description: string;
@@ -106,6 +107,7 @@ export default ({ item }: { item: data_type }) => {
           }}
         />
         <meta name="description" content={item.description} />
+        <meta name="keywords" content={item.keywords} />
         <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
         <OpenGraph
           ogUrl={`https://www.pdfequips.com${item.to}`}

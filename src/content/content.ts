@@ -21,6 +21,7 @@ type ToolType = {
   color: string;
   type: string;
   to: toType;
+  keywords: string;
   features: {
     title: string;
     description: string;
@@ -47,66 +48,71 @@ type Tool = {
   Image_to_PDF: ToolType;
   PDF_to_Image: ToolType;
 };
+
+// please give me hindi version of this:
 export const tool: Tool = {
   JPG_to_PDF: {
     title: "JPG to PDF",
-    seoTitle: "Convert JPG to PDF Online - Free JPG to PDF Converter",
+    seoTitle: "Convert JPG to PDF Online - Free Converter",
     description: "Convert JPG image files to PDF documents",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
+    keywords: "Convert JPG to PDF, JPG to PDF converter, JPG to PDF online, free JPG to PDF, JPG image to PDF, convert images to PDF",
     features: [
       {
         title: "Guaranteed protection for files",
-        description: "Our TLS encryption ensures constant security for your JPEGs Your files are inaccessible to anyone, and we automatically delete them from our servers after conversion for added peace of mind"
+        description: "Our TLS encryption ensures constant security for your JPEGs. Your files are inaccessible to anyone, and we automatically delete them from our servers after conversion for added peace of mind."
       },
       {
         title: "Fast and simple tool to convert JPG to PDF",
-        description: "Simply drag and drop your file into the designated area above to quickly convert it from JPG to PDF Additionally, you can customize settings such as margin, orientation, and size"
+        description: "Simply drag and drop your file into the designated area above to quickly convert it from JPG to PDF. Additionally, you can customize settings such as margin, orientation, and size."
       },
       {
         title: "High-quality conversion",
-        description: "PDFEquips allows users to transform images into high-quality PDF files with its advanced conversion technologies It maintains 100% of the original quality"
+        description: "PDFEquips allows users to transform images into high-quality PDF files with its advanced conversion technologies. It maintains 100% of the original quality."
       }
     ]
   },
   PNG_to_PDF: {
     title: "PNG to PDF",
-    seoTitle: "Convert PNG to PDF Online - Free PNG to PDF Converter",
+    seoTitle: "Convert PNG to PDF Online - Free Converter",
     description: "Convert PNG image files to PDF documents",
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
+    keywords: "Convert PNG to PDF, PNG to PDF converter, PNG to PDF online, free PNG to PDF, PNG image to PDF, convert images to PDF",
     features: [
       {
         title: "We prioritize your privacy",
-        description: "No one sees your files but you—as it should be. PDFEquips Uses TLS encryption for security in all file transfers All files are processed automatically"
+        description: "No one sees your files but you—as it should be. PDFEquips Uses TLS encryption for security in all file transfers. All files are processed automatically."
       },
       {
         title: "Keep the original resolution for PNG files",
-        description: "You can convert PNG images to PDF files, effectively reducing the size of the PNG images With the advanced PDF conversion technologies from PDFEquips, the original resolution of the PNG images is preserved, ensuring no loss of quality at all"
+        description: "You can convert PNG images to PDF files, effectively reducing the size of the PNG images. With the advanced PDF conversion technologies from PDFEquips, the original resolution of the PNG images is preserved, ensuring no loss of quality at all."
       },
       {
         title: "Conversion without the need for software",
-        description: "To convert your PNG to PDF, you don't need any software. With PDFEquips, the conversion happens in the cloud for quick service from any device Just upload, convert, sit back and relax."
+        description: "To convert your PNG to PDF, you don't need any software. With PDFEquips, the conversion happens in the cloud for quick service from any device. Just upload, convert, sit back and relax."
       }
     ]
   },
   GIF_to_PDF: {
     title: "GIF to PDF",
-    seoTitle: "Convert GIF to PDF Online - Free GIF to PDF Converter",
+    seoTitle: "Convert GIF to PDF Online - Free Converter",
     description: "Convert GIF image files to PDF documents",
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
+    keywords: "Convert GIF to PDF, GIF to PDF converter, GIF to PDF online, free GIF to PDF, GIF image to PDF, convert images to PDF",
     features: [
       {
         title: "Fast GIF to PDF Converter",
-        description: "With this useful tool, transforming a GIF image into a PDF document only takes a few seconds Simply upload your animated GIF image, customize the output settings, and save your file It's fast, convenient, and completely free"
+        description: "With this useful tool, transforming a GIF image into a PDF document only takes a few seconds. Simply upload your animated GIF image, customize the output settings, and save your file. It's fast, convenient, and completely free."
       },
       {
         title: "No need to log in",
-        description: "Access our platform without login complications We respect your time and privacy by providing seamless conversion services at your fingertips"
+        description: "Access our platform without login complications. We respect your time and privacy by providing seamless conversion services at your fingertips."
       },
       {
         title: "Conversion without the need for software",
@@ -116,11 +122,12 @@ export const tool: Tool = {
   },
   TIFF_to_PDF: {
     title: "TIFF to PDF",
-    seoTitle: "Convert TIFF to PDF Online - Free TIFF to PDF Converter",
+    seoTitle: "Convert TIFF to PDF Online - Free Converter",
     description: "Convert TIFF image files to PDF documents",
     color: "#e45453",
     type: ".tiff",
     to: "/tiff-to-pdf",
+    keywords: "Convert TIFF to PDF, TIFF to PDF converter, TIFF to PDF online, free TIFF to PDF, TIFF image to PDF, convert images to PDF",
     features: [
       {
         title: "Fast TIFF to PDF Converter",
@@ -138,11 +145,12 @@ export const tool: Tool = {
   },
   BMP_to_PDF: {
     title: "BMP to PDF",
-    seoTitle: "Convert BMP to PDF Online - Free BMP to PDF Converter",
+    seoTitle: "Convert BMP to PDF Online - Free Converter",
     description: "Convert BMP image files to PDF documents",
     color: "#573b26",
     type: ".bmp",
     to: "/bmp-to-pdf",
+    keywords: "Convert BMP to PDF, BMP to PDF converter, BMP to PDF online, free BMP to PDF, BMP image to PDF, convert images to PDF",
     features: [
       {
         title: "Fast Conversion",
@@ -160,11 +168,12 @@ export const tool: Tool = {
   },
   SVG_to_PDF: {
     title: "SVG to PDF",
-    seoTitle: "Convert SVG to PDF Online - Free SVG to PDF Converter",
+    seoTitle: "Convert SVG to PDF Online - Free Converter",
     description: "Convert SVG image files to PDF documents",
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
+    keywords: "Convert SVG to PDF, SVG to PDF converter, SVG to PDF online, free SVG to PDF, SVG image to PDF, convert images to PDF",
     features: [
       {
         title: "Reorder SVGs",
@@ -182,11 +191,12 @@ export const tool: Tool = {
   },
   WebP_to_PDF: {
     title: "WebP to PDF",
-    seoTitle: "Convert WebP to PDF Online - Free WebP to PDF Converter",
+    seoTitle: "Convert WebP to PDF Online - Free Converter",
     description: "Convert WebP image files to PDF documents",
     color: "#6fc21f",
     type: ".webp",
     to: "/webp-to-pdf",
+    keywords: "Convert WebP to PDF, WebP to PDF converter, WebP to PDF online, free WebP to PDF, WebP image to PDF, convert images to PDF",
     features: [
       {
         title: "High-Quality Conversion",
@@ -204,11 +214,12 @@ export const tool: Tool = {
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC to PDF",
-    seoTitle: "Convert HEIF/HEIC to PDF Online - Free HEIF/HEIC to PDF Converter",
+    seoTitle: "Convert HEIF to PDF Online - Free Converter",
     description: "Convert HEIF/HEIC image files to PDF documents",
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
+    keywords: "Convert HEIF to PDF, HEIF to PDF converter, HEIF to PDF online, free HEIF to PDF, HEIF image to PDF, convert images to PDF, Convert HEIC to PDF, HEIC to PDF converter, HEIC to PDF online, free HEIC to PDF, HEIC image to PDF",
     features: [
       {
         title: "High-Quality Conversion",
@@ -226,11 +237,12 @@ export const tool: Tool = {
   },
   PDF_to_JPG: {
     title: "PDF to JPG",
-    seoTitle: "Convert PDF to JPG Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to JPG - Free Online Tool",
     description: "Convert PDF files to JPG image files",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
+    keywords: "Convert PDF to JPG, PDF to JPG converter, PDF to JPG online, free PDF to JPG, PDF document to JPG, convert PDF to image",
     features: [
       {
         title: "Fast and simple tool to convert PDF to JPG",
@@ -248,11 +260,12 @@ export const tool: Tool = {
   },
   PDF_to_PNG: {
     title: "PDF to PNG",
-    seoTitle: "Convert PDF to PNG Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to PNG - Free Online Tool",
     description: "Convert PDF files to PNG image files",
     color: "#3498db",
     type: ".pdf",
     to: "/pdf-to-png",
+    keywords: "Convert PDF to PNG, PDF to PNG converter, PDF to PNG online, free PDF to PNG, PDF document to PNG, convert PDF to image",
     features: [
       {
         title: "User-Friendly Interface",
@@ -268,14 +281,14 @@ export const tool: Tool = {
       }
     ]
   },
-
   PDF_to_GIF: {
     title: "PDF to GIF",
-    seoTitle: "Convert PDF to GIF Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to GIF - Free Online Tool",
     description: "Convert PDF files to GIF image files",
     color: "#636e72",
     type: ".pdf",
     to: "/pdf-to-gif",
+    keywords: "Convert PDF to GIF, PDF to GIF converter, PDF to GIF online, free PDF to GIF, PDF document to GIF, convert PDF to image",
     features: [
       {
         title: "Image Extraction",
@@ -293,11 +306,12 @@ export const tool: Tool = {
   },
   PDF_to_TIFF: {
     title: "PDF to TIFF",
-    seoTitle: "Convert PDF to TIFF Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to TIFF - Free Online Tool",
     description: "Convert PDF files to TIFF image files",
     color: "#e45453",
     type: ".pdf",
     to: "/pdf-to-tiff",
+    keywords: "Convert PDF to TIFF, PDF to TIFF converter, PDF to TIFF online, free PDF to TIFF, PDF document to TIFF, convert PDF to image",
     features: [
       {
         title: "Robust Cloud-Based Conversion",
@@ -315,11 +329,12 @@ export const tool: Tool = {
   },
   PDF_to_BMP: {
     title: "PDF to BMP",
-    seoTitle: "Convert PDF to BMP Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to BMP - Free Online Tool",
     description: "Convert PDF files to BMP image files",
     color: "#573b26",
     type: ".pdf",
     to: "/pdf-to-bmp",
+    keywords: "Convert PDF to BMP, PDF to BMP converter, PDF to BMP online, free PDF to BMP, PDF document to BMP, convert PDF to image",
     features: [
       {
         title: "Secure Processing",
@@ -337,11 +352,12 @@ export const tool: Tool = {
   },
   PDF_to_SVG: {
     title: "PDF to SVG",
-    seoTitle: "Convert PDF to SVG Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to SVG - Free Online Tool",
     description: "Convert PDF files to SVG vector image files",
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",
+    keywords: "Convert PDF to SVG, PDF to SVG converter, PDF to SVG online, free PDF to SVG, PDF document to SVG, convert PDF to vector image",
     features: [
       {
         title: "Vector Graphics Conversion",
@@ -359,11 +375,12 @@ export const tool: Tool = {
   },
   PDF_to_WebP: {
     title: "PDF to WebP",
-    seoTitle: "Convert PDF to WebP Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to WebP - Free Online Tool",
     description: "Convert PDF files to WebP image files",
     color: "#6fc21f",
     type: ".pdf",
     to: "/pdf-to-webp",
+    keywords: "Convert PDF to WebP, PDF to WebP converter, PDF to WebP online, free PDF to WebP, PDF document to WebP, convert PDF to image",
     features: [
       {
         title: "Image Extraction",
@@ -381,11 +398,12 @@ export const tool: Tool = {
   },
   PDF_to_HEIF: {
     title: "PDF to HEIF/HEIC",
-    seoTitle: "Convert PDF to HEIF/HEIC Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to HEIF/HEIC - Free Online Tool",
     description: "Convert PDF files to HEIF/HEIC image files",
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
+    keywords: "Convert PDF to HEIF, PDF to HEIF converter, PDF to HEIF online, free PDF to HEIF, PDF document to HEIF, convert PDF to image, Convert PDF to HEIC, PDF to HEIC converter, PDF to HEIC online, free PDF to HEIC, PDF document to HEIC",
     features: [
       {
         title: "Image Extraction",
@@ -403,11 +421,12 @@ export const tool: Tool = {
   },
   Image_to_PDF: {
     title: "Image to PDF",
-    seoTitle: "Convert Images to PDF Online - Free Image to PDF Converter",
+    seoTitle: "Convert Images to PDF - Free Online Tool",
     description: "Convert image files (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF) to PDF documents",
     color: "#3498db",
     type: "image",
     to: "/image-to-pdf",
+    keywords: "Convert images to PDF, Image to PDF converter, Image to PDF online, free Image to PDF, JPG to PDF, PNG to PDF, BMP to PDF, TIFF to PDF, GIF to PDF, SVG to PDF, WebP to PDF, HEIF to PDF",
     features: [
       {
         title: "Guaranteed protection for files",
@@ -423,14 +442,14 @@ export const tool: Tool = {
       }
     ]
   },
-
   PDF_to_Image: {
     title: "PDF to Image",
-    seoTitle: "Convert PDF to Images Online - Free PDF to Image Converter",
+    seoTitle: "Convert PDF to Images - Free Online Tool",
     description: "Convert PDF documents to image files (JPG, PNG, BMP, TIFF, GIF, SVG, WebP, HEIF)",
     color: "#e74c3c",
     type: ".pdf",
     to: "/pdf-to-image",
+    keywords: "Convert PDF to images, PDF to Image converter, PDF to Image online, free PDF to Image, PDF document to image, PDF to JPG, PDF to PNG, PDF to BMP, PDF to TIFF, PDF to GIF, PDF to SVG, PDF to WebP, PDF to HEIF",
     features: [
       {
         title: "Guaranteed protection for files",
@@ -446,8 +465,7 @@ export const tool: Tool = {
       }
     ]
   }
-};
-
+}
 export const tools = {
   select: "Select",
   or_drop: "or drop files here",
