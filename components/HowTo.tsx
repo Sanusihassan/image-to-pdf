@@ -1,6 +1,3 @@
-// inside of this component i don't want to repeat the h3 element 3 times the length of the array is 3 
-// i want to render it only one time for the next two times 
-// import { PDFToHTMLHOWTOType } from '@/src/how-to';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { ToolState } from '../src/store';

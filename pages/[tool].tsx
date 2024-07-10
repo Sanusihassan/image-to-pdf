@@ -1,4 +1,4 @@
-// download page content and stop auto downloading + action button onclick on download btn
+// i'm using Next.js this is how my [tool].tsx looks like:
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../components/Tool";
@@ -17,6 +17,7 @@ import { howToSchemas, howToType } from "@/src/how-to/how-to";
 import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
 import HowTo from "@/components/HowTo";
+import Script from 'next/script'
 
 export type data_type = {
   title: string;
@@ -100,11 +101,10 @@ export default ({ item }: { item: data_type }) => {
             __html: JSON.stringify(websiteSchema),
           }}
         />
-        <script
+        <Script
+          id="schema-howto"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(currentHowTo),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(currentHowTo) }}
         />
         <meta name="description" content={item.description} />
         <meta name="keywords" content={item.keywords} />
