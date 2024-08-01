@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { ToolState } from '../src/store';
 import { howToType } from '../src/how-to/how-to';
@@ -11,9 +11,6 @@ const HowTo = ({ howTo, alt, imgSrc }: {
     const stateShowTool = useSelector(
         (state: { tool: ToolState }) => state.tool.showTool
     );
-    useEffect(() => {
-        console.log(stateShowTool, howTo)
-    }, [stateShowTool])
     return (
         <>
             <div className={`how-to row align-items-center py-3${stateShowTool ? "" : " d-none"}`}>

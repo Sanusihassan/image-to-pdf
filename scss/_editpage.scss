@@ -160,6 +160,7 @@
       @include extend("d-none");
       width: 100%;
       position: fixed;
+      z-index: 1;
       bottom: 0;
       left: 0;
 
@@ -235,6 +236,8 @@
 }
 
 .submit-btn {
+  z-index: 1;
+
   @each $key, $color in $color-map {
     &.#{$key} {
       $r: red($color);

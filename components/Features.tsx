@@ -2,7 +2,6 @@ import QuickIcon from "./icons/QuickIcon";
 import { BiSelectMultiple } from "react-icons/bi";
 import { CiLock } from "react-icons/ci";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import { ToolState } from "../src/store";
 import { PiFileImageThin } from "react-icons/pi";
 import RobustIcon from "./icons/Features/Robust";
@@ -17,11 +16,7 @@ import { TbDownloadOff } from "react-icons/tb";
 import { type toType } from "@/src/content/content";
 import { FastForwardIcon } from "@heroicons/react/solid";
 import { RiCharacterRecognitionLine } from "react-icons/ri";
-
-
 import { AiOutlineOrderedList } from "react-icons/ai";
-
-
 
 export const Features = ({ features, tool }: {
     features: { title: string; description: string }[];
@@ -30,9 +25,6 @@ export const Features = ({ features, tool }: {
     const stateShowTool = useSelector(
         (state: { tool: ToolState }) => state.tool.showTool
     );
-    useEffect(() => {
-        console.log(stateShowTool)
-    }, [stateShowTool]);
 
     const iconsMap: {
         [K in toType]: any;
