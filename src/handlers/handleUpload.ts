@@ -59,7 +59,6 @@ export const handleUpload = async (
   }
   // formData.append("compress_amount", String(state.compressPdf));
   const originalFileName = files[0]?.name?.split(".").slice(0, -1).join(".");
-
   const mimeTypeLookupTable: {
     [key: string]: { outputFileMimeType: string; outputFileName: string };
   } = {
@@ -71,39 +70,44 @@ export const handleUpload = async (
       outputFileMimeType: "application/pdf",
       outputFileName: `${originalFileName}.pdf`,
     },
-    "application/msword": {
-      outputFileMimeType: "application/msword",
-      outputFileName: `${originalFileName}.docx`,
+    "image/jpeg": {
+      outputFileMimeType: "image/jpeg",
+      outputFileName: `${originalFileName}.jpg`,
     },
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      outputFileName: `${originalFileName}.docx`,
+    "image/png": {
+      outputFileMimeType: "image/png",
+      outputFileName: `${originalFileName}.png`,
     },
-    "application/vnd.ms-excel": {
-      outputFileMimeType: "application/vnd.ms-excel",
-      outputFileName: `${originalFileName}.xlsx`,
+    "image/gif": {
+      outputFileMimeType: "image/gif",
+      outputFileName: `${originalFileName}.gif`,
     },
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      outputFileName: `${originalFileName}.xlsx`,
+    "image/tiff": {
+      outputFileMimeType: "image/tiff",
+      outputFileName: `${originalFileName}.tiff`,
     },
-    "application/vnd.ms-powerpoint": {
-      outputFileMimeType: "application/vnd.ms-powerpoint",
-      outputFileName: `${originalFileName}.pptx`,
+    "image/bmp": {
+      outputFileMimeType: "image/bmp",
+      outputFileName: `${originalFileName}.bmp`,
     },
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-    {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-      outputFileName: `${originalFileName}.pptx`,
+    "image/svg+xml": {
+      outputFileMimeType: "image/svg+xml",
+      outputFileName: `${originalFileName}.svg`,
     },
-    "text/plain": {
-      outputFileMimeType: "text/plain",
-      outputFileName: `${originalFileName}.txt`,
+    "image/webp": {
+      outputFileMimeType: "image/webp",
+      outputFileName: `${originalFileName}.webp`,
+    },
+    "image/heif": {
+      outputFileMimeType: "image/heif",
+      outputFileName: `${originalFileName}.heif`,
+    },
+    "image/heic": {
+      outputFileMimeType: "image/heic",
+      outputFileName: `${originalFileName}.heic`,
     },
   };
+
 
   try {
     const response = await axios.post(url, formData, {
