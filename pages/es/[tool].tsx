@@ -1,3 +1,4 @@
+"use client";
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../../components/Tool";
@@ -6,15 +7,16 @@ import {
   tool,
   tools,
   downloadFile,
-  footer,
 } from "../../src/content/content-es";
 import { errors } from "../../src/content/content-es";
 import { useRouter } from "next/router";
+import { useState, useCallback, useEffect } from "react";
+import { fetchSubscriptionStatus } from "@/src/checkSubscriptionStatus";
 import { routesMap, type data_type } from "../[tool]";
 import { howToSchemas } from "@/src/how-to/how-to-es";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
 import { Features } from "@/components/Features";
-import { Footer } from "@/components/Footer";
+import { Footer } from "pdfequips-footer/components/Footer";
 import HowTo from "@/components/HowTo";
 import { howToType } from "@/src/how-to/how-to";
 
@@ -34,11 +36,12 @@ export async function getStaticProps({
     tool: string;
   };
 }) {
+  const initialPremiumStatus = await fetchSubscriptionStatus();
   const item = routes[`/${params.tool}` as keyof typeof routes].item;
-  return { props: { item } };
+  return { props: { item, initialPremiumStatus } };
 }
 
-export default ({ item, lang }: { item: data_type; lang: string }) => {
+export default ({ item, lang, initialPremiumStatus }: { item: data_type; lang: string; initialPremiumStatus: boolean; }) => {
   const router = useRouter();
   const { asPath } = router;
   const matchingKey = Object.keys(routesMap).find(
@@ -55,6 +58,24 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
     description: item.description,
     url: `https://www.pdfequips.com${asPath}`,
   };
+  const [isPremium, setIsPremium] = useState(initialPremiumStatus);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const checkStatus = useCallback(async () => {
+    try {
+      const status = await fetchSubscriptionStatus(); // Function to fetch subscription status
+      setIsPremium(status);
+      setIsLoaded(true);
+    } catch (err) {
+      console.error("Error checking subscription status:", err);
+      setIsLoaded(true);
+
+    }
+  }, []);
+
+
+  useEffect(() => {
+    checkStatus();
+  }, []);;
   return (
     <>
       <Head>
@@ -74,6 +95,13 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         <meta name="description" content={item.description} />
         <meta name="keywords" content={item.keywords} />
         <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
+        {isLoaded && !isPremium ?
+          <>
+            <meta name="google-adsense-account" content="ca-pub-7391414384206267" />
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7391414384206267"
+              cross-origin="anonymous"></script>
+          </>
+          : null}
         <OpenGraph
           ogUrl={`https://www.pdfequips.com/es${item.to}`}
           ogDescription={item.description}
@@ -101,7 +129,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
       <div className="container">
         <HowTo howTo={currentHowTo as howToType} alt={item.seoTitle} imgSrc={item.to.replace("/", "")} />
       </div>
-      <Footer footer={footer} title={item.seoTitle.split("-")[1]} />
+      <Footer lang={lang} title={item.seoTitle.split("-")[1]} />
     </>
   );
 };

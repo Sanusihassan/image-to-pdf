@@ -1,6 +1,7 @@
 import type { AppContext, AppProps } from "next/app";
 import Head from "next/head";
 import "../index.scss";
+import "react-tooltip/dist/react-tooltip.css";
 // redux store
 import { Provider as ReduxProvider } from "react-redux";
 // @ts-ignore
@@ -39,6 +40,8 @@ function MyApp({ Component, pageProps, lang }: AppProps & { lang: string }) {
     </>
   );
 }
+
+
 MyApp.getInitialProps = async ({
   Component,
   ctx,

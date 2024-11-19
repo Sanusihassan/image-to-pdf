@@ -1,23 +1,25 @@
-// i'm using Next.js this is how my [tool].tsx looks like:
+"use client";
 import Head from "next/head";
 import NavBar from "pdfequips-navbar/NavBar";
 import Tool from "../components/Tool";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
+import { fetchSubscriptionStatus } from "@/src/checkSubscriptionStatus";
 import {
   edit_page,
   errors,
   tool,
   tools,
   downloadFile,
-  footer,
   toType,
 } from "../src/content/content";
 import { useRouter } from "next/router";
 import { howToSchemas, howToType } from "@/src/how-to/how-to";
 import { Features } from "@/components/Features";
-import { Footer } from "@/components/Footer";
+import { Footer } from "pdfequips-footer/components/Footer";
+
 import HowTo from "@/components/HowTo";
 import Script from 'next/script'
+import { useState, useCallback, useEffect } from "react";
 
 export type data_type = {
   title: string;
@@ -49,8 +51,9 @@ export async function getStaticProps({
     tool: string;
   };
 }) {
+  const initialPremiumStatus = await fetchSubscriptionStatus();
   const item = routes[`/${params.tool}` as keyof typeof routes].item;
-  return { props: { item } };
+  return { props: { item, initialPremiumStatus } };
 }
 
 export const routesMap = {
@@ -75,7 +78,7 @@ export const routesMap = {
   PDFToImageHOWTO: "/pdf-to-image"
 };
 
-export default ({ item }: { item: data_type }) => {
+export default ({ item, initialPremiumStatus }: { item: data_type, initialPremiumStatus: boolean }) => {
   const router = useRouter();
   const { asPath } = router;
   const matchingKey = Object.keys(routesMap).find(
@@ -91,6 +94,24 @@ export default ({ item }: { item: data_type }) => {
     description: item.description,
     url: `https://www.pdfequips.com${asPath}`,
   };
+  const [isPremium, setIsPremium] = useState(initialPremiumStatus);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const checkStatus = useCallback(async () => {
+    try {
+      const status = await fetchSubscriptionStatus(); // Function to fetch subscription status
+      setIsPremium(status);
+      setIsLoaded(true);
+    } catch (err) {
+      console.error("Error checking subscription status:", err);
+      setIsLoaded(true);
+
+    }
+  }, []);
+
+
+  useEffect(() => {
+    checkStatus();
+  }, []);
   return (
     <>
       <Head>
@@ -119,11 +140,14 @@ export default ({ item }: { item: data_type }) => {
           ogTitle={item.seoTitle}
           ogImage={`https://www.pdfequips.com/images${item.to}.png`}
         />
-        {/* needed for styles */}
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
+        {isLoaded && !isPremium ?
+          <>
+            <meta name="google-adsense-account" content="ca-pub-7391414384206267" />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7391414384206267"
+              cross-origin="anonymous"></script></>
+          : null}
       </Head>
       <NavBar path={item.to.replace("/", "")} lang="" />
       <Tool
@@ -142,7 +166,7 @@ export default ({ item }: { item: data_type }) => {
       <div className="container">
         <HowTo howTo={currentHowTo as howToType} alt={item.seoTitle} imgSrc={item.to.replace("/", "")} />
       </div>
-      <Footer footer={footer} title={item.seoTitle.split("-")[1]} />
+      <Footer lang="" title={item.seoTitle.split("-")[1]} />
     </>
   );
 };
