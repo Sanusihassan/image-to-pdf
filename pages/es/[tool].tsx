@@ -75,7 +75,7 @@ export default ({ item, lang, initialPremiumStatus }: { item: data_type; lang: s
 
   useEffect(() => {
     checkStatus();
-  }, []);;
+  }, []);
   return (
     <>
       <Head>
