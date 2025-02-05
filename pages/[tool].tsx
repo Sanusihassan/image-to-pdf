@@ -142,10 +142,10 @@ export default ({ item, initialPremiumStatus }: { item: data_type, initialPremiu
         />
         {isLoaded && !isPremium ?
           <>
-            <meta name="google-adsense-account" content="ca-pub-7391414384206267" />
+            <meta name="google-adsense-account" content="ca-pub-7801483217621867" />
             <script
               async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7391414384206267"
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7801483217621867"
               cross-origin="anonymous"></script></>
           : null}
       </Head>
