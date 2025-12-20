@@ -9,7 +9,7 @@ import { type ToolState, resetErrorMessage, setField } from "../src/store";
 import { useFileStore } from "../src/file-store";
 import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
-import { Options } from "./DisplayFile/Options";
+// import { Options } from "./DisplayFile/Options";
 
 type editPageProps = {
   extension: string;

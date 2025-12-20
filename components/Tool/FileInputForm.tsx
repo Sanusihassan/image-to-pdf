@@ -10,7 +10,15 @@ import { useFileStore } from "../../src/file-store";
 import type { tools } from "../../src/content";
 import Loading from "../Loading";
 type AcceptedFileTypes = {
-  [key in ".pdf" | ".pptx" | ".docx" | ".xlsx" | ".jpg" | ".html"]: string;
+  [key in
+    | ".jpg"
+    | ".png"
+    | ".gif"
+    | ".tiff"
+    | ".bmp"
+    | ".svg"
+    | ".webp"
+    | ".heif, .heic"]: string;
 };
 interface FileInputFormProps {
   data: {
@@ -42,9 +50,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const passwords = useSelector(
     (state: { tool: ToolState }) => state.tool.passwords
   );
-  const compressPdf = useSelector(
-    (state: { tool: ToolState }) => state.tool.compressPdf
-  );
   const dispatch = useDispatch();
   // file store
   const { files, setFiles, setFileInput, setDownloadBtn, setSubmitBtn } =
@@ -59,6 +64,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
       return;
     }
     setLoaded(true);
+    console.log("loaded", loaded);
     setFileInput(fileInput);
     setSubmitBtn(submitBtn);
     setDownloadBtn(downloadBtn);
@@ -78,7 +84,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
             errorMessage,
             fileName,
             rotations,
-            compressPdf,
             passwords,
           },
           files,

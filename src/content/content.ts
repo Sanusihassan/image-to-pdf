@@ -523,7 +523,8 @@ export const edit_page = {
       info: "Select from the dropdown the image format you want to convert to:",
       placeholder: "Select image format..."
     }
-  }
+  },
+  cta: "View Plans",
 }
 
 export const downloadFile = {
@@ -764,7 +765,24 @@ export const errors = {
       "An unknown error occurred. Please try again later or contact support.",
     code: "ERR_UNKNOWN",
   },
-  // i want another error like this but when only one file is uploaded
+  PASSWORD_REQUIRED: {
+    message: "PDF requires a password.",
+    code: "PASSWORD_REQUIRED",
+  },
+
+  INCORRECT_PASSWORD: {
+    message: "The password you entered is incorrect.",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "You’ve reached your daily usage limit. Please upgrade your plan to continue using this feature without interruption.",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "The PDF exceeds the maximum page limit of 50 pages.",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
   ERR_NETWORK: {
     message:
       "A network error occurred. Please check your internet connection and try again.",

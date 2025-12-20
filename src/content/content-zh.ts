@@ -7,7 +7,8 @@ import type {
   errors as _errors,
   downloadFile as _downloadFile,
   landing_page as _landing_page,
-} from "../../content";
+} from "../content";
+import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
@@ -652,7 +653,8 @@ export const edit_page: _edit_page = {
       info: "从下拉菜单中选择您要转换为的图像格式:",
       placeholder: "选择图像格式..."
     }
-  }
+  },
+  cta: "查看套餐",
 };
 
 
@@ -731,4 +733,28 @@ export const errors: _errors = {
     message: "请至少上传两个文件以合并。",
     code: "ERR_UPLOAD_COUNT",
   },
+  PASSWORD_REQUIRED: {
+    message: "PDF 需要密码。",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "您输入的密码不正确。",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "您已达到每日使用上限。请升级套餐，继续无中断使用此功能。",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "PDF 超过最大页数限制 50 页。",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
+};
+
+export const adBlockerContent: adBlockerContentType = {
+  title: "检测到广告拦截器",
+  description: "我们注意到您正在使用广告拦截器。请考虑关闭它，或升级到高级版享受无广告体验！",
+  reloadPage: "重新加载页面",
+  upgradeToPremium: "升级到高级版"
 };

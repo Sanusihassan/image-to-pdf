@@ -7,7 +7,8 @@ import type {
   errors as _errors,
   downloadFile as _downloadFile,
   landing_page as _landing_page,
-} from "../../content";
+} from "../content";
+import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
@@ -427,7 +428,7 @@ export const tool: _tool = {
 }
 
 
-export const edit_page = {
+export const edit_page: _edit_page = {
   edit_page_titles: {
     jpg_to_pdf: "Opciones de JPG a PDF",
     png_to_pdf: "Opciones de PNG a PDF",
@@ -477,7 +478,8 @@ export const edit_page = {
       info: "Selecciona desde el menú desplegable el formato de imagen al que deseas convertir:",
       placeholder: "Selecciona formato de imagen..."
     }
-  }
+  },
+  cta: "Ver Planes",
 };
 
 export const downloadFile: _downloadFile = {
@@ -738,4 +740,28 @@ export const errors: _errors = {
     message: "Por favor, suba al menos dos archivos para fusionar.",
     code: "ERR_UPLOAD_COUNT",
   },
+  PASSWORD_REQUIRED: {
+    message: "El PDF requiere contraseña.",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "La contraseña ingresada es incorrecta.",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "Has alcanzado tu límite diario de uso. Actualiza tu plan para continuar sin interrupciones.",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "El PDF supera el límite máximo de 50 páginas.",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
+};
+
+export const adBlockerContent: adBlockerContentType = {
+  title: "Bloqueador de anuncios detectado",
+  description: "Notamos que usas un bloqueador de anuncios. Desactívalo o actualiza a premium para una experiencia sin anuncios.",
+  reloadPage: "Recargar página",
+  upgradeToPremium: "Actualizar a Premium"
 };

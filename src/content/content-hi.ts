@@ -7,7 +7,8 @@ import type {
   errors as _errors,
   downloadFile as _downloadFile,
   landing_page as _landing_page,
-} from "../../content";
+} from "../content";
+import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
@@ -650,7 +651,8 @@ export const edit_page: _edit_page = {
       info: "ड्रॉपडाउन से चयन करें जिस छवि प्रारूप में आप परिवर्तित करना चाहते हैं:",
       placeholder: "छवि प्रारूप का चयन करें..."
     }
-  }
+  },
+  cta: "योजनाएं देखें",
 }
 
 
@@ -736,4 +738,27 @@ export const errors: _errors = {
     message: "कृपया फ्यूजन करने के लिए कम से कम दो फ़ाइलें अपलोड करें।",
     code: "ERR_UPLOAD_COUNT",
   },
+  PASSWORD_REQUIRED: {
+    message: "PDF में पासवर्ड की आवश्यकता है।",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "आपने गलत पासवर्ड डाला है।",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "आपने अपनी दैनिक उपयोग सीमा पूरी कर ली है। बिना रुकावट के जारी रखने के लिए प्लान अपग्रेड करें।",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "PDF अधिकतम 50 पृष्ठों की सीमा से अधिक है।",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
+};
+export const adBlockerContent: adBlockerContentType = {
+  title: "विज्ञापन अवरोधक पता चला",
+  description: "हमने देखा कि आप विज्ञापन अवरोधक इस्तेमाल कर रहे हैं। इसे बंद करें या प्रीमियम में अपग्रेड करें ताकि विज्ञापन-मुक्त अनुभव मिले!",
+  reloadPage: "पेज रीलोड करें",
+  upgradeToPremium: "प्रीमियम में अपग्रेड करें"
 };

@@ -35,3 +35,5 @@ remain the options.
 fix cta style.
 
 synced errors & fix back-btn style
+
+fix d&d and content then finalize ui & integrate api.

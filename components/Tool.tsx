@@ -7,7 +7,12 @@ import { FileInputForm } from "./Tool/FileInputForm";
 import DownloadFile from "./DownloadFile";
 import { useFileStore } from "../src/file-store";
 import { setField } from "../src/store";
-import { ACCEPTED, filterNewFiles, validateFiles } from "../src/utils";
+import {
+  ACCEPTED,
+  filterNewFiles,
+  SUPPORTED_IMAGE_MIME_TYPES,
+  validateFiles,
+} from "../src/utils";
 import type { edit_page } from "../src/content";
 import { getUserSubscription } from "fetch-subscription-status";
 import { Bounce, ToastContainer } from "react-toastify";
@@ -73,7 +78,7 @@ const Tool: React.FC<ToolProps> = ({
       acceptedFiles,
       dispatch,
       errors,
-      "application/pdf"
+      SUPPORTED_IMAGE_MIME_TYPES
     );
     const newFiles = filterNewFiles(acceptedFiles, files, ACCEPTED);
     if (isValid) {
@@ -103,14 +108,16 @@ const Tool: React.FC<ToolProps> = ({
   );
 
   const { getRootProps, isDragActive } = dropzone.useDropzone({ onDrop });
-
   const acceptedFileTypes = {
-    ".pdf": ".pdf, .PDF",
-    ".pptx": ".pptx, .ppt",
-    ".docx": ".docx, .doc",
-    ".xlsx": ".xlsx, .xls",
     ".jpg": ".jpg, .jpeg",
-    ".html": ".html, .htm",
+    ".png": ".png",
+    ".gif": ".gif",
+    ".tiff": ".tiff",
+    ".bmp": ".bmp",
+    ".svg": ".svg",
+    ".webp": ".webp",
+    ".heif, .heic": ".heif, .heic",
+    image: ".jpg, .png, .bmp, .tiff, .gif, .svg, .webp, .heif",
   };
 
   useEffect(() => {

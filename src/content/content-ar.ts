@@ -6,7 +6,8 @@ import type {
   errors as _errors,
   downloadFile as _downloadFile,
   landing_page as _landing_page,
-} from "../../content";
+} from "../content";
+import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
@@ -656,7 +657,8 @@ export const edit_page: _edit_page = {
       info: "اختر من القائمة المنسدلة تنسيق الصورة الذي ترغب في تحويله إليه:",
       placeholder: "اختر تنسيق الصورة..."
     }
-  }
+  },
+  cta: "عرض الخطط",
 };
 
 
@@ -733,4 +735,28 @@ export const errors: _errors = {
     message: "يرجى رفع ملفين على الأقل للدمج.",
     code: "ERR_UPLOAD_COUNT",
   },
+  PASSWORD_REQUIRED: {
+    message: "ملف PDF يتطلب كلمة مرور.",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "كلمة المرور التي أدخلتها غير صحيحة.",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "لقد وصلت إلى الحد اليومي للاستخدام. يرجى ترقية خطتك لمواصلة استخدام الميزة بدون انقطاع.",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "يتجاوز ملف PDF الحد الأقصى لعدد الصفحات وهو 50 صفحة.",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
 };
+
+export const adBlockerContent: adBlockerContentType = {
+  title: "تم اكتشاف مانع الإعلانات",
+  description: "لاحظنا أنك تستخدم مانع الإعلانات. يرجى التفكير في تعطيله أو الترقية إلى النسخة المميزة للحصول على تجربة خالية من الإعلانات!",
+  reloadPage: "إعادة تحميل الصفحة",
+  upgradeToPremium: "الترقية إلى النسخة المميزة"
+}

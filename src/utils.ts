@@ -225,11 +225,6 @@ export const getPlaceHoderImageUrl = (extension: string) => {
   }
 };
 
-// a function to check if the extension is .jpg or .pdf:
-export const isDraggableExtension = (ext: string, asPath: string) => {
-  return ext === ".jpg" || asPath.includes("merge-pdf");
-};
-
 interface PDFFile extends Blob {
   name: string;
 }
@@ -340,26 +335,56 @@ export function sanitizeKey(input: string | number | null | undefined): string {
 
   return key;
 }
+export const ACCEPTED = [
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".gif",
+  ".tiff",
+  ".tif",
+  ".bmp",
+  ".svg",
+  ".webp",
+  ".heif",
+  ".heic",
+] as const;
 
-export const ACCEPTED = ".pdf";
+export const SUPPORTED_IMAGE_MIME_TYPES = [
+  "image/jpeg",
+  "image/png",
+  "image/gif",
+  "image/tiff",
+  "image/bmp",
+  "image/svg+xml",
+  "image/webp",
+  "image/heif",
+  "image/heic",
+];
 
-// Generalized filter function for file validation
+
+
 export const filterNewFiles = (
   acceptedFiles: File[],
   existingFiles: File[],
-  allowedExtension?: string
+  allowedExtensions?: readonly string[]
 ): File[] => {
   return acceptedFiles.filter((newFile) => {
     const isDuplicate = existingFiles.some(
       (existingFile) =>
-        existingFile.name === newFile.name && existingFile.size === newFile.size
+        existingFile.name === newFile.name &&
+        existingFile.size === newFile.size
     );
-    const hasCorrectExtension = allowedExtension
-      ? newFile.name.endsWith(allowedExtension)
+
+    const hasCorrectExtension = allowedExtensions
+      ? allowedExtensions.some((ext) =>
+        newFile.name.toLowerCase().endsWith(ext)
+      )
       : true;
+
     return !isDuplicate && hasCorrectExtension;
   });
 };
+
 
 /**
  * Safely unpacks an ArrayBuffer into a typed object
@@ -455,7 +480,7 @@ export const validateFiles = (
   filesToValidate: File[],
   dispatch: Dispatch<Action>,
   errors: _,
-  mimetype: "application/pdf"
+  mimetype: string | string[]
 ): { isValid: boolean } => {
   const errorCode =
     filesToValidate

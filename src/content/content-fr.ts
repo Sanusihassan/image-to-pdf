@@ -7,7 +7,8 @@ import type {
   errors as _errors,
   downloadFile as _downloadFile,
   landing_page as _landing_page,
-} from "../../content";
+} from "../content";
+import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
@@ -661,7 +662,8 @@ export const edit_page: _edit_page = {
       info: "Sélectionnez dans le menu déroulant le format d'image auquel vous souhaitez convertir :",
       placeholder: "Sélectionnez le format d'image..."
     }
-  }
+  },
+  cta: "Voir les offres",
 };
 
 
@@ -741,4 +743,28 @@ export const errors: _errors = {
     message: "Veuillez télécharger au moins deux fichiers à fusionner.",
     code: "ERR_UPLOAD_COUNT",
   },
+  PASSWORD_REQUIRED: {
+    message: "Le PDF nécessite un mot de passe.",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "Le mot de passe saisi est incorrect.",
+    code: "INCORRECT_PASSWORD",
+  },
+  MAX_DAILY_USAGE: {
+    message:
+      "Vous avez atteint votre limite d'utilisation quotidienne. Mettez à jour votre plan pour continuer sans interruption.",
+    code: "MAX_DAILY_USAGE",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "Le PDF dépasse la limite maximale de 50 pages.",
+    code: "ERR_MAX_PAGES_EXCEEDED",
+  },
+};
+
+export const adBlockerContent: adBlockerContentType = {
+  title: "Bloqueur de publicités détecté",
+  description: "Nous avons remarqué que vous utilisez un bloqueur de publicités. Désactivez-le ou passez à premium pour une expérience sans pubs !",
+  reloadPage: "Recharger la page",
+  upgradeToPremium: "Passer à Premium"
 };

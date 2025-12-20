@@ -23,7 +23,6 @@ export const handleUpload = async (
       k: string;
       p: string;
     }[];
-    compressPdf: compressionType;
   },
   files: File[],
   errors: _
@@ -60,14 +59,13 @@ export const handleUpload = async (
   let url: string = "";
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
-    url = `http://localhost:8000/api/compress-pdf`;
+    url = `http://localhost:8000/api/${state.path}`;
   } else {
-    url = `/api/compress-pdf`;
+    url = `/api/${state.path}`;
   }
   if (state.errorMessage) {
     return;
   }
-  formData.append("compress_amount", String(state.compressPdf));
   const originalFileName =
     state.fileName || files[0]?.name?.split(".").slice(0, -1).join(".");
 

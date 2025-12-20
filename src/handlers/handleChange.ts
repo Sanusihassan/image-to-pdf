@@ -1,6 +1,6 @@
 import { type Action, type Dispatch } from "@reduxjs/toolkit";
 import type { errors as _ } from "../content/content";
-import { validateFiles } from "../utils";
+import { SUPPORTED_IMAGE_MIME_TYPES, validateFiles } from "../utils";
 import { setField } from "../store";
 
 export const handleChange = (
@@ -17,7 +17,7 @@ export const handleChange = (
     finalFiles,
     dispatch,
     errors,
-    "application/pdf"
+    SUPPORTED_IMAGE_MIME_TYPES
   );
 
   if (isValid) {
