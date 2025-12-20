@@ -24,6 +24,15 @@ export interface ToolState {
   isAdBlocked: boolean;
 }
 
+export type supportedImageTypes = 'JPG' |
+  'PNG' |
+  'BMP' |
+  'TIFF' |
+  'GIF' |
+  'SVG' |
+  'WebP' |
+  'HEIF';
+
 const initialState: ToolState = {
   showTool: true,
   errorMessage: "",

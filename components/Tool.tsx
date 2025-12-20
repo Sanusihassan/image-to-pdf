@@ -175,7 +175,7 @@ const Tool: React.FC<ToolProps> = ({
             acceptedFileTypes={acceptedFileTypes}
           />
           <p>{tools.or_drop}</p>
-          <ErrorElement cta={edit_page.filenameOptions.cta} />
+          {/* <ErrorElement cta={edit_page.filenameOptions.cta} /> */}
         </div>
         <EditPage
           extension={data.type}

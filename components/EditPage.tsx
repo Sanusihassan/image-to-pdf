@@ -67,7 +67,7 @@ const EditPage = ({
           edit_page={edit_page}
           drop_files={drop_files}
         />
-        <ErrorElement cta={edit_page.filenameOptions.cta} />
+        {/* <ErrorElement cta={edit_page.filenameOptions.cta} /> */}
         <AddMoreButton
           onClick={() => {
             if (fileInput) {
@@ -100,11 +100,11 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        <Options
+        {/* <Options
           content={edit_page.compress_pdf}
           filenameOptions={edit_page.filenameOptions}
           lang={lang}
-        />
+        /> */}
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

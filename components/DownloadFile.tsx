@@ -46,7 +46,7 @@ const DownloadFile = ({
             className="back-btn"
             style={lang == "ar" ? { order: 1 } : {}}
             data-tooltip-content={
-              downloadFile.backto[path as keyof typeof downloadFile.backto]
+              downloadFile.backTo[path as keyof typeof downloadFile.backTo]
             }
             data-tooltip-id="download-btn-tooltip"
             data-tooltip-place="left"
@@ -81,11 +81,11 @@ const DownloadFile = ({
           </button>
         </div>
       </div>
-      {showDownloadBtn ? (
+      {/* {showDownloadBtn ? (
         <CompressionAnalytics
           content={downloadFile.compressionAnalyticsContent}
         />
-      ) : null}
+      ) : null} */}
     </>
   );
 };
