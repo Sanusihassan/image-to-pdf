@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { ActionDiv } from "./ActionDiv";
 import { Tooltip } from "react-tooltip";
 import { useDispatch } from "react-redux";
-import { getFileDetailsTooltipContent } from "../../src/utils";
+import { getFileDetailsTooltipContent, shortenFileName } from "../../src/utils";
 import { Loader } from "./Loader";
 import type { errors } from "../../src/content";
 interface ImageCardProps {
@@ -96,7 +96,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
           }}
         />
       </div>
-      <p className="text-center">{file.name}</p>
+      <p className="text-center">{shortenFileName(file.name, 15)}</p>
     </div>
   );
 };

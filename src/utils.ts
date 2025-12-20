@@ -516,3 +516,18 @@ export const validateFiles = (
 
   return { isValid: false };
 };
+
+export function shortenFileName(name: string, maxLength = 20) {
+  if (name.length <= maxLength) return name;
+
+  const dotIndex = name.lastIndexOf(".");
+  const ext = dotIndex !== -1 ? name.slice(dotIndex) : "";
+  const base = dotIndex !== -1 ? name.slice(0, dotIndex) : name;
+
+  const shortenedBase =
+    base.length > maxLength
+      ? base.slice(0, maxLength / 2) + "..." + base.slice(-maxLength / 2)
+      : base;
+
+  return shortenedBase + ext;
+}

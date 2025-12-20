@@ -13,6 +13,7 @@ import {
   getFirstPageAsImage,
   getPlaceHoderImageUrl,
   sanitizeKey,
+  shortenFileName,
 } from "../../src/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { setField, type ToolState } from "../../src/store";
@@ -180,7 +181,7 @@ const FileCard = ({
           />
         ) : null}
 
-        <p className="text-center">{file.name}</p>
+        <p className="text-center">{shortenFileName(file.name, 15)}</p>
       </div>
     </div>
   );

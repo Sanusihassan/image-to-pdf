@@ -109,78 +109,68 @@ const Files = ({
   };
 
   return (
-    <div
-      {...getRootProps()}
-      className={`display-file ${isDragActive ? "dragging-over" : ""}`}
-      style={{ position: "relative" }}
-    >
-      <input {...getInputProps()} />
-
-      {isDragActive && <div className="overlay display-4">{drop_files}</div>}
-
-      {files.map((file, index) => (
-        <div key={file.name} className="drag-element">
-          {extension === ".pdf" ? (
-            <FileCard
-              extension={extension}
-              file={file}
-              index={index}
-              isDraggable={false}
-              provided={null}
-              snapshot={null}
-              errors={errors}
-              loader_text={loader_text}
-              fileDetailProps={fileDetailProps}
-            />
-          ) : (
-            <DragDropContext onDragEnd={handleDragEnd}>
-              <Droppable droppableId="imageUrls" direction="horizontal">
-                {(provided, snapshot) => (
-                  <div
-                    className={`display-file ${
-                      snapshot.isDraggingOver ? "dragging-over" : ""
-                    }`}
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
-                  >
-                    <Draggable
-                      key={file.name}
-                      draggableId={file.name}
-                      index={index}
-                      isDragDisabled={true}
+    <>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <Droppable droppableId="imageUrls" direction="horizontal">
+          {(provided, snapshot) => (
+            <div
+              className={`display-file ${
+                snapshot.isDraggingOver ? "dragging-over" : ""
+              }`}
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {files.map((file, index) => (
+                <Draggable
+                  key={file.name}
+                  draggableId={file.name}
+                  index={index}
+                  isDragDisabled={extension === ".pdf"}
+                >
+                  {(provided, snapshot) => (
+                    <div
+                      {...provided.draggableProps}
+                      ref={provided.innerRef}
+                      className={`drag-element ${
+                        snapshot.isDragging ? "dragging" : ""
+                      }`}
+                      style={{
+                        ...provided.draggableProps.style,
+                      }}
                     >
-                      {(provided, snapshot) => (
-                        <div
-                          {...provided.draggableProps}
-                          ref={provided.innerRef}
-                          className={`drag-element ${
-                            snapshot.isDragging ? "dragging" : ""
-                          }`}
-                          style={{
-                            ...provided.draggableProps.style,
-                          }}
-                        >
-                          <ImageCard
-                            index={index}
-                            provided={provided}
-                            extension={extension}
-                            errors={errors}
-                            fileDetailProps={fileDetailProps}
-                            file={file}
-                            loader_text={loader_text}
-                          />
-                        </div>
+                      {extension === ".pdf" ? (
+                        <FileCard
+                          extension={extension}
+                          file={file}
+                          index={index}
+                          isDraggable={false}
+                          provided={null}
+                          snapshot={null}
+                          errors={errors}
+                          loader_text={loader_text}
+                          fileDetailProps={fileDetailProps}
+                        />
+                      ) : (
+                        <ImageCard
+                          index={index}
+                          provided={provided}
+                          extension={extension}
+                          errors={errors}
+                          fileDetailProps={fileDetailProps}
+                          file={file}
+                          loader_text={loader_text}
+                        />
                       )}
-                    </Draggable>
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </DragDropContext>
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
           )}
-        </div>
-      ))}
-    </div>
+        </Droppable>
+      </DragDropContext>
+    </>
   );
 };
 

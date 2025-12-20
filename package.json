@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@hello-pangea/dnd": "^18.0.1",
     "@reduxjs/toolkit": "^2.4.0",
     "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.13.5",
