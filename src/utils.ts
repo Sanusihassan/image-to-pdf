@@ -347,6 +347,7 @@ export const ACCEPTED = [
   ".webp",
   ".heif",
   ".heic",
+  ".pdf",
 ] as const;
 
 export const SUPPORTED_IMAGE_MIME_TYPES = [
@@ -359,6 +360,7 @@ export const SUPPORTED_IMAGE_MIME_TYPES = [
   "image/webp",
   "image/heif",
   "image/heic",
+  "application/pdf",
 ];
 
 

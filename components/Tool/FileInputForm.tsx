@@ -18,7 +18,8 @@ type AcceptedFileTypes = {
     | ".bmp"
     | ".svg"
     | ".webp"
-    | ".heif, .heic"]: string;
+    | ".heif, .heic"
+    | ".pdf"]: string;
 };
 interface FileInputFormProps {
   data: {
@@ -64,7 +65,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
       return;
     }
     setLoaded(true);
-    console.log("loaded", loaded);
     setFileInput(fileInput);
     setSubmitBtn(submitBtn);
     setDownloadBtn(downloadBtn);

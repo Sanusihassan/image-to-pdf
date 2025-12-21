@@ -2,11 +2,11 @@ import { Provider as ReduxProvider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import toolReducer from "../src/store";
 import { Tool as ToolComponent, type ToolProps } from "./Tool";
-// import { type _howToSchema } from "../src/how-to/how-to";
 import { Features } from "./Features";
 import type { WithContext, HowTo as HowToType } from "schema-dts";
 import HowTo from "./HowTo";
 import AdBlockDetector, { type adBlockerContentType } from "./AdBlockDetector";
+import type { toType } from "../src/content/content";
 
 export const store = configureStore({
   reducer: {
@@ -36,6 +36,7 @@ export function ToolWrapper(props: ToolWrapperProps) {
       <div className="container">
         <Features
           features={features as { title: string; description: string }[]}
+          tool={to as toType}
         />
       </div>
       <div className="container">

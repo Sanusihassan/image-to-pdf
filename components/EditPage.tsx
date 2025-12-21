@@ -9,6 +9,7 @@ import { type ToolState, resetErrorMessage, setField } from "../src/store";
 import { useFileStore } from "../src/file-store";
 import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
+import Options from "./DisplayFile/Options";
 // import { Options } from "./DisplayFile/Options";
 
 type editPageProps = {
@@ -100,11 +101,8 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        {/* <Options
-          content={edit_page.compress_pdf}
-          filenameOptions={edit_page.filenameOptions}
-          lang={lang}
-        /> */}
+        {/* only in pdf to image */}
+        {/* <Options edit_page={edit_page} layout="image" /> */}
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

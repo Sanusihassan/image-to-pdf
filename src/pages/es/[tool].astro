@@ -1,0 +1,164 @@
+---
+import {
+  tool,
+  tools,
+  errors,
+  edit_page,
+  downloadFile,
+  adBlockerContent,
+} from "../../content/content-es";
+import { howToSchemas } from "../../how-to/how-to-es";
+import BaseLayout from "../../partials/BaseLayout.astro";
+export const routes = {
+  "/jpg-to-pdf": { item: tool["JPG_to_PDF"] },
+  "/svg-to-pdf": { item: tool["SVG_to_PDF"] },
+  "/png-to-pdf": { item: tool["PNG_to_PDF"] },
+  "/gif-to-pdf": { item: tool["GIF_to_PDF"] },
+  "/tiff-to-pdf": { item: tool["TIFF_to_PDF"] },
+  "/bmp-to-pdf": { item: tool["BMP_to_PDF"] },
+  "/webp-to-pdf": { item: tool["WebP_to_PDF"] },
+  "/heif-heic-to-pdf": { item: tool["HEIF_to_PDF"] },
+  "/pdf-to-jpg": { item: tool["PDF_to_JPG"] },
+  "/pdf-to-svg": { item: tool["PDF_to_SVG"] },
+  "/pdf-to-png": { item: tool["PDF_to_PNG"] },
+  "/pdf-to-gif": { item: tool["PDF_to_GIF"] },
+  "/pdf-to-tiff": { item: tool["PDF_to_TIFF"] },
+  "/pdf-to-bmp": { item: tool["PDF_to_BMP"] },
+  "/pdf-to-webp": { item: tool["PDF_to_WebP"] },
+  "/pdf-to-heif-heic": { item: tool["PDF_to_HEIF"] },
+  "/image-to-pdf": { item: tool["Image_to_PDF"] },
+  "/pdf-to-image": { item: tool["PDF_to_Image"] },
+};
+
+export const routesMap = {
+  JPGToPDFHOWTO: "/jpg-to-pdf",
+  PDFToJPGHOWTO: "/pdf-to-jpg",
+  PNGToPDFHOWTO: "/png-to-pdf",
+  PDFToPNGHOWTO: "/pdf-to-png",
+  GIFToPDFHOWTO: "/gif-to-pdf",
+  PDFToGIFHOWTO: "/pdf-to-gif",
+  TIFFToPDFHOWTO: "/tiff-to-pdf",
+  PDFToTIFFHOWTO: "/pdf-to-tiff",
+  BMPToPDFHOWTO: "/bmp-to-pdf",
+  PDFToBMPHOWTO: "/pdf-to-bmp",
+  SVGToPDFHOWTO: "/svg-to-pdf",
+  PDFToSVGHOWTO: "/pdf-to-svg",
+  WebPToPDFHOWTO: "/webp-to-pdf",
+  PDFToWEBPHOWTO: "/pdf-to-webp",
+  HEIFToPDFHOWTO: "/heif-heic-to-pdf",
+  PDFToHEIFHOWTO: "/pdf-to-heif-heic",
+  HEICToPDFHOWTO: "/heif-heic-to-pdf",
+  ImageToPDFHOWTO: "/image-to-pdf",
+  PDFToImageHOWTO: "/pdf-to-image",
+};
+
+export async function getStaticPaths() {
+  const paths = Object.keys(routes).map((route) => {
+    const toolSlug = route.substring(1); // Remove leading slash
+    return {
+      params: { tool: toolSlug },
+      props: {
+        item: routes[route].item as ToolType,
+        currentRoute: route,
+        toolSlug: toolSlug,
+      },
+    };
+  });
+
+  return paths;
+}
+
+// Get the props from getStaticPaths
+const { item, currentRoute } = Astro.props;
+
+// Construct the current path using the tool parameter
+const asPath = `${currentRoute}`;
+
+// Find matching how-to content
+const matchingKey = Object.keys(routesMap).find(
+  (key) => routesMap[key] === asPath
+);
+
+const currentHowTo = matchingKey ? howToSchemas[matchingKey] : null;
+
+// Website schema for SEO
+const websiteSchema = {
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  name: `PDFEquips ${item.title}`,
+  description: item.description,
+  url: `https://www.pdfequips.com${asPath}`,
+};
+
+const lang = "es";
+import { ToolWrapper } from "../../../components/ToolWrapper";
+import type { ToolType } from "../../content/content";
+const seoConfig = {
+  title: item.seoTitle,
+  description: item.description,
+  to: item.to,
+  openGraph: {
+    url: item.to,
+    title: item.seoTitle,
+    description: item.description,
+    images: [
+      {
+        url: `https://www.pdfequips.com/images/es${item.to}.png`,
+        width: 1200,
+        height: 630,
+        alt: item.title,
+        type: "image/png",
+      },
+    ],
+    site_name: item.title,
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    handle: "@pdfequips",
+    site: "@pdfequips",
+    cardType: "summary_large_image",
+  },
+};
+---
+
+<BaseLayout
+  title={item.title}
+  description={item.description}
+  seoTitle={item.seoTitle}
+  to={item.to}
+  seoConfig={seoConfig}
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(websiteSchema)}
+    />
+    {
+      currentHowTo && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(currentHowTo)}
+        />
+      )
+    }
+  </Fragment>
+  <ToolWrapper
+    client:load
+    tools={tools}
+    data={item}
+    lang={lang}
+    errors={errors}
+    edit_page={edit_page}
+    pages={edit_page.pages}
+    page={edit_page.page}
+    downloadFile={downloadFile}
+    features={item.features}
+    howTo={currentHowTo}
+    seoTitle={item.title}
+    to={currentRoute}
+    adBlockerContent={adBlockerContent}
+  />
+</BaseLayout>
