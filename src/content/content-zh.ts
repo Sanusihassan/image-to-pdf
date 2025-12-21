@@ -750,6 +750,21 @@ export const errors: _errors = {
     message: "PDF 超过最大页数限制 50 页。",
     code: "ERR_MAX_PAGES_EXCEEDED",
   },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "您一次最多只能转换 15 张图片。升级您的方案即可在一个 PDF 中转换更多图片。",
+    code: "ERR_MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "一张或多张图片超过了 20 MB 的大小限制。升级您的方案以上传更大的图片。",
+    code: "ERR_IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "上传的文件总大小超过了允许的限制。升级您的方案以获得更高的上传额度。",
+    code: "ERR_TOTAL_SIZE_EXCEEDED",
+  },
 };
 
 export const adBlockerContent: adBlockerContentType = {

@@ -2,9 +2,9 @@ import { ExclamationCircleIcon } from "@heroicons/react/solid";
 // import { ToolStoreContext } from "../ToolStoreContext";
 import { useSelector } from "react-redux";
 import type { ToolState } from "../src/store";
-// import { CTABtn } from "./DisplayFile/Options";
+import { CTABtn } from "./DisplayFile/Options/CTABtn";
 
-const ErrorElement = ({ cta }: { cta: string }) => {
+const ErrorElement = ({ cta, lang }: { cta: string; lang: string }) => {
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
@@ -30,9 +30,9 @@ const ErrorElement = ({ cta }: { cta: string }) => {
           viewBox="0 0 22 22"
         />
       </div>
-      {/* {errorCode === "MAX_DAILY_USAGE" ? (
-        <CTABtn cta={cta} centerItem={true} />
-      ) : null} */}
+      {errorCode === "MAX_DAILY_USAGE" ? (
+        <CTABtn cta={cta} centerItem={true} lang={lang} />
+      ) : null}
     </>
   );
 };

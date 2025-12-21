@@ -10,6 +10,7 @@ type propTypes = {
   errors: _;
   edit_page: edit_page;
   drop_files: string;
+  path: string;
 };
 
 const DisplayFile = ({
@@ -20,17 +21,9 @@ const DisplayFile = ({
   errors,
   edit_page,
   drop_files,
+  path,
 }: propTypes) => {
   const [toolTipSizes, setToolTipSizes] = useState<string[]>([]);
-
-  useEffect(() => {
-    // const isValid = validateFiles(files, extension, errors, dispatch, {
-    //   path: statePath,
-    // });
-    // if (isValid) {
-    //   dispatch(resetErrorMessage());
-    // }
-  }, [extension]);
 
   return (
     <>
@@ -41,7 +34,7 @@ const DisplayFile = ({
         toolTipSizes={toolTipSizes}
         loader_text={edit_page.loader_text}
         fileDetailProps={[pages, page, lang]}
-        drop_files={drop_files}
+        path={path}
       />
     </>
   );

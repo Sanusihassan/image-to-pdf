@@ -96,7 +96,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
           }}
         />
       </div>
-      <p className="text-center">{shortenFileName(file.name, 15)}</p>
+      <p className="text-center">{shortenFileName(file.name)}</p>
     </div>
   );
 };

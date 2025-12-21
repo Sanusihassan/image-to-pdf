@@ -752,6 +752,22 @@ export const errors: _errors = {
     message: "يتجاوز ملف PDF الحد الأقصى لعدد الصفحات وهو 50 صفحة.",
     code: "ERR_MAX_PAGES_EXCEEDED",
   },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "يمكنك تحويل ما يصل إلى 15 صورة في المرة الواحدة. قم بترقية خطتك لتحويل عدد أكبر من الصور في ملف PDF واحد.",
+    code: "ERR_MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "حجم صورة واحدة أو أكثر يتجاوز الحد الأقصى البالغ 20 ميجابايت. قم بترقية خطتك لرفع صور أكبر حجمًا.",
+    code: "ERR_IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "إجمالي حجم الملفات يتجاوز الحد المسموح به. قم بترقية خطتك للحصول على حدود رفع أعلى.",
+    code: "ERR_TOTAL_SIZE_EXCEEDED",
+  },
+
 };
 
 export const adBlockerContent: adBlockerContentType = {

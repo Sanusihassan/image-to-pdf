@@ -70,7 +70,7 @@ export const Features = ({
       {features.map(({ title, description }, i) => {
         const Icon = icons[i];
         return (
-          <div className="feature">
+          <div className="feature" key={i}>
             <Icon className="feature-icon" />
             <div className="title">{title}</div>
             <p className="description">{description}</p>

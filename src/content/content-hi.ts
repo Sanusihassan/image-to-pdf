@@ -755,6 +755,22 @@ export const errors: _errors = {
     message: "PDF अधिकतम 50 पृष्ठों की सीमा से अधिक है।",
     code: "ERR_MAX_PAGES_EXCEEDED",
   },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "आप एक बार में अधिकतम 15 चित्रों को परिवर्तित कर सकते हैं। एक ही PDF में अधिक चित्रों को बदलने के लिए अपनी योजना अपग्रेड करें।",
+    code: "ERR_MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "एक या अधिक चित्र 20 MB की आकार सीमा से अधिक हैं। बड़े आकार की छवियाँ अपलोड करने के लिए अपनी योजना अपग्रेड करें।",
+    code: "ERR_IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "कुल अपलोड आकार अनुमत सीमा से अधिक है। उच्च अपलोड सीमाओं के लिए अपनी योजना अपग्रेड करें।",
+    code: "ERR_TOTAL_SIZE_EXCEEDED",
+  },
+
 };
 export const adBlockerContent: adBlockerContentType = {
   title: "विज्ञापन अवरोधक पता चला",

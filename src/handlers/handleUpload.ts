@@ -123,9 +123,7 @@ export const handleUpload = async (
       dispatch(setField({ errorMessage: errors.ERR_NETWORK.message }));
       return;
     }
-    console.log("error", error);
     const errorMessage = parseApiError(error, errors);
-    console.log("errorMessage", errorMessage);
     if (errorMessage) {
       dispatch(setField({ errorMessage }));
     }

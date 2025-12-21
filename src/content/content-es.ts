@@ -757,6 +757,22 @@ export const errors: _errors = {
     message: "El PDF supera el límite máximo de 50 páginas.",
     code: "ERR_MAX_PAGES_EXCEEDED",
   },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "Puedes convertir hasta 15 imágenes a la vez. Actualiza tu plan para convertir más imágenes en un solo PDF.",
+    code: "ERR_MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "Una o más imágenes superan el límite de tamaño de 20 MB. Actualiza tu plan para subir imágenes de mayor tamaño.",
+    code: "ERR_IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "El tamaño total de los archivos supera el límite permitido. Actualiza tu plan para obtener límites de carga más altos.",
+    code: "ERR_TOTAL_SIZE_EXCEEDED",
+  },
+
 };
 
 export const adBlockerContent: adBlockerContentType = {

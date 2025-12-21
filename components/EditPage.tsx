@@ -67,8 +67,9 @@ const EditPage = ({
           errors={errors}
           edit_page={edit_page}
           drop_files={drop_files}
+          path={path}
         />
-        {/* <ErrorElement cta={edit_page.filenameOptions.cta} /> */}
+        <ErrorElement cta={edit_page.cta} lang={lang} />
         <AddMoreButton
           onClick={() => {
             if (fileInput) {
@@ -101,8 +102,10 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        {/* only in pdf to image */}
-        {/* <Options edit_page={edit_page} layout="image" /> */}
+        <Options
+          edit_page={edit_page}
+          layout={path === "image-to-pdf" ? "image" : "pdf"}
+        />
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

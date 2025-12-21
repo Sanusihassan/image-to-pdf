@@ -783,6 +783,21 @@ export const errors = {
     message: "The PDF exceeds the maximum page limit of 50 pages.",
     code: "ERR_MAX_PAGES_EXCEEDED",
   },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "You can convert up to 15 images at once. Upgrade your plan to convert more images in a single PDF.",
+    code: "ERR_MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "One or more images exceed the 20 MB size limit. Upgrade your plan to upload larger images.",
+    code: "ERR_IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "The total upload size exceeds the allowed limit. Upgrade your plan for higher upload limits.",
+    code: "ERR_TOTAL_SIZE_EXCEEDED",
+  },
   ERR_NETWORK: {
     message:
       "A network error occurred. Please check your internet connection and try again.",
