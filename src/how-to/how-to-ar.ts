@@ -1,10 +1,5 @@
 import type { _howToSchemas } from "./how-to";
 
-// please add a question mark at the end of each question
-// for example: name: "How to Convert JPG Images to PDF?",
-// keep the content as is just add the question marks
-// just add a qustion mark for the direct name property of each object in the howToSchemas
-// this is the arabic version so add arabic question mark after each question:
 export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {
         "@context": "http://schema.org",

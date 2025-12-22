@@ -18,10 +18,11 @@
       height: 100%;
     }
 
-    .drag-element-img {
-      cursor: all-scroll !important;
-      height: 100%;
-    }
+    // .drag-element-img {
+    //   cursor: all-scroll !important;
+    //   height: 100%;
+    // }
+    @import "./image-card";
 
     .item-img {
       cursor: pointer;
@@ -111,21 +112,6 @@
       }
     }
   }
-
-  // .action-div {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     z-index: 1;
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: center;
-  //     height: 100%;
-  //     width: 100%;
-  //     opacity: 0;
-  //     transition: opacity 0.2s ease-in-out;
-  // }
 
   .hero-icon {
     display: inline-block;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 import type { errors as _, edit_page, Paths } from "../src/content";
 import Files from "./DisplayFile/Files";

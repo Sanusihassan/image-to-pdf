@@ -1,4 +1,4 @@
-import { _howToSchemas } from "./how-to";
+import type { _howToSchemas } from "./how-to";
 
 export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {

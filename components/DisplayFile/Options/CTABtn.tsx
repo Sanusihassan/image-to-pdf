@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { edit_page } from "../../../src/content/content";
 import type { ToolState } from "../../../src/store";
 export const CTABtn = ({
   cta,

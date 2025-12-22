@@ -70,7 +70,7 @@ const getErrorMessage = (errcode: string, errors: ErrorsType): string => {
     const errorMap: Record<string, string> = {
         EMPTY_FILE: errors.EMPTY_FILE.message,
         FILE_TOO_LARGE: errors.FILE_TOO_LARGE.message,
-        SINGLE_FILE_SIZE_EXCEEDED: errors.alerts.singleFileSize,
+        // SINGLE_FILE_SIZE_EXCEEDED: errors.alerts.singleFileSize,
         NOT_SUPPORTED_TYPE: errors.NOT_SUPPORTED_TYPE.message,
         FILE_CORRUPT: errors.FILE_CORRUPT.message,
         MAX_FILES_EXCEEDED: errors.MAX_FILES_EXCEEDED.message,

@@ -12,7 +12,7 @@ export function SubmitBtn({
   k: string;
   edit_page: edit_page;
   errors: errors;
-}): JSX.Element {
+}) {
   const dispatch = useDispatch();
   const { submitBtn, files } = useFileStore();
   // state variables:

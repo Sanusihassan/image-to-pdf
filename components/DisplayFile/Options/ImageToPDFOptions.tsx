@@ -237,7 +237,10 @@ export const ImageToPDFOptions = ({
 
       {/* Merge Checkbox */}
       <section>
-        <label className="inline-flex items-center gap-3 cursor-pointer group">
+        <label
+          className="inline-flex items-center gap-3 cursor-pointer group"
+          onClick={() => updateSettings({ mergeAll: !settings.mergeAll })}
+        >
           <button
             type="button"
             role="checkbox"
