@@ -653,6 +653,18 @@ export const edit_page: _edit_page = {
     }
   },
   cta: "योजनाएं देखें",
+  imageToPDFOptionsContent: {
+    page_orientation: "पृष्ठ अभिविन्यास",
+    portrait: "पोर्ट्रेट",
+    landscape: "लैंडस्केप",
+    page_size: "पृष्ठ का आकार",
+    margins: "मार्जिन",
+    margins_none: "कोई नहीं",
+    margins_small: "छोटा",
+    margins_medium: "मध्यम",
+    margins_large: "बड़ा",
+    merge_all: "सभी छवियों को एक PDF फ़ाइल में मर्ज करें",
+  }
 }
 
 
@@ -663,12 +675,6 @@ export const tools: _tools = {
   drop_files: "फ़ाइलें यहाँ खींचें",
 };
 
-export const footer: _footer = {
-  brand: "PDFEquips",
-  terms: "शर्तें",
-  conditions: "उपयोग की शर्तें",
-  privacy_policy: "गोपनीयता नीति",
-};
 
 export const errors: _errors = {
   EMPTY_FILE: {

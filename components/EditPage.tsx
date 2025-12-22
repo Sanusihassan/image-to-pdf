@@ -1,6 +1,6 @@
 import DisplayFile from "./DisplayFile";
 import { useEffect } from "react";
-import type { edit_page } from "../src/content";
+import type { edit_page, Paths } from "../src/content";
 import ErrorElement from "./ErrorElement";
 import type { errors as _ } from "../src/content";
 import { CogIcon } from "@heroicons/react/outline";
@@ -19,8 +19,7 @@ type editPageProps = {
   page: string;
   lang: string;
   errors: _;
-  path: string;
-  drop_files: string;
+  path: Paths;
 };
 
 const EditPage = ({
@@ -31,7 +30,6 @@ const EditPage = ({
   lang,
   errors,
   path,
-  drop_files,
 }: editPageProps) => {
   // state variables
   const errorCode = useSelector(
@@ -66,7 +64,6 @@ const EditPage = ({
           lang={lang}
           errors={errors}
           edit_page={edit_page}
-          drop_files={drop_files}
           path={path}
         />
         <ErrorElement cta={edit_page.cta} lang={lang} />
@@ -102,10 +99,7 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        <Options
-          edit_page={edit_page}
-          layout={path === "image-to-pdf" ? "image" : "pdf"}
-        />
+        <Options edit_page={edit_page} tool={path} />
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

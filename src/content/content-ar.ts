@@ -659,6 +659,18 @@ export const edit_page: _edit_page = {
     }
   },
   cta: "عرض الخطط",
+  imageToPDFOptionsContent: {
+    page_orientation: "اتجاه الصفحة",
+    portrait: "عمودي",
+    landscape: "أفقي",
+    page_size: "حجم الصفحة",
+    margins: "الهوامش",
+    margins_none: "بدون",
+    margins_small: "صغير",
+    margins_medium: "متوسط",
+    margins_large: "كبير",
+    merge_all: "دمج جميع الصور في ملف PDF واحد",
+  }
 };
 
 

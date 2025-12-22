@@ -480,6 +480,18 @@ export const edit_page: _edit_page = {
     }
   },
   cta: "Ver Planes",
+  imageToPDFOptionsContent: {
+    page_orientation: "Orientación de página",
+    portrait: "Vertical",
+    landscape: "Horizontal",
+    page_size: "Tamaño de página",
+    margins: "Márgenes",
+    margins_none: "Ninguno",
+    margins_small: "Pequeño",
+    margins_medium: "Mediano",
+    margins_large: "Grande",
+    merge_all: "Combinar todas las imágenes en un archivo PDF",
+  }
 };
 
 export const downloadFile: _downloadFile = {

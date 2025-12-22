@@ -1,1 +1,9 @@
 create options & integrate api.
+
+create pdf options & image options based on the image tool.
+
+add reacting to the options.
+
+# validate dragged files for pdf file only pdf files.
+
+sync imageCard with settings.

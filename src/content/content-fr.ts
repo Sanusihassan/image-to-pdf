@@ -664,6 +664,18 @@ export const edit_page: _edit_page = {
     }
   },
   cta: "Voir les offres",
+  imageToPDFOptionsContent: {
+    page_orientation: "Orientation de la page",
+    portrait: "Portrait",
+    landscape: "Paysage",
+    page_size: "Taille de la page",
+    margins: "Marges",
+    margins_none: "Aucune",
+    margins_small: "Petite",
+    margins_medium: "Moyenne",
+    margins_large: "Grande",
+    merge_all: "Fusionner toutes les images en un seul fichier PDF",
+  }
 };
 
 

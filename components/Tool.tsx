@@ -10,10 +10,11 @@ import { setField } from "../src/store";
 import {
   ACCEPTED,
   filterNewFiles,
+  getMimeTypesFromPath,
   SUPPORTED_IMAGE_MIME_TYPES,
   validateFiles,
 } from "../src/utils";
-import type { edit_page } from "../src/content";
+import type { edit_page, Paths } from "../src/content";
 import { getUserSubscription } from "fetch-subscription-status";
 import { Bounce, ToastContainer } from "react-toastify";
 import Cookies from "js-cookie";
@@ -56,7 +57,7 @@ const Tool: React.FC<ToolProps> = ({
   page,
   downloadFile,
 }) => {
-  const path = data.to.replace("/", "");
+  const path: Paths = data.to.replace("/", "") as Paths;
   const stateShowTool = useSelector(
     (state: { tool: any }) => state.tool.showTool
   );
@@ -73,19 +74,20 @@ const Tool: React.FC<ToolProps> = ({
   useEffect(() => {
     dispatch(setField({ showDownloadBtn: false }));
   }, [stateShowTool]);
-  const onDrop = useCallback((acceptedFiles: File[]) => {
+
+  const onDrop = (acceptedFiles: File[]) => {
+    const mimeTypes = getMimeTypesFromPath(path);
     const { isValid } = validateFiles(
       acceptedFiles,
       dispatch,
       errors,
-      SUPPORTED_IMAGE_MIME_TYPES
+      mimeTypes
     );
     const newFiles = filterNewFiles(acceptedFiles, files, ACCEPTED);
     if (isValid) {
-      setFiles(newFiles);
-      handleHideTool();
+      setFiles([...files, ...newFiles]);
     }
-  }, []);
+  };
 
   const handlePaste = useCallback(
     (event: React.ClipboardEvent<HTMLDivElement>) => {
@@ -193,7 +195,6 @@ const Tool: React.FC<ToolProps> = ({
           lang={lang}
           errors={errors}
           path={path}
-          drop_files={tools.drop_files}
         />
         <DownloadFile lang={lang} downloadFile={downloadFile} path={path} />
       </div>

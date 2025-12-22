@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
-import type { errors as _, edit_page } from "../src/content";
+import type { errors as _, edit_page, Paths } from "../src/content";
 import Files from "./DisplayFile/Files";
 type propTypes = {
   extension: string;
@@ -9,8 +9,7 @@ type propTypes = {
   lang: string;
   errors: _;
   edit_page: edit_page;
-  drop_files: string;
-  path: string;
+  path: Paths;
 };
 
 const DisplayFile = ({
@@ -20,7 +19,6 @@ const DisplayFile = ({
   lang,
   errors,
   edit_page,
-  drop_files,
   path,
 }: propTypes) => {
   const [toolTipSizes, setToolTipSizes] = useState<string[]>([]);

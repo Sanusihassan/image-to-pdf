@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { type Action, type Dispatch } from "@reduxjs/toolkit";
-import type { errors as _ } from "./content";
+import type { errors as _, Paths } from "./content";
 import { resetErrorMessage, setField } from "./store";
 import * as pdfjs from "pdfjs-dist";
 import {
@@ -11,6 +11,7 @@ import {
 import { toast, type Id } from "react-toastify";
 
 import Cookies from "js-cookie";
+import type { Accept } from "react-dropzone";
 
 // @ts-ignore
 const pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.min.mjs");
@@ -364,6 +365,82 @@ export const SUPPORTED_IMAGE_MIME_TYPES = [
 ];
 
 
+
+// ============ ACCEPTED FILES BY PATH ============
+const PATH_ACCEPTED_FILES: Record<Paths, Accept> = {
+  // Image to PDF - accept specific image types
+  "jpg-to-pdf": { "image/jpeg": [".jpg", ".jpeg"] },
+  "png-to-pdf": { "image/png": [".png"] },
+  "gif-to-pdf": { "image/gif": [".gif"] },
+  "tiff-to-pdf": { "image/tiff": [".tiff", ".tif"] },
+  "bmp-to-pdf": { "image/bmp": [".bmp"] },
+  "webp-to-pdf": { "image/webp": [".webp"] },
+  "svg-to-pdf": { "image/svg+xml": [".svg"] },
+  "heif-heic-to-pdf": { "image/heif": [".heif", ".heic"] },
+
+  // Generic image to PDF - accept all image types
+  "image-to-pdf": {
+    "image/jpeg": [".jpg", ".jpeg"],
+    "image/png": [".png"],
+    "image/gif": [".gif"],
+    "image/tiff": [".tiff", ".tif"],
+    "image/bmp": [".bmp"],
+    "image/webp": [".webp"],
+    "image/svg+xml": [".svg"],
+    "image/heif": [".heif", ".heic"],
+  },
+
+  // PDF to Image - accept PDF only
+  "pdf-to-jpg": { "application/pdf": [".pdf"] },
+  "pdf-to-png": { "application/pdf": [".pdf"] },
+  "pdf-to-gif": { "application/pdf": [".pdf"] },
+  "pdf-to-tiff": { "application/pdf": [".pdf"] },
+  "pdf-to-bmp": { "application/pdf": [".pdf"] },
+  "pdf-to-webp": { "application/pdf": [".pdf"] },
+  "pdf-to-svg": { "application/pdf": [".pdf"] },
+  "pdf-to-heif-heic": { "application/pdf": [".pdf"] },
+
+  // Generic PDF to image - accept PDF only
+  "pdf-to-image": { "application/pdf": [".pdf"] },
+};
+
+// ============ HELPER FUNCTIONS ============
+
+/**
+ * Get the Accept object for react-dropzone based on the path
+ */
+export const getAcceptFromPath = (path: Paths): Accept => {
+  return PATH_ACCEPTED_FILES[path];
+};
+
+/**
+ * Get array of MIME types for validation based on the path
+ */
+export const getMimeTypesFromPath = (path: Paths): string[] => {
+  const accept = PATH_ACCEPTED_FILES[path];
+  return Object.keys(accept);
+};
+
+/**
+ * Get the primary MIME type for a path (useful for single-type validation)
+ */
+export const getPrimaryMimeType = (path: Paths): string => {
+  return getMimeTypesFromPath(path)[0];
+};
+
+/**
+ * Check if a path accepts PDF files
+ */
+export const acceptsPdf = (path: Paths): boolean => {
+  return path.startsWith("pdf-to-");
+};
+
+/**
+ * Check if a path accepts image files
+ */
+export const acceptsImages = (path: Paths): boolean => {
+  return path.endsWith("-to-pdf");
+};
 
 export const filterNewFiles = (
   acceptedFiles: File[],

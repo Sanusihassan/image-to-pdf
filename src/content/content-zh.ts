@@ -655,6 +655,18 @@ export const edit_page: _edit_page = {
     }
   },
   cta: "查看套餐",
+  imageToPDFOptionsContent: {
+    page_orientation: "页面方向",
+    portrait: "纵向",
+    landscape: "横向",
+    page_size: "页面大小",
+    margins: "边距",
+    margins_none: "无",
+    margins_small: "小",
+    margins_medium: "中",
+    margins_large: "大",
+    merge_all: "将所有图像合并到一个PDF文件中",
+  }
 };
 
 

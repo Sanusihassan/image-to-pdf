@@ -7,7 +7,7 @@ import { handleUpload } from "../../src/handlers/handleUpload";
 import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
 // types
-import type { tools } from "../../src/content";
+import type { Paths, tools } from "../../src/content";
 import Loading from "../Loading";
 type AcceptedFileTypes = {
   [key in
@@ -38,7 +38,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   lang,
   tools,
 }) => {
-  const path = data.to.replace("/", "");
+  const path = data.to.replace("/", "") as Paths;
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
@@ -121,14 +121,14 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           accept={
             acceptedFileTypes[data.type as keyof typeof acceptedFileTypes]
           }
-          multiple={path !== "split-pdf" && path !== "pdf-to-pdf-a"}
+          multiple
           ref={fileInput}
           className="position-absolute file-input"
           onClick={(e) => {
             e.stopPropagation();
           }}
           onChange={(e) => {
-            handleChange(e, dispatch, setFiles, errors, files);
+            handleChange(e, dispatch, setFiles, errors, files, path);
           }}
         />
       </div>

@@ -1,5 +1,5 @@
 import { type Dispatch, type SetStateAction, useEffect } from "react";
-import type { errors as _ } from "../../src/content";
+import type { errors as _, Paths } from "../../src/content";
 import FileCard from "./FileCard";
 import { useDropzone, type Accept } from "react-dropzone";
 import { useFileStore } from "../../src/file-store";
@@ -10,6 +10,8 @@ import {
   ACCEPTED,
   calculatePages,
   filterNewFiles,
+  getAcceptFromPath,
+  getMimeTypesFromPath,
   SUPPORTED_IMAGE_MIME_TYPES,
   validateFiles,
 } from "../../src/utils";
@@ -28,7 +30,7 @@ type FileProps = {
   setToolTipSizes: Dispatch<SetStateAction<string[]>>;
   loader_text: string;
   fileDetailProps: [string, string, string];
-  path: string;
+  path: Paths;
 };
 
 type ValidationResult = string | "";
@@ -136,11 +138,12 @@ const Files = ({
   }, [files]);
 
   const onDrop = (acceptedFiles: File[]) => {
+    const mimeTypes = getMimeTypesFromPath(path);
     const { isValid } = validateFiles(
       acceptedFiles,
       dispatch,
       errors,
-      SUPPORTED_IMAGE_MIME_TYPES
+      mimeTypes
     );
     const newFiles = filterNewFiles(acceptedFiles, files, ACCEPTED);
     if (isValid) {
@@ -148,20 +151,9 @@ const Files = ({
     }
   };
 
-  const imageAccept: Accept = {
-    "image/jpeg": [".jpeg", ".jpg"],
-    "image/png": [".png"],
-    "image/gif": [".gif"],
-    "image/tiff": [".tiff", ".tif"],
-    "image/bmp": [".bmp"],
-    "image/svg+xml": [".svg"],
-    "image/webp": [".webp"],
-    "image/heif": [".heif", ".heic"], // some platforms use .heic
-  };
-
   useDropzone({
     onDrop,
-    accept: imageAccept,
+    accept: getAcceptFromPath(path), // Dynamic based on path
     noClick: files.length > 0,
     noKeyboard: files.length > 0,
   });

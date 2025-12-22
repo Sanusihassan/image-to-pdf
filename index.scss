@@ -10,9 +10,6 @@
 svg {
   display: initial !important;
 }
-
-$pdf-color: #fc271c;
-// only for image tools
 $color-map: (
   "jpg-to-pdf": #f1c40f,
   "pdf-to-jpg": #f1c40f,
@@ -199,4 +196,11 @@ a.no-underline {
 
 .spinner-grow {
   @include extend("spinner-grow");
+}
+.inline-flex {
+  display: inline-flex !important;
+}
+
+[class*="page-sizes-select"] {
+  z-index: 6 !important;
 }

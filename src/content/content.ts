@@ -525,6 +525,18 @@ export const edit_page = {
     }
   },
   cta: "View Plans",
+  imageToPDFOptionsContent: {
+    page_orientation: "Page Orientation",
+    portrait: "Portrait",
+    landscape: "Landscape",
+    page_size: "Page Size",
+    margins: "Margins",
+    margins_none: "None",
+    margins_small: "Small",
+    margins_medium: "Medium",
+    margins_large: "Large",
+    merge_all: "Merge all images into one PDF file",
+  }
 }
 
 export const downloadFile = {

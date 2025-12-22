@@ -11,3 +11,23 @@ export type translate_pdf = typeof import("./content/content").translate_pdf;
 
 export type ContinueIn = typeof import("./content/content").ContinueIn;
 export type ChangeTo = typeof import("./content/content").ChangeTo;
+
+export type Paths =
+    | "jpg-to-pdf"
+    | "svg-to-pdf"
+    | "png-to-pdf"
+    | "gif-to-pdf"
+    | "tiff-to-pdf"
+    | "bmp-to-pdf"
+    | "webp-to-pdf"
+    | "heif-heic-to-pdf"
+    | "pdf-to-jpg"
+    | "pdf-to-svg"
+    | "pdf-to-png"
+    | "pdf-to-gif"
+    | "pdf-to-tiff"
+    | "pdf-to-bmp"
+    | "pdf-to-webp"
+    | "pdf-to-heif-heic"
+    | "image-to-pdf"
+    | "pdf-to-image";
