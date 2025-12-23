@@ -666,6 +666,23 @@ export const edit_page: _edit_page = {
     margins_medium: "中",
     margins_large: "大",
     merge_all: "将所有图像合并到一个PDF文件中",
+  },
+  pdfToImageOptionsContent: {
+    conversion_mode: "转换模式",
+    mode_page_title: "页面转 {format}",
+    mode_page_description: "此 PDF 的每一页都将转换为 {format} 文件。将创建 {count} 个 {format} 文件。",
+    mode_page_description_generic: "此 PDF 的每一页都将转换为 {format} 文件。",
+    mode_extract_title: "提取图像",
+    mode_extract_description: "PDF 中嵌入的所有图像将被提取为 {format} 图像。",
+    image_quality: "图像质量",
+    quality_low: "低 (72 DPI)",
+    quality_medium: "中 (150 DPI)",
+    quality_high: "高 (300 DPI)",
+    quality_very_high: "非常高 (600 DPI)",
+    quality_low_hint: "文件较小，适合网页浏览。",
+    quality_medium_hint: "质量与大小平衡。适用于大多数用途。",
+    quality_high_hint: "高质量，适合打印。",
+    quality_very_high_hint: "最高质量，文件最大。最适合专业打印。",
   }
 };
 

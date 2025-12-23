@@ -664,6 +664,23 @@ export const edit_page: _edit_page = {
     margins_medium: "मध्यम",
     margins_large: "बड़ा",
     merge_all: "सभी छवियों को एक PDF फ़ाइल में मर्ज करें",
+  },
+  pdfToImageOptionsContent: {
+    conversion_mode: "रूपांतरण मोड",
+    mode_page_title: "पेज से {format}",
+    mode_page_description: "इस PDF का हर पेज {format} फ़ाइल में बदल जाएगा। {count} {format} बनेंगे।",
+    mode_page_description_generic: "इस PDF का हर पेज {format} फ़ाइल में बदल जाएगा।",
+    mode_extract_title: "छवियाँ निकालें",
+    mode_extract_description: "PDF में एम्बेड की गई सभी छवियाँ {format} छवियों के रूप में निकाली जाएंगी।",
+    image_quality: "छवि गुणवत्ता",
+    quality_low: "कम (72 DPI)",
+    quality_medium: "मध्यम (150 DPI)",
+    quality_high: "उच्च (300 DPI)",
+    quality_very_high: "बहुत उच्च (600 DPI)",
+    quality_low_hint: "छोटा फ़ाइल आकार, वेब देखने के लिए उपयुक्त।",
+    quality_medium_hint: "गुणवत्ता और आकार में संतुलन। अधिकांश उपयोगों के लिए अनुशंसित।",
+    quality_high_hint: "उच्च गुणवत्ता, प्रिंटिंग के लिए उपयुक्त।",
+    quality_very_high_hint: "अधिकतम गुणवत्ता, सबसे बड़ा फ़ाइल आकार। पेशेवर प्रिंटिंग के लिए सर्वोत्तम।",
   }
 }
 

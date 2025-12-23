@@ -6,4 +6,4 @@ add reacting to the options.
 
 # validate dragged files for pdf file only pdf files.
 
-add pdf image options.
+/pdf-to-gif options are different.

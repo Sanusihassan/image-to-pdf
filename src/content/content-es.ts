@@ -491,6 +491,23 @@ export const edit_page: _edit_page = {
     margins_medium: "Mediano",
     margins_large: "Grande",
     merge_all: "Combinar todas las imágenes en un archivo PDF",
+  },
+  pdfToImageOptionsContent: {
+    conversion_mode: "Modo de conversión",
+    mode_page_title: "Página a {format}",
+    mode_page_description: "Cada página de este PDF se convertirá en un archivo {format}. Se crearán {count} {format}.",
+    mode_page_description_generic: "Cada página de este PDF se convertirá en un archivo {format}.",
+    mode_extract_title: "Extraer imágenes",
+    mode_extract_description: "Todas las imágenes incrustadas en el PDF se extraerán como imágenes {format}.",
+    image_quality: "Calidad de imagen",
+    quality_low: "Baja (72 DPI)",
+    quality_medium: "Media (150 DPI)",
+    quality_high: "Alta (300 DPI)",
+    quality_very_high: "Muy alta (600 DPI)",
+    quality_low_hint: "Tamaño de archivo menor, adecuado para visualización web.",
+    quality_medium_hint: "Equilibrio entre calidad y tamaño. Recomendado para la mayoría de usos.",
+    quality_high_hint: "Alta calidad, adecuado para impresión.",
+    quality_very_high_hint: "Máxima calidad, mayor tamaño de archivo. Ideal para impresión profesional.",
   }
 };
 

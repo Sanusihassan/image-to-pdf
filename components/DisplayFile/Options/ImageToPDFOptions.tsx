@@ -151,7 +151,7 @@ export const ImageToPDFOptions = ({
             >
               <div
                 className={`${
-                  orientation === "portrait" ? "w-6 h-8" : "w-8 h-6"
+                  orientation === "portrait" ? "w-8 h-6" : "w-6 h-8"
                 } border-2 rounded-sm`}
                 style={{
                   borderColor:
@@ -197,7 +197,7 @@ export const ImageToPDFOptions = ({
           }}
           styles={selectStyles}
           isSearchable={false}
-          className="page-sizes-select"
+          className="custom-select"
         />
       </section>
 

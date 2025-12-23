@@ -670,7 +670,25 @@ export const edit_page: _edit_page = {
     margins_medium: "متوسط",
     margins_large: "كبير",
     merge_all: "دمج جميع الصور في ملف PDF واحد",
+  },
+  pdfToImageOptionsContent: {
+    conversion_mode: "وضع التحويل",
+    mode_page_title: "صفحة إلى {format}",
+    mode_page_description: "سيتم تحويل كل صفحة من ملف PDF إلى ملف {format}. سيتم إنشاء {count} ملف {format}.",
+    mode_page_description_generic: "سيتم تحويل كل صفحة من ملف PDF إلى ملف {format}.",
+    mode_extract_title: "استخراج الصور",
+    mode_extract_description: "سيتم استخراج جميع الصور المضمنة داخل ملف PDF كصور {format}.",
+    image_quality: "جودة الصورة",
+    quality_low: "منخفضة (72 DPI)",
+    quality_medium: "متوسطة (150 DPI)",
+    quality_high: "عالية (300 DPI)",
+    quality_very_high: "عالية جداً (600 DPI)",
+    quality_low_hint: "حجم ملف أصغر، مناسب للعرض على الويب.",
+    quality_medium_hint: "توازن بين الجودة وحجم الملف. موصى به لمعظم الاستخدامات.",
+    quality_high_hint: "جودة عالية، مناسبة للطباعة.",
+    quality_very_high_hint: "أقصى جودة، أكبر حجم ملف. الأفضل للطباعة الاحترافية.",
   }
+
 };
 
 

@@ -44,7 +44,14 @@ export interface ToolState {
   originalFileSize: number;
   compressedFileSize: number;
   isAdBlocked: boolean;
-  imageToPDFSettings: ImageToPDFSettings
+  imageToPDFSettings: ImageToPDFSettings;
+  pdfToImageSettings
+}
+
+// Add to your store types
+export interface PDFToImageSettings {
+  mode: "page" | "extract";
+  quality: number; // DPI: 72, 150, 300, 600
 }
 
 export type supportedImageTypes = 'JPG' |
@@ -77,6 +84,10 @@ const initialState: ToolState = {
     pageSize: "a4paper",
     margins: "small",
     mergeAll: true,
+  },
+  pdfToImageSettings: {
+    mode: "page",
+    quality: 150,
   }
 };
 
