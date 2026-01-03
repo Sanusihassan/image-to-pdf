@@ -508,6 +508,41 @@ export const edit_page: _edit_page = {
     quality_medium_hint: "Equilibrio entre calidad y tamaño. Recomendado para la mayoría de usos.",
     quality_high_hint: "Alta calidad, adecuado para impresión.",
     quality_very_high_hint: "Máxima calidad, mayor tamaño de archivo. Ideal para impresión profesional.",
+  },
+  pdfToGifContent: {
+    dimensions: "Dimensiones",
+    width: "Ancho",
+    height: "Alto",
+    width_placeholder: "Auto",
+    height_placeholder: "Auto",
+    fit_mode: "Modo de redimensionado",
+    fit_max: "Máximo",
+    fit_max_description:
+      "Redimensiona la imagen para que quepa en las dimensiones sin aumentar el tamaño si es más pequeña.",
+    fit_crop: "Recortar",
+    fit_crop_description:
+      "Redimensiona la imagen para llenar las dimensiones y recorta el exceso.",
+    fit_scale: "Escalar",
+    fit_scale_description:
+      "Aplica las dimensiones exactas escalando la imagen.",
+    pages: "Páginas",
+    pages_placeholder: "Todas las páginas",
+    pages_hint: "ej., 1-3 o 1,2,3",
+    strip_metadata: "Eliminar metadatos",
+  },
+  pdfToGifFileCard: {
+    loading: "Cargando páginas...",
+    page: "Página",
+    delay: "Retraso",
+    delay_seconds: "s",
+    enable_page: "Habilitar página",
+    disable_page: "Deshabilitar página",
+    remove_file: "Eliminar archivo",
+    drag_to_reorder: "Arrastra para reordenar",
+    all_pages_disabled_warning:
+      "Todas las páginas están deshabilitadas. Habilita al menos una página para crear un GIF.",
+    select_file: "Seleccionar archivo para editar",
+    files_count: "archivos",
   }
 };
 

@@ -1,7 +1,7 @@
 import { type Dispatch, type SetStateAction, useEffect } from "react";
-import type { errors as _, Paths } from "../../src/content";
+import type { errors as _, edit_page, Paths } from "../../src/content";
 import FileCard from "./FileCard";
-import { useDropzone, type Accept } from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 import { useFileStore } from "../../src/file-store";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubscriptionStatus } from "fetch-subscription-status";
@@ -12,7 +12,6 @@ import {
   filterNewFiles,
   getAcceptFromPath,
   getMimeTypesFromPath,
-  SUPPORTED_IMAGE_MIME_TYPES,
   validateFiles,
 } from "../../src/utils";
 import ImageCard from "./ImageCard";
@@ -22,6 +21,7 @@ import {
   Droppable,
   type DropResult,
 } from "react-beautiful-dnd";
+import PDFToGifWrapper from "../PDFToGifWrapper";
 
 type FileProps = {
   errors: _;
@@ -31,6 +31,7 @@ type FileProps = {
   loader_text: string;
   fileDetailProps: [string, string, string];
   path: Paths;
+  pdfToGifFileCard: edit_page["pdfToGifFileCard"];
 };
 
 type ValidationResult = string | "";
@@ -102,6 +103,7 @@ const Files = ({
   loader_text,
   fileDetailProps,
   path,
+  pdfToGifFileCard,
 }: FileProps) => {
   const { files, setFiles } = useFileStore();
   const dispatch = useDispatch();
@@ -167,6 +169,16 @@ const Files = ({
     items.splice(result.destination!.index, 0, reorderedItem);
     setFiles(items);
   };
+
+  if (path === "pdf-to-gif") {
+    return (
+      <PDFToGifWrapper
+        errors={errors}
+        content={pdfToGifFileCard}
+        themeColor="#636e72"
+      />
+    );
+  }
 
   return (
     <>

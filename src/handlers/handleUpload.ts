@@ -2,7 +2,7 @@ import axios from "axios";
 import { downloadConvertedFile } from "../downloadFile";
 import type { errors as _ } from "../content";
 import { type RefObject } from "react";
-import { resetErrorMessage, setField, type compressionType } from "../store";
+import { resetErrorMessage, setField, type GifPagesRecord, type ImageToPDFSettings, type PDFToGifSettings, type PDFToImageSettings, type supportedImageTypes } from "../store";
 import type { Action, Dispatch } from "@reduxjs/toolkit/react";
 import { parseApiError } from "../parseApiError";
 let filesOnSubmit = [];
@@ -23,6 +23,11 @@ export const handleUpload = async (
       k: string;
       p: string;
     }[];
+    options: ImageToPDFSettings | PDFToImageSettings | {
+      pdfToGifPagesRecord: GifPagesRecord;
+      pdfToGifSettings: PDFToGifSettings;
+    };
+    selectedImageFormat: supportedImageTypes | null
   },
   files: File[],
   errors: _
@@ -56,6 +61,9 @@ export const handleUpload = async (
   }
   formData.append("rotations", JSON.stringify(state.rotations));
   formData.append("passwords", JSON.stringify(state.passwords));
+  if (state.selectedImageFormat) {
+    formData.append("selectedImageFormat", state.selectedImageFormat);
+  }
   let url: string = "";
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {

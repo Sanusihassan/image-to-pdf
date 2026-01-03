@@ -2,7 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 // store
-import type { ToolState } from "../../src/store";
+import type {
+  GifPagesRecord,
+  ImageToPDFSettings,
+  PDFToGifSettings,
+  PDFToImageSettings,
+  ToolState,
+} from "../../src/store";
 import { handleUpload } from "../../src/handlers/handleUpload";
 import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
@@ -51,6 +57,41 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const passwords = useSelector(
     (state: { tool: ToolState }) => state.tool.passwords
   );
+
+  const selectedImageFormat = useSelector(
+    (state: { tool: ToolState }) => state.tool.selectedImageFormat
+  );
+
+  const imageToPDFSettings = useSelector(
+    (state: { tool: ToolState }) => state.tool.imageToPDFSettings
+  );
+
+  const pdfToImageSettings = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToImageSettings
+  );
+
+  const pdfToGifSettings = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToGifSettings
+  );
+
+  const pdfToGifPagesRecord = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToGifPagesRecord
+  );
+  //
+  let options:
+    | ImageToPDFSettings
+    | PDFToImageSettings
+    | {
+        pdfToGifPagesRecord: GifPagesRecord;
+        pdfToGifSettings: PDFToGifSettings;
+      };
+  if (path.endsWith("to-pdf")) {
+    options = imageToPDFSettings;
+  } else if (path.startsWith("pdf-to") && path !== "pdf-to-gif") {
+    options = pdfToImageSettings;
+  } else if (path === "pdf-to-gif") {
+    options = { pdfToGifPagesRecord, pdfToGifSettings };
+  }
   const dispatch = useDispatch();
   // file store
   const { files, setFiles, setFileInput, setDownloadBtn, setSubmitBtn } =
@@ -85,6 +126,8 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
             fileName,
             rotations,
             passwords,
+            options,
+            selectedImageFormat,
           },
           files,
           errors

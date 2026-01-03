@@ -2,6 +2,14 @@ import { createSlice, type Draft, type PayloadAction } from "@reduxjs/toolkit";
 type WritableDraft<T> = {
   -readonly [K in keyof T]: Draft<T[K]>;
 };
+export type FitMode = "max" | "crop" | "scale";
+export interface PDFToGifSettings {
+  width?: number;
+  height?: number;
+  fit: FitMode;
+  strip: boolean;
+  pages?: string; // e.g., "1-3" or "1,2,3"
+}
 
 export type pageSizeType = "a0paper" |
   "a1paper" |
@@ -27,7 +35,6 @@ export interface ImageToPDFSettings {
 }
 
 type k = keyof WritableDraft<ToolState>;
-export type compressionType = "recommended" | "less" | "extreme";
 export interface ToolState {
   showTool: boolean;
   isSubmitted: boolean;
@@ -35,17 +42,17 @@ export interface ToolState {
   errorCode: string | null;
   showDownloadBtn: boolean;
   showOptions: boolean;
-  nav_height: number;
   fileName: string;
   limitationMsg: string;
   rotations: { k: string; r: number }[];
   passwords: { k: string; p: string }[];
   subscriptionStatus: boolean | null;
-  originalFileSize: number;
-  compressedFileSize: number;
   isAdBlocked: boolean;
   imageToPDFSettings: ImageToPDFSettings;
-  pdfToImageSettings
+  pdfToImageSettings: PDFToImageSettings;
+  pdfToGifSettings: PDFToGifSettings; // <-- Add this
+  pdfToGifPagesRecord: GifPagesRecord; // <-- Add this for multi-file support
+  selectedImageFormat: supportedImageTypes | null
 }
 
 // Add to your store types
@@ -63,6 +70,14 @@ export type supportedImageTypes = 'JPG' |
   'WebP' |
   'HEIF';
 
+export interface GifPage {
+  pageNumber: number;
+  imageUrl: string;
+  enabled: boolean;
+  delay: number; // in seconds
+}
+export type GifPagesRecord = Record<string, GifPage[]>;
+
 const initialState: ToolState = {
   showTool: true,
   errorMessage: "",
@@ -70,15 +85,13 @@ const initialState: ToolState = {
   errorCode: null,
   showDownloadBtn: false,
   showOptions: false,
-  nav_height: 0,
   fileName: "",
   limitationMsg: "",
   rotations: [],
   passwords: [],
   subscriptionStatus: null,
-  compressedFileSize: 0,
-  originalFileSize: 0,
   isAdBlocked: false,
+  selectedImageFormat: null,
   imageToPDFSettings: {
     pageOrientation: "portrait",
     pageSize: "a4paper",
@@ -88,7 +101,15 @@ const initialState: ToolState = {
   pdfToImageSettings: {
     mode: "page",
     quality: 150,
-  }
+  },
+  pdfToGifSettings: {
+    width: null,
+    height: null,
+    fit: "max",
+    strip: false,
+    pages: null,
+  },
+  pdfToGifPagesRecord: {}
 };
 
 const toolSlice = createSlice({

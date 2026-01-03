@@ -52,7 +52,7 @@ function emptyPDFHandler(dispatch: Dispatch<Action>, errors: _) {
   dispatch(setField({ errorCode: "ERR_EMPTY_FILE" }));
   return DEFAULT_PDF_IMAGE;
 }
-// i don't know why but when i pass any other file type except images or pdfs this function will cause the application to crash by entering an infinite loop
+
 export const getFileDetailsTooltipContent = async (
   file: File,
   pages: string,

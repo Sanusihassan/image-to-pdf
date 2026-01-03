@@ -1,4 +1,3 @@
-// FileCard.tsx
 import type {
   DraggableProvided,
   DraggableStateSnapshot,

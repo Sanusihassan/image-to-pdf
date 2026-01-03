@@ -687,8 +687,41 @@ export const edit_page: _edit_page = {
     quality_medium_hint: "توازن بين الجودة وحجم الملف. موصى به لمعظم الاستخدامات.",
     quality_high_hint: "جودة عالية، مناسبة للطباعة.",
     quality_very_high_hint: "أقصى جودة، أكبر حجم ملف. الأفضل للطباعة الاحترافية.",
+  },
+  pdfToGifContent: {
+    dimensions: "الأبعاد",
+    width: "العرض",
+    height: "الارتفاع",
+    width_placeholder: "تلقائي",
+    height_placeholder: "تلقائي",
+    fit_mode: "وضع تغيير الحجم",
+    fit_max: "الحد الأقصى",
+    fit_max_description:
+      "يغير حجم الصورة لتناسب الأبعاد المحددة دون زيادة الحجم إذا كانت أصغر.",
+    fit_crop: "قص",
+    fit_crop_description:
+      "يغير حجم الصورة لملء الأبعاد ويقص أي زيادة.",
+    fit_scale: "مقياس",
+    fit_scale_description: "يفرض الأبعاد الدقيقة عن طريق تحجيم الصورة.",
+    pages: "الصفحات",
+    pages_placeholder: "جميع الصفحات",
+    pages_hint: "مثال: 1-3 أو 1,2,3",
+    strip_metadata: "إزالة البيانات الوصفية",
+  },
+  pdfToGifFileCard: {
+    loading: "جارٍ تحميل الصفحات...",
+    page: "صفحة",
+    delay: "تأخير",
+    delay_seconds: "ث",
+    enable_page: "تفعيل الصفحة",
+    disable_page: "تعطيل الصفحة",
+    remove_file: "إزالة الملف",
+    drag_to_reorder: "اسحب لإعادة الترتيب",
+    all_pages_disabled_warning:
+      "جميع الصفحات معطلة. قم بتفعيل صفحة واحدة على الأقل لإنشاء GIF.",
+    select_file: "اختر الملف للتعديل",
+    files_count: "ملفات",
   }
-
 };
 
 

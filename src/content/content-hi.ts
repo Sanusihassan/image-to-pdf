@@ -681,6 +681,40 @@ export const edit_page: _edit_page = {
     quality_medium_hint: "गुणवत्ता और आकार में संतुलन। अधिकांश उपयोगों के लिए अनुशंसित।",
     quality_high_hint: "उच्च गुणवत्ता, प्रिंटिंग के लिए उपयुक्त।",
     quality_very_high_hint: "अधिकतम गुणवत्ता, सबसे बड़ा फ़ाइल आकार। पेशेवर प्रिंटिंग के लिए सर्वोत्तम।",
+  },
+  pdfToGifContent: {
+    dimensions: "आयाम",
+    width: "चौड़ाई",
+    height: "ऊंचाई",
+    width_placeholder: "स्वचालित",
+    height_placeholder: "स्वचालित",
+    fit_mode: "आकार बदलने का मोड",
+    fit_max: "अधिकतम",
+    fit_max_description:
+      "छवि को निर्दिष्ट आयामों में फिट करने के लिए आकार बदलता है, छोटी होने पर आकार नहीं बढ़ाता।",
+    fit_crop: "क्रॉप",
+    fit_crop_description:
+      "आयामों को भरने के लिए छवि का आकार बदलता है और अतिरिक्त को काटता है।",
+    fit_scale: "स्केल",
+    fit_scale_description: "छवि को स्केल करके सटीक आयाम लागू करता है।",
+    pages: "पृष्ठ",
+    pages_placeholder: "सभी पृष्ठ",
+    pages_hint: "उदा., 1-3 या 1,2,3",
+    strip_metadata: "मेटाडेटा हटाएं",
+  },
+  pdfToGifFileCard: {
+    loading: "पृष्ठ लोड हो रहे हैं...",
+    page: "पृष्ठ",
+    delay: "विलंब",
+    delay_seconds: "से",
+    enable_page: "पृष्ठ सक्षम करें",
+    disable_page: "पृष्ठ अक्षम करें",
+    remove_file: "फ़ाइल हटाएं",
+    drag_to_reorder: "पुनर्व्यवस्थित करने के लिए खींचें",
+    all_pages_disabled_warning:
+      "सभी पृष्ठ अक्षम हैं। GIF बनाने के लिए कम से कम एक पृष्ठ सक्षम करें।",
+    select_file: "संपादित करने के लिए फ़ाइल चुनें",
+    files_count: "फ़ाइलें",
   }
 }
 

@@ -8,10 +8,19 @@ export interface OptionsProps {
 import { ImageOptions } from "./Options/ImageOptions";
 import { ImageToPDFOptions } from "./Options/ImageToPDFOptions";
 import { PDFToImageOptions } from "./Options/PDFToImageOptions";
+import { PDFToGifOptions } from "./Options/PDFToGifOptions";
 
 const Options = ({ tool, edit_page }: OptionsProps) => {
   if (tool === "image-to-pdf") {
-    return <ImageOptions content={edit_page.options_content.image_to_pdf} />;
+    return (
+      <>
+        <ImageOptions content={edit_page.options_content.image_to_pdf} />
+        <ImageToPDFOptions
+          tool={tool}
+          content={edit_page.imageToPDFOptionsContent}
+        />
+      </>
+    );
   } else if (tool.endsWith("to-pdf")) {
     return (
       <ImageToPDFOptions
@@ -21,10 +30,15 @@ const Options = ({ tool, edit_page }: OptionsProps) => {
     );
   } else if (tool.startsWith("pdf-to")) {
     return (
-      <PDFToImageOptions
-        content={edit_page.pdfToImageOptionsContent}
-        tool={tool}
-      />
+      <>
+        <PDFToImageOptions
+          content={edit_page.pdfToImageOptionsContent}
+          tool={tool}
+        />
+        {tool === "pdf-to-gif" ? (
+          <PDFToGifOptions content={edit_page.pdfToGifContent} />
+        ) : null}
+      </>
     );
   }
 };

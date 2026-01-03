@@ -683,6 +683,38 @@ export const edit_page: _edit_page = {
     quality_medium_hint: "质量与大小平衡。适用于大多数用途。",
     quality_high_hint: "高质量，适合打印。",
     quality_very_high_hint: "最高质量，文件最大。最适合专业打印。",
+  },
+  pdfToGifContent: {
+    dimensions: "尺寸",
+    width: "宽度",
+    height: "高度",
+    width_placeholder: "自动",
+    height_placeholder: "自动",
+    fit_mode: "调整模式",
+    fit_max: "最大",
+    fit_max_description: "调整图像大小以适应指定尺寸，如果较小则不会放大。",
+    fit_crop: "裁剪",
+    fit_crop_description: "调整图像大小以填充尺寸并裁剪多余部分。",
+    fit_scale: "缩放",
+    fit_scale_description: "通过缩放强制应用精确尺寸。",
+    pages: "页面",
+    pages_placeholder: "所有页面",
+    pages_hint: "例如：1-3 或 1,2,3",
+    strip_metadata: "删除元数据",
+  },
+  pdfToGifFileCard: {
+    loading: "正在加载页面...",
+    page: "页面",
+    delay: "延迟",
+    delay_seconds: "秒",
+    enable_page: "启用页面",
+    disable_page: "禁用页面",
+    remove_file: "删除文件",
+    drag_to_reorder: "拖动以重新排序",
+    all_pages_disabled_warning:
+      "所有页面都已禁用。请至少启用一个页面以创建 GIF。",
+    select_file: "选择要编辑的文件",
+    files_count: "个文件",
   }
 };
 

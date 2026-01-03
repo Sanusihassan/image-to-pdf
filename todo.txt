@@ -6,4 +6,7 @@ add reacting to the options.
 
 # validate dragged files for pdf file only pdf files.
 
-/pdf-to-gif options are different.
+/pdf-to-gif options are different. [DONE]
+
+implement backend.
+

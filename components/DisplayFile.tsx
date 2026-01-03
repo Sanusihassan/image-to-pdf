@@ -33,6 +33,7 @@ const DisplayFile = ({
         loader_text={edit_page.loader_text}
         fileDetailProps={[pages, page, lang]}
         path={path}
+        pdfToGifFileCard={edit_page.pdfToGifFileCard}
       />
     </>
   );
