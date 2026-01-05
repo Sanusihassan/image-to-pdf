@@ -580,7 +580,6 @@ export const edit_page = {
     strip_metadata: "Strip metadata",
   },
   pdfToGifFileCard: {
-    // File card content
     loading: "Loading pages...",
     page: "Page",
     delay: "Delay",
@@ -591,9 +590,32 @@ export const edit_page = {
     drag_to_reorder: "Drag to reorder",
     all_pages_disabled_warning:
       "All pages are disabled. Enable at least one page to create a GIF.",
-    // Wrapper content
+    settings: "Settings",
+    hide_settings: "Hide settings",
     select_file: "Select file to edit",
     files_count: "files",
+    optionsContent: {
+      dimensions: "Dimensions",
+      width: "Width",
+      height: "Height",
+      width_placeholder: "Auto",
+      height_placeholder: "Auto",
+      fit_mode: "Fit Mode",
+      fit_max: "Max (Preserve Aspect)",
+      fit_max_description:
+        "Scales to fit within dimensions while preserving aspect ratio.",
+      fit_crop: "Crop (Fill & Clip)",
+      fit_crop_description:
+        "Fills dimensions and crops excess to maintain aspect ratio.",
+      fit_scale: "Scale (Stretch)",
+      fit_scale_description: "Stretches to exact dimensions, may distort image.",
+      strip_metadata: "Strip metadata",
+    }
+  },
+  fileNameInput: {
+    label: "Output File Name (Optional)",
+    placeholder: "Enter file name",
+    helperText: "This will be the name of the document that gets downloaded.",
   }
 }
 

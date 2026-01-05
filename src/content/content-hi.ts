@@ -713,8 +713,30 @@ export const edit_page: _edit_page = {
     drag_to_reorder: "पुनर्व्यवस्थित करने के लिए खींचें",
     all_pages_disabled_warning:
       "सभी पृष्ठ अक्षम हैं। GIF बनाने के लिए कम से कम एक पृष्ठ सक्षम करें।",
+    settings: "सेटिंग्स",
+    hide_settings: "सेटिंग्स छुपाएं",
     select_file: "संपादित करने के लिए फ़ाइल चुनें",
     files_count: "फ़ाइलें",
+    optionsContent: {
+      dimensions: "आयाम",
+      width: "चौड़ाई",
+      height: "ऊंचाई",
+      width_placeholder: "ऑटो",
+      height_placeholder: "ऑटो",
+      fit_mode: "फ़िट मोड",
+      fit_max: "अधिकतम (अनुपात बनाए रखें)",
+      fit_max_description: "अनुपात बनाए रखते हुए आयामों में फ़िट होने के लिए स्केल करता है।",
+      fit_crop: "क्रॉप (भरें और काटें)",
+      fit_crop_description: "आयाम भरता है और अनुपात बनाए रखने के लिए अतिरिक्त काटता है।",
+      fit_scale: "स्ट्रेच (विकृत)",
+      fit_scale_description: "सटीक आयामों में खिंचता है, छवि विकृत हो सकती है।",
+      strip_metadata: "मेटाडेटा हटाएं",
+    }
+  },
+  fileNameInput: {
+    label: "आउटपुट फाइल नाम (वैकल्पिक)",
+    placeholder: "फाइल नाम दर्ज करें",
+    helperText: "यह डाउनलोड होने वाले दस्तावेज़ का नाम होगा।",
   }
 }
 

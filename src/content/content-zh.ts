@@ -713,8 +713,30 @@ export const edit_page: _edit_page = {
     drag_to_reorder: "拖动以重新排序",
     all_pages_disabled_warning:
       "所有页面都已禁用。请至少启用一个页面以创建 GIF。",
+    settings: "设置",
+    hide_settings: "隐藏设置",
     select_file: "选择要编辑的文件",
     files_count: "个文件",
+    optionsContent: {
+      dimensions: "尺寸",
+      width: "宽度",
+      height: "高度",
+      width_placeholder: "自动",
+      height_placeholder: "自动",
+      fit_mode: "适应模式",
+      fit_max: "最大（保持比例）",
+      fit_max_description: "缩放以适应尺寸，同时保持纵横比。",
+      fit_crop: "裁剪（填充并裁切）",
+      fit_crop_description: "填充尺寸并裁剪多余部分以保持比例。",
+      fit_scale: "拉伸（变形）",
+      fit_scale_description: "拉伸到精确尺寸，可能会扭曲图像。",
+      strip_metadata: "删除元数据",
+    }
+  },
+  fileNameInput: {
+    label: "输出文件名（可选）",
+    placeholder: "输入文件名",
+    helperText: "这将是下载的文档名称。",
   }
 };
 

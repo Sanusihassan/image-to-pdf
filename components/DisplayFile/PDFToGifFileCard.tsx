@@ -7,46 +7,34 @@ import {
   type DraggableProvided,
   type DraggableStateSnapshot,
 } from "react-beautiful-dnd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tooltip";
 import { Eye, EyeOff, GripVertical, Trash2 } from "lucide-react";
 import * as pdfjs from "pdfjs-dist";
 import type { PDFDocumentProxy, PageViewport, RenderTask } from "pdfjs-dist";
 import { useFileStore } from "../../src/file-store";
-import { setField } from "../../src/store";
-import type { errors as _ } from "../../src/content";
+import {
+  setField,
+  setPdfToGifFileData,
+  updatePdfToGifPages,
+  createInitialGifData,
+  DEFAULT_PAGE_DELAY,
+  type GifPage,
+  type ToolState,
+} from "../../src/store";
+import type { errors as _, edit_page } from "../../src/content";
 import { Loader } from "./Loader";
 
 // ============ TYPES ============
-export interface GifPage {
-  pageNumber: number;
-  imageUrl: string;
-  enabled: boolean;
-  delay: number; // in seconds
-}
-
 export interface PDFToGifFileCardProps {
   file: File;
-  fileKey: string; // sanitized key for this file
+  fileKey: string;
   errors: _;
-  content: {
-    loading: string;
-    page: string;
-    delay: string;
-    delay_seconds: string;
-    enable_page: string;
-    disable_page: string;
-    remove_file: string;
-    drag_to_reorder: string;
-    all_pages_disabled_warning: string;
-  };
+  content: edit_page["pdfToGifFileCard"];
   themeColor?: string;
-  initialPages?: GifPage[];
-  onPagesUpdate?: (fileKey: string, pages: GifPage[]) => void;
 }
 
 // ============ CONSTANTS ============
-const DEFAULT_DELAY = 0.5; // Default delay in seconds
 const THEME_COLOR_DEFAULT = "#636e72";
 
 // ============ HELPER FUNCTIONS ============
@@ -91,10 +79,10 @@ async function getAllPagesAsImages(
       await renderTask.promise;
 
       pages.push({
-        pageNumber: i,
+        page: i,
         imageUrl: canvas.toDataURL(),
         enabled: true,
-        delay: DEFAULT_DELAY,
+        delay: DEFAULT_PAGE_DELAY,
       });
     }
 
@@ -123,8 +111,8 @@ interface PageItemProps {
   index: number;
   provided: DraggableProvided;
   snapshot: DraggableStateSnapshot;
-  onToggleEnabled: (pageNumber: number) => void;
-  onDelayChange: (pageNumber: number, delay: number) => void;
+  onToggleEnabled: (pageNum: number) => void;
+  onDelayChange: (pageNum: number, delay: number) => void;
   content: PDFToGifFileCardProps["content"];
   themeColor: string;
 }
@@ -143,7 +131,7 @@ const PageItem = ({
     <div
       ref={provided.innerRef}
       {...provided.draggableProps}
-      {...provided.dragHandleProps} // Make entire card draggable
+      {...provided.dragHandleProps}
       className={`relative rounded-lg border-2 transition-all cursor-grab active:cursor-grabbing ${
         snapshot.isDragging ? "shadow-lg z-10" : ""
       } ${page.enabled ? "bg-white" : "bg-gray-100"}`}
@@ -157,26 +145,26 @@ const PageItem = ({
         opacity: page.enabled ? 1 : 0.5,
       }}
     >
-      {/* Drag Handle Indicator (visual only, whole card is draggable) */}
+      {/* Drag Handle Indicator */}
       <div
         className="absolute top-2 left-2 p-1 rounded bg-white/80 pointer-events-none"
-        data-tooltip-id={`drag-tooltip-${page.pageNumber}`}
+        data-tooltip-id={`drag-tooltip-${page.page}`}
         data-tooltip-content={content.drag_to_reorder}
       >
         <GripVertical size={16} className="text-gray-400" />
-        <Tooltip id={`drag-tooltip-${page.pageNumber}`} place="top" />
+        <Tooltip id={`drag-tooltip-${page.page}`} place="top" />
       </div>
 
       {/* Toggle Enable/Disable Button */}
       <button
         type="button"
         onClick={(e) => {
-          e.stopPropagation(); // Prevent drag when clicking button
-          onToggleEnabled(page.pageNumber);
+          e.stopPropagation();
+          onToggleEnabled(page.page);
         }}
-        onMouseDown={(e) => e.stopPropagation()} // Prevent drag initiation
+        onMouseDown={(e) => e.stopPropagation()}
         className="absolute top-2 right-2 p-1.5 rounded bg-white/80 hover:bg-white transition-colors z-10"
-        data-tooltip-id={`toggle-tooltip-${page.pageNumber}`}
+        data-tooltip-id={`toggle-tooltip-${page.page}`}
         data-tooltip-content={
           page.enabled ? content.disable_page : content.enable_page
         }
@@ -186,14 +174,14 @@ const PageItem = ({
         ) : (
           <EyeOff size={16} className="text-gray-400" />
         )}
-        <Tooltip id={`toggle-tooltip-${page.pageNumber}`} place="top" />
+        <Tooltip id={`toggle-tooltip-${page.page}`} place="top" />
       </button>
 
       {/* Page Image */}
       <div className="p-3 pt-10">
         <img
           src={page.imageUrl}
-          alt={`${content.page} ${page.pageNumber}`}
+          alt={`${content.page} ${page.page}`}
           className="w-full h-auto rounded shadow-sm object-contain"
           style={{ maxHeight: "180px" }}
           draggable={false}
@@ -204,7 +192,7 @@ const PageItem = ({
       <div className="px-3 pb-3">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-gray-700">
-            {content.page} {page.pageNumber}
+            {content.page} {page.page}
           </span>
           <span className="text-xs text-gray-400">#{index + 1}</span>
         </div>
@@ -224,7 +212,7 @@ const PageItem = ({
             onChange={(e) => {
               const val = parseFloat(e.target.value);
               if (!isNaN(val) && val >= 0) {
-                onDelayChange(page.pageNumber, val);
+                onDelayChange(page.page, val);
               }
             }}
             min={0.1}
@@ -253,43 +241,23 @@ export const PDFToGifFileCard = ({
   errors,
   content,
   themeColor = THEME_COLOR_DEFAULT,
-  initialPages,
-  onPagesUpdate,
 }: PDFToGifFileCardProps) => {
   const dispatch = useDispatch();
   const { files, setFiles } = useFileStore();
-  const [pages, setPages] = useState<GifPage[]>(initialPages || []);
-  const [isLoading, setIsLoading] = useState(!initialPages?.length);
+  const [isLoading, setIsLoading] = useState(true);
   const isSubscribedRef = useRef(true);
 
-  // Track if pages were just initialized to avoid duplicate updates
-  const initializedRef = useRef(false);
-  const prevPagesRef = useRef<GifPage[]>(pages);
+  // Get this file's data from Redux (merged structure)
+  const fileData = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToGifRecord[fileKey]
+  );
 
-  // Notify parent of page updates - only when pages actually change
+  const pages = fileData?.pages || [];
+
+  // Load pages on mount if not already loaded
   useEffect(() => {
-    // Skip if no pages yet or no callback
-    if (pages.length === 0 || !onPagesUpdate) return;
-
-    // Skip if this is initial mount with initialPages (already in parent state)
-    if (!initializedRef.current && initialPages?.length) {
-      initializedRef.current = true;
-      prevPagesRef.current = pages;
-      return;
-    }
-
-    // Skip if pages reference hasn't changed
-    if (prevPagesRef.current === pages) return;
-
-    prevPagesRef.current = pages;
-    initializedRef.current = true;
-    onPagesUpdate(fileKey, pages);
-  }, [pages, fileKey, onPagesUpdate, initialPages]);
-
-  // Load all pages on mount (only if no initial pages)
-  useEffect(() => {
-    if (initialPages?.length) {
-      setPages(initialPages);
+    // If we already have pages, don't reload
+    if (fileData?.pages?.length) {
       setIsLoading(false);
       return;
     }
@@ -300,8 +268,14 @@ export const PDFToGifFileCard = ({
       setIsLoading(true);
       const extractedPages = await getAllPagesAsImages(file, dispatch, errors);
 
-      if (isSubscribedRef.current) {
-        setPages(extractedPages);
+      if (isSubscribedRef.current && extractedPages.length > 0) {
+        // Initialize with default settings and extracted pages
+        dispatch(
+          setPdfToGifFileData({
+            fileKey,
+            data: createInitialGifData(extractedPages),
+          })
+        );
         setIsLoading(false);
       }
     };
@@ -311,46 +285,48 @@ export const PDFToGifFileCard = ({
     return () => {
       isSubscribedRef.current = false;
     };
-    // Only depend on file identity, not initialPages changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [file, dispatch, errors]);
+  }, [file, fileKey, dispatch, errors, fileData?.pages?.length]);
 
   // Handle drag end
-  const handleDragEnd = useCallback((result: DropResult) => {
-    if (!result.destination) return;
+  const handleDragEnd = useCallback(
+    (result: DropResult) => {
+      if (!result.destination) return;
 
-    const sourceIndex = result.source.index;
-    const destIndex = result.destination.index;
+      const sourceIndex = result.source.index;
+      const destIndex = result.destination.index;
 
-    if (sourceIndex === destIndex) return;
+      if (sourceIndex === destIndex) return;
 
-    setPages((prevPages) => {
-      const newPages = Array.from(prevPages);
+      const newPages = Array.from(pages);
       const [removed] = newPages.splice(sourceIndex, 1);
       newPages.splice(destIndex, 0, removed);
-      return newPages;
-    });
-  }, []);
+
+      dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
+    },
+    [pages, fileKey, dispatch]
+  );
 
   // Toggle page enabled/disabled
-  const handleToggleEnabled = useCallback((pageNumber: number) => {
-    setPages((prevPages) =>
-      prevPages.map((page) =>
-        page.pageNumber === pageNumber
-          ? { ...page, enabled: !page.enabled }
-          : page
-      )
-    );
-  }, []);
+  const handleToggleEnabled = useCallback(
+    (pageNum: number) => {
+      const newPages = pages.map((p) =>
+        p.page === pageNum ? { ...p, enabled: !p.enabled } : p
+      );
+      dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
+    },
+    [pages, fileKey, dispatch]
+  );
 
   // Update page delay
-  const handleDelayChange = useCallback((pageNumber: number, delay: number) => {
-    setPages((prevPages) =>
-      prevPages.map((page) =>
-        page.pageNumber === pageNumber ? { ...page, delay } : page
-      )
-    );
-  }, []);
+  const handleDelayChange = useCallback(
+    (pageNum: number, delay: number) => {
+      const newPages = pages.map((p) =>
+        p.page === pageNum ? { ...p, delay } : p
+      );
+      dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
+    },
+    [pages, fileKey, dispatch]
+  );
 
   // Remove file
   const handleRemoveFile = () => {
@@ -371,83 +347,92 @@ export const PDFToGifFileCard = ({
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <h3 className="text-lg font-semibold text-gray-800">
-            {file.name.length > 30
-              ? file.name.slice(0, 15) + "..." + file.name.slice(-12)
-              : file.name}
-          </h3>
-          <span
-            className="px-2 py-1 text-xs font-medium rounded-full"
-            style={{
-              backgroundColor: `${themeColor}15`,
-              color: themeColor,
-            }}
+      <div className="p-6 border-b border-gray-100">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <h3 className="text-lg font-semibold text-gray-800">
+              {file.name.length > 30
+                ? file.name.slice(0, 15) + "..." + file.name.slice(-12)
+                : file.name}
+            </h3>
+            <span
+              className="px-2 py-1 text-xs font-medium rounded-full"
+              style={{
+                backgroundColor: `${themeColor}15`,
+                color: themeColor,
+              }}
+            >
+              {enabledPagesCount} / {pages.length} {content.page}
+              {pages.length !== 1 ? "s" : ""}
+            </span>
+          </div>
+          {/* Remove File */}
+          <button
+            type="button"
+            onClick={handleRemoveFile}
+            className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+            data-tooltip-id="remove-file-tooltip"
+            data-tooltip-content={content.remove_file}
           >
-            {enabledPagesCount} / {pages.length} {content.page}
-            {pages.length !== 1 ? "s" : ""}
-          </span>
+            <Trash2 size={20} />
+            <Tooltip id="remove-file-tooltip" place="top" />
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={handleRemoveFile}
-          className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-          data-tooltip-id="remove-file-tooltip"
-          data-tooltip-content={content.remove_file}
-        >
-          <Trash2 size={20} />
-          <Tooltip id="remove-file-tooltip" place="top" />
-        </button>
       </div>
 
-      {/* Warning if all pages disabled */}
-      {allPagesDisabled && (
-        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-          <p className="text-sm text-amber-700">
-            ⚠️ {content.all_pages_disabled_warning}
-          </p>
-        </div>
-      )}
+      {/* Main Content */}
+      <div className="p-6">
+        {/* Warning if all pages disabled */}
+        {allPagesDisabled && (
+          <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+            <p className="text-sm text-amber-700">
+              ⚠️ {content.all_pages_disabled_warning}
+            </p>
+          </div>
+        )}
 
-      {/* Pages Grid with Drag and Drop */}
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId={`gif-pages-${fileKey}`} direction="horizontal">
-          {(provided, snapshot) => (
-            <div
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-              className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2 rounded-lg transition-colors ${
-                snapshot.isDraggingOver ? "bg-gray-50" : ""
-              }`}
-            >
-              {pages.map((page, index) => (
-                <Draggable
-                  key={`${fileKey}-page-${page.pageNumber}`}
-                  draggableId={`${fileKey}-page-${page.pageNumber}`}
-                  index={index}
-                >
-                  {(provided, snapshot) => (
-                    <PageItem
-                      page={page}
-                      index={index}
-                      provided={provided}
-                      snapshot={snapshot}
-                      onToggleEnabled={handleToggleEnabled}
-                      onDelayChange={handleDelayChange}
-                      content={content}
-                      themeColor={themeColor}
-                    />
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+        {/* Pages Grid with Drag and Drop */}
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable
+            droppableId={`gif-pages-${fileKey}`}
+            direction="horizontal"
+          >
+            {(provided, snapshot) => (
+              <div
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+                className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2 rounded-lg transition-colors ${
+                  snapshot.isDraggingOver ? "bg-gray-50" : ""
+                }`}
+              >
+                {pages.map((page, index) => (
+                  <Draggable
+                    key={`${fileKey}-page-${page.page}`}
+                    draggableId={`${fileKey}-page-${page.page}`}
+                    index={index}
+                  >
+                    {(provided, snapshot) => (
+                      <PageItem
+                        page={page}
+                        index={index}
+                        provided={provided}
+                        snapshot={snapshot}
+                        onToggleEnabled={handleToggleEnabled}
+                        onDelayChange={handleDelayChange}
+                        content={content}
+                        themeColor={themeColor}
+                      />
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </div>
     </div>
   );
 };

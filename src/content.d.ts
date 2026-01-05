@@ -1,3 +1,5 @@
+import type { ImageToPDFSettings, PDFToGifRecord, PDFToImageSettings } from "./store";
+
 // this is my content.d.ts
 export type landing_page = typeof import("./content/content").landing_page;
 export type tools = typeof import("./content/content").tools;
@@ -31,3 +33,8 @@ export type Paths =
     | "pdf-to-heif-heic"
     | "image-to-pdf"
     | "pdf-to-image";
+
+export type OptionsType =
+    | ImageToPDFSettings
+    | PDFToImageSettings
+    | { pdfToGifRecord: PDFToGifRecord }; // New merged structure

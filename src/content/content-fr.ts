@@ -725,8 +725,33 @@ export const edit_page: _edit_page = {
     drag_to_reorder: "Glisser pour réorganiser",
     all_pages_disabled_warning:
       "Toutes les pages sont désactivées. Activez au moins une page pour créer un GIF.",
+    settings: "Paramètres",
+    hide_settings: "Masquer les paramètres",
     select_file: "Sélectionner le fichier à modifier",
     files_count: "fichiers",
+    optionsContent: {
+      dimensions: "Dimensions",
+      width: "Largeur",
+      height: "Hauteur",
+      width_placeholder: "Auto",
+      height_placeholder: "Auto",
+      fit_mode: "Mode d'ajustement",
+      fit_max: "Maximum (Conserver les proportions)",
+      fit_max_description:
+        "Redimensionne pour s'adapter aux dimensions tout en conservant les proportions.",
+      fit_crop: "Rogner (Remplir et couper)",
+      fit_crop_description:
+        "Remplit les dimensions et rogne l'excédent pour conserver les proportions.",
+      fit_scale: "Étirer (Déformer)",
+      fit_scale_description:
+        "Étire aux dimensions exactes, peut déformer l'image.",
+      strip_metadata: "Supprimer les métadonnées",
+    }
+  },
+  fileNameInput: {
+    label: "Nom du fichier de sortie (facultatif)",
+    placeholder: "Saisir le nom du fichier",
+    helperText: "Ce sera le nom du document qui sera téléchargé.",
   }
 };
 

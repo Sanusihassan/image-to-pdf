@@ -109,6 +109,18 @@
     flex: 1 0 25%;
     grid-template-rows: 7% 85% 13%;
     align-self: flex-start;
+    .input-wrapper {
+      @include extend("mb-3");
+      .label {
+        @include extend("form-label fw-bold");
+      }
+      .input {
+        @include extend("form-control");
+      }
+      .helper-text {
+        @include extend("form-text text-muted");
+      }
+    }
 
     // @include xs {
     //   display: grid;

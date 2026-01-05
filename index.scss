@@ -204,3 +204,7 @@ a.no-underline {
 [class*="custom-select"] {
   z-index: 6 !important;
 }
+
+.limitation-alert {
+  @include extend("mt-3 alert alert-info mb-3");
+}

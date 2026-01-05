@@ -719,8 +719,30 @@ export const edit_page: _edit_page = {
     drag_to_reorder: "اسحب لإعادة الترتيب",
     all_pages_disabled_warning:
       "جميع الصفحات معطلة. قم بتفعيل صفحة واحدة على الأقل لإنشاء GIF.",
-    select_file: "اختر الملف للتعديل",
+    settings: "الإعدادات",
+    hide_settings: "إخفاء الإعدادات",
+    select_file: "اختر الملف للتحرير",
     files_count: "ملفات",
+    optionsContent: {
+      dimensions: "الأبعاد",
+      width: "العرض",
+      height: "الارتفاع",
+      width_placeholder: "تلقائي",
+      height_placeholder: "تلقائي",
+      fit_mode: "وضع الملاءمة",
+      fit_max: "أقصى (الحفاظ على النسبة)",
+      fit_max_description: "يتناسب مع الأبعاد مع الحفاظ على نسبة العرض إلى الارتفاع.",
+      fit_crop: "قص (ملء وقطع)",
+      fit_crop_description: "يملأ الأبعاد ويقص الزائد للحفاظ على النسبة.",
+      fit_scale: "تمديد (تشويه)",
+      fit_scale_description: "يمتد للأبعاد الدقيقة، قد يشوه الصورة.",
+      strip_metadata: "إزالة البيانات الوصفية",
+    }
+  },
+  fileNameInput: {
+    label: "اسم الملف الناتج (اختياري)",
+    placeholder: "أدخل اسم الملف",
+    helperText: "سيكون هذا اسم المستند الذي يتم تنزيله.",
   }
 };
 

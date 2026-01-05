@@ -1,15 +1,61 @@
+// handleUpload.ts
 import axios from "axios";
 import { downloadConvertedFile } from "../downloadFile";
-import type { errors as _ } from "../content";
+import type { errors as _, OptionsType } from "../content";
 import { type RefObject } from "react";
-import { resetErrorMessage, setField, type GifPagesRecord, type ImageToPDFSettings, type PDFToGifSettings, type PDFToImageSettings, type supportedImageTypes } from "../store";
+import {
+  resetErrorMessage,
+  setField,
+  preparePdfToGifRecordForAPI,
+  type PDFToGifRecord,
+  type PDFToGifRecordForAPI,
+  type ImageToPDFSettings,
+  type PDFToImageSettings,
+  type supportedImageTypes,
+} from "../store";
 import type { Action, Dispatch } from "@reduxjs/toolkit/react";
 import { parseApiError } from "../parseApiError";
-let filesOnSubmit = [];
-let prevState = null;
+
+let filesOnSubmit: string[] = [];
+let prevState: string | null = null;
+
+// Type for API-ready options
+type OptionsForAPI =
+  | ImageToPDFSettings
+  | PDFToImageSettings
+  | { pdfToGifRecord: PDFToGifRecordForAPI };
+
+// ============ HELPERS ============
+/**
+ * Checks if options are PDF-to-GIF options (new merged structure)
+ */
+function isPdfToGifOptions(
+  options: OptionsType
+): options is { pdfToGifRecord: PDFToGifRecord } {
+  return (
+    options !== null &&
+    typeof options === "object" &&
+    "pdfToGifRecord" in options
+  );
+}
+
+/**
+ * Prepares options for API transmission.
+ * For PDF-to-GIF: strips imageUrl and syncs pages string
+ */
+function prepareOptionsForAPI(options: OptionsType): OptionsForAPI {
+  if (isPdfToGifOptions(options)) {
+    return {
+      pdfToGifRecord: preparePdfToGifRecordForAPI(options.pdfToGifRecord),
+    };
+  }
+  return options;
+}
+
+// ============ MAIN FUNCTION ============
 export const handleUpload = async (
   e: React.FormEvent<HTMLFormElement>,
-  downloadBtn: RefObject<HTMLAnchorElement>,
+  downloadBtn: RefObject<HTMLAnchorElement | null>,
   dispatch: Dispatch<Action>,
   state: {
     path: string;
@@ -23,11 +69,8 @@ export const handleUpload = async (
       k: string;
       p: string;
     }[];
-    options: ImageToPDFSettings | PDFToImageSettings | {
-      pdfToGifPagesRecord: GifPagesRecord;
-      pdfToGifSettings: PDFToGifSettings;
-    };
-    selectedImageFormat: supportedImageTypes | null
+    options: OptionsType;
+    selectedImageFormat: supportedImageTypes | null;
   },
   files: File[],
   errors: _
@@ -36,6 +79,7 @@ export const handleUpload = async (
   dispatch(setField({ isSubmitted: true }));
 
   if (!files) return;
+
   // Extract file names from the File[] array
   const fileNames = files.map((file) => file.name);
 
@@ -43,7 +87,15 @@ export const handleUpload = async (
   const allFilesPresent = fileNames.every((fileName) =>
     filesOnSubmit.includes(fileName)
   );
-  const strState = JSON.stringify(state);
+
+  // Create state string for comparison (use sanitized options to avoid imageUrl in comparison)
+  const sanitizedOptions = prepareOptionsForAPI(state.options);
+  const stateForComparison = {
+    ...state,
+    options: sanitizedOptions,
+  };
+  const strState = JSON.stringify(stateForComparison);
+
   if (
     allFilesPresent &&
     files.length === filesOnSubmit.length &&
@@ -61,9 +113,12 @@ export const handleUpload = async (
   }
   formData.append("rotations", JSON.stringify(state.rotations));
   formData.append("passwords", JSON.stringify(state.passwords));
-  if (state.selectedImageFormat) {
-    formData.append("selectedImageFormat", state.selectedImageFormat);
-  }
+
+  // Send sanitized options (without imageUrl for pdf-to-gif)
+  formData.append("options", JSON.stringify(sanitizedOptions));
+  formData.append("selectedImageFormat", state.selectedImageFormat || "JPG");
+
+
   let url: string = "";
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
@@ -71,72 +126,56 @@ export const handleUpload = async (
   } else {
     url = `/api/${state.path}`;
   }
+
   if (state.errorMessage) {
     return;
   }
+
   const originalFileName =
     state.fileName || files[0]?.name?.split(".").slice(0, -1).join(".");
 
-  const mimeTypeLookupTable: {
-    [key: string]: { outputFileMimeType: string; outputFileName: string };
-  } = {
-    "application/zip": {
-      outputFileMimeType: "application/zip",
-      outputFileName: `${originalFileName || "PDFEquips"}-compressed.zip`,
-    },
-    "application/pdf": {
-      outputFileMimeType: "application/pdf",
-      outputFileName: `${originalFileName}.pdf`,
-    },
-  };
-
   try {
     const response = await axios.post(url, formData, {
-      responseType: "arraybuffer",
-      withCredentials: true
+      responseType: "blob",
     });
-    // const originalFileName = files[0]?.name?.split(".").slice(0, -1).join(".");
-    const mimeType = response.data.type || response.headers["content-type"];
-    const mimeTypeData = mimeTypeLookupTable[mimeType] || {
-      outputFileMimeType: mimeType,
-      outputFileName: "",
-    };
-    const { outputFileMimeType, outputFileName } = mimeTypeData;
-    const compressedFileSize = response.data.byteLength;
 
-    // Dispatch the compressed file size to Redux store
-    dispatch(
-      setField({
-        compressedFileSize: compressedFileSize,
-      })
-    );
+    filesOnSubmit = fileNames;
+
+    // downloadConvertedFile now handles MIME types and extensions automatically
+    downloadConvertedFile(response, state.path, originalFileName, downloadBtn);
 
     dispatch(setField({ showDownloadBtn: true }));
-    downloadConvertedFile(
-      response,
-      outputFileMimeType,
-      outputFileName,
-      downloadBtn
-    );
-    filesOnSubmit = files.map((f) => f.name);
-
-    if (response.status !== 200) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    dispatch(resetErrorMessage());
+  } catch (error: any) {
+    if (error?.response?.data) {
+      const blob = error.response.data;
+      const text = await blob.text();
+      try {
+        const errorData = JSON.parse(text);
+        if (errorData?.code === "PASSWORD_REQUIRED") {
+          dispatch(setField({ errorCode: "PASSWORD_REQUIRED" }));
+        } else {
+          dispatch(
+            setField({
+              errorMessage: parseApiError(errorData, errors),
+            })
+          );
+        }
+      } catch {
+        dispatch(
+          setField({
+            errorMessage: errors.UNKNOWN_ERROR?.message || "Unknown error",
+          })
+        );
+      }
     } else {
-      dispatch(resetErrorMessage());
-      dispatch(setField({ isSubmitted: false }));
+      dispatch(
+        setField({
+          errorMessage: errors.ERR_NETWORK?.message || "Network error",
+        })
+      );
     }
-  } catch (error) {
-    if ((error as { code: string }).code === "ERR_NETWORK") {
-      dispatch(setField({ errorMessage: errors.ERR_NETWORK.message }));
-      return;
-    }
-    const errorMessage = parseApiError(error, errors);
-    if (errorMessage) {
-      dispatch(setField({ errorMessage }));
-    }
-    dispatch(setField({ isSubmitted: false }));
-  } finally {
-    dispatch(setField({ isSubmitted: false }));
   }
 };
+
+export default handleUpload;

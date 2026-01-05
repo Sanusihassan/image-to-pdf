@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import Select, { type StylesConfig } from "react-select";
 import {
-  setField,
-  type PDFToGifSettings,
+  updatePdfToGifSettings,
+  type PDFToGifFileSettings,
   type ToolState,
+  type FitMode,
 } from "../../../src/store";
+import type { edit_page } from "../../../src/content";
 
 // ============ TYPES ============
-type FitMode = "max" | "crop" | "scale";
-
 interface FitOption {
   value: FitMode;
   label: string;
@@ -16,43 +16,35 @@ interface FitOption {
 }
 
 interface PDFToGifOptionsProps {
-  content: {
-    // Dimensions
-    dimensions: string;
-    width: string;
-    height: string;
-    width_placeholder: string;
-    height_placeholder: string;
-    // Fit mode
-    fit_mode: string;
-    fit_max: string;
-    fit_max_description: string;
-    fit_crop: string;
-    fit_crop_description: string;
-    fit_scale: string;
-    fit_scale_description: string;
-    // Pages
-    pages: string;
-    pages_placeholder: string;
-    pages_hint: string;
-    // Strip
-    strip_metadata: string;
-  };
+  content: edit_page["pdfToGifContent"];
+  themeColor?: string;
 }
 
 // ============ CONSTANTS ============
-const THEME_COLOR = "#636e72"; // GIF tool color
+const THEME_COLOR_DEFAULT = "#636e72";
 
 // ============ COMPONENT ============
-export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
+export const PDFToGifOptions = ({
+  content,
+  themeColor = THEME_COLOR_DEFAULT,
+}: PDFToGifOptionsProps) => {
   const dispatch = useDispatch();
 
-  const settings = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifSettings
+  // Get the selected file key from global state
+  const fileKey = useSelector(
+    (state: { tool: ToolState }) => state.tool.selectedPdfToGifFileKey
   );
 
-  const updateSettings = (updates: Partial<PDFToGifSettings>) => {
-    dispatch(setField({ pdfToGifSettings: { ...settings, ...updates } }));
+  // Get settings for the selected file
+  const fileData = useSelector((state: { tool: ToolState }) =>
+    fileKey ? state.tool.pdfToGifRecord[fileKey] : null
+  );
+
+  const settings = fileData?.settings;
+
+  const updateSettings = (updates: Partial<PDFToGifFileSettings>) => {
+    if (!fileKey) return;
+    dispatch(updatePdfToGifSettings({ fileKey, settings: updates }));
   };
 
   // Fit options with labels from content
@@ -78,22 +70,22 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
   const selectStyles: StylesConfig<FitOption, false> = {
     control: (base, state) => ({
       ...base,
-      borderColor: state.isFocused ? THEME_COLOR : "#e5e7eb",
-      boxShadow: state.isFocused ? `0 0 0 1px ${THEME_COLOR}` : "none",
+      borderColor: state.isFocused ? themeColor : "#e5e7eb",
+      boxShadow: state.isFocused ? `0 0 0 1px ${themeColor}` : "none",
       "&:hover": {
-        borderColor: THEME_COLOR,
+        borderColor: themeColor,
       },
     }),
     option: (base, state) => ({
       ...base,
       backgroundColor: state.isSelected
-        ? THEME_COLOR
+        ? themeColor
         : state.isFocused
-          ? `${THEME_COLOR}15`
+          ? `${themeColor}15`
           : "white",
       color: state.isSelected ? "white" : "#374151",
       "&:active": {
-        backgroundColor: `${THEME_COLOR}30`,
+        backgroundColor: `${themeColor}30`,
       },
     }),
     singleValue: (base) => ({
@@ -102,16 +94,17 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
     }),
   };
 
-  if (!settings) return null;
+  // Don't render if no file is selected or no settings
+  if (!fileKey || !settings) return null;
 
   const selectedFit = fitOptions.find((f) => f.value === settings.fit);
   const currentFitDescription =
     fitOptions.find((f) => f.value === settings.fit)?.description || "";
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="space-y-4 px-2">
       {/* Dimensions */}
-      <section className="mb-6">
+      <section>
         <h3 className="text-sm font-semibold text-gray-700 mb-3">
           {content.dimensions}
         </h3>
@@ -131,14 +124,9 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
               }}
               placeholder={content.width_placeholder}
               className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm transition-all focus:outline-none"
-              style={
-                {
-                  // Dynamic focus styles via inline for theme color
-                }
-              }
               onFocus={(e) => {
-                e.target.style.borderColor = THEME_COLOR;
-                e.target.style.boxShadow = `0 0 0 1px ${THEME_COLOR}`;
+                e.target.style.borderColor = themeColor;
+                e.target.style.boxShadow = `0 0 0 1px ${themeColor}`;
               }}
               onBlur={(e) => {
                 e.target.style.borderColor = "#e5e7eb";
@@ -163,8 +151,8 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
               placeholder={content.height_placeholder}
               className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm transition-all focus:outline-none"
               onFocus={(e) => {
-                e.target.style.borderColor = THEME_COLOR;
-                e.target.style.boxShadow = `0 0 0 1px ${THEME_COLOR}`;
+                e.target.style.borderColor = themeColor;
+                e.target.style.boxShadow = `0 0 0 1px ${themeColor}`;
               }}
               onBlur={(e) => {
                 e.target.style.borderColor = "#e5e7eb";
@@ -177,7 +165,7 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
       </section>
 
       {/* Fit Mode */}
-      <section className="mb-6">
+      <section>
         <h3 className="text-sm font-semibold text-gray-700 mb-3">
           {content.fit_mode}
         </h3>
@@ -199,36 +187,18 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
         )}
       </section>
 
-      {/* Page Range */}
-      <section className="mb-6">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">
-          {content.pages}
-        </h3>
-        <input
-          type="text"
-          value={settings.pages ?? ""}
-          onChange={(e) => updateSettings({ pages: e.target.value })}
-          placeholder={content.pages_placeholder}
-          className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm transition-all focus:outline-none"
-          onFocus={(e) => {
-            e.target.style.borderColor = THEME_COLOR;
-            e.target.style.boxShadow = `0 0 0 1px ${THEME_COLOR}`;
-          }}
-          onBlur={(e) => {
-            e.target.style.borderColor = "#e5e7eb";
-            e.target.style.boxShadow = "none";
-          }}
-        />
-        <p className="text-xs text-gray-500 mt-2">{content.pages_hint}</p>
-      </section>
-
       {/* Strip Metadata Checkbox */}
       <section>
-        <label className="inline-flex items-center gap-3 cursor-pointer group">
+        <label
+          className="inline-flex items-center gap-3 cursor-pointer group"
+          htmlFor="strip-metadata"
+          onClick={() => updateSettings({ strip: !settings.strip })}
+        >
           <button
             type="button"
             role="checkbox"
             aria-checked={settings.strip}
+            id="strip-metadata"
             onClick={() => updateSettings({ strip: !settings.strip })}
             className={`w-5 h-5 rounded border-2 transition-all flex items-center justify-center shrink-0 ${
               settings.strip
@@ -236,8 +206,8 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
                 : "border-gray-300 bg-white group-hover:border-gray-400"
             }`}
             style={{
-              backgroundColor: settings.strip ? THEME_COLOR : undefined,
-              borderColor: settings.strip ? THEME_COLOR : undefined,
+              backgroundColor: settings.strip ? themeColor : undefined,
+              borderColor: settings.strip ? themeColor : undefined,
             }}
           >
             {settings.strip && (
@@ -264,3 +234,5 @@ export const PDFToGifOptions = ({ content }: PDFToGifOptionsProps) => {
     </div>
   );
 };
+
+export default PDFToGifOptions;

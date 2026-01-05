@@ -10,6 +10,7 @@ import { useFileStore } from "../src/file-store";
 import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
 import Options from "./DisplayFile/Options";
+import { OutputFileNameInput } from "./DisplayFile/Options/OutputFileNameInput";
 // import { Options } from "./DisplayFile/Options";
 
 type editPageProps = {
@@ -100,6 +101,9 @@ const EditPage = ({
           </bdi>
         </h5>
         <Options edit_page={edit_page} tool={path} />
+        <div className="footer">
+          <OutputFileNameInput content={edit_page.fileNameInput} />
+        </div>
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

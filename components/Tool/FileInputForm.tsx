@@ -3,9 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // store
 import type {
-  GifPagesRecord,
   ImageToPDFSettings,
-  PDFToGifSettings,
   PDFToImageSettings,
   ToolState,
 } from "../../src/store";
@@ -13,7 +11,7 @@ import { handleUpload } from "../../src/handlers/handleUpload";
 import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
 // types
-import type { Paths, tools } from "../../src/content";
+import type { OptionsType, Paths, tools } from "../../src/content";
 import Loading from "../Loading";
 type AcceptedFileTypes = {
   [key in
@@ -70,27 +68,17 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
     (state: { tool: ToolState }) => state.tool.pdfToImageSettings
   );
 
-  const pdfToGifSettings = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifSettings
+  const pdfToGifRecord = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToGifRecord
   );
 
-  const pdfToGifPagesRecord = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifPagesRecord
-  );
-  //
-  let options:
-    | ImageToPDFSettings
-    | PDFToImageSettings
-    | {
-        pdfToGifPagesRecord: GifPagesRecord;
-        pdfToGifSettings: PDFToGifSettings;
-      };
+  let options: OptionsType;
   if (path.endsWith("to-pdf")) {
     options = imageToPDFSettings;
   } else if (path.startsWith("pdf-to") && path !== "pdf-to-gif") {
     options = pdfToImageSettings;
   } else if (path === "pdf-to-gif") {
-    options = { pdfToGifPagesRecord, pdfToGifSettings };
+    options = { pdfToGifRecord };
   }
   const dispatch = useDispatch();
   // file store

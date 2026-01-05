@@ -1,26 +1,29 @@
 import React from "react";
-import type { edit_page as _, Paths } from "../../src/content";
+import type { edit_page, Paths } from "../../src/content";
 
 export interface OptionsProps {
   tool: Paths;
-  edit_page: _;
+  edit_page: edit_page;
 }
+
 import { ImageOptions } from "./Options/ImageOptions";
 import { ImageToPDFOptions } from "./Options/ImageToPDFOptions";
 import { PDFToImageOptions } from "./Options/PDFToImageOptions";
 import { PDFToGifOptions } from "./Options/PDFToGifOptions";
 
 const Options = ({ tool, edit_page }: OptionsProps) => {
-  if (tool === "image-to-pdf") {
+  if (tool === "pdf-to-image") {
     return (
       <>
         <ImageOptions content={edit_page.options_content.image_to_pdf} />
-        <ImageToPDFOptions
+        <PDFToImageOptions
+          content={edit_page.pdfToImageOptionsContent}
           tool={tool}
-          content={edit_page.imageToPDFOptionsContent}
         />
       </>
     );
+  } else if (tool === "pdf-to-gif") {
+    return <PDFToGifOptions content={edit_page.pdfToGifContent} />;
   } else if (tool.endsWith("to-pdf")) {
     return (
       <ImageToPDFOptions
@@ -35,12 +38,11 @@ const Options = ({ tool, edit_page }: OptionsProps) => {
           content={edit_page.pdfToImageOptionsContent}
           tool={tool}
         />
-        {tool === "pdf-to-gif" ? (
-          <PDFToGifOptions content={edit_page.pdfToGifContent} />
-        ) : null}
       </>
     );
   }
+
+  return null;
 };
 
 export default Options;

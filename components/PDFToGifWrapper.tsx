@@ -1,9 +1,13 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect } from "react";
 import Select, { type StylesConfig } from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import type { edit_page, errors } from "../src/content";
+import type { errors, edit_page } from "../src/content";
 import { useFileStore } from "../src/file-store";
-import { type ToolState, setField, type GifPage } from "../src/store";
+import {
+  type ToolState,
+  cleanupPdfToGifRecord,
+  setSelectedPdfToGifFileKey,
+} from "../src/store";
 import { sanitizeKey } from "../src/utils";
 import PDFToGifFileCard from "./DisplayFile/PDFToGifFileCard";
 
@@ -16,10 +20,7 @@ interface FileOption {
 
 interface PDFToGifWrapperProps {
   errors: errors;
-  content: edit_page["pdfToGifFileCard"] & {
-    select_file: string;
-    files_count: string;
-  };
+  content: edit_page["pdfToGifFileCard"];
   themeColor?: string;
 }
 
@@ -35,17 +36,15 @@ export const PDFToGifWrapper = ({
   const dispatch = useDispatch();
   const { files } = useFileStore();
 
-  // Track which file is currently selected
-  const [selectedFileKey, setSelectedFileKey] = useState<string | null>(null);
-
-  // Get all files' GIF pages from Redux
-  const gifPagesRecord = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifPagesRecord
+  // Get selected file key from global Redux state
+  const selectedFileKey = useSelector(
+    (state: { tool: ToolState }) => state.tool.selectedPdfToGifFileKey
   );
 
-  // Use ref to access latest gifPagesRecord without causing effect re-runs
-  const gifPagesRecordRef = useRef(gifPagesRecord);
-  gifPagesRecordRef.current = gifPagesRecord;
+  // Get the merged GIF record from Redux
+  const pdfToGifRecord = useSelector(
+    (state: { tool: ToolState }) => state.tool.pdfToGifRecord
+  );
 
   // Build file options for Select
   const fileOptions: FileOption[] = files.map((file) => {
@@ -63,59 +62,24 @@ export const PDFToGifWrapper = ({
   // Auto-select first file if none selected or selected file removed
   useEffect(() => {
     if (files.length === 0) {
-      setSelectedFileKey(null);
+      dispatch(setSelectedPdfToGifFileKey(null));
       return;
     }
 
     const currentKeys = files.map((f) => sanitizeKey(f.name.split(".")[0]));
 
     if (!selectedFileKey || !currentKeys.includes(selectedFileKey)) {
-      setSelectedFileKey(currentKeys[0]);
+      dispatch(setSelectedPdfToGifFileKey(currentKeys[0]));
     }
-  }, [files, selectedFileKey]);
+  }, [files, selectedFileKey, dispatch]);
 
-  // Clean up removed files from gifPagesRecord
+  // Clean up removed files from pdfToGifRecord
   useEffect(() => {
-    if (!gifPagesRecord || Object.keys(gifPagesRecord).length === 0) return;
+    if (!pdfToGifRecord || Object.keys(pdfToGifRecord).length === 0) return;
 
-    const currentKeys = new Set(
-      files.map((f) => sanitizeKey(f.name.split(".")[0]))
-    );
-    const recordKeys = Object.keys(gifPagesRecord);
-
-    // Remove entries for files that no longer exist
-    const keysToRemove = recordKeys.filter((k) => !currentKeys.has(k));
-
-    if (keysToRemove.length > 0) {
-      const updatedRecord = { ...gifPagesRecord };
-      keysToRemove.forEach((k) => delete updatedRecord[k]);
-      dispatch(setField({ pdfToGifPagesRecord: updatedRecord }));
-    }
-    // Only run when files change, not when gifPagesRecord changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [files, dispatch]);
-
-  // Handle pages update from child component - stable reference using ref
-  const handlePagesUpdate = useCallback(
-    (fileKey: string, pages: GifPage[]) => {
-      // Use ref to get current value without adding to dependencies
-      const currentRecord = gifPagesRecordRef.current || {};
-
-      // Only update if pages actually changed (compare by reference is enough here
-      // since PDFToGifFileCard creates new array on changes)
-      if (currentRecord[fileKey] === pages) return;
-
-      dispatch(
-        setField({
-          pdfToGifPagesRecord: {
-            ...currentRecord,
-            [fileKey]: pages,
-          },
-        })
-      );
-    },
-    [dispatch] // Only dispatch as dependency - stable reference
-  );
+    const currentKeys = files.map((f) => sanitizeKey(f.name.split(".")[0]));
+    dispatch(cleanupPdfToGifRecord(currentKeys));
+  }, [files, dispatch, pdfToGifRecord]);
 
   // Get currently selected file
   const selectedOption = fileOptions.find((o) => o.value === selectedFileKey);
@@ -155,13 +119,13 @@ export const PDFToGifWrapper = ({
   };
 
   // Calculate total enabled pages across all files
-  const totalEnabledPages = Object.values(gifPagesRecord || {}).reduce(
-    (sum, pages) => sum + pages.filter((p) => p.enabled).length,
+  const totalEnabledPages = Object.values(pdfToGifRecord || {}).reduce(
+    (sum, fileData) => sum + fileData.pages.filter((p) => p.enabled).length,
     0
   );
 
-  const totalPages = Object.values(gifPagesRecord || {}).reduce(
-    (sum, pages) => sum + pages.length,
+  const totalPages = Object.values(pdfToGifRecord || {}).reduce(
+    (sum, fileData) => sum + fileData.pages.length,
     0
   );
 
@@ -185,7 +149,7 @@ export const PDFToGifWrapper = ({
                 value={selectedOption}
                 onChange={(option) => {
                   if (option) {
-                    setSelectedFileKey(option.value);
+                    dispatch(setSelectedPdfToGifFileKey(option.value));
                   }
                 }}
                 styles={selectStyles}
@@ -227,8 +191,6 @@ export const PDFToGifWrapper = ({
           errors={errors}
           content={content}
           themeColor={themeColor}
-          initialPages={gifPagesRecord?.[selectedFileKey]}
-          onPagesUpdate={handlePagesUpdate}
         />
       )}
     </div>

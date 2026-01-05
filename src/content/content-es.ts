@@ -538,11 +538,36 @@ export const edit_page: _edit_page = {
     enable_page: "Habilitar página",
     disable_page: "Deshabilitar página",
     remove_file: "Eliminar archivo",
-    drag_to_reorder: "Arrastra para reordenar",
+    drag_to_reorder: "Arrastrar para reordenar",
     all_pages_disabled_warning:
       "Todas las páginas están deshabilitadas. Habilita al menos una página para crear un GIF.",
+    settings: "Configuración",
+    hide_settings: "Ocultar configuración",
     select_file: "Seleccionar archivo para editar",
     files_count: "archivos",
+    optionsContent: {
+      dimensions: "Dimensiones",
+      width: "Ancho",
+      height: "Alto",
+      width_placeholder: "Auto",
+      height_placeholder: "Auto",
+      fit_mode: "Modo de ajuste",
+      fit_max: "Máximo (Preservar proporción)",
+      fit_max_description:
+        "Escala para ajustarse a las dimensiones preservando la proporción.",
+      fit_crop: "Recortar (Rellenar y cortar)",
+      fit_crop_description:
+        "Rellena las dimensiones y recorta el exceso para mantener la proporción.",
+      fit_scale: "Escalar (Estirar)",
+      fit_scale_description:
+        "Estira a las dimensiones exactas, puede distorsionar la imagen.",
+      strip_metadata: "Eliminar metadatos",
+    }
+  },
+  fileNameInput: {
+    label: "Nombre del archivo de salida (Opcional)",
+    placeholder: "Ingresar nombre del archivo",
+    helperText: "Este será el nombre del documento que se descargará.",
   }
 };
 
