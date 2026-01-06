@@ -191,14 +191,11 @@ export const downloadConvertedFile = (
   }
 
   // Determine final filename
-  let finalFilename: string;
+  let finalFilename: string = ensureCorrectExtension(fileName, extension);
 
-  if (serverFilename) {
+  if (!finalFilename) {
     // Use server-provided filename
     finalFilename = serverFilename;
-  } else {
-    // Build filename from provided name + extension
-    finalFilename = ensureCorrectExtension(fileName, extension);
   }
 
   // Create blob with correct MIME type

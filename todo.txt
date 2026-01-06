@@ -9,5 +9,3 @@ add reacting to the options.
 /pdf-to-gif options are different. [DONE]
 
 implement backend
-
-deploy.
