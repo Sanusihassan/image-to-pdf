@@ -754,105 +754,184 @@ export const footer: _footer = {
   privacy_policy: "سياسة الخصوصية",
 };
 
-export const errors: _errors = {
+// errors.ar.ts
+// Location: src/content/ar/errors.ts
+/**
+ * Arabic translation of error messages.
+ */
+
+export const errors = {
+  // ============ أخطاء الملفات ============
   EMPTY_FILE: {
     message: "الملف فارغ. يرجى اختيار ملف صالح.",
-    code: "ERR_EMPTY_FILE",
+    code: "EMPTY_FILE",
   },
   FILE_TOO_LARGE: {
     message:
-      "حجم الملف كبير جدًا. يرجى اختيار ملف أصغر، أو استخدام أداة ضغط PDF الخاصة بنا لتقليل حجم الملف.",
-    code: "ERR_FILE_SIZE_LIMIT_EXCEEDED",
-  },
-  NOT_SUPPORTED_TYPE: {
-    message: "الملف غير مدعوم.",
-    types: {
-      PDF: "يرجى اختيار ملف PDF صالح.",
-      JPG: "يرجى اختيار ملف صورة JPEG صالح.",
-      DOC: "يرجى اختيار ملف مستند Word صالح.",
-      DOCX: "يرجى اختيار ملف مستند Word صالح.",
-      XLS: "يرجى اختيار ملف جدول بيانات Excel صالح.",
-      XLSX: "يرجى اختيارملف جدول بيانات Excel صالح.",
-      PPT: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
-      PPTX: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
-    },
-    code: "ERR_INVALID_FILE_TYPE",
+      "الملف كبير جداً. يرجى اختيار ملف أصغر، أو استخدام أداة ضغط PDF لتقليل حجم الملف.",
+    code: "FILE_TOO_LARGE",
   },
   FILE_CORRUPT: {
-    message: "الملف تالف ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
     message:
-      "الملف يحتوي على خطوط أحرف مفقودة. يرجى التأكد من تضمين جميع الخطوط في ملف PDF.",
-    code: "ERR_MISSING_FONTS",
+      "الملف تالف ولا يمكن معالجته. يرجى اختيار ملف صالح.",
+    code: "FILE_CORRUPT",
   },
-  INVALID_IMAGE_DATA: {
-    message:
-      "الملف يحتوي على بيانات صورة غير صالحة. يرجى التأكد من تنسيق جميع الصور بشكل صحيح.",
-    code: "ERR_INVALID_IMAGE_DATA",
+  FILE_NOT_FOUND: {
+    message: "لم يتم العثور على الملف المطلوب. يرجى المحاولة مرة أخرى.",
+    code: "FILE_NOT_FOUND",
   },
-  SECURITY_RISK: {
-    message:
-      "الملف يحتوي على مخاطر أمان ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_SECURITY_RISK",
+  NO_FILES_PROVIDED: {
+    message: "لم يتم تقديم أي ملفات. يرجى تحديد ملف واحد على الأقل.",
+    code: "NO_FILES_PROVIDED",
   },
+  NO_FILES_SELECTED: {
+    message: "لم يتم تحديد أي ملفات. يرجى تحديد ملف واحد على الأقل.",
+    code: "NO_FILES_SELECTED",
+  },
+  NOT_SUPPORTED_TYPE: {
+    message: "نوع الملف هذا غير مدعوم. يرجى اختيار تنسيق ملف صالح.",
+    code: "NOT_SUPPORTED_TYPE",
+  },
+
+  // ============ حدود التحميل ============
   MAX_FILES_EXCEEDED: {
     message:
       "لقد تجاوزت الحد الأقصى لعدد الملفات المسموح به. يرجى حذف بعض الملفات والمحاولة مرة أخرى.",
-    code: "ERR_MAX_FILES_EXCEEDED",
-  },
-  NO_FILES_SELECTED: {
-    message: "لم يتم اختيار أي ملفات. يرجى اختيار ملف واحد على الأقل.",
-    code: "ERR_NO_FILES_SELECTED",
-  },
-  UNKNOWN_ERROR: {
-    message:
-      "حدث خطأ غير معروف. يرجى المحاولة مرة أخرى لاحقًا أو الاتصال بالدعم.",
-    code: "ERR_UNKNOWN",
-  },
-  ERR_NETWORK: {
-    message:
-      "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
-    code: "ERR_NETWORK",
+    code: "MAX_FILES_EXCEEDED",
   },
   ERR_UPLOAD_COUNT: {
-    message: "يرجى رفع ملفين على الأقل للدمج.",
+    message: "لقد تجاوزت الحد الأقصى لعدد الملفات المسموح به.",
     code: "ERR_UPLOAD_COUNT",
   },
+  MAX_PAGES_EXCEEDED: {
+    message: "ملف PDF يتجاوز الحد الأقصى لعدد الصفحات. قم بترقية خطتك للحصول على حدود أعلى.",
+    code: "MAX_PAGES_EXCEEDED",
+  },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "يمكنك تحويل ما يصل إلى 15 صورة في المرة الواحدة. قم بترقية خطتك لتحويل المزيد من الصور.",
+    code: "MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "واحدة أو أكثر من الصور تتجاوز حد الحجم. قم بترقية خطتك لتحميل صور أكبر.",
+    code: "IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "إجمالي حجم التحميل يتجاوز الحد المسموح به. قم بترقية خطتك للحصول على حدود أعلى.",
+    code: "TOTAL_SIZE_EXCEEDED",
+  },
+  TOO_MANY_FRAMES: {
+    message: "عدد كبير جداً من الإطارات لرسوم GIF المتحركة. يرجى تقليل عدد الصفحات المفعّلة.",
+    code: "TOO_MANY_FRAMES",
+  },
+
+  // ============ أخطاء PDF ============
   PASSWORD_REQUIRED: {
-    message: "ملف PDF يتطلب كلمة مرور.",
+    message: "ملف PDF هذا محمي بكلمة مرور. يرجى إدخال كلمة المرور.",
     code: "PASSWORD_REQUIRED",
   },
   INCORRECT_PASSWORD: {
     message: "كلمة المرور التي أدخلتها غير صحيحة.",
     code: "INCORRECT_PASSWORD",
   },
-  MAX_DAILY_USAGE: {
+  MISSING_FONTS: {
     message:
-      "لقد وصلت إلى الحد اليومي للاستخدام. يرجى ترقية خطتك لمواصلة استخدام الميزة بدون انقطاع.",
-    code: "MAX_DAILY_USAGE",
+      "يحتوي الملف على خطوط مفقودة ولا يمكن معالجته. يرجى التأكد من تضمين جميع الخطوط في ملف PDF.",
+    code: "MISSING_FONTS",
   },
-  MAX_PAGES_EXCEEDED: {
-    message: "يتجاوز ملف PDF الحد الأقصى لعدد الصفحات وهو 50 صفحة.",
-    code: "ERR_MAX_PAGES_EXCEEDED",
-  },
-  MAX_IMAGES_EXCEEDED: {
+  INVALID_IMAGE_DATA: {
     message:
-      "يمكنك تحويل ما يصل إلى 15 صورة في المرة الواحدة. قم بترقية خطتك لتحويل عدد أكبر من الصور في ملف PDF واحد.",
-    code: "ERR_MAX_IMAGES_EXCEEDED",
+      "يحتوي الملف على بيانات صور غير صالحة. يرجى التأكد من تنسيق جميع الصور بشكل صحيح.",
+    code: "INVALID_IMAGE_DATA",
   },
-  IMAGE_TOO_LARGE: {
+  SECURITY_RISK: {
     message:
-      "حجم صورة واحدة أو أكثر يتجاوز الحد الأقصى البالغ 20 ميجابايت. قم بترقية خطتك لرفع صور أكبر حجمًا.",
-    code: "ERR_IMAGE_TOO_LARGE",
-  },
-  TOTAL_SIZE_EXCEEDED: {
-    message:
-      "إجمالي حجم الملفات يتجاوز الحد المسموح به. قم بترقية خطتك للحصول على حدود رفع أعلى.",
-    code: "ERR_TOTAL_SIZE_EXCEEDED",
+      "يحتوي الملف على مخاطر أمنية ولا يمكن معالجته. يرجى اختيار ملف صالح.",
+    code: "SECURITY_RISK",
   },
 
+  // ============ أخطاء التنسيق/الخيارات ============
+  FORMAT_REQUIRED: {
+    message: "يرجى تحديد تنسيق الإخراج.",
+    code: "FORMAT_REQUIRED",
+  },
+  INVALID_FORMAT: {
+    message: "التنسيق المحدد غير مدعوم.",
+    code: "INVALID_FORMAT",
+  },
+  INVALID_INPUT: {
+    message: "تم تقديم إدخال غير صالح. يرجى التحقق من إعداداتك والمحاولة مرة أخرى.",
+    code: "INVALID_INPUT",
+  },
+  INVALID_MODE: {
+    message: "وضع التحويل المحدد غير صالح.",
+    code: "INVALID_MODE",
+  },
+  INVALID_QUALITY: {
+    message: "إعداد الجودة غير صالح. يرجى تحديد خيار جودة صالح.",
+    code: "INVALID_QUALITY",
+  },
+  INVALID_FIT_MODE: {
+    message: "وضع الملاءمة غير صالح. يرجى تحديد max أو crop أو scale.",
+    code: "INVALID_FIT_MODE",
+  },
+  INVALID_DIMENSION: {
+    message: "قيمة البعد غير صالحة. يجب أن يكون العرض والارتفاع أرقاماً موجبة.",
+    code: "INVALID_DIMENSION",
+  },
+  DIMENSION_TOO_LARGE: {
+    message: "البعد كبير جداً. الحد الأقصى المسموح به هو 4096 بكسل.",
+    code: "DIMENSION_TOO_LARGE",
+  },
+  INVALID_PAGE_NUMBER: {
+    message: "رقم الصفحة غير صالح. يجب أن تكون أرقام الصفحات أعداداً صحيحة موجبة.",
+    code: "INVALID_PAGE_NUMBER",
+  },
+  INVALID_DELAY: {
+    message: "قيمة التأخير غير صالحة. يجب أن يكون التأخير 0.1 ثانية على الأقل.",
+    code: "INVALID_DELAY",
+  },
+  DELAY_TOO_LONG: {
+    message: "التأخير طويل جداً. الحد الأقصى للتأخير هو 60 ثانية لكل إطار.",
+    code: "DELAY_TOO_LONG",
+  },
+
+  // ============ أخطاء التحويل ============
+  CONVERSION_ERROR: {
+    message: "حدث خطأ أثناء التحويل. يرجى المحاولة مرة أخرى.",
+    code: "CONVERSION_ERROR",
+  },
+  INTERNAL_ERROR: {
+    message: "حدث خطأ داخلي في الخادم. يرجى المحاولة لاحقاً.",
+    code: "INTERNAL_ERROR",
+  },
+  PERMISSION_ERROR: {
+    message: "تم رفض الإذن. يرجى التحقق من أذونات الملف والمحاولة مرة أخرى.",
+    code: "PERMISSION_ERROR",
+  },
+
+  // ============ حدود الاستخدام ============
+  MAX_DAILY_USAGE: {
+    message:
+      "لقد وصلت إلى حد الاستخدام اليومي. يرجى ترقية خطتك للمتابعة.",
+    code: "MAX_DAILY_USAGE",
+  },
+
+  // ============ أخطاء الشبكة ============
+  ERR_NETWORK: {
+    message:
+      "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.",
+    code: "ERR_NETWORK",
+  },
+
+  // ============ خطأ افتراضي ============
+  UNKNOWN_ERROR: {
+    message:
+      "حدث خطأ غير معروف. يرجى المحاولة لاحقاً أو الاتصال بالدعم.",
+    code: "UNKNOWN_ERROR",
+  },
 };
 
 export const adBlockerContent: adBlockerContentType = {

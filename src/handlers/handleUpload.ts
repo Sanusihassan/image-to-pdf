@@ -14,7 +14,7 @@ import {
   type supportedImageTypes,
 } from "../store";
 import type { Action, Dispatch } from "@reduxjs/toolkit/react";
-import { parseApiError } from "../parseApiError";
+import { parseApiError, isPasswordRequired } from "../parseApiError";
 
 let filesOnSubmit: string[] = [];
 let prevState: string | null = null;
@@ -52,6 +52,18 @@ function prepareOptionsForAPI(options: OptionsType): OptionsForAPI {
   return options;
 }
 
+/**
+ * Parse error response blob to JSON
+ */
+async function parseErrorBlob(blob: Blob): Promise<Record<string, unknown> | null> {
+  try {
+    const text = await blob.text();
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
 // ============ MAIN FUNCTION ============
 export const handleUpload = async (
   e: React.FormEvent<HTMLFormElement>,
@@ -78,7 +90,10 @@ export const handleUpload = async (
   e.preventDefault();
   dispatch(setField({ isSubmitted: true }));
 
-  if (!files) return;
+  if (!files || files.length === 0) {
+    dispatch(setField({ errorMessage: errors.NO_FILES_SELECTED?.message || "No files selected." }));
+    return;
+  }
 
   // Extract file names from the File[] array
   const fileNames = files.map((file) => file.name);
@@ -96,6 +111,7 @@ export const handleUpload = async (
   };
   const strState = JSON.stringify(stateForComparison);
 
+  // If same files and same state, just show download button (file already converted)
   if (
     allFilesPresent &&
     files.length === filesOnSubmit.length &&
@@ -107,71 +123,91 @@ export const handleUpload = async (
   }
   prevState = strState;
 
+  // Build form data
   const formData = new FormData();
   for (let i = 0; i < files.length; i++) {
     formData.append("files", files[i]);
   }
   formData.append("rotations", JSON.stringify(state.rotations));
   formData.append("passwords", JSON.stringify(state.passwords));
-
-  // Send sanitized options (without imageUrl for pdf-to-gif)
   formData.append("options", JSON.stringify(sanitizedOptions));
-  formData.append("selectedImageFormat", state.selectedImageFormat || "JPG");
 
-
-  let url: string = "";
-  // @ts-ignore
-  if (process.env.NODE_ENV === "development") {
-    url = `http://localhost:8000/api/${state.path}`;
-  } else {
-    url = `/api/${state.path}`;
+  // Only append selectedImageFormat if it's set
+  if (state.selectedImageFormat) {
+    formData.append("selectedImageFormat", state.selectedImageFormat);
   }
 
+  // Build URL
+  const url =
+    process.env.NODE_ENV === "development"
+      ? `http://localhost:8000/api/${state.path}`
+      : `/api/${state.path}`;
+
+  // Don't proceed if there's already an error
   if (state.errorMessage) {
     return;
   }
 
+  // Get original filename for download
   const originalFileName =
-    state.fileName || files[0]?.name?.split(".").slice(0, -1).join(".");
+    state.fileName || files[0]?.name?.split(".").slice(0, -1).join(".") || "converted";
 
   try {
     const response = await axios.post(url, formData, {
       responseType: "blob",
     });
 
+    // Success - store filenames and trigger download
     filesOnSubmit = fileNames;
-
-    // downloadConvertedFile now handles MIME types and extensions automatically
     downloadConvertedFile(response, state.path, originalFileName, downloadBtn);
-
     dispatch(setField({ showDownloadBtn: true }));
     dispatch(resetErrorMessage());
-  } catch (error: any) {
-    if (error?.response?.data) {
-      const blob = error.response.data;
-      const text = await blob.text();
-      try {
-        const errorData = JSON.parse(text);
-        if (errorData?.code === "PASSWORD_REQUIRED") {
-          dispatch(setField({ errorCode: "PASSWORD_REQUIRED" }));
+
+  } catch (error: unknown) {
+    // Handle axios errors
+    if (axios.isAxiosError(error)) {
+      if (error.response?.data) {
+        // Parse error response blob
+        const errorData = await parseErrorBlob(error.response.data);
+
+        if (errorData) {
+          // Check for password required (special handling)
+          if (isPasswordRequired(errorData)) {
+            dispatch(setField({ errorCode: "PASSWORD_REQUIRED" }));
+            return;
+          }
+
+          // Parse and display error message
+          const errorMessage = parseApiError(errorData, errors);
+          dispatch(setField({ errorMessage }));
         } else {
+          // Couldn't parse error response
           dispatch(
             setField({
-              errorMessage: parseApiError(errorData, errors),
+              errorMessage: errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
             })
           );
         }
-      } catch {
+      } else if (error.code === "ERR_NETWORK" || !error.response) {
+        // Network error
         dispatch(
           setField({
-            errorMessage: errors.UNKNOWN_ERROR?.message || "Unknown error",
+            errorMessage: errors.ERR_NETWORK?.message || "Network error. Please check your connection.",
+          })
+        );
+      } else {
+        // Other axios error
+        dispatch(
+          setField({
+            errorMessage: errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
           })
         );
       }
     } else {
+      // Non-axios error
       dispatch(
         setField({
-          errorMessage: errors.ERR_NETWORK?.message || "Network error",
+          errorMessage: errors.UNKNOWN_ERROR?.message || "An unexpected error occurred.",
         })
       );
     }

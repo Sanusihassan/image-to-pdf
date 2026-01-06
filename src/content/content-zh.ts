@@ -756,97 +756,183 @@ export const footer: _footer = {
   privacy_policy: "隐私政策",
 };
 
-export const errors: _errors = {
+// errors.zh.ts
+// Location: src/content/zh/errors.ts
+/**
+ * Chinese (Simplified) translation of error messages.
+ */
+
+export const errors = {
+  // ============ 文件错误 ============
   EMPTY_FILE: {
-    message: "文件为空，请选择一个有效的文件。",
-    code: "ERR_EMPTY_FILE",
+    message: "文件为空。请选择一个有效的文件。",
+    code: "EMPTY_FILE",
   },
   FILE_TOO_LARGE: {
     message:
-      "文件太大。请选择一个更小的文件，或使用我们的压缩PDF工具来减小文件大小。",
-    code: "ERR_FILE_SIZE_LIMIT_EXCEEDED",
-  },
-  NOT_SUPPORTED_TYPE: {
-    message: "文件不是受支持的类型。",
-    types: {
-      PDF: "请选择一个有效的PDF文件。",
-      JPG: "请选择一个有效的JPEG图片文件。",
-      DOC: "请选择一个有效的Word文档文件。",
-      DOCX: "请选择一个有效的Word文档文件。",
-      XLS: "请选择一个有效的Excel电子表格文件。",
-      XLSX: "请选择一个有效的Excel电子表格文件。",
-      PPT: "请选择一个有效的PowerPoint演示文稿文件。",
-      PPTX: "请选择一个有效的PowerPoint演示文稿文件。",
-    },
-    code: "ERR_INVALID_FILE_TYPE",
+      "文件太大。请选择一个较小的文件，或使用我们的PDF压缩工具来减小文件大小。",
+    code: "FILE_TOO_LARGE",
   },
   FILE_CORRUPT: {
-    message: "文件已损坏，无法处理。请选择一个有效的文件。",
-    code: "ERR_FILE_CORRUPT",
+    message:
+      "文件已损坏，无法处理。请选择一个有效的文件。",
+    code: "FILE_CORRUPT",
   },
-  MISSING_FONTS: {
-    message: "文件缺少字体。请确保所有字体都嵌入在PDF文件中。",
-    code: "ERR_MISSING_FONTS",
+  FILE_NOT_FOUND: {
+    message: "未找到请求的文件。请重新上传。",
+    code: "FILE_NOT_FOUND",
   },
-  INVALID_IMAGE_DATA: {
-    message: "文件包含无效的图像数据。请确保所有图像格式正确。",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message: "文件存在安全风险，无法处理。请选择一个有效的文件。",
-    code: "ERR_SECURITY_RISK",
-  },
-  MAX_FILES_EXCEEDED: {
-    message: "您已超出允许的最大文件数。请删除一些文件并重试。",
-    code: "ERR_MAX_FILES_EXCEEDED",
+  NO_FILES_PROVIDED: {
+    message: "未提供文件。请至少选择一个文件。",
+    code: "NO_FILES_PROVIDED",
   },
   NO_FILES_SELECTED: {
-    message: "未选择任何文件。请选择至少一个文件。",
-    code: "ERR_NO_FILES_SELECTED",
+    message: "未选择文件。请至少选择一个文件。",
+    code: "NO_FILES_SELECTED",
   },
-  UNKNOWN_ERROR: {
-    message: "发生未知错误。请稍后重试或联系支持人员。",
-    code: "ERR_UNKNOWN",
+  NOT_SUPPORTED_TYPE: {
+    message: "不支持此文件类型。请选择有效的文件格式。",
+    code: "NOT_SUPPORTED_TYPE",
   },
-  ERR_NETWORK: {
-    message: "网络错误，请检查您的互联网连接并重试。",
-    code: "ERR_NETWORK",
+
+  // ============ 上传限制 ============
+  MAX_FILES_EXCEEDED: {
+    message:
+      "您已超过允许的最大文件数量。请删除一些文件后重试。",
+    code: "MAX_FILES_EXCEEDED",
   },
   ERR_UPLOAD_COUNT: {
-    message: "请至少上传两个文件以合并。",
+    message: "您已超过允许的最大文件数量。",
     code: "ERR_UPLOAD_COUNT",
   },
+  MAX_PAGES_EXCEEDED: {
+    message: "PDF超过最大页数限制。升级您的计划以获得更高的限制。",
+    code: "MAX_PAGES_EXCEEDED",
+  },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "您一次最多可以转换15张图片。升级您的计划以转换更多图片。",
+    code: "MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "一张或多张图片超过大小限制。升级您的计划以上传更大的图片。",
+    code: "IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "总上传大小超过允许的限制。升级您的计划以获得更高的限制。",
+    code: "TOTAL_SIZE_EXCEEDED",
+  },
+  TOO_MANY_FRAMES: {
+    message: "GIF动画帧数太多。请减少启用的页面数量。",
+    code: "TOO_MANY_FRAMES",
+  },
+
+  // ============ PDF错误 ============
   PASSWORD_REQUIRED: {
-    message: "PDF 需要密码。",
+    message: "此PDF受密码保护。请输入密码。",
     code: "PASSWORD_REQUIRED",
   },
   INCORRECT_PASSWORD: {
     message: "您输入的密码不正确。",
     code: "INCORRECT_PASSWORD",
   },
+  MISSING_FONTS: {
+    message:
+      "文件包含缺失的字体，无法处理。请确保所有字体都嵌入在PDF中。",
+    code: "MISSING_FONTS",
+  },
+  INVALID_IMAGE_DATA: {
+    message:
+      "文件包含无效的图像数据。请确保所有图像格式正确。",
+    code: "INVALID_IMAGE_DATA",
+  },
+  SECURITY_RISK: {
+    message:
+      "文件包含安全风险，无法处理。请选择一个有效的文件。",
+    code: "SECURITY_RISK",
+  },
+
+  // ============ 格式/选项错误 ============
+  FORMAT_REQUIRED: {
+    message: "请选择输出格式。",
+    code: "FORMAT_REQUIRED",
+  },
+  INVALID_FORMAT: {
+    message: "不支持所选格式。",
+    code: "INVALID_FORMAT",
+  },
+  INVALID_INPUT: {
+    message: "提供的输入无效。请检查您的设置后重试。",
+    code: "INVALID_INPUT",
+  },
+  INVALID_MODE: {
+    message: "所选转换模式无效。",
+    code: "INVALID_MODE",
+  },
+  INVALID_QUALITY: {
+    message: "质量设置无效。请选择有效的质量选项。",
+    code: "INVALID_QUALITY",
+  },
+  INVALID_FIT_MODE: {
+    message: "适应模式无效。请选择max、crop或scale。",
+    code: "INVALID_FIT_MODE",
+  },
+  INVALID_DIMENSION: {
+    message: "尺寸值无效。宽度和高度必须是正数。",
+    code: "INVALID_DIMENSION",
+  },
+  DIMENSION_TOO_LARGE: {
+    message: "尺寸太大。最大允许4096像素。",
+    code: "DIMENSION_TOO_LARGE",
+  },
+  INVALID_PAGE_NUMBER: {
+    message: "页码无效。页码必须是正整数。",
+    code: "INVALID_PAGE_NUMBER",
+  },
+  INVALID_DELAY: {
+    message: "延迟值无效。延迟必须至少为0.1秒。",
+    code: "INVALID_DELAY",
+  },
+  DELAY_TOO_LONG: {
+    message: "延迟太长。每帧最大延迟为60秒。",
+    code: "DELAY_TOO_LONG",
+  },
+
+  // ============ 转换错误 ============
+  CONVERSION_ERROR: {
+    message: "转换过程中发生错误。请重试。",
+    code: "CONVERSION_ERROR",
+  },
+  INTERNAL_ERROR: {
+    message: "发生内部服务器错误。请稍后重试。",
+    code: "INTERNAL_ERROR",
+  },
+  PERMISSION_ERROR: {
+    message: "权限被拒绝。请检查文件权限后重试。",
+    code: "PERMISSION_ERROR",
+  },
+
+  // ============ 使用限制 ============
   MAX_DAILY_USAGE: {
     message:
-      "您已达到每日使用上限。请升级套餐，继续无中断使用此功能。",
+      "您已达到每日使用限制。请升级您的计划以继续。",
     code: "MAX_DAILY_USAGE",
   },
-  MAX_PAGES_EXCEEDED: {
-    message: "PDF 超过最大页数限制 50 页。",
-    code: "ERR_MAX_PAGES_EXCEEDED",
-  },
-  MAX_IMAGES_EXCEEDED: {
+
+  // ============ 网络错误 ============
+  ERR_NETWORK: {
     message:
-      "您一次最多只能转换 15 张图片。升级您的方案即可在一个 PDF 中转换更多图片。",
-    code: "ERR_MAX_IMAGES_EXCEEDED",
+      "发生网络错误。请检查您的网络连接后重试。",
+    code: "ERR_NETWORK",
   },
-  IMAGE_TOO_LARGE: {
+
+  // ============ 未知错误 ============
+  UNKNOWN_ERROR: {
     message:
-      "一张或多张图片超过了 20 MB 的大小限制。升级您的方案以上传更大的图片。",
-    code: "ERR_IMAGE_TOO_LARGE",
-  },
-  TOTAL_SIZE_EXCEEDED: {
-    message:
-      "上传的文件总大小超过了允许的限制。升级您的方案以获得更高的上传额度。",
-    code: "ERR_TOTAL_SIZE_EXCEEDED",
+      "发生未知错误。请稍后重试或联系支持。",
+    code: "UNKNOWN_ERROR",
   },
 };
 

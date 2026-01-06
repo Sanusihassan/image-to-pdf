@@ -764,105 +764,183 @@ export const footer: _footer = {
   privacy_policy: "politique de confidentialité",
 };
 
-export const errors: _errors = {
+// errors.fr.ts
+// Location: src/content/fr/errors.ts
+/**
+ * French translation of error messages.
+ */
+
+export const errors = {
+  // ============ ERREURS DE FICHIER ============
   EMPTY_FILE: {
     message: "Le fichier est vide. Veuillez choisir un fichier valide.",
-    code: "ERR_EMPTY_FILE",
+    code: "EMPTY_FILE",
   },
   FILE_TOO_LARGE: {
     message:
-      "Le fichier est trop volumineux. Veuillez choisir un fichier plus petit ou utiliser notre outil de compression PDF pour réduire la taille du fichier.",
-    code: "ERR_FILE_SIZE_LIMIT_EXCEEDED",
-  },
-  NOT_SUPPORTED_TYPE: {
-    message: "Le fichier n'est pas d'un type pris en charge.",
-    types: {
-      PDF: "Veuillez choisir un fichier PDF valide.",
-      JPG: "Veuillez choisir un fichier d'image JPEG valide.",
-      DOC: "Veuillez choisir un fichier de document Word valide.",
-      DOCX: "Veuillez choisir un fichier de document Word valide.",
-      XLS: "Veuillez choisir un fichier de feuille de calcul Excel valide.",
-      XLSX: "Veuillez choisir un fichier de feuille de calcul Excel valide.",
-      PPT: "Veuillez choisir un fichier de présentation PowerPoint valide.",
-      PPTX: "Veuillez choisir un fichier de présentation PowerPoint valide.",
-    },
-    code: "ERR_INVALID_FILE_TYPE",
+      "Le fichier est trop volumineux. Veuillez choisir un fichier plus petit ou utiliser notre outil de compression PDF pour réduire la taille.",
+    code: "FILE_TOO_LARGE",
   },
   FILE_CORRUPT: {
     message:
       "Le fichier est corrompu et ne peut pas être traité. Veuillez choisir un fichier valide.",
-    code: "ERR_FILE_CORRUPT",
+    code: "FILE_CORRUPT",
+  },
+  FILE_NOT_FOUND: {
+    message: "Le fichier demandé n'a pas été trouvé. Veuillez réessayer de le télécharger.",
+    code: "FILE_NOT_FOUND",
+  },
+  NO_FILES_PROVIDED: {
+    message: "Aucun fichier n'a été fourni. Veuillez sélectionner au moins un fichier.",
+    code: "NO_FILES_PROVIDED",
+  },
+  NO_FILES_SELECTED: {
+    message: "Aucun fichier sélectionné. Veuillez sélectionner au moins un fichier.",
+    code: "NO_FILES_SELECTED",
+  },
+  NOT_SUPPORTED_TYPE: {
+    message: "Ce type de fichier n'est pas pris en charge. Veuillez choisir un format de fichier valide.",
+    code: "NOT_SUPPORTED_TYPE",
+  },
+
+  // ============ LIMITES DE TÉLÉCHARGEMENT ============
+  MAX_FILES_EXCEEDED: {
+    message:
+      "Vous avez dépassé le nombre maximum de fichiers autorisés. Veuillez supprimer certains fichiers et réessayer.",
+    code: "MAX_FILES_EXCEEDED",
+  },
+  ERR_UPLOAD_COUNT: {
+    message: "Vous avez dépassé le nombre maximum de fichiers autorisés.",
+    code: "ERR_UPLOAD_COUNT",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "Le PDF dépasse la limite maximale de pages. Mettez à niveau votre plan pour des limites plus élevées.",
+    code: "MAX_PAGES_EXCEEDED",
+  },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "Vous pouvez convertir jusqu'à 15 images à la fois. Mettez à niveau votre plan pour convertir plus d'images.",
+    code: "MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "Une ou plusieurs images dépassent la limite de taille. Mettez à niveau votre plan pour télécharger des images plus grandes.",
+    code: "IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "La taille totale du téléchargement dépasse la limite autorisée. Mettez à niveau votre plan pour des limites plus élevées.",
+    code: "TOTAL_SIZE_EXCEEDED",
+  },
+  TOO_MANY_FRAMES: {
+    message: "Trop d'images pour l'animation GIF. Veuillez réduire le nombre de pages activées.",
+    code: "TOO_MANY_FRAMES",
+  },
+
+  // ============ ERREURS PDF ============
+  PASSWORD_REQUIRED: {
+    message: "Ce PDF est protégé par mot de passe. Veuillez entrer le mot de passe.",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "Le mot de passe que vous avez entré est incorrect.",
+    code: "INCORRECT_PASSWORD",
   },
   MISSING_FONTS: {
     message:
-      "Le fichier contient des polices manquantes. Veuillez vous assurer que toutes les polices sont intégrées dans le fichier PDF.",
-    code: "ERR_MISSING_FONTS",
+      "Le fichier contient des polices manquantes et ne peut pas être traité. Veuillez vous assurer que toutes les polices sont intégrées dans le PDF.",
+    code: "MISSING_FONTS",
   },
   INVALID_IMAGE_DATA: {
     message:
-      "Le fichier contient des données d'image non valides. Veuillez vous assurer que toutes les images sont correctement formatées.",
-    code: "ERR_INVALID_IMAGE_DATA",
+      "Le fichier contient des données d'image invalides. Veuillez vous assurer que toutes les images sont correctement formatées.",
+    code: "INVALID_IMAGE_DATA",
   },
   SECURITY_RISK: {
     message:
       "Le fichier contient un risque de sécurité et ne peut pas être traité. Veuillez choisir un fichier valide.",
-    code: "ERR_SECURITY_RISK",
+    code: "SECURITY_RISK",
   },
-  MAX_FILES_EXCEEDED: {
+
+  // ============ ERREURS DE FORMAT/OPTIONS ============
+  FORMAT_REQUIRED: {
+    message: "Veuillez sélectionner un format de sortie.",
+    code: "FORMAT_REQUIRED",
+  },
+  INVALID_FORMAT: {
+    message: "Le format sélectionné n'est pas pris en charge.",
+    code: "INVALID_FORMAT",
+  },
+  INVALID_INPUT: {
+    message: "Entrée invalide fournie. Veuillez vérifier vos paramètres et réessayer.",
+    code: "INVALID_INPUT",
+  },
+  INVALID_MODE: {
+    message: "Mode de conversion sélectionné invalide.",
+    code: "INVALID_MODE",
+  },
+  INVALID_QUALITY: {
+    message: "Paramètre de qualité invalide. Veuillez sélectionner une option de qualité valide.",
+    code: "INVALID_QUALITY",
+  },
+  INVALID_FIT_MODE: {
+    message: "Mode d'ajustement invalide. Veuillez sélectionner max, crop ou scale.",
+    code: "INVALID_FIT_MODE",
+  },
+  INVALID_DIMENSION: {
+    message: "Valeur de dimension invalide. La largeur et la hauteur doivent être des nombres positifs.",
+    code: "INVALID_DIMENSION",
+  },
+  DIMENSION_TOO_LARGE: {
+    message: "Dimension trop grande. Le maximum autorisé est de 4096 pixels.",
+    code: "DIMENSION_TOO_LARGE",
+  },
+  INVALID_PAGE_NUMBER: {
+    message: "Numéro de page invalide. Les numéros de page doivent être des entiers positifs.",
+    code: "INVALID_PAGE_NUMBER",
+  },
+  INVALID_DELAY: {
+    message: "Valeur de délai invalide. Le délai doit être d'au moins 0,1 seconde.",
+    code: "INVALID_DELAY",
+  },
+  DELAY_TOO_LONG: {
+    message: "Délai trop long. Le délai maximum est de 60 secondes par image.",
+    code: "DELAY_TOO_LONG",
+  },
+
+  // ============ ERREURS DE CONVERSION ============
+  CONVERSION_ERROR: {
+    message: "Une erreur s'est produite lors de la conversion. Veuillez réessayer.",
+    code: "CONVERSION_ERROR",
+  },
+  INTERNAL_ERROR: {
+    message: "Une erreur interne du serveur s'est produite. Veuillez réessayer plus tard.",
+    code: "INTERNAL_ERROR",
+  },
+  PERMISSION_ERROR: {
+    message: "Permission refusée. Veuillez vérifier les permissions du fichier et réessayer.",
+    code: "PERMISSION_ERROR",
+  },
+
+  // ============ LIMITES D'UTILISATION ============
+  MAX_DAILY_USAGE: {
     message:
-      "Vous avez dépassé le nombre maximal de fichiers autorisés. Veuillez supprimer certains fichiers et réessayer.",
-    code: "ERR_MAX_FILES_EXCEEDED",
+      "Vous avez atteint votre limite d'utilisation quotidienne. Veuillez mettre à niveau votre plan pour continuer.",
+    code: "MAX_DAILY_USAGE",
   },
-  NO_FILES_SELECTED: {
+
+  // ============ ERREURS RÉSEAU ============
+  ERR_NETWORK: {
     message:
-      "Aucun fichier sélectionné. Veuillez sélectionner au moins un fichier.",
-    code: "ERR_NO_FILES_SELECTED",
+      "Une erreur réseau s'est produite. Veuillez vérifier votre connexion Internet et réessayer.",
+    code: "ERR_NETWORK",
   },
+
+  // ============ ERREUR INCONNUE ============
   UNKNOWN_ERROR: {
     message:
       "Une erreur inconnue s'est produite. Veuillez réessayer plus tard ou contacter le support.",
-    code: "ERR_UNKNOWN",
-  },
-  ERR_NETWORK: {
-    message:
-      "Une erreur de réseau s'est produite. Veuillez vérifier votre connexion Internet et réessayer.",
-    code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Veuillez télécharger au moins deux fichiers à fusionner.",
-    code: "ERR_UPLOAD_COUNT",
-  },
-  PASSWORD_REQUIRED: {
-    message: "Le PDF nécessite un mot de passe.",
-    code: "PASSWORD_REQUIRED",
-  },
-  INCORRECT_PASSWORD: {
-    message: "Le mot de passe saisi est incorrect.",
-    code: "INCORRECT_PASSWORD",
-  },
-  MAX_DAILY_USAGE: {
-    message:
-      "Vous avez atteint votre limite d'utilisation quotidienne. Mettez à jour votre plan pour continuer sans interruption.",
-    code: "MAX_DAILY_USAGE",
-  },
-  MAX_PAGES_EXCEEDED: {
-    message: "Le PDF dépasse la limite maximale de 50 pages.",
-    code: "ERR_MAX_PAGES_EXCEEDED",
-  },
-  MAX_IMAGES_EXCEEDED: {
-    message:
-      "Vous pouvez convertir jusqu’à 15 images à la fois. Passez à un plan supérieur pour convertir davantage d’images dans un seul PDF.",
-    code: "ERR_MAX_IMAGES_EXCEEDED",
-  },
-  IMAGE_TOO_LARGE: {
-    message:
-      "Une ou plusieurs images dépassent la limite de taille de 20 Mo. Passez à un plan supérieur pour importer des images plus volumineuses.",
-    code: "ERR_IMAGE_TOO_LARGE",
-  },
-  TOTAL_SIZE_EXCEEDED: {
-    message:
-      "La taille totale des fichiers dépasse la limite autorisée. Passez à un plan supérieur pour bénéficier de limites de téléchargement plus élevées.",
-    code: "ERR_TOTAL_SIZE_EXCEEDED",
+    code: "UNKNOWN_ERROR",
   },
 };
 

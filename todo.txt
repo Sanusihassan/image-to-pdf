@@ -8,8 +8,5 @@ add reacting to the options.
 
 /pdf-to-gif options are different. [DONE]
 
-implement backend.
-
-
-next add fileName input.
+implement backend
 

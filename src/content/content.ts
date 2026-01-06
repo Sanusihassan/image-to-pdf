@@ -798,109 +798,189 @@ export const footer = {
   conditions: "conditions",
   privacy_policy: "privacy policy",
 };
+// errors.ts
+// Location: src/content/errors.ts
+/**
+ * Error definitions that sync with backend API error codes.
+ * Each error has a user-friendly message and a code that matches the backend.
+ */
 
 export const errors = {
+  // ============ FILE ERRORS ============
   EMPTY_FILE: {
     message: "The file is empty. Please choose a valid file.",
-    code: "ERR_EMPTY_FILE",
+    code: "EMPTY_FILE",
   },
   FILE_TOO_LARGE: {
     message:
       "The file is too large. Please choose a smaller file, or use our compress-pdf tool to reduce the file size.",
-    code: "ERR_FILE_SIZE_LIMIT_EXCEEDED",
-  },
-  NOT_SUPPORTED_TYPE: {
-    message: "The file is not a supported type.",
-    types: {
-      PDF: "Please choose a valid PDF file.",
-      JPG: "Please choose a valid JPEG image file.",
-      DOC: "Please choose a valid Word document file.",
-      DOCX: "Please choose a valid Word document file.",
-      XLS: "Please choose a valid Excel spreadsheet file.",
-      XLSX: "Please choose a valid Excel spreadsheet file.",
-      PPT: "Please choose a valid PowerPoint presentation file.",
-      PPTX: "Please choose a valid PowerPoint presentation file.",
-    },
-    code: "ERR_INVALID_FILE_TYPE",
+    code: "FILE_TOO_LARGE",
   },
   FILE_CORRUPT: {
     message:
       "The file is corrupt and cannot be processed. Please choose a valid file.",
-    code: "ERR_FILE_CORRUPT",
+    code: "FILE_CORRUPT",
   },
-  MISSING_FONTS: {
-    message:
-      "The file contains missing fontsand cannot be processed. Please ensure all fonts are embedded in the PDF file.",
-    code: "ERR_MISSING_FONTS",
+  FILE_NOT_FOUND: {
+    message: "The requested file was not found. Please try uploading again.",
+    code: "FILE_NOT_FOUND",
   },
-  INVALID_IMAGE_DATA: {
-    message:
-      "The file contains invalid image data. Please ensure all images are properly formatted.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "The file contains a security risk and cannot be processed. Please choose a valid file.",
-    code: "ERR_SECURITY_RISK",
-  },
-  MAX_FILES_EXCEEDED: {
-    message:
-      "You have exceeded the maximum number of files allowed. Please delete some files and try again.",
-    code: "ERR_MAX_FILES_EXCEEDED",
+  NO_FILES_PROVIDED: {
+    message: "No files were provided. Please select at least one file.",
+    code: "NO_FILES_PROVIDED",
   },
   NO_FILES_SELECTED: {
     message: "No files selected. Please select at least one file.",
-    code: "ERR_NO_FILES_SELECTED",
+    code: "NO_FILES_SELECTED",
   },
-  UNKNOWN_ERROR: {
-    message:
-      "An unknown error occurred. Please try again later or contact support.",
-    code: "ERR_UNKNOWN",
-  },
-  PASSWORD_REQUIRED: {
-    message: "PDF requires a password.",
-    code: "PASSWORD_REQUIRED",
+  NOT_SUPPORTED_TYPE: {
+    message: "This file type is not supported. Please choose a valid file format.",
+    code: "NOT_SUPPORTED_TYPE",
   },
 
+  // ============ UPLOAD LIMITS ============
+  MAX_FILES_EXCEEDED: {
+    message:
+      "You have exceeded the maximum number of files allowed. Please delete some files and try again.",
+    code: "MAX_FILES_EXCEEDED",
+  },
+  ERR_UPLOAD_COUNT: {
+    message: "You have exceeded the maximum number of files allowed.",
+    code: "ERR_UPLOAD_COUNT",
+  },
+  MAX_PAGES_EXCEEDED: {
+    message: "The PDF exceeds the maximum page limit. Upgrade your plan for higher limits.",
+    code: "MAX_PAGES_EXCEEDED",
+  },
+  MAX_IMAGES_EXCEEDED: {
+    message:
+      "You can convert up to 15 images at once. Upgrade your plan to convert more images.",
+    code: "MAX_IMAGES_EXCEEDED",
+  },
+  IMAGE_TOO_LARGE: {
+    message:
+      "One or more images exceed the size limit. Upgrade your plan to upload larger images.",
+    code: "IMAGE_TOO_LARGE",
+  },
+  TOTAL_SIZE_EXCEEDED: {
+    message:
+      "The total upload size exceeds the allowed limit. Upgrade your plan for higher limits.",
+    code: "TOTAL_SIZE_EXCEEDED",
+  },
+  TOO_MANY_FRAMES: {
+    message: "Too many frames for GIF animation. Please reduce the number of enabled pages.",
+    code: "TOO_MANY_FRAMES",
+  },
+
+  // ============ PDF ERRORS ============
+  PASSWORD_REQUIRED: {
+    message: "This PDF is password protected. Please enter the password.",
+    code: "PASSWORD_REQUIRED",
+  },
   INCORRECT_PASSWORD: {
     message: "The password you entered is incorrect.",
     code: "INCORRECT_PASSWORD",
   },
+  MISSING_FONTS: {
+    message:
+      "The file contains missing fonts and cannot be processed. Please ensure all fonts are embedded in the PDF.",
+    code: "MISSING_FONTS",
+  },
+  INVALID_IMAGE_DATA: {
+    message:
+      "The file contains invalid image data. Please ensure all images are properly formatted.",
+    code: "INVALID_IMAGE_DATA",
+  },
+  SECURITY_RISK: {
+    message:
+      "The file contains a security risk and cannot be processed. Please choose a valid file.",
+    code: "SECURITY_RISK",
+  },
+
+  // ============ FORMAT/OPTIONS ERRORS ============
+  FORMAT_REQUIRED: {
+    message: "Please select an output format.",
+    code: "FORMAT_REQUIRED",
+  },
+  INVALID_FORMAT: {
+    message: "The selected format is not supported.",
+    code: "INVALID_FORMAT",
+  },
+  INVALID_INPUT: {
+    message: "Invalid input provided. Please check your settings and try again.",
+    code: "INVALID_INPUT",
+  },
+  INVALID_MODE: {
+    message: "Invalid conversion mode selected.",
+    code: "INVALID_MODE",
+  },
+  INVALID_QUALITY: {
+    message: "Invalid quality setting. Please select a valid quality option.",
+    code: "INVALID_QUALITY",
+  },
+  INVALID_FIT_MODE: {
+    message: "Invalid fit mode. Please select max, crop, or scale.",
+    code: "INVALID_FIT_MODE",
+  },
+  INVALID_DIMENSION: {
+    message: "Invalid dimension value. Width and height must be positive numbers.",
+    code: "INVALID_DIMENSION",
+  },
+  DIMENSION_TOO_LARGE: {
+    message: "Dimension too large. Maximum allowed is 4096 pixels.",
+    code: "DIMENSION_TOO_LARGE",
+  },
+  INVALID_PAGE_NUMBER: {
+    message: "Invalid page number. Page numbers must be positive integers.",
+    code: "INVALID_PAGE_NUMBER",
+  },
+  INVALID_DELAY: {
+    message: "Invalid delay value. Delay must be at least 0.1 seconds.",
+    code: "INVALID_DELAY",
+  },
+  DELAY_TOO_LONG: {
+    message: "Delay too long. Maximum delay is 60 seconds per frame.",
+    code: "DELAY_TOO_LONG",
+  },
+
+  // ============ CONVERSION ERRORS ============
+  CONVERSION_ERROR: {
+    message: "An error occurred during conversion. Please try again.",
+    code: "CONVERSION_ERROR",
+  },
+  INTERNAL_ERROR: {
+    message: "An internal server error occurred. Please try again later.",
+    code: "INTERNAL_ERROR",
+  },
+  PERMISSION_ERROR: {
+    message: "Permission denied. Please check file permissions and try again.",
+    code: "PERMISSION_ERROR",
+  },
+
+  // ============ USAGE LIMITS ============
   MAX_DAILY_USAGE: {
     message:
-      "You’ve reached your daily usage limit. Please upgrade your plan to continue using this feature without interruption.",
+      "You've reached your daily usage limit. Please upgrade your plan to continue.",
     code: "MAX_DAILY_USAGE",
   },
-  MAX_PAGES_EXCEEDED: {
-    message: "The PDF exceeds the maximum page limit of 50 pages.",
-    code: "ERR_MAX_PAGES_EXCEEDED",
-  },
-  MAX_IMAGES_EXCEEDED: {
-    message:
-      "You can convert up to 15 images at once. Upgrade your plan to convert more images in a single PDF.",
-    code: "ERR_MAX_IMAGES_EXCEEDED",
-  },
-  IMAGE_TOO_LARGE: {
-    message:
-      "One or more images exceed the 20 MB size limit. Upgrade your plan to upload larger images.",
-    code: "ERR_IMAGE_TOO_LARGE",
-  },
-  TOTAL_SIZE_EXCEEDED: {
-    message:
-      "The total upload size exceeds the allowed limit. Upgrade your plan for higher upload limits.",
-    code: "ERR_TOTAL_SIZE_EXCEEDED",
-  },
+
+  // ============ NETWORK ERRORS ============
   ERR_NETWORK: {
     message:
       "A network error occurred. Please check your internet connection and try again.",
     code: "ERR_NETWORK",
   },
-  ERR_UPLOAD_COUNT: {
-    message: "Please upload at least two files to merge.",
-    code: "ERR_UPLOAD_COUNT",
+
+  // ============ FALLBACK ============
+  UNKNOWN_ERROR: {
+    message:
+      "An unknown error occurred. Please try again later or contact support.",
+    code: "UNKNOWN_ERROR",
   },
 };
 
+export type ErrorCode = keyof typeof errors;
+export type ErrorsType = typeof errors;
 export const adBlockerContent = {
   title: "Ad Blocker Detected",
   description: "We noticed you're using an ad blocker. Please consider disabling it or upgrade to premium for an ad-free experience!",

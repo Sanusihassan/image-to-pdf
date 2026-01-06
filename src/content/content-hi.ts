@@ -749,108 +749,186 @@ export const tools: _tools = {
 };
 
 
-export const errors: _errors = {
+// errors.hi.ts
+// Location: src/content/hi/errors.ts
+/**
+ * Hindi translation of error messages.
+ */
+
+export const errors = {
+  // ============ फ़ाइल त्रुटियाँ ============
   EMPTY_FILE: {
-    message: "फ़ाइल खाली है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_EMPTY_FILE",
+    message: "फ़ाइल खाली है। कृपया एक वैध फ़ाइल चुनें।",
+    code: "EMPTY_FILE",
   },
   FILE_TOO_LARGE: {
     message:
-      "फ़ाइल बहुत बड़ी है। कृपया एक छोटी फ़ाइल चुनें या हमारा कंप्रेस-पीडीएफ़ उपकरण उपयोग करके फ़ाइल का आकार कम करें।",
-    code: "ERR_FILE_SIZE_LIMIT_EXCEEDED",
-  },
-  NOT_SUPPORTED_TYPE: {
-    message: "फ़ाइल एक समर्थित प्रकार नहीं है।",
-    types: {
-      PDF: "कृपया एक मान्य पीडीएफ़फ़ाइल चुनें।",
-      JPG: "कृपया एक मान्य जेपेग छवि फ़ाइल चुनें।",
-      DOC: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      DOCX: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      XLS: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      XLSX: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      PPT: "कृपया एक मान्यपावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
-      PPTX: "कृपया एक मान्य पावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
-    },
-    code: "ERR_INVALID_FILE_TYPE",
+      "फ़ाइल बहुत बड़ी है। कृपया एक छोटी फ़ाइल चुनें, या फ़ाइल का आकार कम करने के लिए हमारे PDF कंप्रेस टूल का उपयोग करें।",
+    code: "FILE_TOO_LARGE",
   },
   FILE_CORRUPT: {
     message:
-      "फ़ाइल का डाटा भ्रष्ट है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_FILE_CORRUPT",
+      "फ़ाइल दूषित है और इसे संसाधित नहीं किया जा सकता। कृपया एक वैध फ़ाइल चुनें।",
+    code: "FILE_CORRUPT",
   },
-  MISSING_FONTS: {
-    message:
-      "फ़ाइल में फ़ॉन्ट गुम हैं। कृपया सुनिश्चित करें कि पीडीएफफ़ाइल में सभी फ़ॉन्ट एम्बेड हैं।",
-    code: "ERR_MISSING_FONTS",
+  FILE_NOT_FOUND: {
+    message: "अनुरोधित फ़ाइल नहीं मिली। कृपया दोबारा अपलोड करने का प्रयास करें।",
+    code: "FILE_NOT_FOUND",
   },
-  INVALID_IMAGE_DATA: {
-    message:
-      "फ़ाइल में अवैध छवि डेटा है। कृपया सुनिश्चित करें कि सभी छवियाँ सही ढंग से फ़ॉर्मेटेड हैं।",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "फ़ाइल में सुरक्षा जोखिम हो सकता है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_SECURITY_RISK",
-  },
-  MAX_FILES_EXCEEDED: {
-    message:
-      "आपने अनुमति दी हुई अधिकतम फ़ाइलों की संख्या पार कर दी है। कृपया कुछ फ़ाइलें हटाएं और पुनः प्रयास करें।",
-    code: "ERR_MAX_FILES_EXCEEDED",
+  NO_FILES_PROVIDED: {
+    message: "कोई फ़ाइल प्रदान नहीं की गई। कृपया कम से कम एक फ़ाइल चुनें।",
+    code: "NO_FILES_PROVIDED",
   },
   NO_FILES_SELECTED: {
-    message: "कोई फ़ाइल चयनित नहीं की गई है। कृपया कम से कम एक फ़ाइल चुनें।",
-    code: "ERR_NO_FILES_SELECTED",
+    message: "कोई फ़ाइल नहीं चुनी गई। कृपया कम से कम एक फ़ाइल चुनें।",
+    code: "NO_FILES_SELECTED",
   },
-  UNKNOWN_ERROR: {
-    message:
-      "एक अज्ञात त्रुटि हुई है। कृपया बाद में पुनः प्रयास करें या सहायता से संपर्क करें।",
-    code: "ERR_UNKNOWN",
-  },
-  ERR_NETWORK: {
-    message:
-      "नेटवर्क में त्रुटि हो गई है। कृपया अपना इंटरनेट कनेक्शन जांचें और पुनः प्रयास करें।",
-    code: "ERR_NETWORK",
+  NOT_SUPPORTED_TYPE: {
+    message: "यह फ़ाइल प्रकार समर्थित नहीं है। कृपया एक वैध फ़ाइल प्रारूप चुनें।",
+    code: "NOT_SUPPORTED_TYPE",
   },
 
+  // ============ अपलोड सीमाएँ ============
+  MAX_FILES_EXCEEDED: {
+    message:
+      "आपने अनुमत फ़ाइलों की अधिकतम संख्या पार कर दी है। कृपया कुछ फ़ाइलें हटाएं और पुनः प्रयास करें।",
+    code: "MAX_FILES_EXCEEDED",
+  },
   ERR_UPLOAD_COUNT: {
-    message: "कृपया फ्यूजन करने के लिए कम से कम दो फ़ाइलें अपलोड करें।",
+    message: "आपने अनुमत फ़ाइलों की अधिकतम संख्या पार कर दी है।",
     code: "ERR_UPLOAD_COUNT",
   },
-  PASSWORD_REQUIRED: {
-    message: "PDF में पासवर्ड की आवश्यकता है।",
-    code: "PASSWORD_REQUIRED",
-  },
-  INCORRECT_PASSWORD: {
-    message: "आपने गलत पासवर्ड डाला है।",
-    code: "INCORRECT_PASSWORD",
-  },
-  MAX_DAILY_USAGE: {
-    message:
-      "आपने अपनी दैनिक उपयोग सीमा पूरी कर ली है। बिना रुकावट के जारी रखने के लिए प्लान अपग्रेड करें।",
-    code: "MAX_DAILY_USAGE",
-  },
   MAX_PAGES_EXCEEDED: {
-    message: "PDF अधिकतम 50 पृष्ठों की सीमा से अधिक है।",
-    code: "ERR_MAX_PAGES_EXCEEDED",
+    message: "PDF अधिकतम पृष्ठ सीमा से अधिक है। उच्च सीमाओं के लिए अपनी योजना अपग्रेड करें।",
+    code: "MAX_PAGES_EXCEEDED",
   },
   MAX_IMAGES_EXCEEDED: {
     message:
-      "आप एक बार में अधिकतम 15 चित्रों को परिवर्तित कर सकते हैं। एक ही PDF में अधिक चित्रों को बदलने के लिए अपनी योजना अपग्रेड करें।",
-    code: "ERR_MAX_IMAGES_EXCEEDED",
+      "आप एक बार में 15 छवियों तक परिवर्तित कर सकते हैं। अधिक छवियों को परिवर्तित करने के लिए अपनी योजना अपग्रेड करें।",
+    code: "MAX_IMAGES_EXCEEDED",
   },
   IMAGE_TOO_LARGE: {
     message:
-      "एक या अधिक चित्र 20 MB की आकार सीमा से अधिक हैं। बड़े आकार की छवियाँ अपलोड करने के लिए अपनी योजना अपग्रेड करें।",
-    code: "ERR_IMAGE_TOO_LARGE",
+      "एक या अधिक छवियाँ आकार सीमा से अधिक हैं। बड़ी छवियाँ अपलोड करने के लिए अपनी योजना अपग्रेड करें।",
+    code: "IMAGE_TOO_LARGE",
   },
   TOTAL_SIZE_EXCEEDED: {
     message:
-      "कुल अपलोड आकार अनुमत सीमा से अधिक है। उच्च अपलोड सीमाओं के लिए अपनी योजना अपग्रेड करें।",
-    code: "ERR_TOTAL_SIZE_EXCEEDED",
+      "कुल अपलोड आकार अनुमत सीमा से अधिक है। उच्च सीमाओं के लिए अपनी योजना अपग्रेड करें।",
+    code: "TOTAL_SIZE_EXCEEDED",
+  },
+  TOO_MANY_FRAMES: {
+    message: "GIF एनीमेशन के लिए बहुत अधिक फ़्रेम। कृपया सक्षम पृष्ठों की संख्या कम करें।",
+    code: "TOO_MANY_FRAMES",
   },
 
+  // ============ PDF त्रुटियाँ ============
+  PASSWORD_REQUIRED: {
+    message: "यह PDF पासवर्ड से सुरक्षित है। कृपया पासवर्ड दर्ज करें।",
+    code: "PASSWORD_REQUIRED",
+  },
+  INCORRECT_PASSWORD: {
+    message: "आपने जो पासवर्ड दर्ज किया है वह गलत है।",
+    code: "INCORRECT_PASSWORD",
+  },
+  MISSING_FONTS: {
+    message:
+      "फ़ाइल में गायब फ़ॉन्ट हैं और इसे संसाधित नहीं किया जा सकता। कृपया सुनिश्चित करें कि सभी फ़ॉन्ट PDF में एम्बेड किए गए हैं।",
+    code: "MISSING_FONTS",
+  },
+  INVALID_IMAGE_DATA: {
+    message:
+      "फ़ाइल में अमान्य छवि डेटा है। कृपया सुनिश्चित करें कि सभी छवियाँ सही ढंग से स्वरूपित हैं।",
+    code: "INVALID_IMAGE_DATA",
+  },
+  SECURITY_RISK: {
+    message:
+      "फ़ाइल में सुरक्षा जोखिम है और इसे संसाधित नहीं किया जा सकता। कृपया एक वैध फ़ाइल चुनें।",
+    code: "SECURITY_RISK",
+  },
+
+  // ============ प्रारूप/विकल्प त्रुटियाँ ============
+  FORMAT_REQUIRED: {
+    message: "कृपया आउटपुट प्रारूप चुनें।",
+    code: "FORMAT_REQUIRED",
+  },
+  INVALID_FORMAT: {
+    message: "चयनित प्रारूप समर्थित नहीं है।",
+    code: "INVALID_FORMAT",
+  },
+  INVALID_INPUT: {
+    message: "अमान्य इनपुट प्रदान किया गया। कृपया अपनी सेटिंग्स जांचें और पुनः प्रयास करें।",
+    code: "INVALID_INPUT",
+  },
+  INVALID_MODE: {
+    message: "अमान्य रूपांतरण मोड चयनित।",
+    code: "INVALID_MODE",
+  },
+  INVALID_QUALITY: {
+    message: "अमान्य गुणवत्ता सेटिंग। कृपया एक वैध गुणवत्ता विकल्प चुनें।",
+    code: "INVALID_QUALITY",
+  },
+  INVALID_FIT_MODE: {
+    message: "अमान्य फ़िट मोड। कृपया max, crop या scale चुनें।",
+    code: "INVALID_FIT_MODE",
+  },
+  INVALID_DIMENSION: {
+    message: "अमान्य आयाम मान। चौड़ाई और ऊंचाई सकारात्मक संख्याएँ होनी चाहिए।",
+    code: "INVALID_DIMENSION",
+  },
+  DIMENSION_TOO_LARGE: {
+    message: "आयाम बहुत बड़ा है। अधिकतम अनुमत 4096 पिक्सेल है।",
+    code: "DIMENSION_TOO_LARGE",
+  },
+  INVALID_PAGE_NUMBER: {
+    message: "अमान्य पृष्ठ संख्या। पृष्ठ संख्याएँ सकारात्मक पूर्णांक होनी चाहिए।",
+    code: "INVALID_PAGE_NUMBER",
+  },
+  INVALID_DELAY: {
+    message: "अमान्य देरी मान। देरी कम से कम 0.1 सेकंड होनी चाहिए।",
+    code: "INVALID_DELAY",
+  },
+  DELAY_TOO_LONG: {
+    message: "देरी बहुत लंबी। प्रति फ़्रेम अधिकतम देरी 60 सेकंड है।",
+    code: "DELAY_TOO_LONG",
+  },
+
+  // ============ रूपांतरण त्रुटियाँ ============
+  CONVERSION_ERROR: {
+    message: "रूपांतरण के दौरान त्रुटि हुई। कृपया पुनः प्रयास करें।",
+    code: "CONVERSION_ERROR",
+  },
+  INTERNAL_ERROR: {
+    message: "आंतरिक सर्वर त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
+    code: "INTERNAL_ERROR",
+  },
+  PERMISSION_ERROR: {
+    message: "अनुमति अस्वीकृत। कृपया फ़ाइल अनुमतियाँ जांचें और पुनः प्रयास करें।",
+    code: "PERMISSION_ERROR",
+  },
+
+  // ============ उपयोग सीमाएँ ============
+  MAX_DAILY_USAGE: {
+    message:
+      "आपने अपनी दैनिक उपयोग सीमा पूरी कर ली है। जारी रखने के लिए कृपया अपनी योजना अपग्रेड करें।",
+    code: "MAX_DAILY_USAGE",
+  },
+
+  // ============ नेटवर्क त्रुटियाँ ============
+  ERR_NETWORK: {
+    message:
+      "नेटवर्क त्रुटि हुई। कृपया अपना इंटरनेट कनेक्शन जांचें और पुनः प्रयास करें।",
+    code: "ERR_NETWORK",
+  },
+
+  // ============ अज्ञात त्रुटि ============
+  UNKNOWN_ERROR: {
+    message:
+      "एक अज्ञात त्रुटि हुई। कृपया बाद में पुनः प्रयास करें या सहायता से संपर्क करें।",
+    code: "UNKNOWN_ERROR",
+  },
 };
+
 export const adBlockerContent: adBlockerContentType = {
   title: "विज्ञापन अवरोधक पता चला",
   description: "हमने देखा कि आप विज्ञापन अवरोधक इस्तेमाल कर रहे हैं। इसे बंद करें या प्रीमियम में अपग्रेड करें ताकि विज्ञापन-मुक्त अनुभव मिले!",
