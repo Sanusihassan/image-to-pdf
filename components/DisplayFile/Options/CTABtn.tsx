@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import type { ToolState } from "../../../src/store";
+import { useEffect } from "react";
 export const CTABtn = ({
   cta,
   centerItem,
@@ -13,6 +14,10 @@ export const CTABtn = ({
     (state: { tool: ToolState }) => state.tool.errorCode
   );
 
+  useEffect(() => {
+    console.log("lang", lang);
+  }, []);
+
   return (
     <div
       className={
@@ -24,7 +29,7 @@ export const CTABtn = ({
       }
     >
       <a
-        href={`${lang !== "en" ? "/" + lang : ""}/pricing`}
+        href={`${lang !== "" ? "/" + lang : ""}/pricing`}
         className="cta-btn"
         target="_blank"
       >
