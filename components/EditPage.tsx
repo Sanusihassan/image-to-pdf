@@ -100,7 +100,7 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        <Options edit_page={edit_page} tool={path} />
+        <Options edit_page={edit_page} tool={path} lang={lang} />
         <div className="footer">
           <OutputFileNameInput content={edit_page.fileNameInput} />
         </div>
