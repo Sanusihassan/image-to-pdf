@@ -32,6 +32,7 @@ export const CTABtn = ({
         href={`${lang !== "" ? "/" + lang : ""}/pricing`}
         className="cta-btn"
         target="_blank"
+        onClick={(e) => e.stopPropagation()}
       >
         {cta}
       </a>
