@@ -2,7 +2,7 @@ import type { _howToSchemas } from "./how-to";
 
 export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将JPG图像转换为PDF ？",
         description: "逐步指南以将多个JPG图像转换为单个PDF文档。",
@@ -45,7 +45,7 @@ export const howToSchemas: _howToSchemas = {
         ],
     },
     PNGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将PNG图像转换为PDF ？",
         "description": "逐步指南，将多个PNG图像转换为单个PDF文档。",
@@ -88,7 +88,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     GIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将GIF图像转换为PDF ？",
         "description": "逐步指南，将多个GIF图像转换为单个PDF文档。",
@@ -131,7 +131,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     TIFFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将TIFF图像转换为PDF ？",
         "description": "逐步指南，将多个TIFF图像转换为单个PDF文档。",
@@ -174,7 +174,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     BMPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将BMP图像转换为PDF ？",
         "description": "逐步指南，将BMP图像转换为单个PDF文档。",
@@ -217,7 +217,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     SVGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将SVG图像转换为PDF ？",
         "description": "逐步指南，将SVG图像转换为单个PDF文档。",
@@ -260,7 +260,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     WebPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将WebP图像转换为PDF ？",
         "description": "逐步指南，将WebP图像转换为单个PDF文档。",
@@ -303,7 +303,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     HEIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将HEIF图像转换为PDF ？",
         "description": "逐步指南，将HEIF图像转换为单个PDF文档。",
@@ -348,7 +348,7 @@ export const howToSchemas: _howToSchemas = {
 
 
     HEICToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "如何将HEIC图像转换为PDF ？",
         "description": "逐步指南，将HEIC图像转换为单个PDF文档。",
@@ -391,7 +391,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     ImageToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将图像转换为 PDF ？",
         description: "将多个图像（JPG、PNG 等）转换为单个 PDF 文件的分步指南。",
@@ -429,7 +429,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToImageHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 转换为图像 ？",
         description: "将 PDF 文件转换为图像（JPG、PNG 等）的分步指南。",
@@ -472,7 +472,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToPNGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 转换为 PNG 图像 ？",
         description: "将 PDF 文件转换为 PNG 图像的分步指南。",
@@ -510,7 +510,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToJPGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 JPG 图像 ？",
         description: "将 PDF 文件转换为多个 JPG 图像的分步指南。",
@@ -543,7 +543,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToGIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 GIF 图像 ？",
         description: "将 PDF 文件转换为 GIF 图像的分步指南。",
@@ -576,7 +576,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToBMPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 BMP 图像 ？",
         description: "将 PDF 文件转换为 BMP 图像的分步指南。",
@@ -609,7 +609,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToWEBPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 WebP 图像 ？",
         description: "将 PDF 文件转换为 WebP 图像的分步指南。",
@@ -642,7 +642,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToSVGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 SVG 图像 ？",
         description: "将 PDF 文件转换为 SVG 图像的分步指南。",
@@ -675,7 +675,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToTIFFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 TIFF 图像 ？",
         description: "将 PDF 文件转换为 TIFF 图像的分步指南。",
@@ -708,7 +708,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToHEIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "如何将 PDF 文件转换为 HEIF/HEIC 图像 ？",
         description: "将 PDF 文件转换为 HEIF 或 HEIC 图像的分步指南。",

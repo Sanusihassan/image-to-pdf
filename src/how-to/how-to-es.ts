@@ -2,7 +2,7 @@ import type { _howToSchemas } from "./how-to";
 
 export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir imágenes JPG a PDF?",
         description: "Guía paso a paso para convertir varias imágenes JPG en un solo documento PDF.",
@@ -45,7 +45,7 @@ export const howToSchemas: _howToSchemas = {
         ],
     },
     PNGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir imágenes PNG a PDF?",
         description: "Guía paso a paso para convertir varias imágenes PNG en un único documento PDF.",
@@ -88,7 +88,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     GIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes GIF a PDF?",
         description: "Guía paso a paso para convertir múltiples imágenes GIF en un único documento PDF.",
@@ -131,7 +131,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     TIFFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes TIFF a PDF?",
         description: "Guía paso a paso para convertir múltiples imágenes TIFF en un único documento PDF.",
@@ -174,7 +174,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     BMPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes BMP a PDF?",
         description: "Guía paso a paso para convertir imágenes BMP en un único documento PDF.",
@@ -217,7 +217,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     SVGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes SVG a PDF?",
         description: "Guía paso a paso para convertir imágenes SVG en un único documento PDF.",
@@ -260,7 +260,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     WebPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes WebP a PDF?",
         description: "Guía paso a paso para convertir imágenes WebP en un único documento PDF.",
@@ -303,7 +303,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     HEIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes HEIF a PDF?",
         description: "Guía paso a paso para convertir imágenes HEIF en un único documento PDF.",
@@ -346,7 +346,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     HEICToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo Convertir Imágenes HEIC a PDF?",
         description: "Guía paso a paso para convertir imágenes HEIC en un único documento PDF.",
@@ -390,7 +390,7 @@ export const howToSchemas: _howToSchemas = {
     },
 
     ImageToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir imágenes a PDF?",
         description: "Guía paso a paso para convertir múltiples imágenes (JPG, PNG, etc.) en un solo documento PDF.",
@@ -428,7 +428,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToImageHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir PDF a imágenes?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes (JPG, PNG, etc.).",
@@ -471,7 +471,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToPNGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir PDF a imágenes PNG?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes PNG.",
@@ -509,7 +509,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToJPGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes JPG?",
         description: "Guía paso a paso para convertir un documento PDF en múltiples imágenes JPG.",
@@ -542,7 +542,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToGIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes GIF?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes GIF.",
@@ -575,7 +575,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToBMPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes BMP?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes BMP.",
@@ -608,7 +608,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToWEBPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes WebP?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes WebP.",
@@ -641,7 +641,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToSVGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes SVG?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes SVG.",
@@ -674,7 +674,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToTIFFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes TIFF?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes TIFF.",
@@ -707,7 +707,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToHEIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "¿Cómo convertir documentos PDF a imágenes HEIF/HEIC?",
         description: "Guía paso a paso para convertir un documento PDF en imágenes HEIF o HEIC.",

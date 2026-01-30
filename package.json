@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.6",
     "@hello-pangea/dnd": "^18.0.1",
     "@reduxjs/toolkit": "^2.4.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.13.5",
+    "astro": "^5.17.1",
     "astro-seo-schema": "^5.0.0",
     "fetch-subscription-status": "^3.0.4",
     "js-cookie": "^3.0.5",
@@ -37,7 +37,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/react": "^4.4.2",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^24.6.0",
     "@types/react-beautiful-dnd": "^13.1.8",

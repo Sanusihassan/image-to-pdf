@@ -76,14 +76,14 @@ const asPath = `${currentRoute}`;
 
 // Find matching how-to content
 const matchingKey = Object.keys(routesMap).find(
-  (key) => routesMap[key] === asPath
+  (key) => routesMap[key] === asPath,
 );
 
 const currentHowTo = matchingKey ? howToSchemas[matchingKey] : null;
 
 // Website schema for SEO
 const websiteSchema = {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org",
   "@type": "WebPage",
   name: `PDFEquips ${item.title}`,
   description: item.description,

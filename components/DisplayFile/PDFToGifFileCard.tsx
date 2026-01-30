@@ -23,7 +23,6 @@ import {
   type ToolState,
 } from "../../src/store";
 import type { errors as _, edit_page } from "../../src/content";
-import { Loader } from "./Loader";
 
 // ============ TYPES ============
 export interface PDFToGifFileCardProps {
@@ -42,7 +41,7 @@ async function getAllPagesAsImages(
   file: File,
   dispatch: ReturnType<typeof useDispatch>,
   errors: _,
-  password?: string
+  password?: string,
 ): Promise<GifPage[]> {
   const fileUrl = URL.createObjectURL(file);
   const pages: GifPage[] = [];
@@ -99,11 +98,50 @@ async function getAllPagesAsImages(
     dispatch(
       setField({
         errorMessage: errors.FILE_CORRUPT?.message || "File is corrupt",
-      })
+      }),
     );
     return [];
   }
 }
+
+// ============ PAGE SKELETON COMPONENT ============
+const PageSkeleton = ({ themeColor }: { themeColor: string }) => {
+  return (
+    <div
+      className="relative rounded-lg border-2 bg-white animate-pulse"
+      style={{ borderColor: "#e5e7eb" }}
+    >
+      {/* Drag Handle Skeleton */}
+      <div className="absolute top-2 left-2 p-1 rounded bg-gray-200 w-7 h-7" />
+
+      {/* Toggle Button Skeleton */}
+      <div className="absolute top-2 right-2 p-1.5 rounded bg-gray-200 w-7 h-7" />
+
+      {/* Page Image Skeleton */}
+      <div className="p-3 pt-10">
+        <div
+          className="w-full rounded shadow-sm bg-gray-200"
+          style={{ height: "180px" }}
+        />
+      </div>
+
+      {/* Page Info & Delay Control Skeleton */}
+      <div className="px-3 pb-3">
+        <div className="flex items-center justify-between mb-2">
+          <div className="h-4 bg-gray-200 rounded w-16" />
+          <div className="h-3 bg-gray-200 rounded w-8" />
+        </div>
+
+        {/* Delay Input Skeleton */}
+        <div className="flex items-center gap-2">
+          <div className="h-3 bg-gray-200 rounded w-12" />
+          <div className="flex-1 h-8 bg-gray-200 rounded" />
+          <div className="h-3 bg-gray-200 rounded w-8" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // ============ PAGE ITEM COMPONENT ============
 interface PageItemProps {
@@ -249,7 +287,7 @@ export const PDFToGifFileCard = ({
 
   // Get this file's data from Redux (merged structure)
   const fileData = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifRecord[fileKey]
+    (state: { tool: ToolState }) => state.tool.pdfToGifRecord[fileKey],
   );
 
   const pages = fileData?.pages || [];
@@ -274,7 +312,7 @@ export const PDFToGifFileCard = ({
           setPdfToGifFileData({
             fileKey,
             data: createInitialGifData(extractedPages),
-          })
+          }),
         );
         setIsLoading(false);
       }
@@ -303,29 +341,29 @@ export const PDFToGifFileCard = ({
 
       dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
     },
-    [pages, fileKey, dispatch]
+    [pages, fileKey, dispatch],
   );
 
   // Toggle page enabled/disabled
   const handleToggleEnabled = useCallback(
     (pageNum: number) => {
       const newPages = pages.map((p) =>
-        p.page === pageNum ? { ...p, enabled: !p.enabled } : p
+        p.page === pageNum ? { ...p, enabled: !p.enabled } : p,
       );
       dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
     },
-    [pages, fileKey, dispatch]
+    [pages, fileKey, dispatch],
   );
 
   // Update page delay
   const handleDelayChange = useCallback(
     (pageNum: number, delay: number) => {
       const newPages = pages.map((p) =>
-        p.page === pageNum ? { ...p, delay } : p
+        p.page === pageNum ? { ...p, delay } : p,
       );
       dispatch(updatePdfToGifPages({ fileKey, pages: newPages }));
     },
-    [pages, fileKey, dispatch]
+    [pages, fileKey, dispatch],
   );
 
   // Remove file
@@ -338,14 +376,6 @@ export const PDFToGifFileCard = ({
   const allPagesDisabled = pages.length > 0 && pages.every((p) => !p.enabled);
   const enabledPagesCount = pages.filter((p) => p.enabled).length;
 
-  if (isLoading) {
-    return (
-      <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-        <Loader loader_text={content.loading} />
-      </div>
-    );
-  }
-
   return (
     <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       {/* Header */}
@@ -357,16 +387,23 @@ export const PDFToGifFileCard = ({
                 ? file.name.slice(0, 15) + "..." + file.name.slice(-12)
                 : file.name}
             </h3>
-            <span
-              className="px-2 py-1 text-xs font-medium rounded-full"
-              style={{
-                backgroundColor: `${themeColor}15`,
-                color: themeColor,
-              }}
-            >
-              {enabledPagesCount} / {pages.length} {content.page}
-              {pages.length !== 1 ? "s" : ""}
-            </span>
+            {!isLoading && (
+              <span
+                className="px-2 py-1 text-xs font-medium rounded-full"
+                style={{
+                  backgroundColor: `${themeColor}15`,
+                  color: themeColor,
+                }}
+              >
+                {enabledPagesCount} / {pages.length} {content.page}
+                {pages.length !== 1 ? "s" : ""}
+              </span>
+            )}
+            {isLoading && (
+              <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-400 animate-pulse">
+                {content.loading}
+              </span>
+            )}
           </div>
           {/* Remove File */}
           <button
@@ -385,7 +422,7 @@ export const PDFToGifFileCard = ({
       {/* Main Content */}
       <div className="p-6">
         {/* Warning if all pages disabled */}
-        {allPagesDisabled && (
+        {!isLoading && allPagesDisabled && (
           <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
             <p className="text-sm text-amber-700">
               ⚠️ {content.all_pages_disabled_warning}
@@ -393,45 +430,57 @@ export const PDFToGifFileCard = ({
           </div>
         )}
 
-        {/* Pages Grid with Drag and Drop */}
-        <DragDropContext onDragEnd={handleDragEnd}>
-          <Droppable
-            droppableId={`gif-pages-${fileKey}`}
-            direction="horizontal"
-          >
-            {(provided, snapshot) => (
-              <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2 rounded-lg transition-colors ${
-                  snapshot.isDraggingOver ? "bg-gray-50" : ""
-                }`}
-              >
-                {pages.map((page, index) => (
-                  <Draggable
-                    key={`${fileKey}-page-${page.page}`}
-                    draggableId={`${fileKey}-page-${page.page}`}
-                    index={index}
-                  >
-                    {(provided, snapshot) => (
-                      <PageItem
-                        page={page}
-                        index={index}
-                        provided={provided}
-                        snapshot={snapshot}
-                        onToggleEnabled={handleToggleEnabled}
-                        onDelayChange={handleDelayChange}
-                        content={content}
-                        themeColor={themeColor}
-                      />
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+        {/* Loading State: Show Skeleton Placeholders */}
+        {isLoading && (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2">
+            {/* Show 8 skeleton loaders as placeholders */}
+            {Array.from({ length: 8 }).map((_, i) => (
+              <PageSkeleton key={`skeleton-${i}`} themeColor={themeColor} />
+            ))}
+          </div>
+        )}
+
+        {/* Loaded State: Show Actual Pages with Drag and Drop */}
+        {!isLoading && (
+          <DragDropContext onDragEnd={handleDragEnd}>
+            <Droppable
+              droppableId={`gif-pages-${fileKey}`}
+              direction="horizontal"
+            >
+              {(provided, snapshot) => (
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                  className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2 rounded-lg transition-colors ${
+                    snapshot.isDraggingOver ? "bg-gray-50" : ""
+                  }`}
+                >
+                  {pages.map((page, index) => (
+                    <Draggable
+                      key={`${fileKey}-page-${page.page}`}
+                      draggableId={`${fileKey}-page-${page.page}`}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <PageItem
+                          page={page}
+                          index={index}
+                          provided={provided}
+                          snapshot={snapshot}
+                          onToggleEnabled={handleToggleEnabled}
+                          onDelayChange={handleDelayChange}
+                          content={content}
+                          themeColor={themeColor}
+                        />
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        )}
       </div>
     </div>
   );

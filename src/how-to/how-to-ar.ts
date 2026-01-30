@@ -2,7 +2,7 @@ import type { _howToSchemas } from "./how-to";
 
 export const howToSchemas: _howToSchemas = {
     JPGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور JPG إلى PDF؟",
         description: "دليل خطوة بخطوة لتحويل صور JPG متعددة إلى وثيقة PDF واحدة.",
@@ -45,7 +45,7 @@ export const howToSchemas: _howToSchemas = {
         ],
     },
     PNGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور PNG إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور PNG المتعددة إلى مستند PDF واحد.",
@@ -88,7 +88,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     GIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور GIF إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور GIF المتعددة إلى مستند PDF واحد.",
@@ -131,7 +131,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     TIFFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور TIFF إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور TIFF المتعددة إلى مستند PDF واحد.",
@@ -174,7 +174,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     BMPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور BMP إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور BMP إلى مستند PDF واحد.",
@@ -217,7 +217,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     SVGToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور SVG إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور SVG إلى مستند PDF واحد.",
@@ -260,7 +260,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     WebPToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور WebP إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور WebP إلى مستند PDF واحد.",
@@ -303,7 +303,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     HEIFToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         name: "كيفية تحويل صور HEIF إلى ملف PDF؟",
         description: "دليل خطوة بخطوة لتحويل الصور HEIF إلى مستند PDF واحد.",
@@ -346,7 +346,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     HEICToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل صور HEIC إلى ملف PDF؟",
         "description": "دليل خطوة بخطوة لتحويل الصور HEIC إلى مستند PDF واحد.",
@@ -389,7 +389,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     ImageToPDFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل الصور إلى PDF؟",
         "description": "دليل خطوة بخطوة لتحويل صور متعددة (JPG, PNG, إلخ) إلى مستند PDF واحد.",
@@ -427,7 +427,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToImageHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل PDF إلى صور؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور (JPG, PNG, إلخ).",
@@ -470,7 +470,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToPNGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل PDF إلى صور PNG؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور PNG.",
@@ -508,7 +508,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToJPGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور JPG؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور JPG متعددة.",
@@ -541,7 +541,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToGIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور GIF؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور GIF.",
@@ -574,7 +574,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToBMPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور BMP؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور BMP.",
@@ -607,7 +607,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToWEBPHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور WebP؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور WebP.",
@@ -641,7 +641,7 @@ export const howToSchemas: _howToSchemas = {
     },
 
     PDFToSVGHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور SVG؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور SVG.",
@@ -674,7 +674,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToTIFFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور TIFF؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور TIFF.",
@@ -707,7 +707,7 @@ export const howToSchemas: _howToSchemas = {
         ]
     },
     PDFToHEIFHOWTO: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "كيفية تحويل مستندات PDF إلى صور HEIF/HEIC؟",
         "description": "دليل خطوة بخطوة لتحويل مستند PDF إلى صور HEIF أو HEIC.",
