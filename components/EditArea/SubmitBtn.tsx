@@ -17,19 +17,19 @@ export function SubmitBtn({
   const { submitBtn, files } = useFileStore();
   // state variables:
   const errorMessage = useSelector(
-    (state: { tool: ToolState }) => state.tool.errorMessage
+    (state: { tool: ToolState }) => state.tool.errorMessage,
   );
   const isSubmitted = useSelector(
-    (state: { tool: ToolState }) => state.tool.isSubmitted
+    (state: { tool: ToolState }) => state.tool.isSubmitted,
   );
   const limitationMsg = useSelector(
-    (state: { tool: ToolState }) => state.tool.limitationMsg
+    (state: { tool: ToolState }) => state.tool.limitationMsg,
   );
   const subscriptionStatus = useSelector(
-    (state: { tool: ToolState }) => state.tool.subscriptionStatus
+    (state: { tool: ToolState }) => state.tool.subscriptionStatus,
   );
   const isAdBlocked = useSelector(
-    (state: { tool: ToolState }) => state.tool.isAdBlocked
+    (state: { tool: ToolState }) => state.tool.isAdBlocked,
   );
   return (
     <button
@@ -46,13 +46,13 @@ export function SubmitBtn({
           dispatch(
             setField({
               errorCode: "MAX_DAILY_USAGE",
-            })
+            }),
           );
           dispatch(setField({ errorMessage: errors.MAX_DAILY_USAGE.message }));
           dispatch(
             setField({
               isSubmitted: false,
-            })
+            }),
           );
         }
       }}
