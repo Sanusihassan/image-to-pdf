@@ -604,7 +604,14 @@ export const downloadFile: _downloadFile = {
     "pdf-to-heif-heic": "العودة إلى تحويل PDF إلى HEIF/HEIC",
     "image-to-pdf": "العودة إلى تحويل الصورة إلى PDF",
     "pdf-to-image": "العودة إلى تحويل PDF إلى صورة"
-  }
+  },
+  trustpilotCTA: {
+    prompt: "هل أعجبك الناتج؟",
+    cta: "قيّمنا",
+    conjunction: "على",
+    platformName: "Trustpilot",
+    href: "https://www.trustpilot.com/review/pdfequips.com",
+  },
 };
 
 export const edit_page: _edit_page = {

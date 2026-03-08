@@ -790,6 +790,13 @@ export const downloadFile = {
     "image-to-pdf": "Back To IMAGE to PDF",
     "pdf-to-image": "Back To PDF to IMAGE",
   },
+  trustpilotCTA: {
+    prompt: "Happy with the result?",
+    cta: "Rate us",
+    conjunction: "on",
+    platformName: "Trustpilot",
+    href: "https://www.trustpilot.com/review/pdfequips.com",
+  },
 };
 
 export const footer = {

@@ -600,7 +600,14 @@ export const downloadFile: _downloadFile = {
     "pdf-to-heif-heic": "返回PDF转HEIF/HEIC",
     "image-to-pdf": "返回图片转PDF",
     "pdf-to-image": "返回PDF转图片"
-  }
+  },
+  trustpilotCTA: {
+    prompt: "对结果满意吗？",
+    cta: "为我们评分",
+    conjunction: "在",
+    platformName: "Trustpilot",
+    href: "https://www.trustpilot.com/review/pdfequips.com",
+  },
 };
 
 export const edit_page: _edit_page = {

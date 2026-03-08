@@ -742,6 +742,13 @@ export const downloadFile: _downloadFile = {
     "image-to-pdf": "Volver a IMAGEN a PDF",
     "pdf-to-image": "Volver a PDF a IMAGEN",
   },
+  trustpilotCTA: {
+    prompt: "¿Satisfecho con el resultado?",
+    cta: "Califícanos",
+    conjunction: "en",
+    platformName: "Trustpilot",
+    href: "https://www.trustpilot.com/review/pdfequips.com",
+  },
 };
 
 

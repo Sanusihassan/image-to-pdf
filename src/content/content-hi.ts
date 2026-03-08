@@ -598,6 +598,13 @@ export const downloadFile: _downloadFile = {
     "image-to-pdf": "छवि से PDF वापस",
     "pdf-to-image": "PDF से छवि वापस",
   },
+  trustpilotCTA: {
+    prompt: "परिणाम से संतुष्ट हैं?",
+    cta: "हमें रेट करें",
+    conjunction: "पर",
+    platformName: "Trustpilot",
+    href: "https://www.trustpilot.com/review/pdfequips.com",
+  },
 };
 
 
