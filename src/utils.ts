@@ -160,7 +160,7 @@ export async function getFirstPageAsImage(
       const pdf: PDFDocumentProxy = await loadingTask.promise;
       const page = await pdf.getPage(1); // Get the first page
 
-      const scale = 1.5;
+      const scale = 1;
       const viewport: PageViewport = page.getViewport({ scale });
 
       const canvas = document.createElement("canvas");
