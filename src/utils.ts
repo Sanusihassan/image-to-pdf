@@ -137,7 +137,7 @@ export async function getFirstPageAsImage(
       let tid: Id;
 
       // Handle password requests
-      loadingTask.onPassword = (updatePassword, reason) => {
+      loadingTask.onPassword = (updatePassword: (arg0: string) => void, reason: number) => {
         if (reason === pdfjs.PasswordResponses.NEED_PASSWORD) {
           // First time asking for password
           if (password) {
@@ -182,7 +182,7 @@ export async function getFirstPageAsImage(
       URL.revokeObjectURL(fileUrl);
 
       return canvas.toDataURL();
-    } catch (error) {
+    } catch (error: any) {
       // Clean up the object URL on error
       URL.revokeObjectURL(fileUrl);
 
@@ -261,7 +261,7 @@ export async function getNthPageAsImage(
       const pdf: PDFDocumentProxy = await loadingTask.promise;
       const page = await pdf.getPage(pageNumber); // Get the Nth page
 
-      const scale = 1.5;
+      const scale = .95;
       const viewport: PageViewport = page.getViewport({ scale });
 
       const canvas = document.createElement("canvas");
@@ -565,7 +565,7 @@ export const validateFiles = (
     filesToValidate
       .map((file) => genericFileValidation(file, mimetype))
       .find((result) => result !== null) || null;
-  let tid = null;
+  let tid: Id = "";
   if (errorCode) {
     dispatch(setField({ errorCode }));
     let errMsg = "";
