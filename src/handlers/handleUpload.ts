@@ -1,8 +1,9 @@
-// handleUpload.ts
+// ============================================================================
+// REFACTORED handleUpload.ts (image-tools) - Using Blob Pattern
+// ============================================================================
+
 import axios from "axios";
-import { downloadConvertedFile } from "../downloadFile";
 import type { errors as _, OptionsType } from "../content";
-import { type RefObject } from "react";
 import {
   resetErrorMessage,
   setField,
@@ -26,6 +27,7 @@ type OptionsForAPI =
   | { pdfToGifRecord: PDFToGifRecordForAPI };
 
 // ============ HELPERS ============
+
 /**
  * Checks if options are PDF-to-GIF options (new merged structure)
  */
@@ -55,7 +57,9 @@ function prepareOptionsForAPI(options: OptionsType): OptionsForAPI {
 /**
  * Parse error response blob to JSON
  */
-async function parseErrorBlob(blob: Blob): Promise<Record<string, unknown> | null> {
+async function parseErrorBlob(
+  blob: Blob
+): Promise<Record<string, unknown> | null> {
   try {
     const text = await blob.text();
     return JSON.parse(text);
@@ -64,10 +68,29 @@ async function parseErrorBlob(blob: Blob): Promise<Record<string, unknown> | nul
   }
 }
 
+/**
+ * Determine output filename based on tool path
+ */
+function getOutputFileName(
+  path: string,
+  originalFileName: string
+): string {
+  const extensionMap: Record<string, string> = {
+    "pdf-to-image": ".png",
+    "image-to-pdf": ".pdf",
+    "pdf-to-gif": ".gif",
+    "image-converter": ".png", // default
+  };
+
+  const ext = extensionMap[path] || ".png";
+  return `${originalFileName}${ext}`;
+}
+
 // ============ MAIN FUNCTION ============
+
 export const handleUpload = async (
   e: React.FormEvent<HTMLFormElement>,
-  downloadBtn: RefObject<HTMLAnchorElement | null>,
+  // NOTE: downloadBtn parameter REMOVED
   dispatch: Dispatch<Action>,
   state: {
     path: string;
@@ -85,13 +108,20 @@ export const handleUpload = async (
     selectedImageFormat: supportedImageTypes | null;
   },
   files: File[],
-  errors: _
+  errors: _,
+  setDownloadBlob: (blob: Blob, filename: string) => void
 ) => {
   e.preventDefault();
   dispatch(setField({ isSubmitted: true }));
 
   if (!files || files.length === 0) {
-    dispatch(setField({ errorMessage: errors.NO_FILES_SELECTED?.message || "No files selected." }));
+    dispatch(
+      setField({
+        errorMessage:
+          errors.NO_FILES_SELECTED?.message || "No files selected.",
+      })
+    );
+    dispatch(setField({ isSubmitted: false }));
     return;
   }
 
@@ -121,9 +151,13 @@ export const handleUpload = async (
     dispatch(resetErrorMessage());
     return;
   }
+
   prevState = strState;
 
-  // Build form data
+  // ────────────────────────────────────────────────────────────────────────
+  // Build FormData
+  // ────────────────────────────────────────────────────────────────────────
+
   const formData = new FormData();
   for (let i = 0; i < files.length; i++) {
     formData.append("files", files[i]);
@@ -137,33 +171,60 @@ export const handleUpload = async (
     formData.append("selectedImageFormat", state.selectedImageFormat);
   }
 
+  // ────────────────────────────────────────────────────────────────────────
   // Build URL
+  // ────────────────────────────────────────────────────────────────────────
+
   const url =
     process.env.NODE_ENV === "development"
       ? `http://localhost:8000/api/${state.path}`
       : `/api/${state.path}`;
 
-  // Don't proceed if there's already an error
+  // Early exit if there's already an error
   if (state.errorMessage) {
+    dispatch(setField({ isSubmitted: false }));
     return;
   }
 
   // Get original filename for download
   const originalFileName =
-    state.fileName || files[0]?.name?.split(".").slice(0, -1).join(".") || "converted";
+    state.fileName ||
+    files[0]?.name?.split(".").slice(0, -1).join(".") ||
+    "converted";
+
+  const outputFileName = getOutputFileName(state.path, originalFileName);
+
+  // ────────────────────────────────────────────────────────────────────────
+  // API Call & Blob Handling
+  // ────────────────────────────────────────────────────────────────────────
 
   try {
     const response = await axios.post(url, formData, {
       responseType: "blob",
+      withCredentials: true,
+      headers: { "Content-Type": "multipart/form-data" },
     });
 
-    // Success - store filenames and trigger download
+    // Extract blob with correct MIME type
+    const blob = new Blob([response.data], {
+      type: response.headers["content-type"] || "application/octet-stream",
+    });
+
+    // ───────────────────────────────────────────────────────────────────────
+    // NEW: Deferred download via setDownloadBlob
+    // ───────────────────────────────────────────────────────────────────────
+    setDownloadBlob(blob, outputFileName);
+
+    // Success - update tracking and state
     filesOnSubmit = fileNames;
-    downloadConvertedFile(response, state.path, originalFileName, downloadBtn);
     dispatch(setField({ showDownloadBtn: true }));
     dispatch(resetErrorMessage());
-
+    dispatch(setField({ isSubmitted: false }));
   } catch (error: unknown) {
+    // ───────────────────────────────────────────────────────────────────────
+    // Error Handling
+    // ───────────────────────────────────────────────────────────────────────
+
     // Handle axios errors
     if (axios.isAxiosError(error)) {
       if (error.response?.data) {
@@ -174,6 +235,7 @@ export const handleUpload = async (
           // Check for password required (special handling)
           if (isPasswordRequired(errorData)) {
             dispatch(setField({ errorCode: "PASSWORD_REQUIRED" }));
+            dispatch(setField({ isSubmitted: false }));
             return;
           }
 
@@ -184,7 +246,8 @@ export const handleUpload = async (
           // Couldn't parse error response
           dispatch(
             setField({
-              errorMessage: errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
+              errorMessage:
+                errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
             })
           );
         }
@@ -192,14 +255,17 @@ export const handleUpload = async (
         // Network error
         dispatch(
           setField({
-            errorMessage: errors.ERR_NETWORK?.message || "Network error. Please check your connection.",
+            errorMessage:
+              errors.ERR_NETWORK?.message ||
+              "Network error. Please check your connection.",
           })
         );
       } else {
         // Other axios error
         dispatch(
           setField({
-            errorMessage: errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
+            errorMessage:
+              errors.UNKNOWN_ERROR?.message || "An unknown error occurred.",
           })
         );
       }
@@ -207,10 +273,13 @@ export const handleUpload = async (
       // Non-axios error
       dispatch(
         setField({
-          errorMessage: errors.UNKNOWN_ERROR?.message || "An unexpected error occurred.",
+          errorMessage:
+            errors.UNKNOWN_ERROR?.message || "An unexpected error occurred.",
         })
       );
     }
+
+    dispatch(setField({ isSubmitted: false }));
   }
 };
 

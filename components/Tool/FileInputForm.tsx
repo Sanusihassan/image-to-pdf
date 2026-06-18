@@ -44,32 +44,32 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
 }) => {
   const path = data.to.replace("/", "") as Paths;
   const errorMessage = useSelector(
-    (state: { tool: ToolState }) => state.tool.errorMessage
+    (state: { tool: ToolState }) => state.tool.errorMessage,
   );
   const fileName = useSelector(
-    (state: { tool: ToolState }) => state.tool.fileName
+    (state: { tool: ToolState }) => state.tool.fileName,
   );
   const rotations = useSelector(
-    (state: { tool: ToolState }) => state.tool.rotations
+    (state: { tool: ToolState }) => state.tool.rotations,
   );
   const passwords = useSelector(
-    (state: { tool: ToolState }) => state.tool.passwords
+    (state: { tool: ToolState }) => state.tool.passwords,
   );
 
   const selectedImageFormat = useSelector(
-    (state: { tool: ToolState }) => state.tool.selectedImageFormat
+    (state: { tool: ToolState }) => state.tool.selectedImageFormat,
   );
 
   const imageToPDFSettings = useSelector(
-    (state: { tool: ToolState }) => state.tool.imageToPDFSettings
+    (state: { tool: ToolState }) => state.tool.imageToPDFSettings,
   );
 
   const pdfToImageSettings = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToImageSettings
+    (state: { tool: ToolState }) => state.tool.pdfToImageSettings,
   );
 
   const pdfToGifRecord = useSelector(
-    (state: { tool: ToolState }) => state.tool.pdfToGifRecord
+    (state: { tool: ToolState }) => state.tool.pdfToGifRecord,
   );
 
   let options: OptionsType;
@@ -82,12 +82,11 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   }
   const dispatch = useDispatch();
   // file store
-  const { files, setFiles, setFileInput, setDownloadBtn, setSubmitBtn } =
+  const { files, setFiles, setFileInput, setSubmitBtn, setDownloadBlob } =
     useFileStore();
   // refs
   const fileInput = useRef<HTMLInputElement>(null);
   const submitBtn = useRef<HTMLButtonElement>(null);
-  const downloadBtn = useRef<HTMLAnchorElement>(null);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -96,7 +95,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
     setLoaded(true);
     setFileInput(fileInput);
     setSubmitBtn(submitBtn);
-    setDownloadBtn(downloadBtn);
   }, []);
   return (
     <form
@@ -106,7 +104,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
       onSubmit={(e) =>
         handleUpload(
           e,
-          downloadBtn,
           dispatch,
           {
             path,
@@ -118,7 +115,8 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
             selectedImageFormat,
           },
           files,
-          errors
+          errors,
+          setDownloadBlob,
         )
       }
       method="POST"
@@ -163,12 +161,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           }}
         />
       </div>
-      <a
-        href=""
-        className="d-none"
-        ref={downloadBtn}
-        download="__output.pdf"
-      ></a>
       {/* <div className="my-4">
           </div> */}
       <button type="submit" ref={submitBtn} className="d-none">

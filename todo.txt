@@ -11,3 +11,7 @@ add reacting to the options.
 implement backend
 
 extract images is not working.
+
+
+
+add increaseDailySiteUsage also for convert tools.

@@ -8,6 +8,22 @@ import { useEffect } from "react";
 import { useFileStore } from "../src/file-store";
 import { increaseDailySiteUsage } from "../src/utils";
 import TrustpilotCTA from "./TrustpilotCTA";
+// Safari-safe blob download: runs synchronously inside the click handler
+// so the user-gesture chain stays intact.
+function saveBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.rel = "noopener";
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 100);
+}
 const DownloadFile = ({
   lang,
   downloadFile,
@@ -17,7 +33,7 @@ const DownloadFile = ({
   downloadFile: downloadFile;
   path: string;
 }) => {
-  const { files, downloadBtn } = useFileStore();
+  const { files, downloadBlob, clearDownloadBlob } = useFileStore();
   const dispatch = useDispatch();
   const showDownloadBtn = useSelector(
     (state: { tool: ToolState }) => state.tool.showDownloadBtn,
@@ -25,6 +41,21 @@ const DownloadFile = ({
   const subscriptionStatus = useSelector(
     (state: { tool: ToolState }) => state.tool.subscriptionStatus,
   );
+  const fileName = useSelector(
+    (state: { tool: ToolState }) => state.tool.fileName,
+  );
+  const handleDownload = () => {
+    if (!downloadBlob) return;
+    saveBlob(downloadBlob, fileName || "PDFEquips");
+    if (!subscriptionStatus) {
+      increaseDailySiteUsage();
+    }
+  };
+
+  const handleBack = () => {
+    clearDownloadBlob?.();
+    dispatch(setField({ showDownloadBtn: false }));
+  };
   useEffect(() => {}, [downloadFile, showDownloadBtn]);
   return (
     // download-page
@@ -50,24 +81,12 @@ const DownloadFile = ({
             }
             data-tooltip-id="download-btn-tooltip"
             data-tooltip-place="left"
-            onClick={() => {
-              dispatch(setField({ showDownloadBtn: false }));
-            }}
+            onClick={handleBack}
           >
             <ArrowLeftIcon className="icon" />
             <Tooltip id="download-btn-tooltip" />
           </button>
-          <button
-            className={`download-btn ${path}`}
-            onClick={() => {
-              if (downloadBtn?.current) {
-                downloadBtn.current.click();
-              }
-              if (!subscriptionStatus) {
-                increaseDailySiteUsage();
-              }
-            }}
-          >
+          <button className={`download-btn ${path}`} onClick={handleDownload}>
             <DownloadIcon className="icon text-white mr-2" />
             <bdi>
               {downloadFile.btnText &&

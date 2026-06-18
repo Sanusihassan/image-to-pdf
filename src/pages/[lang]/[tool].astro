@@ -1,0 +1,203 @@
+---
+// src/pages/[lang]/[tool].astro
+import BaseLayout from "../../partials/BaseLayout.astro";
+import { ToolWrapper } from "../../../components/ToolWrapper";
+import type { ToolType } from "../../content/content";
+
+// Import all language content files
+import * as contentAr from "../../content/content-ar";
+import * as contentEs from "../../content/content-es";
+import * as contentFr from "../../content/content-fr";
+import * as contentHi from "../../content/content-hi";
+import * as contentZh from "../../content/content-zh";
+
+// Import all language how-to guides
+import * as howToAr from "../../how-to/how-to-ar";
+import * as howToEs from "../../how-to/how-to-es";
+import * as howToFr from "../../how-to/how-to-fr";
+import * as howToHi from "../../how-to/how-to-hi";
+import * as howToZh from "../../how-to/how-to-zh";
+import type { HowTo, WithContext } from "schema-dts";
+
+export const routesMap = {
+  JPGToPDFHOWTO: "/jpg-to-pdf",
+  PDFToJPGHOWTO: "/pdf-to-jpg",
+  PNGToPDFHOWTO: "/png-to-pdf",
+  PDFToPNGHOWTO: "/pdf-to-png",
+  GIFToPDFHOWTO: "/gif-to-pdf",
+  PDFToGIFHOWTO: "/pdf-to-gif",
+  TIFFToPDFHOWTO: "/tiff-to-pdf",
+  PDFToTIFFHOWTO: "/pdf-to-tiff",
+  BMPToPDFHOWTO: "/bmp-to-pdf",
+  PDFToBMPHOWTO: "/pdf-to-bmp",
+  SVGToPDFHOWTO: "/svg-to-pdf",
+  PDFToSVGHOWTO: "/pdf-to-svg",
+  WebPToPDFHOWTO: "/webp-to-pdf",
+  PDFToWEBPHOWTO: "/pdf-to-webp",
+  HEIFToPDFHOWTO: "/heif-heic-to-pdf",
+  PDFToHEIFHOWTO: "/pdf-to-heif-heic",
+  HEICToPDFHOWTO: "/heif-heic-to-pdf",
+  ImageToPDFHOWTO: "/image-to-pdf",
+  PDFToImageHOWTO: "/pdf-to-image",
+};
+
+export async function getStaticPaths() {
+  // Scoped inside to prevent Astro ReferenceErrors during build isolation
+  const toolKeysMap = {
+    "/jpg-to-pdf": "JPG_to_PDF",
+    "/svg-to-pdf": "SVG_to_PDF",
+    "/png-to-pdf": "PNG_to_PDF",
+    "/gif-to-pdf": "GIF_to_PDF",
+    "/tiff-to-pdf": "TIFF_to_PDF",
+    "/bmp-to-pdf": "BMP_to_PDF",
+    "/webp-to-pdf": "WebP_to_PDF",
+    "/heif-heic-to-pdf": "HEIF_to_PDF",
+    "/pdf-to-jpg": "PDF_to_JPG",
+    "/pdf-to-svg": "PDF_to_SVG",
+    "/pdf-to-png": "PDF_to_PNG",
+    "/pdf-to-gif": "PDF_to_GIF",
+    "/pdf-to-tiff": "PDF_to_TIFF",
+    "/pdf-to-bmp": "PDF_to_BMP",
+    "/pdf-to-webp": "PDF_to_WebP",
+    "/pdf-to-heif-heic": "PDF_to_HEIF",
+    "/image-to-pdf": "Image_to_PDF",
+    "/pdf-to-image": "PDF_to_Image",
+  };
+
+  // Language configurations matrix
+  const languages = [
+    { lang: "ar", content: contentAr, howTo: howToAr, ogLocale: "ar_AR" },
+    { lang: "es", content: contentEs, howTo: howToEs, ogLocale: "es_ES" },
+    { lang: "fr", content: contentFr, howTo: howToFr, ogLocale: "fr_FR" },
+    { lang: "hi", content: contentHi, howTo: howToHi, ogLocale: "hi_IN" },
+    { lang: "zh", content: contentZh, howTo: howToZh, ogLocale: "zh_CN" },
+  ];
+
+  const paths = [];
+
+  // Generate matrix combinations for every language and conversion tool
+  for (const langConfig of languages) {
+    for (const [route, toolKey] of Object.entries(toolKeysMap)) {
+      const toolSlug = route.substring(1); // Strips the leading slash
+      const localizedToolItem =
+        langConfig.content.tool[
+          toolKey as keyof typeof langConfig.content.tool
+        ];
+
+      paths.push({
+        params: { lang: langConfig.lang, tool: toolSlug },
+        props: {
+          lang: langConfig.lang,
+          item: localizedToolItem as ToolType,
+          currentRoute: route,
+          content: langConfig.content,
+          howToSchemas: langConfig.howTo.howToSchemas,
+          ogLocale: langConfig.ogLocale,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+// Extract matrix runtime parameters from props mapping
+const { lang, item, currentRoute, content, howToSchemas, ogLocale } =
+  Astro.props;
+
+// Destructure localized text variables
+const { tools, errors, edit_page, downloadFile, adBlockerContent } = content;
+
+const asPath = `${currentRoute}`;
+
+// Resolve schema localization key matches cleanly
+const matchingKey = Object.keys(routesMap).find(
+  (key) => routesMap[key as keyof typeof routesMap] === asPath,
+);
+const currentHowTo = matchingKey
+  ? howToSchemas[matchingKey as keyof typeof howToSchemas]
+  : null;
+
+// Build up structural JSON-LD metadata markup objects
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `PDFEquips ${item.title}`,
+  description: item.description,
+  url: `https://www.pdfequips.com${asPath}`,
+};
+
+const seoConfig = {
+  title: item.seoTitle,
+  description: item.description,
+  to: item.to,
+  openGraph: {
+    url: item.to,
+    title: item.seoTitle,
+    description: item.description,
+    images: [
+      {
+        url: `https://www.pdfequips.com/images/${lang}${item.to}.png`,
+        width: 1200,
+        height: 630,
+        alt: item.title,
+        type: "image/png",
+      },
+    ],
+    site_name: item.title,
+    locale: ogLocale,
+    type: "website",
+  },
+  twitter: {
+    handle: "@pdfequips",
+    site: "@pdfequips",
+    cardType: "summary_large_image",
+  },
+};
+---
+
+<BaseLayout
+  title={item.title}
+  description={item.description}
+  seoTitle={item.seoTitle}
+  to={item.to}
+  seoConfig={seoConfig}
+  lang={lang}
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(websiteSchema)}
+    />
+    {
+      currentHowTo && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(currentHowTo)}
+        />
+      )
+    }
+    <link
+      rel="canonical"
+      href={`https://www.pdfequips.com/${lang}${item.to}`}
+    />
+  </Fragment>
+  <ToolWrapper
+    client:load
+    tools={tools}
+    data={item}
+    lang={lang}
+    errors={errors}
+    edit_page={edit_page}
+    pages={edit_page.pages}
+    page={edit_page.page}
+    downloadFile={downloadFile}
+    features={item.features}
+    howTo={currentHowTo as WithContext<HowTo>}
+    seoTitle={item.title}
+    to={currentRoute}
+    adBlockerContent={adBlockerContent}
+  />
+</BaseLayout>
