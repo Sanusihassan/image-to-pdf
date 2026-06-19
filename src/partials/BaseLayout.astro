@@ -1,8 +1,7 @@
 ---
-const { pathname } = Astro.url;
 const { seoConfig, lang } = Astro.props;
 let dir = "ltr";
-if (pathname.startsWith("/ar")) {
+if ("ar" === lang) {
   dir = "rtl";
 }
 
