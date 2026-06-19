@@ -15,3 +15,5 @@ extract images is not working.
 
 
 add increaseDailySiteUsage also for convert tools.
+
+add a timeout for content loaded loader.

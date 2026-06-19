@@ -1,12 +1,9 @@
+// FileInputForm.tsx
 import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 // store
-import type {
-  ImageToPDFSettings,
-  PDFToImageSettings,
-  ToolState,
-} from "../../src/store";
+import type { ToolState } from "../../src/store";
 import { handleUpload } from "../../src/handlers/handleUpload";
 import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
@@ -88,14 +85,31 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const fileInput = useRef<HTMLInputElement>(null);
   const submitBtn = useRef<HTMLButtonElement>(null);
   const [loaded, setLoaded] = useState(false);
+
+  // AFTER: Waits for browser idle or page load (with timeout)
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
+    const setupRefs = () => {
+      setLoaded(true);
+      setFileInput(fileInput);
+      setSubmitBtn(submitBtn);
+    };
+
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(setupRefs, { timeout: 3000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      // Fallback for older browsers
+      if (document.readyState === "complete") {
+        setupRefs();
+      } else {
+        document.addEventListener("DOMContentLoaded", setupRefs, {
+          once: true,
+        });
+        return () =>
+          document.removeEventListener("DOMContentLoaded", setupRefs);
+      }
     }
-    setLoaded(true);
-    setFileInput(fileInput);
-    setSubmitBtn(submitBtn);
-  }, []);
+  }, [setFileInput, setSubmitBtn]);
   return (
     <form
       onClick={(e) => {
