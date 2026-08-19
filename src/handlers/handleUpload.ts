@@ -69,21 +69,58 @@ async function parseErrorBlob(
 }
 
 /**
- * Determine output filename based on tool path
+ * Output extension by tool path. The path always determines the format,
+ * so this works even when the response MIME type is unrecognized.
  */
-function getOutputFileName(
-  path: string,
-  originalFileName: string
-): string {
-  const extensionMap: Record<string, string> = {
-    "pdf-to-image": ".png",
-    "image-to-pdf": ".pdf",
-    "pdf-to-gif": ".gif",
-    "image-converter": ".png", // default
-  };
+const OUTPUT_EXTENSIONS: Record<string, string> = {
+  // → PDF
+  "jpg-to-pdf": "pdf",
+  "svg-to-pdf": "pdf",
+  "png-to-pdf": "pdf",
+  "gif-to-pdf": "pdf",
+  "tiff-to-pdf": "pdf",
+  "bmp-to-pdf": "pdf",
+  "webp-to-pdf": "pdf",
+  "heif-heic-to-pdf": "pdf",
+  "image-to-pdf": "pdf",
+  // PDF → image
+  "pdf-to-jpg": "jpg",
+  "pdf-to-svg": "svg",
+  "pdf-to-png": "png",
+  "pdf-to-gif": "gif",
+  "pdf-to-tiff": "tiff",
+  "pdf-to-bmp": "bmp",
+  "pdf-to-webp": "webp",
+  "pdf-to-heif-heic": "heic",
+};
 
-  const ext = extensionMap[path] || ".png";
-  return `${originalFileName}${ext}`;
+/**
+ * Resolves the download filename.
+ *
+ * A zip response means several outputs (e.g. one image per PDF page),
+ * whatever the tool's normal extension is. For the generic pdf-to-image
+ * tool the extension comes from the format the user picked.
+ */
+function resolveDownloadName(
+  mimeType: string,
+  path: string,
+  baseName: string,
+  selectedImageFormat?: string | null
+): string {
+  const cleanMime = mimeType.split(";")[0].trim().toLowerCase();
+  const safeBase = baseName?.replace(/\.[a-z0-9]{2,5}$/i, "") || "converted";
+
+  if (cleanMime === "application/zip") {
+    return `${safeBase}.zip`;
+  }
+
+  const ext =
+    (path === "pdf-to-image" && selectedImageFormat) ||
+    OUTPUT_EXTENSIONS[path] ||
+    cleanMime.split("/")[1] ||
+    "";
+
+  return ext ? `${safeBase}.${ext}` : safeBase;
 }
 
 // ============ MAIN FUNCTION ============
@@ -192,8 +229,6 @@ export const handleUpload = async (
     files[0]?.name?.split(".").slice(0, -1).join(".") ||
     "converted";
 
-  const outputFileName = getOutputFileName(state.path, originalFileName);
-
   // ────────────────────────────────────────────────────────────────────────
   // API Call & Blob Handling
   // ────────────────────────────────────────────────────────────────────────
@@ -205,10 +240,18 @@ export const handleUpload = async (
       headers: { "Content-Type": "multipart/form-data" },
     });
 
+    const mimeType =
+      response.headers["content-type"] || "application/octet-stream";
+
     // Extract blob with correct MIME type
-    const blob = new Blob([response.data], {
-      type: response.headers["content-type"] || "application/octet-stream",
-    });
+    const blob = new Blob([response.data], { type: mimeType });
+
+    const outputFileName = resolveDownloadName(
+      mimeType,
+      state.path,
+      originalFileName,
+      state.selectedImageFormat
+    );
 
     // ───────────────────────────────────────────────────────────────────────
     // NEW: Deferred download via setDownloadBlob

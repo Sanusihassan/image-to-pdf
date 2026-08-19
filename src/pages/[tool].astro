@@ -62,7 +62,7 @@ export async function getStaticPaths() {
     return {
       params: { tool: toolSlug },
       props: {
-        item: routes[route].item as ToolType,
+        item: routes[route as keyof typeof routes].item as ToolType,
         currentRoute: route,
         toolSlug: toolSlug,
       },
@@ -80,10 +80,12 @@ const asPath = `${currentRoute}`;
 
 // Find matching how-to content
 const matchingKey = Object.keys(routesMap).find(
-  (key) => routesMap[key] === asPath,
+  (key) => routesMap[key as keyof typeof routesMap] === asPath,
 );
 
-const currentHowTo = matchingKey ? howToSchemas[matchingKey] : null;
+const currentHowTo = matchingKey
+  ? howToSchemas[matchingKey as keyof typeof howToSchemas]
+  : null;
 
 // Website schema for SEO
 const websiteSchema = {
@@ -96,6 +98,7 @@ const websiteSchema = {
 
 const lang = "en"; // Assuming English, adjust if dynamic
 import { ToolWrapper } from "../../components/ToolWrapper";
+import type { HowTo, WithContext } from "schema-dts";
 const seoConfig = {
   title: item.seoTitle,
   description: item.description,
@@ -161,7 +164,7 @@ const seoConfig = {
     page={edit_page.page}
     downloadFile={downloadFile}
     features={item.features}
-    howTo={currentHowTo}
+    howTo={currentHowTo as WithContext<HowTo>}
     seoTitle={item.title}
     to={currentRoute}
     adBlockerContent={adBlockerContent}
