@@ -54,7 +54,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   );
 
   const selectedImageFormat = useSelector(
-    (state: { tool: ToolState }) => state.tool.selectedImageFormat,
+    (state: { tool: ToolState }) => state.tool.selectedImageFormat || "JPG",
   );
 
   const imageToPDFSettings = useSelector(
