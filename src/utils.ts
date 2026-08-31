@@ -669,6 +669,10 @@ export const validateFiles = (
       errMsg = errors.UNKNOWN_ERROR.message;
     }
 
+    dispatch(setField({
+      errorMessage: errMsg
+    }));
+
     tid = toast(errMsg);
 
     return { isValid: false };
