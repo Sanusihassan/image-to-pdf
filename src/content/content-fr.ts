@@ -614,6 +614,165 @@ export const downloadFile: _downloadFile = {
     platformName: "Trustpilot",
     href: "https://www.trustpilot.com/review/pdfequips.com",
   },
+  shareOverlay: {
+    copiedText: "Copié",
+    "jpg-to-pdf": {
+      modalTitles: ["Partagez l'amour !", "Parlez-en à vos amis !", "Aidez-nous à grandir !"],
+      modalDescription:
+        "Des photos dispersées dans plusieurs fichiers JPG, combinées en un seul document facile à envoyer. Faites passer le mot.",
+      shareText:
+        "Combine une ou plusieurs images JPG en un seul document PDF, dans l'ordre où elles ont été ajoutées.",
+      url: "https://www.pdfequips.com/jpg-to-pdf",
+    },
+    "svg-to-pdf": {
+      modalTitles: ["Passez le mot !", "Votre voix compte !", "Rejoignez le mouvement !"],
+      modalDescription:
+        "Des graphiques vectoriels transformés en un PDF qui s'ouvre de la même manière sur n'importe quel appareil, sans lecteur requis.",
+      shareText:
+        "Convertit un graphique vectoriel SVG en PDF, en préservant ses formes et ses tracés.",
+      url: "https://www.pdfequips.com/svg-to-pdf",
+    },
+    "png-to-pdf": {
+      modalTitles: ["Faites-le savoir !", "Rejoignez notre communauté !", "Partagez votre enthousiasme !"],
+      modalDescription:
+        "Des captures d'écran et graphiques PNG transformés en un véritable document, prêt à envoyer ou à imprimer.",
+      shareText:
+        "Convertit des images PNG en un document PDF, en remplissant les zones transparentes avec un fond uni.",
+      url: "https://www.pdfequips.com/png-to-pdf",
+    },
+    "gif-to-pdf": {
+      modalTitles: ["Votre soutien compte !", "Aidez-nous à toucher plus de monde !", "Soutenez-nous en partageant !"],
+      modalDescription:
+        "Un moyen rapide d'intégrer un GIF dans un document que vous pouvez réellement imprimer ou archiver.",
+      shareText:
+        "Convertit une image GIF en un document PDF ; pour les GIF animés, une seule image est utilisée.",
+      url: "https://www.pdfequips.com/gif-to-pdf",
+    },
+    "tiff-to-pdf": {
+      modalTitles: ["Ensemble, faisons bouger les choses !", "Faites la différence — partagez !", "Faisons le buzz !"],
+      modalDescription:
+        "Des pages TIFF numérisées transformées en un PDF partageable, y compris les fichiers multipages.",
+      shareText:
+        "Convertit des images TIFF en un document PDF, y compris les fichiers TIFF multipages.",
+      url: "https://www.pdfequips.com/tiff-to-pdf",
+    },
+    "bmp-to-pdf": {
+      modalTitles: ["Aidez-nous à faire bouger les choses !", "Parlez-en à vos amis !", "Partagez l'amour !"],
+      modalDescription:
+        "Un ancien fichier au format BMP, transformé en quelque chose que vous pouvez envoyer sans hésitation.",
+      shareText:
+        "Convertit des images BMP en un document PDF.",
+      url: "https://www.pdfequips.com/bmp-to-pdf",
+    },
+    "webp-to-pdf": {
+      modalTitles: ["Passez le mot !", "Votre voix compte !", "Aidez-nous à grandir !"],
+      modalDescription:
+        "Des images WebP, le format enregistré par défaut par la plupart des navigateurs, converties en un document que tout le monde peut ouvrir.",
+      shareText:
+        "Convertit des images WebP en un document PDF.",
+      url: "https://www.pdfequips.com/webp-to-pdf",
+    },
+    "heif-heic-to-pdf": {
+      modalTitles: ["Rejoignez notre communauté !", "Rejoignez le mouvement !", "Faites-le savoir !"],
+      modalDescription:
+        "Des photos d'iPhone au format HEIF/HEIC, transformées en un PDF qui s'ouvre partout, sans application de conversion préalable.",
+      shareText:
+        "Convertit les photos HEIF/HEIC, le format utilisé par de nombreux iPhone, en un document PDF.",
+      url: "https://www.pdfequips.com/heif-heic-to-pdf",
+    },
+    "pdf-to-jpg": {
+      modalTitles: ["Partagez votre enthousiasme !", "Votre soutien compte !", "Aidez-nous à toucher plus de monde !"],
+      modalDescription:
+        "Chaque page d'un PDF exportée sous forme d'image JPG distincte — pratique pour les aperçus, les vignettes ou le partage d'une seule page.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image JPG distincte.",
+      url: "https://www.pdfequips.com/pdf-to-jpg",
+    },
+    "pdf-to-svg": {
+      modalTitles: ["Soutenez-nous en partageant !", "Ensemble, faisons bouger les choses !", "Parlez-en à vos amis !"],
+      modalDescription:
+        "Des pages PDF reconstruites sous forme de graphiques vectoriels vectorisables, utiles pour les outils de conception nécessitant un fichier SVG.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image vectorielle SVG modifiable.",
+      url: "https://www.pdfequips.com/pdf-to-svg",
+    },
+    "pdf-to-png": {
+      modalTitles: ["Faites la différence — partagez !", "Passez le mot !", "Rejoignez notre communauté !"],
+      modalDescription:
+        "Des pages PDF exportées au format PNG, avec la gestion de la transparence intacte lorsque la source le permet.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image PNG distincte.",
+      url: "https://www.pdfequips.com/pdf-to-png",
+    },
+    "pdf-to-gif": {
+      modalTitles: ["Faisons le buzz !", "Votre voix compte !", "Partagez l'amour !"],
+      modalDescription:
+        "Des pages PDF transformées en images GIF individuelles, une par page.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image GIF distincte.",
+      url: "https://www.pdfequips.com/pdf-to-gif",
+    },
+    "pdf-to-tiff": {
+      modalTitles: ["Aidez-nous à faire bouger les choses !", "Faites-le savoir !", "Rejoignez le mouvement !"],
+      modalDescription:
+        "Un PDF exporté au format TIFF, le format attendu par la plupart des processus de numérisation et d'impression.",
+      shareText:
+        "Convertit un PDF en un fichier TIFF, en combinant ses pages dans une ou plusieurs images.",
+      url: "https://www.pdfequips.com/pdf-to-tiff",
+    },
+    "pdf-to-bmp": {
+      modalTitles: ["Parlez-en à vos amis !", "Votre soutien compte !", "Aidez-nous à grandir !"],
+      modalDescription:
+        "Des pages PDF exportées en images BMP simples, un fichier par page.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image BMP distincte.",
+      url: "https://www.pdfequips.com/pdf-to-bmp",
+    },
+    "pdf-to-webp": {
+      modalTitles: ["Partagez votre enthousiasme !", "Passez le mot !", "Soutenez-nous en partageant !"],
+      modalDescription:
+        "Des pages PDF exportées sous forme d'images WebP — des fichiers plus légers avec le même contenu.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image WebP distincte.",
+      url: "https://www.pdfequips.com/pdf-to-webp",
+    },
+    "pdf-to-heif-heic": {
+      modalTitles: ["Rejoignez notre communauté !", "Ensemble, faisons bouger les choses !", "Aidez-nous à toucher plus de monde !"],
+      modalDescription:
+        "Des pages PDF exportées au format HEIF/HEIC utilisé par de nombreux iPhone, prêtes à être glissées dans Photos.",
+      shareText:
+        "Convertit chaque page d'un PDF en une image HEIF/HEIC, le format utilisé par de nombreux iPhone.",
+      url: "https://www.pdfequips.com/pdf-to-heif-heic",
+    },
+    "image-to-pdf": {
+      modalTitles: ["Votre voix compte !", "Faisons le buzz !", "Faites la différence — partagez !"],
+      modalDescription:
+        "N'importe quel mélange de formats d'images, combiné en un seul PDF — pas besoin de les convertir séparément auparavant.",
+      shareText:
+        "Combine une ou plusieurs images, dans des formats courants comme JPG et PNG, en un seul document PDF.",
+      url: "https://www.pdfequips.com/image-to-pdf",
+    },
+    "pdf-to-image": {
+      modalTitles: ["Partagez l'amour !", "Rejoignez le mouvement !", "Faites-le savoir !"],
+      modalDescription:
+        "Chaque page d'un PDF exportée dans son propre fichier image — choisissez le format qui convient à vos besoins.",
+      shareText:
+        "Convertit chaque page d'un PDF en un fichier image distinct.",
+      url: "https://www.pdfequips.com/pdf-to-image",
+    },
+  },
+  premiumToast: {
+    variants: [
+      {
+        message: "Vous voulez de meilleurs résultats ? Essayez Premium pour un formatage et une précision supérieurs !",
+        actionButton: "Essayer Premium",
+      },
+      {
+        message: "Vous préférez une expérience sans publicité ? Premium supprime entièrement les publicités.",
+        actionButton: "Passer à Premium",
+      },
+    ],
+  },
 };
 
 

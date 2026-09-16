@@ -749,6 +749,165 @@ export const downloadFile: _downloadFile = {
     platformName: "Trustpilot",
     href: "https://www.trustpilot.com/review/pdfequips.com",
   },
+  shareOverlay: {
+    copiedText: "Copiado",
+    "jpg-to-pdf": {
+      modalTitles: ["¡Comparte el amor!", "¡Cuéntale a tus amigos!", "¡Ayúdanos a crecer!"],
+      modalDescription:
+        "Fotos dispersas en archivos JPG separados, combinadas en un solo documento digno de enviar. Pásalo.",
+      shareText:
+        "Combina una o más imágenes JPG en un solo documento PDF, en el orden en que se agregaron.",
+      url: "https://www.pdfequips.com/jpg-to-pdf",
+    },
+    "svg-to-pdf": {
+      modalTitles: ["¡Pasa la voz!", "¡Tu voz cuenta!", "¡Únete al movimiento!"],
+      modalDescription:
+        "Gráficos vectoriales convertidos en un PDF que se abre igual en cualquier dispositivo, sin necesidad de visor.",
+      shareText:
+        "Convierte un gráfico vectorial SVG a PDF, conservando sus formas y trazados.",
+      url: "https://www.pdfequips.com/svg-to-pdf",
+    },
+    "png-to-pdf": {
+      modalTitles: ["¡Hazlo saber a otros!", "¡Sé parte de nuestra comunidad!", "¡Comparte el entusiasmo!"],
+      modalDescription:
+        "Capturas de pantalla y gráficos PNG convertidos en un documento adecuado, listo para enviar o imprimir.",
+      shareText:
+        "Convierte imágenes PNG en un documento PDF, rellenando las áreas transparentes con un fondo sólido.",
+      url: "https://www.pdfequips.com/png-to-pdf",
+    },
+    "gif-to-pdf": {
+      modalTitles: ["¡Tu apoyo importa!", "¡Ayúdanos a llegar a más personas!", "¡Apóyanos compartiendo!"],
+      modalDescription:
+        "Una forma rápida de poner un GIF en un documento que realmente puedes imprimir o archivar.",
+      shareText:
+        "Convierte una imagen GIF en un documento PDF; para GIF animados, se utiliza un solo fotograma.",
+      url: "https://www.pdfequips.com/gif-to-pdf",
+    },
+    "tiff-to-pdf": {
+      modalTitles: ["¡Juntos podemos lograr un impacto!", "¡Haz la diferencia, compártelo!", "¡Hagamos que esto se vuelva viral!"],
+      modalDescription:
+        "Páginas TIFF escaneadas convertidas en un PDF compartible, incluidos los archivos de varias páginas.",
+      shareText:
+        "Convierte imágenes TIFF en un documento PDF, incluidos archivos TIFF de varias páginas.",
+      url: "https://www.pdfequips.com/tiff-to-pdf",
+    },
+    "bmp-to-pdf": {
+      modalTitles: ["¡Ayúdanos a hacer el cambio!", "¡Cuéntale a tus amigos!", "¡Comparte el amor!"],
+      modalDescription:
+        "Un archivo BMP de formato antiguo, convertido en algo que puedes enviar sin pensarlo dos veces.",
+      shareText:
+        "Convierte imágenes BMP en un documento PDF.",
+      url: "https://www.pdfequips.com/bmp-to-pdf",
+    },
+    "webp-to-pdf": {
+      modalTitles: ["¡Pasa la voz!", "¡Tu voz cuenta!", "¡Ayúdanos a crecer!"],
+      modalDescription:
+        "Imágenes WebP, el formato que la mayoría de los navegadores guardan de forma predeterminada, convertidas en un documento que cualquiera puede abrir.",
+      shareText:
+        "Convierte imágenes WebP en un documento PDF.",
+      url: "https://www.pdfequips.com/webp-to-pdf",
+    },
+    "heif-heic-to-pdf": {
+      modalTitles: ["¡Sé parte de nuestra comunidad!", "¡Únete al movimiento!", "¡Hazlo saber a otros!"],
+      modalDescription:
+        "Fotos de iPhone en formato HEIF/HEIC, convertidas en un PDF que se abre en cualquier lugar, sin necesidad de una aplicación de conversión previa.",
+      shareText:
+        "Convierte fotos HEIF/HEIC, el formato utilizado por muchos iPhone, en un documento PDF.",
+      url: "https://www.pdfequips.com/heif-heic-to-pdf",
+    },
+    "pdf-to-jpg": {
+      modalTitles: ["¡Comparte el entusiasmo!", "¡Tu apoyo importa!", "¡Ayúdanos a llegar a más personas!"],
+      modalDescription:
+        "Cada página de un PDF, exportada como su propia imagen JPG: útil para vistas previas, miniaturas o para compartir una sola página.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen JPG independiente.",
+      url: "https://www.pdfequips.com/pdf-to-jpg",
+    },
+    "pdf-to-svg": {
+      modalTitles: ["¡Apóyanos compartiendo!", "¡Juntos podemos lograr un impacto!", "¡Cuéntale a tus amigos!"],
+      modalDescription:
+        "Páginas PDF reconstruidas como gráficos vectoriales escalables, útiles para herramientas de diseño que requieren entrada SVG.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen vectorial SVG escalable.",
+      url: "https://www.pdfequips.com/pdf-to-svg",
+    },
+    "pdf-to-png": {
+      modalTitles: ["¡Haz la diferencia, compártelo!", "¡Pasa la voz!", "¡Sé parte de nuestra comunidad!"],
+      modalDescription:
+        "Páginas PDF exportadas como PNG, con el soporte de transparencia intacto cuando la fuente lo permite.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen PNG independiente.",
+      url: "https://www.pdfequips.com/pdf-to-png",
+    },
+    "pdf-to-gif": {
+      modalTitles: ["¡Hagamos que esto se vuelva viral!", "¡Tu voz cuenta!", "¡Comparte el amor!"],
+      modalDescription:
+        "Páginas PDF convertidas en imágenes GIF individuales, una por página.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen GIF independiente.",
+      url: "https://www.pdfequips.com/pdf-to-gif",
+    },
+    "pdf-to-tiff": {
+      modalTitles: ["¡Ayúdanos a hacer el cambio!", "¡Hazlo saber a otros!", "¡Únete al movimiento!"],
+      modalDescription:
+        "Un PDF exportado a TIFF, el formato que esperan la mayoría de los flujos de trabajo de escaneo e impresión.",
+      shareText:
+        "Convierte un PDF en un archivo TIFF, combinando sus páginas en uno o más fotogramas de imagen.",
+      url: "https://www.pdfequips.com/pdf-to-tiff",
+    },
+    "pdf-to-bmp": {
+      modalTitles: ["¡Cuéntale a tus amigos!", "¡Tu apoyo importa!", "¡Ayúdanos a crecer!"],
+      modalDescription:
+        "Páginas PDF exportadas a imágenes BMP simples, un archivo por página.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen BMP independiente.",
+      url: "https://www.pdfequips.com/pdf-to-bmp",
+    },
+    "pdf-to-webp": {
+      modalTitles: ["¡Comparte el entusiasmo!", "¡Pasa la voz!", "¡Apóyanos compartiendo!"],
+      modalDescription:
+        "Páginas PDF exportadas como imágenes WebP: archivos más pequeños, mismo contenido.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen WebP independiente.",
+      url: "https://www.pdfequips.com/pdf-to-webp",
+    },
+    "pdf-to-heif-heic": {
+      modalTitles: ["¡Sé parte de nuestra comunidad!", "¡Juntos podemos lograr un impacto!", "¡Ayúdanos a llegar a más personas!"],
+      modalDescription:
+        "Páginas PDF exportadas al formato HEIF/HEIC utilizado por muchos iPhone, listas para guardarse directamente en Fotos.",
+      shareText:
+        "Convierte cada página de un PDF en una imagen HEIF/HEIC, el formato utilizado por muchos iPhone.",
+      url: "https://www.pdfequips.com/pdf-to-heif-heic",
+    },
+    "image-to-pdf": {
+      modalTitles: ["¡Tu voz cuenta!", "¡Hagamos que esto se vuelva viral!", "¡Haz la diferencia, compártelo!"],
+      modalDescription:
+        "Cualquier mezcla de formatos de imagen, combinados en un solo PDF, sin necesidad de convertir cada uno por separado.",
+      shareText:
+        "Combina una o más imágenes, en formatos comunes como JPG y PNG, en un solo documento PDF.",
+      url: "https://www.pdfequips.com/image-to-pdf",
+    },
+    "pdf-to-image": {
+      modalTitles: ["¡Comparte el amor!", "¡Únete al movimiento!", "¡Hazlo saber a otros!"],
+      modalDescription:
+        "Cada página de un PDF, exportada como su propio archivo de imagen: elige el formato que se adapte a tus necesidades.",
+      shareText:
+        "Convierte cada página de un PDF en un archivo de imagen independiente.",
+      url: "https://www.pdfequips.com/pdf-to-image",
+    },
+  },
+  premiumToast: {
+    variants: [
+      {
+        message: "¡¿Quieres mejores resultados?! Prueba Premium para obtener mayor formato y precisión.",
+        actionButton: "Probar Premium",
+      },
+      {
+        message: "¿Prefieres una experiencia sin anuncios? Premium elimina los anuncios por completo.",
+        actionButton: "Obtener Premium",
+      },
+    ],
+  },
 };
 
 

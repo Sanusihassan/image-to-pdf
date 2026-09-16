@@ -612,6 +612,165 @@ export const downloadFile: _downloadFile = {
     platformName: "Trustpilot",
     href: "https://www.trustpilot.com/review/pdfequips.com",
   },
+  shareOverlay: {
+    copiedText: "تم النسخ",
+    "jpg-to-pdf": {
+      modalTitles: ["شارك الحب!", "أخبر أصدقاءك!", "ساعدنا على النمو!"],
+      modalDescription:
+        "صور متفرقة عبر ملفات JPG منفصلة، مجمعة في مستند واحد يستحق الإرسال. انشرها.",
+      shareText:
+        "يدمج صورة JPG واحدة أو أكثر في مستند PDF واحد، بنفس الترتيب الذي تمت إضافتها به.",
+      url: "https://www.pdfequips.com/jpg-to-pdf",
+    },
+    "svg-to-pdf": {
+      modalTitles: ["انشر الخبر!", "صوتك يحدث فرقًا!", "انضم إلى المبادرة!"],
+      modalDescription:
+        "رسومات متجهية تحولت إلى ملف PDF يفتح بالطريقة نفسها على أي جهاز، دون الحاجة إلى برنامج عرض.",
+      shareText:
+        "يحول رسمة SVG المتجهية إلى ملف PDF مع الحفاظ على أشكالها ومساراتها.",
+      url: "https://www.pdfequips.com/svg-to-pdf",
+    },
+    "png-to-pdf": {
+      modalTitles: ["عرف الآخرين!", "كن جزءًا من مجتمعنا!", "شارك الحماس!"],
+      modalDescription:
+        "لقطات شاشة ورسومات PNG تحولت إلى مستند مناسب، جاهز للإرسال أو الطباعة.",
+      shareText:
+        "يحول صور PNG إلى مستند PDF، مع ملء المناطق الشفافة بخلفية صلبة.",
+      url: "https://www.pdfequips.com/png-to-pdf",
+    },
+    "gif-to-pdf": {
+      modalTitles: ["دعمك يهمنا!", "ساعدنا للوصول إلى المزيد!", "ادعمنا بالمشاركة!"],
+      modalDescription:
+        "طريقة سريعة لوضع صورة GIF في مستند يمكنك طباعته أو حفظه بالفعل.",
+      shareText:
+        "يحول صورة GIF إلى مستند PDF؛ بالنسبة لصور GIF المتحركة، يتم استخدام إطار واحد.",
+      url: "https://www.pdfequips.com/gif-to-pdf",
+    },
+    "tiff-to-pdf": {
+      modalTitles: ["معًا يمكننا إحداث تأثير!", "اصنع فارقًا — شارك الآن!", "دعنا نجعل هذا ينتشر!"],
+      modalDescription:
+        "صفحات TIFF الممسوحة ضوئيًا تحولت إلى ملف PDF واحد قابل للمشاركة، بما في ذلك الملفات متعددة الصفحات.",
+      shareText:
+        "يحول صور TIFF إلى مستند PDF، بما في ذلك ملفات TIFF متعددة الصفحات.",
+      url: "https://www.pdfequips.com/tiff-to-pdf",
+    },
+    "bmp-to-pdf": {
+      modalTitles: ["ساعدنا في إحداث تغيير!", "أخبر أصدقاءك!", "شارك الحب!"],
+      modalDescription:
+        "ملف BMP بتنسيق قديم، تحول إلى شيء يمكنك إرساله دون تردد.",
+      shareText:
+        "يحول صور BMP إلى مستند PDF.",
+      url: "https://www.pdfequips.com/bmp-to-pdf",
+    },
+    "webp-to-pdf": {
+      modalTitles: ["انشر الخبر!", "صوتك يحدث فرقًا!", "ساعدنا على النمو!"],
+      modalDescription:
+        "صور WebP، وهو التنسيق الذي تحفظه معظم المتصفحات افتراضيًا، تحولت إلى مستند يمكن لأي شخص فتحه.",
+      shareText:
+        "يحول صور WebP إلى مستند PDF.",
+      url: "https://www.pdfequips.com/webp-to-pdf",
+    },
+    "heif-heic-to-pdf": {
+      modalTitles: ["كن جزءًا من مجتمعنا!", "انضم إلى المبادرة!", "عرف الآخرين!"],
+      modalDescription:
+        "صور iPhone بتنسيق HEIF/HEIC، تحولت إلى ملف PDF يفتح في أي مكان دون الحاجة لبرنامج تحويل أولاً.",
+      shareText:
+        "يحول صور HEIF/HEIC، وهو التنسيق المستخدم في العديد من أجهزة iPhone، إلى مستند PDF.",
+      url: "https://www.pdfequips.com/heif-heic-to-pdf",
+    },
+    "pdf-to-jpg": {
+      modalTitles: ["شارك الحماس!", "دعمك يهمنا!", "ساعدنا للوصول إلى المزيد!"],
+      modalDescription:
+        "كل صفحة من ملف PDF كصورة JPG منفصلة — مفيدة للمعاينات أو الصور المصغرة أو مشاركة صفحة واحدة.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة JPG منفصلة.",
+      url: "https://www.pdfequips.com/pdf-to-jpg",
+    },
+    "pdf-to-svg": {
+      modalTitles: ["ادعمنا بالمشاركة!", "معًا يمكننا إحداث تأثير!", "أخبر أصدقاءك!"],
+      modalDescription:
+        "صفحات PDF التي تم إعادة بنائها كرسومات متجهية قابلة للتكبير، مفيدة لأدوات التصميم التي تتطلب إدخال SVG.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة متجهية SVG قابلة للتكبير.",
+      url: "https://www.pdfequips.com/pdf-to-svg",
+    },
+    "pdf-to-png": {
+      modalTitles: ["اصنع فارقًا — شارك الآن!", "انشر الخبر!", "كن جزءًا من مجتمعنا!"],
+      modalDescription:
+        "صفحات PDF المصدّرة كصور PNG، مع بقاء دعم الشفافية ساريًا حيثما يسمح المصدر.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة PNG منفصلة.",
+      url: "https://www.pdfequips.com/pdf-to-png",
+    },
+    "pdf-to-gif": {
+      modalTitles: ["دعنا نجعل هذا ينتشر!", "صوتك يحدث فرقًا!", "شارك الحب!"],
+      modalDescription:
+        "صفحات PDF تحولت إلى صور GIF فردية، صورة واحدة لكل صفحة.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة GIF منفصلة.",
+      url: "https://www.pdfequips.com/pdf-to-gif",
+    },
+    "pdf-to-tiff": {
+      modalTitles: ["ساعدنا في إحداث تغيير!", "عرف الآخرين!", "انضم إلى المبادرة!"],
+      modalDescription:
+        "ملف PDF مُصَدَّر إلى TIFF، وهو التنسيق الذي تتوقعه معظم مسارات عمل المسح الضوئي والطباعة.",
+      shareText:
+        "يحول ملف PDF إلى ملف TIFF، مع دمج صفحاته في إطار صورة واحد أو أكثر.",
+      url: "https://www.pdfequips.com/pdf-to-tiff",
+    },
+    "pdf-to-bmp": {
+      modalTitles: ["أخبر أصدقاءك!", "دعمك يهمنا!", "ساعدنا على النمو!"],
+      modalDescription:
+        "صفحات PDF مُصَدَّرة إلى صور BMP العادية، ملف واحد لكل صفحة.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة BMP منفصلة.",
+      url: "https://www.pdfequips.com/pdf-to-bmp",
+    },
+    "pdf-to-webp": {
+      modalTitles: ["شارك الحماس!", "انشر الخبر!", "ادعمنا بالمشاركة!"],
+      modalDescription:
+        "صفحات PDF المصدّرة كصور WebP — ملفات أصغر حجماً بنفس المحتوى.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة WebP منفصلة.",
+      url: "https://www.pdfequips.com/pdf-to-webp",
+    },
+    "pdf-to-heif-heic": {
+      modalTitles: ["كن جزءًا من مجتمعنا!", "معًا يمكننا إحداث تأثير!", "ساعدنا للوصول إلى المزيد!"],
+      modalDescription:
+        "صفحات PDF مُصَدَّرة إلى تنسيق HEIF/HEIC المستخدم في العديد من أجهزة iPhone، جاهزة للإدراج مباشرة في تطبيق الصور.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى صورة HEIF/HEIC، وهو التنسيق المستخدم في العديد من أجهزة iPhone.",
+      url: "https://www.pdfequips.com/pdf-to-heif-heic",
+    },
+    "image-to-pdf": {
+      modalTitles: ["صوتك يحدث فرقًا!", "دعنا نجعل هذا ينتشر!", "اصنع فارقًا — شارك الآن!"],
+      modalDescription:
+        "أي مزيج من تنسيقات الصور، مدمجة في ملف PDF واحد — لا داعي لتحويل كل صورة على حدة أولاً.",
+      shareText:
+        "يدمج صورة واحدة أو أكثر، بتنسيقات شائعة مثل JPG و PNG، في مستند PDF واحد.",
+      url: "https://www.pdfequips.com/image-to-pdf",
+    },
+    "pdf-to-image": {
+      modalTitles: ["شارك الحب!", "انضم إلى المبادرة!", "عرف الآخرين!"],
+      modalDescription:
+        "كل صفحة من ملف PDF، مصدّرة كملف صورة خاص بها — اختر التنسيق الذي يناسب احتياجاتك.",
+      shareText:
+        "يحول كل صفحة من ملف PDF إلى ملف صورة منفصل.",
+      url: "https://www.pdfequips.com/pdf-to-image",
+    },
+  },
+  premiumToast: {
+    variants: [
+      {
+        message: "هل تريد نتائج أفضل؟ جرب Premium للحصول على دقة وتنسيق ممتازين!",
+        actionButton: "جرب Premium",
+      },
+      {
+        message: "هل تفضل تجربة خالية من الإعلانات؟ Premium يزيل الإعلانات تمامًا.",
+        actionButton: "احصل على Premium",
+      },
+    ],
+  },
 };
 
 export const edit_page: _edit_page = {

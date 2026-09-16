@@ -4,10 +4,12 @@ import { DownloadIcon, ArrowLeftIcon } from "@heroicons/react/solid";
 import { useDispatch } from "react-redux";
 import { Tooltip } from "react-tooltip";
 import type { downloadFile } from "../src/content";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFileStore } from "../src/file-store";
 import { increaseDailySiteUsage } from "../src/utils";
 import TrustpilotCTA from "./TrustpilotCTA";
+import { PremiumToast } from "./PremiumToast";
+import ShareOverlay from "./ShareOverlay";
 // Safari-safe blob download: runs synchronously inside the click handler
 // so the user-gesture chain stays intact.
 function saveBlob(blob: Blob, filename: string) {
@@ -23,6 +25,53 @@ function saveBlob(blob: Blob, filename: string) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }, 100);
+}
+export function getRandomCtaIndex(length: number = 3): number {
+  return Math.floor(Math.random() * length);
+}
+
+const OUTPUT_EXTENSIONS: Record<string, string> = {
+  "jpg-to-pdf": "pdf",
+  "svg-to-pdf": "pdf",
+  "png-to-pdf": "pdf",
+  "gif-to-pdf": "pdf",
+  "tiff-to-pdf": "pdf",
+  "bmp-to-pdf": "pdf",
+  "webp-to-pdf": "pdf",
+  "heif-heic-to-pdf": "pdf",
+  "pdf-to-jpg": "jpg",
+  "pdf-to-svg": "svg",
+  "pdf-to-png": "png",
+  "pdf-to-gif": "gif",
+  "pdf-to-tiff": "tiff",
+  "pdf-to-bmp": "bmp",
+  "pdf-to-webp": "webp",
+  "pdf-to-heif-heic": "heic",
+  "image-to-pdf": "pdf",
+  "pdf-to-image": "jpg",
+};
+/**
+ * The server sends the real filename via Content-Disposition; this only
+ * runs when that was missing or the blob type didn't resolve.
+ */
+function resolveFileName(
+  fileName: string | undefined,
+  path: string,
+  blob: Blob,
+  isMultiple: boolean,
+): string {
+  const ext =
+    isMultiple || blob.type === "application/zip"
+      ? "zip"
+      : (OUTPUT_EXTENSIONS[path] ?? "");
+
+  if (!ext) return fileName || "PDFEquips";
+  if (!fileName) return `converted.${ext}`;
+
+  // Strip any input extension and apply the output one — the source name
+  // carries the wrong extension for every convert tool.
+  const base = fileName.replace(/\.[a-z0-9]{2,4}$/i, "");
+  return `${base}.${ext}`;
 }
 const DownloadFile = ({
   lang,
@@ -44,11 +93,41 @@ const DownloadFile = ({
   const fileName = useSelector(
     (state: { tool: ToolState }) => state.tool.fileName,
   );
+  const [showShareOverlay, setShowShareOverlay] = useState(false);
+  const [overlayContent, setOverlayContent] = useState<{
+    modalTitle: string;
+    modalDescription: string;
+    shareText: string;
+    url: string;
+  } | null>(null); // no index, no default title — nothing to move *from*
+  const shareContent =
+    downloadFile.shareOverlay[path as keyof typeof downloadFile.shareOverlay];
   const handleDownload = () => {
     if (!downloadBlob) return;
-    saveBlob(downloadBlob, fileName || "PDFEquips");
+    const name = resolveFileName(
+      fileName,
+      path,
+      downloadBlob,
+      Boolean(files && files.length > 1),
+    );
+
+    saveBlob(downloadBlob, name);
     if (!subscriptionStatus) {
-      increaseDailySiteUsage();
+      // Coin flip happens once, here — not on every render.
+      const shouldShowOverlay = Math.random() < 0.5;
+
+      if (shouldShowOverlay) {
+        const index = getRandomCtaIndex(shareContent.modalTitles.length);
+        setOverlayContent({
+          modalTitle: shareContent.modalTitles[index],
+          modalDescription: shareContent.modalDescription,
+          shareText: shareContent.shareText,
+          url: shareContent.url,
+        });
+        setShowShareOverlay(true);
+      }
+
+      increaseDailySiteUsage(); // stays outside the if — usage counts either way
     }
   };
 
@@ -101,6 +180,19 @@ const DownloadFile = ({
         </div>
         <TrustpilotCTA content={downloadFile.trustpilotCTA} />
       </div>
+      {!subscriptionStatus ? (
+        <PremiumToast
+          content={downloadFile.premiumToast}
+          lang={lang}
+          theme={path}
+        />
+      ) : null}
+      <ShareOverlay
+        content={overlayContent}
+        isOpen={showShareOverlay}
+        copiedText={downloadFile.shareOverlay.copiedText}
+        onClose={() => setShowShareOverlay(false)}
+      />
     </>
   );
 };

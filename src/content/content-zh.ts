@@ -608,6 +608,165 @@ export const downloadFile: _downloadFile = {
     platformName: "Trustpilot",
     href: "https://www.trustpilot.com/review/pdfequips.com",
   },
+  shareOverlay: {
+    copiedText: "已复制",
+    "jpg-to-pdf": {
+      modalTitles: ["分享这份喜爱！", "告诉你的朋友！", "助力我们成长！"],
+      modalDescription:
+        "分散在不同 JPG 文件中的照片，合成为一份值得发送的完整文档。快分享给朋友吧。",
+      shareText:
+        "按照添加顺序，将一张或多张 JPG 图像合并为一个 PDF 文档。",
+      url: "https://www.pdfequips.com/jpg-to-pdf",
+    },
+    "svg-to-pdf": {
+      modalTitles: ["一传十，十传百！", "您的声音很重要！", "加入我们的行列！"],
+      modalDescription:
+        "矢量图形转换为 PDF，在任何设备上打开效果一致，无需专门的查看器。",
+      shareText:
+        "将 SVG 矢量图形转换为 PDF，同时保留其形状和路径。",
+      url: "https://www.pdfequips.com/svg-to-pdf",
+    },
+    "png-to-pdf": {
+      modalTitles: ["让更多人知道！", "成为我们社区的一员！", "分享这份喜悦！"],
+      modalDescription:
+        "PNG 截图和图形转换为规范的文档，随时可以发送或打印。",
+      shareText:
+        "将 PNG 图像转换为 PDF 文档，并用纯色背景填充透明区域。",
+      url: "https://www.pdfequips.com/png-to-pdf",
+    },
+    "gif-to-pdf": {
+      modalTitles: ["您的支持至关重要！", "帮助我们触及更多人！", "通过分享来支持我们！"],
+      modalDescription:
+        "快速将 GIF 放入可打印或归档文档的便捷方法。",
+      shareText:
+        "将 GIF 图像转换为 PDF 文档；对于动态 GIF，将使用单个静止帧。",
+      url: "https://www.pdfequips.com/gif-to-pdf",
+    },
+    "tiff-to-pdf": {
+      modalTitles: ["携手共创改变！", "创造改变 — 立即分享！", "让我们一起打爆朋友圈！"],
+      modalDescription:
+        "扫描的 TIFF 页面转换为一份易于分享的 PDF，支持多页文件。",
+      shareText:
+        "将 TIFF 图像转换为 PDF 文档，包含多页 TIFF 文件。",
+      url: "https://www.pdfequips.com/tiff-to-pdf",
+    },
+    "bmp-to-pdf": {
+      modalTitles: ["帮助我们做出改变！", "告诉你的朋友！", "分享这份喜爱！"],
+      modalDescription:
+        "老旧格式的 BMP 文件，转换为可以毫不犹豫发送的通用文档。",
+      shareText:
+        "将 BMP 图像转换为 PDF 文档。",
+      url: "https://www.pdfequips.com/bmp-to-pdf",
+    },
+    "webp-to-pdf": {
+      modalTitles: ["一传十，十传百！", "您的声音很重要！", "助力我们成长！"],
+      modalDescription:
+        "WebP 图像（大多数浏览器默认保存的格式）转换为任何人都能打开的文档。",
+      shareText:
+        "将 WebP 图像转换为 PDF 文档。",
+      url: "https://www.pdfequips.com/webp-to-pdf",
+    },
+    "heif-heic-to-pdf": {
+      modalTitles: ["成为我们社区的一员！", "加入我们的行列！", "让更多人知道！"],
+      modalDescription:
+        "HEIF/HEIC 格式的 iPhone 照片转换为可随时随地打开的 PDF，无需先使用转换软件。",
+      shareText:
+        "将 HEIF/HEIC 格式的照片（许多 iPhone 使用的格式）转换为 PDF 文档。",
+      url: "https://www.pdfequips.com/heif-heic-to-pdf",
+    },
+    "pdf-to-jpg": {
+      modalTitles: ["分享这份喜悦！", "您的支持至关重要！", "帮助我们触及更多人！"],
+      modalDescription:
+        "PDF 的每一页都导出为单独的 JPG 图像 — 非常适合预览、缩略图或分享单页。",
+      shareText:
+        "将 PDF 的每一页转换为单独的 JPG 图像。",
+      url: "https://www.pdfequips.com/pdf-to-jpg",
+    },
+    "pdf-to-svg": {
+      modalTitles: ["通过分享来支持我们！", "携手共创改变！", "告诉你的朋友！"],
+      modalDescription:
+        "PDF 页面重构为可缩放矢量图形，适用于需要 SVG 输入的设计工具。",
+      shareText:
+        "将 PDF 的每一页转换为可缩放的 SVG 矢量图像。",
+      url: "https://www.pdfequips.com/pdf-to-svg",
+    },
+    "pdf-to-png": {
+      modalTitles: ["创造改变 — 立即分享！", "一传十，十传百！", "成为我们社区的一员！"],
+      modalDescription:
+        "PDF 页面导出为 PNG，在源文件允许的情况下保留透明度支持。",
+      shareText:
+        "将 PDF 的每一页转换为单独的 PNG 图像。",
+      url: "https://www.pdfequips.com/pdf-to-png",
+    },
+    "pdf-to-gif": {
+      modalTitles: ["让我们一起打爆朋友圈！", "您的声音很重要！", "分享这份喜爱！"],
+      modalDescription:
+        "PDF 页面转换为单独的 GIF 图像，一页一张。",
+      shareText:
+        "将 PDF 的每一页转换为单独的 GIF 图像。",
+      url: "https://www.pdfequips.com/pdf-to-gif",
+    },
+    "pdf-to-tiff": {
+      modalTitles: ["帮助我们做出改变！", "让更多人知道！", "加入我们的行列！"],
+      modalDescription:
+        "PDF 导出为 TIFF，这是大多数扫描和打印工作流所支持的格式。",
+      shareText:
+        "将 PDF 转换为 TIFF 文件，将其页面合并为一个或多个图像帧。",
+      url: "https://www.pdfequips.com/pdf-to-tiff",
+    },
+    "pdf-to-bmp": {
+      modalTitles: ["告诉你的朋友！", "您的支持至关重要！", "助力我们成长！"],
+      modalDescription:
+        "PDF 页面导出为普通 BMP 图像，一页一个文件。",
+      shareText:
+        "将 PDF 的每一页转换为单独的 BMP 图像。",
+      url: "https://www.pdfequips.com/pdf-to-bmp",
+    },
+    "pdf-to-webp": {
+      modalTitles: ["分享这份喜悦！", "一传十，十传百！", "通过分享来支持我们！"],
+      modalDescription:
+        "PDF 页面导出为 WebP 图像 — 文件更小，内容不变。",
+      shareText:
+        "将 PDF 的每一页转换为单独的 WebP 图像。",
+      url: "https://www.pdfequips.com/pdf-to-webp",
+    },
+    "pdf-to-heif-heic": {
+      modalTitles: ["成为我们社区的一员！", "携手共创改变！", "帮助我们触及更多人！"],
+      modalDescription:
+        "PDF 页面导出为许多 iPhone 使用的 HEIF/HEIC 格式，可直接放入照片库。",
+      shareText:
+        "将 PDF 的每一页转换为 HEIF/HEIC 图像（许多 iPhone 使用的格式）。",
+      url: "https://www.pdfequips.com/pdf-to-heif-heic",
+    },
+    "image-to-pdf": {
+      modalTitles: ["您的声音很重要！", "让我们一起打爆朋友圈！", "创造改变 — 立即分享！"],
+      modalDescription:
+        "任意图像格式混合合并为一个 PDF — 无需事先分别转换每一张。",
+      shareText:
+        "将一张或多张常见格式（如 JPG 和 PNG）的图像合并为一个 PDF 文档。",
+      url: "https://www.pdfequips.com/image-to-pdf",
+    },
+    "pdf-to-image": {
+      modalTitles: ["分享这份喜爱！", "加入我们的行列！", "让更多人知道！"],
+      modalDescription:
+        "PDF 的每一页都导出为其自己的图像文件 — 选择适合您需求的格式。",
+      shareText:
+        "将 PDF 的每一页转换为单独的图像文件。",
+      url: "https://www.pdfequips.com/pdf-to-image",
+    },
+  },
+  premiumToast: {
+    variants: [
+      {
+        message: "想要更好的效果？试试 Premium 以获得更出色的排版和准确度！",
+        actionButton: "体验 Premium",
+      },
+      {
+        message: "想要无广告体验？Premium 可完全移除所有广告。",
+        actionButton: "升级 Premium",
+      },
+    ],
+  },
 };
 
 export const edit_page: _edit_page = {
