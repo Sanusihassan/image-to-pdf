@@ -31,6 +31,11 @@ $color-map: (
   "pdf-to-image": #273c75,
   "image-to-pdf": #273c75,
 );
+:root {
+  @each $key, $value in $color-map {
+    --#{$key}: #{$value};
+  }
+}
 
 body {
   @include ar-wrapper {
