@@ -190,7 +190,7 @@ const DownloadFile = ({
       <ShareOverlay
         content={overlayContent}
         isOpen={showShareOverlay}
-        copiedText={downloadFile.shareOverlay.copiedText}
+        extra={downloadFile.shareOverlayExtra}
         onClose={() => setShowShareOverlay(false)}
       />
     </>

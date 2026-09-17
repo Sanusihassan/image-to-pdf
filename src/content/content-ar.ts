@@ -612,8 +612,11 @@ export const downloadFile: _downloadFile = {
     platformName: "Trustpilot",
     href: "https://www.trustpilot.com/review/pdfequips.com",
   },
-  shareOverlay: {
+  shareOverlayExtra: {
     copiedText: "تم النسخ",
+    copy_link: "نسخ الرابط",
+  },
+  shareOverlay: {
     "jpg-to-pdf": {
       modalTitles: ["شارك الحب!", "أخبر أصدقاءك!", "ساعدنا على النمو!"],
       modalDescription:

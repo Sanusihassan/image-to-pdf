@@ -13,7 +13,10 @@ interface ShareOverlayProps {
   isOpen: boolean;
   onClose: () => void;
   content: ShareContentData | null;
-  copiedText?: string;
+  extra: {
+    copiedText: string;
+    copy_link: string;
+  };
 }
 
 const TRANSITION_MS = 200;
@@ -22,7 +25,7 @@ export default function ShareOverlay({
   isOpen,
   onClose,
   content,
-  copiedText = "Copied",
+  extra,
 }: ShareOverlayProps) {
   const [copied, setCopied] = useState(false);
   const [shouldRender, setShouldRender] = useState(isOpen);
@@ -186,10 +189,10 @@ export default function ShareOverlay({
             >
               {copied ? (
                 <span className="flex items-center gap-1">
-                  <Check className="w-4 h-4" /> {copiedText}
+                  <Check className="w-4 h-4" /> {extra.copiedText}
                 </span>
               ) : (
-                "Copy Link"
+                extra.copy_link
               )}
             </button>
           </div>
