@@ -58,12 +58,9 @@ function resolveFileName(
   fileName: string | undefined,
   path: string,
   blob: Blob,
-  isMultiple: boolean,
 ): string {
   const ext =
-    isMultiple || blob.type === "application/zip"
-      ? "zip"
-      : (OUTPUT_EXTENSIONS[path] ?? "");
+    blob.type === "application/zip" ? "zip" : (OUTPUT_EXTENSIONS[path] ?? "");
 
   if (!ext) return fileName || "PDFEquips";
   if (!fileName) return `converted.${ext}`;
@@ -104,12 +101,7 @@ const DownloadFile = ({
     downloadFile.shareOverlay[path as keyof typeof downloadFile.shareOverlay];
   const handleDownload = () => {
     if (!downloadBlob) return;
-    const name = resolveFileName(
-      fileName,
-      path,
-      downloadBlob,
-      Boolean(files && files.length > 1),
-    );
+    const name = resolveFileName(fileName, path, downloadBlob);
 
     saveBlob(downloadBlob, name);
     if (!subscriptionStatus) {
