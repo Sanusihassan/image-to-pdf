@@ -22,6 +22,27 @@ type editPageProps = {
   errors: _;
   path: Paths;
 };
+const colorMap: Record<string, string> = {
+  "jpg-to-pdf": "#f1c40f",
+  "pdf-to-jpg": "#f1c40f",
+  "pdf-to-word": "#1b5ebe",
+  "svg-to-pdf": "#ffb338",
+  "png-to-pdf": "#3498db",
+  "gif-to-pdf": "#636e72",
+  "tiff-to-pdf": "#e45453",
+  "bmp-to-pdf": "#573b26",
+  "webp-to-pdf": "#6fc21f",
+  "heif-heic-to-pdf": "#c376b8",
+  "pdf-to-svg": "#ffb338",
+  "pdf-to-png": "#3498db",
+  "pdf-to-gif": "#636e72",
+  "pdf-to-tiff": "#e45453",
+  "pdf-to-bmp": "#573b26",
+  "pdf-to-webp": "#6fc21f",
+  "pdf-to-heif-heic": "#c376b8",
+  "pdf-to-image": "#273c75",
+  "image-to-pdf": "#273c75",
+};
 
 const EditPage = ({
   extension,
@@ -34,16 +55,16 @@ const EditPage = ({
 }: editPageProps) => {
   // state variables
   const errorCode = useSelector(
-    (state: { tool: ToolState }) => state.tool.errorCode
+    (state: { tool: ToolState }) => state.tool.errorCode,
   );
   const showTool = useSelector(
-    (state: { tool: ToolState }) => state.tool.showTool
+    (state: { tool: ToolState }) => state.tool.showTool,
   );
   const showDownloadBtn = useSelector(
-    (state: { tool: ToolState }) => state.tool.showDownloadBtn
+    (state: { tool: ToolState }) => state.tool.showDownloadBtn,
   );
   const showOptions = useSelector(
-    (state: { tool: ToolState }) => state.tool.showOptions
+    (state: { tool: ToolState }) => state.tool.showOptions,
   );
   const dispatch = useDispatch();
   // actual files;
@@ -94,7 +115,7 @@ const EditPage = ({
               edit_page.edit_page_titles[
                 path.replace(
                   /-/g,
-                  "_"
+                  "_",
                 ) as keyof typeof edit_page.edit_page_titles
               ]
             }
@@ -102,7 +123,10 @@ const EditPage = ({
         </h5>
         <Options edit_page={edit_page} tool={path} lang={lang} />
         <div className="footer">
-          <OutputFileNameInput content={edit_page.fileNameInput} />
+          <OutputFileNameInput
+            content={edit_page.fileNameInput}
+            themeColor={colorMap[path]}
+          />
         </div>
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
