@@ -165,7 +165,7 @@ export const downloadConvertedFile = (
   downloadBtn: RefObject<HTMLAnchorElement | null>
 ) => {
   // Get Content-Type from response headers
-  const contentType = response.headers["content-type"];
+  const contentType = response.headers["content-type"]?.toString();
   const contentDisposition = response.headers["content-disposition"];
 
   // Try to get filename from Content-Disposition header first
@@ -219,7 +219,7 @@ export const triggerDownload = (
   path: string,
   fileName: string
 ): void => {
-  const contentType = response.headers["content-type"];
+  const contentType = response.headers["content-type"]?.toString();
   const contentDisposition = response.headers["content-disposition"];
 
   const serverFilename = getFilenameFromContentDisposition(contentDisposition);

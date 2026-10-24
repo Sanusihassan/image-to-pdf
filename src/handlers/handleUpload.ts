@@ -241,7 +241,8 @@ export const handleUpload = async (
     });
 
     const mimeType =
-      response.headers["content-type"] || "application/octet-stream";
+      response.headers["content-type"]?.toString() ||
+      "application/octet-stream";
 
     // Extract blob with correct MIME type
     const blob = new Blob([response.data], { type: mimeType });
