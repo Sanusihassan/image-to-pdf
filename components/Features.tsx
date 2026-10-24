@@ -1,7 +1,6 @@
 import QuickIcon from "./icons/QuickIcon";
 import { BiSelectMultiple } from "react-icons/bi";
 import { CiLock } from "react-icons/ci";
-import { useSelector } from "react-redux";
 import { PiFileImageThin } from "react-icons/pi";
 import RobustIcon from "./icons/Features/Robust";
 import { IoMdOptions } from "react-icons/io";
@@ -16,7 +15,6 @@ import { FastForwardIcon } from "@heroicons/react/solid";
 import { RiCharacterRecognitionLine } from "react-icons/ri";
 import { AiOutlineOrderedList } from "react-icons/ai";
 import type { toType } from "../src/content/content";
-import type { ToolState } from "../src/store";
 
 export const Features = ({
   features,
@@ -25,10 +23,6 @@ export const Features = ({
   features: { title: string; description: string }[];
   tool: toType;
 }) => {
-  const stateShowTool = useSelector(
-    (state: { tool: ToolState }) => state.tool.showTool
-  );
-
   const iconsMap: {
     [K in toType]: any;
   } = {
@@ -66,7 +60,7 @@ export const Features = ({
   // @ts-ignore
   const icons = iconsMap[tool];
   return (
-    <div className={`features${stateShowTool ? "" : " d-none"}`}>
+    <div className="features hide-when-editing">
       {features.map(({ title, description }, i) => {
         const Icon = icons[i];
         return (

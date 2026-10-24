@@ -98,6 +98,7 @@ const websiteSchema = {
 
 const lang = "en"; // Assuming English, adjust if dynamic
 import { ToolWrapper } from "../../components/ToolWrapper";
+import ToolContent from "../../components/ToolContent.astro";
 import type { HowTo, WithContext } from "schema-dts";
 const seoConfig = {
   title: item.seoTitle,
@@ -163,10 +164,12 @@ const seoConfig = {
     pages={edit_page.pages}
     page={edit_page.page}
     downloadFile={downloadFile}
-    features={item.features}
+    adBlockerContent={adBlockerContent}
+  />
+  <ToolContent
     howTo={currentHowTo as WithContext<HowTo>}
+    features={item.features}
     seoTitle={item.title}
     to={currentRoute}
-    adBlockerContent={adBlockerContent}
   />
 </BaseLayout>
