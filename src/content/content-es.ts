@@ -197,8 +197,8 @@ export const tool: _tool = {
   },
   PDF_to_JPG: {
     title: "PDF a JPG",
-    seoTitle: "Convertir PDF a JPG - Convertidor gratuito",
-    description: "Convierte archivos PDF a archivos de imagen JPG",
+    seoTitle: "Convertir PDF a JPG Gratis - Convertidor de PDF a JPEG",
+    description: "Convierte PDF a JPG gratis y en línea. Transforma cada página en una imagen JPEG de alta calidad (72 a 600 DPI) o extrae las imágenes del PDF. Sin registro.",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
@@ -206,7 +206,7 @@ export const tool: _tool = {
     features: [
       {
         title: "Herramienta rápida y sencilla para convertir PDF a JPG",
-        description: "Simplemente arrastra y suelta tu archivo en el área designada arriba para convertirlo rápidamente de PDF a JPG. Además, puedes personalizar configuraciones como margen, orientación y tamaño."
+        description: "Arrastra y suelta tu PDF en el área de arriba para convertirlo a JPG. Convierte cada página en su propia imagen JPEG o extrae solo las imágenes incrustadas en el PDF, y elige la calidad que necesitas: desde 72 DPI para la web hasta 600 DPI para imprimir."
       },
       {
         title: "Protección garantizada para archivos",
