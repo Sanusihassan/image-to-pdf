@@ -10,12 +10,14 @@ import "../../index.scss";
 import Navbar from "pdfequips-navbar/NavBar";
 import { Footer } from "pdfequips-footer/components/Footer";
 import AstroSeo from "./AstroSeo.astro";
+import Hreflang from "./Hreflang.astro";
 ---
 
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
     <AstroSeo {...seoConfig} />
+    <Hreflang to={seoConfig.to} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
