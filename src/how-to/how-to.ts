@@ -105,43 +105,33 @@ export const howToSchemas = {
     GIFToPDFHOWTO: {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": "How to Convert GIF Images to PDF?",
-        "description": "Step-by-step guide to convert multiple GIF images to a single PDF document.",
+        "name": "How to Convert GIF to PDF",
+        "description": "Combine one or more GIF images into a PDF online, in the order you choose.",
         "step": [
             {
                 "@type": "HowToStep",
-                "name": "Step 1",
-                "text": "Open the GIF to PDF converter tool on PDFEquips."
+                "name": "Upload your GIF images",
+                "text": "Open the GIF to PDF converter on PDFEquips, then drag and drop one or more GIF images or click Select to choose them."
             },
             {
                 "@type": "HowToStep",
-                "name": "Step 2",
-                "text": "Drag and drop GIF images or click the 'Select GIF Files' button to choose your images."
+                "name": "Arrange the images",
+                "text": "Drag the images into the order you want them to appear in the PDF."
             },
             {
                 "@type": "HowToStep",
-                "name": "Step 3",
-                "text": "Arrange the images by dragging and dropping them in your preferred order."
+                "name": "Adjust the page settings",
+                "text": "Optionally set the page orientation, page size and margins, and choose whether to merge all images into one PDF file."
             },
             {
                 "@type": "HowToStep",
-                "name": "Step 4",
-                "text": "Configure settings like orientation, page size, and margin if needed."
+                "name": "Convert to PDF",
+                "text": "Click Convert to PDF and wait a few seconds while your GIFs are converted."
             },
             {
                 "@type": "HowToStep",
-                "name": "Step 5",
-                "text": "Click the 'Convert' button to start the GIF to PDF conversion process."
-            },
-            {
-                "@type": "HowToStep",
-                "name": "Step 6",
-                "text": "Wait for the conversion process to finish."
-            },
-            {
-                "@type": "HowToStep",
-                "name": "Step 7",
-                "text": "Download the converted PDF document."
+                "name": "Download your PDF",
+                "text": "Download the finished PDF document."
             }
         ]
     },
@@ -535,33 +525,33 @@ export const howToSchemas = {
     PDFToJPGHOWTO: {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        name: "How to Convert PDF Documents to JPG Images?",
-        description: "Step-by-step guide to convert a PDF document into multiple JPG images.",
+        name: "How to Convert PDF to JPG",
+        description: "Convert a PDF to JPG images online: one JPEG per page, or only the images embedded in the PDF, at 72 to 600 DPI.",
         step: [
             {
                 "@type": "HowToStep",
-                name: "Step 1",
-                text: "Open the PDF to JPG tool on PDFEquips."
+                name: "Upload your PDF",
+                text: "Open the PDF to JPG converter on PDFEquips, then drag and drop your PDF or click Select to choose it."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 2",
-                text: "Upload or select the PDF file you want to convert."
+                name: "Choose a conversion mode",
+                text: "Pick Page to JPG to turn every page into its own JPEG image, or Extract Images to save only the images embedded in the PDF."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 3",
-                text: "Click the 'Convert to JPG' button to start the PDF to JPG conversion process."
+                name: "Set the image quality",
+                text: "Choose Low (72 DPI) for the web, Medium (150 DPI) for most uses, High (300 DPI) for printing, or Very High (600 DPI) for professional print."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 4",
-                text: "Wait for the conversion process to finish."
+                name: "Convert to JPG",
+                text: "Click Convert to JPG and wait a few seconds while your PDF is converted."
             },
             {
                 "@type": "HowToStep",
-                name: "Step 5",
-                text: "Download the converted JPG images."
+                name: "Download your JPG images",
+                text: "Download the JPG images when the conversion is done."
             }
         ]
     },
