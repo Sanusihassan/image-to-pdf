@@ -99,8 +99,8 @@ export const tool: Tool = {
   },
   GIF_to_PDF: {
     title: "GIF to PDF",
-    seoTitle: "Convert GIF to PDF Online - Free Converter",
-    description: "Convert GIF image files to PDF documents",
+    seoTitle: "GIF to PDF Converter - Convert GIF to PDF Online Free",
+    description: "Convert GIF to PDF online for free. Combine one or more GIF images into a single PDF, reorder them, and set page size, orientation and margins. No sign-up.",
     color: "#636e72",
     type: ".gif",
     to: "/gif-to-pdf",
@@ -237,8 +237,8 @@ export const tool: Tool = {
   },
   PDF_to_JPG: {
     title: "PDF to JPG",
-    seoTitle: "Convert PDF to JPG - Free Online Tool",
-    description: "Convert PDF files to JPG image files",
+    seoTitle: "PDF to JPG Converter - Convert PDF to JPEG Free Online",
+    description: "Convert PDF to JPG online for free. Turn every page into a high-quality JPEG (72 to 600 DPI) or extract the images inside your PDF. No sign-up needed.",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
@@ -246,7 +246,7 @@ export const tool: Tool = {
     features: [
       {
         title: "Fast and simple tool to convert PDF to JPG",
-        description: "Simply drag and drop your file into the designated area above to quickly convert it from PDF to JPG. Additionally, you can customize settings such as margin, orientation, and size."
+        description: "Drag and drop your PDF into the area above to convert it to JPG. Turn every page into its own JPEG image, or extract only the images embedded in the PDF, and pick the quality you need, from 72 DPI for the web to 600 DPI for print."
       },
       {
         title: "Guaranteed protection for files",
