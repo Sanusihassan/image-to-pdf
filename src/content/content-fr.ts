@@ -12,9 +12,9 @@ import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
-    title: "JPG en PDF",
+    title: "Convertir JPG en PDF",
     seoTitle: "Convertir JPG en PDF - Convertisseur gratuit",
-    description: "Convertir des fichiers d'image JPG en documents PDF",
+    description: "Convertissez vos images JPG en PDF gratuitement et en ligne. Regroupez plusieurs photos JPEG dans un seul PDF, sans inscription ni filigrane.",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
@@ -196,7 +196,7 @@ export const tool: _tool = {
     ]
   },
   PDF_to_JPG: {
-    title: "PDF en JPG",
+    title: "Convertir PDF en JPG",
     seoTitle: "Convertir PDF en JPG Gratuit - Convertisseur PDF en JPEG",
     description: "Convertissez un PDF en JPG gratuitement en ligne. Transformez chaque page en image JPEG de haute qualité (72 à 600 DPI) ou extrayez les images du PDF.",
     color: "#f1c40f",
