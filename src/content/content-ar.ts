@@ -12,8 +12,8 @@ import type { adBlockerContentType } from "./content";
 export const tool: _tool = {
   JPG_to_PDF: {
     title: "تحويل JPG إلى PDF",
-    seoTitle: "تحويل JPG إلى PDF - محول مجاني عبر الإنترنت",
-    description: "تحويل ملفات الصور JPG إلى مستندات PDF",
+    seoTitle: "تحويل JPG إلى PDF مجانًا - دمج صور JPG في ملف PDF واحد",
+    description: "حوّل صور JPG إلى PDF مجانًا عبر الإنترنت. اجمع عدة صور في ملف PDF واحد، بدون تسجيل وبدون علامة مائية.",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
@@ -195,9 +195,9 @@ export const tool: _tool = {
     ],
   },
   PDF_to_JPG: {
-    title: "PDF إلى JPG",
-    seoTitle: "تحويل PDF إلى JPG - محول مجاني عبر الإنترنت",
-    description: "تحويل ملفات PDF إلى ملفات صور JPG",
+    title: "تحويل PDF إلى JPG",
+    seoTitle: "تحويل PDF إلى JPG مجانًا - تحويل صفحات PDF إلى صور",
+    description: "حوّل ملف PDF إلى صور JPG مجانًا عبر الإنترنت. حوّل كل صفحة إلى صورة بدقة من 72 إلى 600 DPI أو استخرج الصور من الملف، بدون تسجيل.",
     color: "#f1c40f",
     type: ".pdf",
     to: "/pdf-to-jpg",
@@ -380,8 +380,8 @@ export const tool: _tool = {
   },
   Image_to_PDF: {
     title: "تحويل الصور إلى PDF",
-    seoTitle: "تحويل الصور إلى ملف PDF عبر الإنترنت - محول صور مجاني إلى PDF",
-    description: "تحويل ملفات الصور (JPG، PNG، BMP، TIFF، GIF، SVG، WebP، HEIF) إلى مستندات PDF",
+    seoTitle: "تحويل الصور إلى PDF مجانًا - تحويل صورة أو عدة صور إلى PDF",
+    description: "حوّل الصور إلى PDF مجانًا عبر الإنترنت: JPG وPNG وHEIC وغيرها. اجمع عدة صور في ملف PDF واحد، بدون تسجيل.",
     color: "#3498db",
     type: "image",
     to: "/image-to-pdf",
