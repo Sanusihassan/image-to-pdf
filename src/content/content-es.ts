@@ -12,9 +12,9 @@ import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
   JPG_to_PDF: {
-    title: "JPG a PDF",
-    seoTitle: "Convertir JPG a PDF - Convertidor gratuito",
-    description: "Convertir archivos de imagen JPG a documentos PDF",
+    title: "Convertir JPG a PDF",
+    seoTitle: "Convertir JPG a PDF Gratis - Unir Imágenes JPG en un PDF",
+    description: "Convierte imágenes JPG a PDF gratis y en línea. Une varias fotos JPEG en un solo PDF, sin registro y sin marcas de agua.",
     color: "#f1c40f",
     type: ".jpg",
     to: "/jpg-to-pdf",
@@ -35,9 +35,9 @@ export const tool: _tool = {
     ]
   },
   PNG_to_PDF: {
-    title: "PNG a PDF",
-    seoTitle: "Convertir PNG a PDF - Convertidor gratuito",
-    description: "Convertir archivos de imagen PNG a documentos PDF",
+    title: "Convertir PNG a PDF",
+    seoTitle: "Convertir PNG a PDF Gratis - Convertidor de PNG a PDF",
+    description: "Convierte imágenes PNG a PDF gratis y en línea. Une varias imágenes en un solo PDF y elige la orientación, el tamaño de página y los márgenes. Sin registro.",
     color: "#3498db",
     type: ".png",
     to: "/png-to-pdf",
@@ -173,9 +173,9 @@ export const tool: _tool = {
     ]
   },
   HEIF_to_PDF: {
-    title: "HEIF/HEIC a PDF",
-    seoTitle: "Convertir HEIF/HEIC a PDF - Convertidor gratuito",
-    description: "Convertir archivos de imagen HEIF/HEIC a documentos PDF",
+    title: "Convertir HEIC a PDF",
+    seoTitle: "Convertir HEIC a PDF Gratis - Fotos de iPhone (HEIF) a PDF",
+    description: "Convierte fotos HEIC o HEIF del iPhone a PDF gratis y en línea. Une varias imágenes en un solo PDF, sin registro ni aplicaciones.",
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
@@ -196,7 +196,7 @@ export const tool: _tool = {
     ]
   },
   PDF_to_JPG: {
-    title: "PDF a JPG",
+    title: "Convertir PDF a JPG",
     seoTitle: "Convertir PDF a JPG Gratis - Convertidor de PDF a JPEG",
     description: "Convierte PDF a JPG gratis y en línea. Transforma cada página en una imagen JPEG de alta calidad (72 a 600 DPI) o extrae las imágenes del PDF. Sin registro.",
     color: "#f1c40f",
