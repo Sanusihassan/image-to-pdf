@@ -128,8 +128,8 @@ export const tool: _tool = {
   },
   SVG_to_PDF: {
     title: "SVG 转 PDF",
-    seoTitle: "在线将 SVG 转换为 PDF - 免费转换器",
-    description: "将 SVG 图像文件转换为 PDF 文档",
+    seoTitle: "SVG转PDF在线转换器 - 免费将SVG转为PDF",
+    description: "免费在线将SVG转换为PDF。可将多个SVG图像合并为一个PDF，并设置页面大小、方向和边距，无需注册。",
     color: "#ffb338",
     type: ".svg",
     to: "/svg-to-pdf",
@@ -174,8 +174,8 @@ export const tool: _tool = {
   },
   HEIF_to_PDF: {
     title: "HEIF/HEIC 转 PDF",
-    seoTitle: "在线将 HEIF 转换为 PDF - 免费转换器",
-    description: "将 HEIF/HEIC 图像文件转换为 PDF 文档",
+    seoTitle: "HEIC转PDF在线转换器 - 免费将iPhone照片转为PDF",
+    description: "免费在线将HEIC或HEIF照片转换为PDF。可将多张iPhone照片合并为一个PDF，无需注册或安装应用。",
     color: "#c376b8",
     type: ".heif, .heic",
     to: "/heif-heic-to-pdf",
@@ -313,8 +313,8 @@ export const tool: _tool = {
   },
   PDF_to_SVG: {
     title: "PDF 转 SVG",
-    seoTitle: "将 PDF 转换为 SVG - 免费在线工具",
-    description: "将 PDF 文件转换为 SVG 矢量图像文件",
+    seoTitle: "PDF转SVG在线转换器 - 免费将PDF转为SVG",
+    description: "免费在线将PDF转换为SVG。把PDF的每一页转换为SVG文件，无需注册。",
     color: "#ffb338",
     type: ".pdf",
     to: "/pdf-to-svg",

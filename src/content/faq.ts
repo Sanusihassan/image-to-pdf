@@ -4,8 +4,9 @@ import { faq as en } from "./faq-en";
 import { faq as fr } from "./faq-fr";
 import { faq as es } from "./faq-es";
 import { faq as ar } from "./faq-ar";
+import { faq as zh } from "./faq-zh";
 
 export type FaqEntry = { question: string; answer: string };
 export type FaqContent = { title: string; items: Record<string, FaqEntry[]> };
 
-export const faqs: Record<string, FaqContent> = { en, fr, es, ar };
+export const faqs: Record<string, FaqContent> = { en, fr, es, ar, zh };
