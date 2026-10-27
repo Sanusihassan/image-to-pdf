@@ -16,7 +16,7 @@ import Hreflang from "./Hreflang.astro";
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
-    <AstroSeo {...seoConfig} />
+    <AstroSeo {...seoConfig} lang={lang} />
     <Hreflang to={seoConfig.to} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
