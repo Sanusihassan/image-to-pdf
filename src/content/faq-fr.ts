@@ -39,5 +39,23 @@ export const faq: FaqContent = {
         answer: "Oui. Vos fichiers sont transférés via une connexion chiffrée (TLS) et supprimés automatiquement de nos serveurs après le traitement.",
       },
     ],
+    "/pdf-to-heif-heic": [
+      {
+        question: "Comment convertir un PDF en HEIC ?",
+        answer: "Sélectionnez votre PDF ou glissez-le dans la zone ci-dessus. Choisissez de transformer chaque page en image ou d'extraire les images du PDF, réglez la qualité, puis cliquez sur « Convertir en HEIF/HEIC ».",
+      },
+      {
+        question: "Quelle est la différence entre HEIC et HEIF ?",
+        answer: "HEIF est le format d'image, et HEIC est le type de fichier qu'Apple utilise pour ce format sur iPhone, iPad et Mac. Il s'agit du même type d'image.",
+      },
+      {
+        question: "La conversion de PDF en HEIC est-elle gratuite ?",
+        answer: "Oui. Elle est gratuite, sans inscription, et fonctionne dans votre navigateur.",
+      },
+      {
+        question: "Mes fichiers sont-ils en sécurité ?",
+        answer: "Oui. Vos fichiers sont transférés via une connexion chiffrée (TLS) et supprimés automatiquement de nos serveurs après le traitement.",
+      },
+    ],
   },
 };

@@ -398,8 +398,8 @@ export const tool: Tool = {
   },
   PDF_to_HEIF: {
     title: "PDF to HEIF/HEIC",
-    seoTitle: "Convert PDF to HEIF/HEIC - Free Online Tool",
-    description: "Convert PDF files to HEIF/HEIC image files",
+    seoTitle: "PDF to HEIC Converter - Convert PDF to HEIC/HEIF Online Free",
+    description: "Convert PDF to HEIC online for free. Turn every page into a HEIC/HEIF image (72 to 600 DPI) or extract the images inside your PDF. No sign-up.",
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",

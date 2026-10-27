@@ -358,8 +358,8 @@ export const tool: _tool = {
   },
   PDF_to_HEIF: {
     title: "PDF vers HEIF/HEIC",
-    seoTitle: "Convertir PDF en HEIF/HEIC - Convertisseur gratuit",
-    description: "Convertir des fichiers PDF en fichiers d'image HEIF/HEIC",
+    seoTitle: "Convertir PDF en HEIC en ligne gratuit - PDF en HEIF",
+    description: "Convertissez un PDF en HEIC gratuitement en ligne. Transformez chaque page en image HEIC/HEIF ou extrayez les images du PDF, sans inscription.",
     color: "#c376b8",
     type: ".pdf",
     to: "/pdf-to-heif-heic",
